@@ -5,10 +5,13 @@ Last updated: 2026-09-04
 ## Canonical status
 
 - Project: Endogenous Interoperability and Standards Coalitions
-- Current canonical stage: Stage 0 — Idea / Motivation Intake
-- Stage 0 execution status: NOT YET RUN
-- Canonical verdict: UNRESOLVED
-- Current route: theory candidate
+- Last completed stage: Stage 0 — Idea / Motivation Intake
+- Stage 0 execution status: COMPLETED
+- Stage 0 report: `reviews/STAGE_00_IDEA_INTAKE_2026-09-04.md`
+- Stage 0 canonical verdict: `GO TO AUDIT`
+- Current canonical stage: Stage 1 — Source & Mathematical Audit
+- Stage 1 status: AUTHORIZED / NOT YET RUN
+- Current route: theory candidate — REFRAMED AT STAGE 0
 - Production manuscript authorized: NO
 - Theory frozen: NO
 - Target journal: UNRESOLVED
@@ -19,42 +22,70 @@ Last updated: 2026-09-04
 - Version: `v1.1`
 - Release SHA: `488e5ab06c207909296a7564eaf9066f7f94319c`
 - Stage 0 template: `templates/STAGE_00_IDEA_INTAKE.md`
+- Next template: `templates/STAGE_01_AUDIT.md`
 
 ## Frozen project boundary
 
-This project is independent from `private-compatibility-standards-coalitions`. The earlier paper may later serve as a benchmark, but its frozen theory is not the canonical model of this repository and must not be modified through this project.
+This project is independent from `private-compatibility-standards-coalitions`. The earlier paper may serve only as an explicitly documented benchmark or nested comparison. Its frozen theory is not the canonical model here and must not be modified through this project.
 
-## Current research question — provisional
+## Stage 0 surviving research question
 
-When firms can choose the degree of interoperability rather than only whether to adopt a common standard, how do network effects and product differentiation shape the private interoperability choice, price competition, national welfare, and the stability of standards coalitions?
+When a formal standards coalition fixes participation but member firms retain control over implementation-level interoperability, under what conditions does the profit-maximizing interoperability choice differ from the national-welfare threshold required for coalition stability enough to change whether the coalition persists or unravels?
 
-This wording is provisional until Stage 0.
+This replaces the broader initialization question for purposes of Stage 1 audit.
 
-## Early economic kill tests
+## Stage 0 finding that constrains all later work
 
-Before investing in a full model, the project must determine whether a disciplined minimal structure can deliver all of the following:
+Preliminary external verification found close prior literature already containing much of the original proposed package:
 
-1. A nonempty parameter region with an interior private interoperability choice: `0 < a_o* < 1`.
-2. An economically distinct government/coalition threshold `â` rather than a relabeling of the firm's private FOC.
-3. Parameter regions with `a_o* < â` and/or `a_o* > â` that change coalition stability, welfare, or another full-game strategic result.
-4. A mechanism that cannot be reduced to a standard compatibility/network-effects model plus a cosmetic continuous parameter.
-5. A credible economic reason for any curvature/cost needed to generate interiority; no ad hoc convex term may be introduced solely to force `a_o*` into `(0,1)`.
+- continuous/endogenous compatibility choice;
+- horizontal differentiation / Hotelling-style competition;
+- network externalities;
+- compatibility before price competition;
+- interior partial compatibility;
+- private-versus-welfare comparisons;
+- common standardization / network alliance concepts.
 
-Failure of tests 1–3 is a strong reason to kill or radically simplify the endogenous-interoperability branch.
+The closest preliminary hits include Stadler, Tobler Trexler & Unsorg (2022), Foros & Hansen (2001), and Toshimitsu (2018). Therefore:
 
-## Candidate architecture — not frozen
+1. `0 < a_o* < 1` is a viability condition, not a novelty signal.
+2. `Salop + network effects + endogenous interoperability` is not an acceptable contribution claim.
+3. The project survives only if actor separation and timing — government/formal coalition first, private implementation second, coalition stability after anticipated continuation — generate a genuinely new full-game strategic or welfare result.
 
-- Salop circular differentiation is a candidate representation, not yet canonical.
-- Firm-level interoperability intensity `a_i ∈ [0,1]` is the preferred first candidate.
-- Pairwise effective compatibility derived from `(a_i,a_j)` remains UNRESOLVED.
-- Network externalities are allowed as a candidate mechanism but should enter only if they generate a distinct strategic margin.
-- Price competition should be solved after interoperability choices in the candidate timing.
-- Government/national-welfare objectives and coalition formation are downstream objects and must not be hard-coded before the private interoperability mechanism survives.
+## Current economic kill tests
+
+Before investing in a canonical minimal model, Stage 1/2 must determine whether the surviving whole game can escape absorption.
+
+Required surviving properties are now:
+
+1. A credible institutional reason that formal standard adoption leaves privately controlled interoperability implementation discretion.
+2. A private equilibrium interoperability object `a_o*` derived from firm incentives.
+3. A distinct government coalition-stability threshold `â`, preferably defined by a membership/deviation indifference condition rather than simply by welfare maximization over `a`.
+4. A parameter region in which the ordering of `a_o*` and `â` changes coalition participation/deviation incentives or another full-game equilibrium regime.
+5. A mechanism not reducible to a standard continuous-compatibility model plus government vocabulary.
+6. No artificial curvature introduced solely to force an interior solution.
+
+If a close paper already contains government/formal-coalition membership, privately chosen post-agreement interoperability, downstream competition, national welfare, and coalition stability with the same strategic feedback, the project should be killed or radically reframed rather than enlarged.
+
+## Candidate architecture — still not frozen
+
+- Salop circular differentiation remains optional, not canonical.
+- Network externalities remain optional, not canonical.
+- A non-network switching/data-portability route is admissible but must be audited against Jeon, Menicucci & Nasr (2023).
+- A pairwise/network-topology interoperability route is admissible but must be audited against current interoperability-network work, including Huang, Tan, Teh & Zhou (2026).
+- The strongest surviving timing candidate is:
+  1. governments/countries choose or inherit formal coalition membership;
+  2. firms choose implementation-level interoperability;
+  3. firms compete in the product market;
+  4. consumers choose;
+  5. national welfare and membership/deviation payoffs are evaluated.
 
 ## Next action
 
-Execute `prompts/STAGE_00_IDEA_INTAKE.md` and save the report as:
+Instantiate and execute Stage 1 — Source & Mathematical Audit using the canonical v1.1 template.
 
-`reviews/STAGE_00_IDEA_INTAKE_2026-09-04.md`
+Stage 1 must focus on the surviving research object:
 
-If and only if the Stage 0 verdict is `GO TO AUDIT`, proceed to Stage 1 Source & Mathematical Audit using the canonical v1.1 template. A `CONDITIONAL GO` may work only on its specified blocker.
+`formal standards coalition / government membership -> private interoperability implementation -> downstream competition -> national welfare -> coalition participation/deviation stability`.
+
+Stage 1 must obtain and inspect the closest full texts identified in the Stage 0 report before any minimal model is promoted to canonical status.
