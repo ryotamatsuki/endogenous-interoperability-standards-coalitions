@@ -5,14 +5,14 @@ Last updated: 2026-09-04
 ## Canonical status
 
 - Project: Endogenous Interoperability and Standards Coalitions
-- Last completed stage: Stage 3 C-ESD Policy-Map Hardening
-- Hardening report: `reviews/STAGE_03R_CESD_POLICY_MAP_HARDENING_2026-09-04.md`
-- Policy-map source of truth: `model/STAGE3R_CESD_POLICY_MAP.md`
-- Hardening decisions: `decisions/STAGE3R_CESD_POLICY_MAP_DECISIONS.md`
-- C-ESD canonical verdict: `GO -> GO TO STAGE 4 MINIMAL MODEL`
-- Current canonical stage: **Stage 4 — Minimal Model**
-- Current route: C1 TERMINATED / C2 TERMINATED / C-RP TERMINATED / C-ESD SELECTED FOR STAGE 4
-- Stage 4 authorized for C-ESD: YES
+- Last completed stage: **Stage 4 — C-ESD Minimal Model**
+- Stage-4 report: `reviews/STAGE_04_MINIMAL_MODEL_CESD_2026-09-04.md`
+- Stage-4 model source: `model/STAGE4_MINIMAL_MODEL_CESD.md`
+- Stage-4 verification: `verification/stage04_cesd_minimal.py`
+- Stage-4 decisions: `decisions/STAGE4_CESD_DECISIONS.md`
+- C-ESD canonical verdict: **GO**
+- Current canonical stage: **Stage 6 — Novelty Re-Kill**
+- Current route: C1 TERMINATED / C2 TERMINATED / C-RP TERMINATED / C-ESD SURVIVED STAGE 4
 - Production manuscript authorized: NO
 - Theory frozen: NO
 - Target journal: UNRESOLVED
@@ -22,213 +22,168 @@ Last updated: 2026-09-04
 - Repository: `ryotamatsuki/research-paper-workflow`
 - Version: `v1.1`
 - Release SHA: `488e5ab06c207909296a7564eaf9066f7f94319c`
-- Stage 4 template: `templates/STAGE_04_MINIMAL_MODEL.md`
+- Stage-4 template: `templates/STAGE_04_MINIMAL_MODEL.md`
+- Stage-4 route on GO: Stage 6 — Novelty Re-Kill
 
 ## Frozen project boundary
 
 `ryotamatsuki/private-compatibility-standards-coalitions` remains the frozen Stage-8 mandatory institutional/coalition benchmark B0 and must not be modified.
 
-C-ESD is not currently claimed to algebraically nest B0. B0 has different demand primitives, conversion cost `c`, network value and binary private adoption cost `F`.
+C-ESD does not algebraically nest B0. B0 uses different demand, conversion-cost and private-adoption primitives.
 
-## C-ESD selected mechanism
+## C-ESD frozen mechanism
 
 C-ESD — **Endogenous Standard Differentiation × Strategic Product Repositioning**.
 
-Frozen feedback:
+Timing:
 
-`rho -> standards-bloc depth choices s_C -> pairwise standard frictions Tau(rho,s) -> firm product locations x_i -> downstream prices -> national welfare -> coalition stability`.
+`rho -> bloc depths s_C -> pairwise Tau(rho,s) -> product locations x_i -> prices -> W_i -> coalition stability`.
 
-The government policy variable is not private interoperability investment.
+### Policy map
 
-Relative profit is excluded from the Stage-4 baseline.
+For each formal standards bloc `C`, `s_C in [0,s_bar]`, `s_bar<t_bar`.
 
-## Stage-3 firm-side findings that remain binding
-
-### Simple Hotelling: killed
-
-In full-coverage quadratic Hotelling,
-
-`pi1=t(x2-x1)(2+x1+x2)^2/18`,
-
-so the common transport coefficient factors out of the location objective. Firm location best responses are independent of `t`.
-
-A symmetric two-firm network extension also fails to create `dx*/dt != 0`.
-
-### Three-firm Salop SU asymmetry: positive
-
-With the Stage-3 compatibility network and `r=v/t`, equal spacing has zero unilateral location gradient under IS and SW. Under `SU_12`, the member gradient is
-
-`r(3r-2)(12r-7)/[6(2r-1)(6r-5)^2] < 0`
-
-for `0<r<1/2`.
-
-Lower standard friction therefore strengthens SU-member strategic re-differentiation.
-
-Anchored Salop diagnostics with substantive redesign cost also produced `dx*/dt != 0` under SU.
-
-## Frozen policy-depth object
-
-For each formal standards bloc `C in rho`, choose
-
-`s_C in [0,s_bar]`, with `s_bar<t_bar`.
-
-Interpret `s_C` as the coherence/specificity depth of bloc C's standard.
-
-The realized standard-induced friction is pairwise.
-
-### Same bloc
-
-If `i,j in C`,
+Same bloc:
 
 `tau_ij=t_bar-s_C`.
 
-### Different blocs
-
-If `i in C`, `j in D`, `C != D`,
+Different blocs `C,D`:
 
 `tau_ij=t_bar+(s_C+s_D)/2`.
 
-The mapping is label-invariant and common to IS, SU and SW.
+Bloc `C` maximizes `sum_{i in C} W_i`; blocs choose simultaneously.
 
-## Explicit regime maps
+The formal partition determines the compatibility-network graph and network coefficient `v` is fixed with respect to policy depth.
 
-### IS
+No direct policy cost is present.
 
-One bloc `{1,2,3}` chooses `s_I`:
+## Stage-4 Salop microfoundation
 
-`tau_12=tau_13=tau_23=t_bar-s_I`.
+Consumers are uniformly distributed on a unit product-characteristic circle. Country of origin is independent of product taste; each country owns one third of consumer mass.
 
-### SU_12
+On arc `ij`:
 
-Bloc `{1,2}` chooses `s_12`; singleton `{3}` chooses `s_3`:
+`u_i=A-p_i-tau_ij y+v n_i`.
 
-`tau_12=t_bar-s_12`,
+The exact weighted-Laplacian demand is
 
-`tau_13=tau_23=t_bar+(s_12+s_3)/2`.
+`q=b-(1/2)L(Tau)p+(v/2)L(Tau)G_rho q`.
 
-Thus deeper SU integration makes member standards closer while making the member-outsider boundaries more differentiated.
+Price and location continuations are solved by backward induction. Firm redesign/repositioning cost remains
 
-Holding `s_3=0`,
+`gamma d_c(x_i,h_i)^2/2`,
 
-`tau_12+tau_13+tau_23=3 t_bar`.
+with inherited anchors
 
-Hence the SU member-bloc depth margin redistributes pairwise standard differentiation rather than mechanically changing its mean.
+`h=(1/6,1/2,5/6)`.
 
-### SW
+Every certified location witness must pass whole-circle unilateral-deviation checks, not only local FOCs/SOCs.
 
-Three singleton governments choose `s_1,s_2,s_3`:
+## Stage-4 exact benchmark results
 
-`tau_12=t_bar+(s_1+s_2)/2`,
+At equal spacing and common friction `t`:
 
-`tau_13=t_bar+(s_1+s_3)/2`,
+IS:
 
-`tau_23=t_bar+(s_2+s_3)/2`.
+`q_i=1/3`, `p_i=t/3`, `W_i=v/3-t/36`.
 
-## Why the cross coefficient is fixed at 1/2
+Thus `s_I*=s_bar`.
 
-The Stage-4 baseline does not contain a free external-discrimination parameter.
+Symmetric SW:
 
-Under `SU_12`, increasing `s_12` lowers one internal pair friction with derivative `-1` and raises two cross-bloc pair frictions symmetrically. Requiring the member-bloc depth margin by itself to preserve mean pairwise friction gives
+`q_i=1/3`, `p_i=(2t-3v)/6`, `W_i=v/9-t/36`.
 
-`-1+2 lambda=0`,
+In the Stage-4 result region, the SW singleton-policy equilibrium is `s_i=0`.
 
-so
+## Stage-4 witness
 
-`lambda=1/2`.
+Normalize
 
-A generalized lambda may be considered only as later robustness if the baseline survives.
+`t_bar=1`, `v=0.04`, `gamma=0.11`, `s_bar=0.25`.
 
-## Government / bloc policy game
+### B-T — endogenous policy, fixed product positions
 
-After formal partition `rho` is fixed, all standards blocs choose their depths simultaneously.
+- IS: `W=-0.007500`
+- SU member: `W=-0.017667`
+- SU outsider: `W=-0.025410`
+- SW: `W=-0.023333`
 
-Bloc `C` maximizes
+Stable set:
 
-`Omega_C=sum_{i in C} W_i`.
+`{IS}`.
 
-Therefore the policy-depth equilibrium is a Nash equilibrium among formal standards blocs.
+### B-X — zero policy depth, endogenous product positions
 
-- IS: the three-country bloc chooses `s_I`;
-- SU_12: bloc `{1,2}` chooses `s_12`; singleton `{3}` chooses `s_3`;
-- SW: each singleton government chooses `s_i`.
+- IS: `W=-0.014444`
+- SU member: `W=-0.014878`
+- SU outsider: `W=-0.033413`
+- SW: `W=-0.023333`
 
-In the symmetric baseline, members of a multi-country bloc have identical continuation welfare, so bloc-sum maximization is equivalent to representative-member welfare maximization. No transfers or bargaining weights are introduced.
+Stable set:
 
-## Network-effect freeze
-
-Formal partition determines the compatibility network as in the Stage-3 Salop diagnostic.
-
-The network coefficient `v` is held fixed with respect to `s_C` during Stage 4.
-
-Do not make network intensity another continuous policy channel during Stage 4.
-
-## Policy cost freeze
-
-Do not add a direct convex government policy cost merely to generate an interior `s_C`.
-
-Boundary depth equilibria are admissible.
-
-## National welfare
-
-Retain
-
-`W_i=CS_i+Pi_i`,
-
-with foreign-firm profits excluded from national welfare.
-
-Stage 4 must fully microfound national consumer surplus and worldwide domestic-firm profit under the selected Salop implementation before any coalition-stability theorem is certified.
-
-## Stage-4 timing
-
-`rho -> s*(rho) -> x*(rho,s*) -> p*(rho,s*,x*) -> W_i -> coalition stability`.
-
-## Required Stage-4 benchmarks
-
-### B-EXO / B-X
-
-All `s_C=0`; firms choose locations; then price competition.
-
-### B-T
-
-Blocs choose `s_C`; product locations are fixed at inherited anchors; then price competition.
+`{IS}`.
 
 ### FULL
 
-Blocs choose `s_C`; firms choose locations; then price competition.
+Policy equilibrium:
 
-The FULL architecture qualifies only if endogenous policy × endogenous product repositioning generates a government-welfare or coalition-stability implication unavailable in B-T and B-X separately.
+- IS: `s_I=0.25`
+- SU_12: `(s_12,s_3)=(0.25,0)`
+- SW: `(0,0,0)`
 
-## Stage-4 mandatory kill tests
+SU location equilibrium:
 
-Stage 4 must verify:
+`x=(0.084567,0.582100,0.833333)`.
 
-1. downstream price equilibrium;
-2. full market coverage / demand positivity and any required participation conditions;
-3. location best responses, SOC/global optimum, ordering changes and corners;
-4. policy-depth best responses and boundary solutions;
-5. existence and uniqueness/multiplicity of the bloc-depth equilibrium;
-6. consumer surplus and national welfare microfoundation;
-7. IS/SU/SW continuation values;
-8. coalition blocking/deviation conditions;
-9. B-T vs B-X vs FULL decomposition;
-10. whether any stability reversal is structural rather than an artifact of the redesign cost or boundary restriction.
+Welfare:
 
-## Stage-4 no-hybridization rule
+- IS: `W=-0.007500`
+- SU member: `W=-0.005929`
+- SU outsider: `W=-0.046811`
+- SW: `W=-0.023333`
 
-Do not add:
+Therefore
 
-- relative-profit objectives;
-- private interoperability investment;
-- endogenous network intensity;
-- extra policy costs;
-- lobbying;
-- transfers;
-- dynamics;
-- topology choice;
-- additional countries.
+`W_M^FULL > W_I^FULL > W_O^FULL`,
 
-If the frozen C-ESD model fails the Stage-4 theorem test, return `NO-GO` rather than modifying the mechanism silently.
+and `W_M^FULL>W_W^FULL`.
+
+Stable set:
+
+`{SU_12,SU_13,SU_23}`.
+
+## Headline interaction
+
+Define
+
+`Delta_M=W_SU_member-W_IS`.
+
+At the Stage-4 witness:
+
+`Delta_M^(B-T)=-0.010167`,
+
+`Delta_M^(B-X)=-0.000434`,
+
+`Delta_M^(FULL)=+0.001571`.
+
+Thus neither government policy choice alone nor product repositioning alone generates the coalition reversal. The interaction does.
+
+## Robustness / regularity audit
+
+A local 3x3x3 grid around the witness passes the strict FULL-only reversal plus whole-circle SU location best-response checks at 23/27 points. A wider 5x5x5 audit passes at 108/125 points.
+
+Low-`gamma` counterexamples exist where an SU local stationary point fails because the outsider has a profitable jump around the circle. Those points are rejected; no new primitive is added to rescue them.
+
+## Stage-4 verdict
+
+**GO**.
+
+The FULL architecture generates a coalition-stability result unavailable from both nested benchmarks.
 
 ## Next action
 
-Execute **Stage 4 — Minimal Model** for the frozen C-ESD architecture.
+Execute **Stage 6 — Novelty Re-Kill** on the actual surviving proposition:
+
+> Endogenous government standard depth and endogenous firm product repositioning interact to reverse standards-coalition stability: B-T and B-X select international standardization, while the FULL game makes regional standardization unions stable and IS pair-blockable.
+
+Do not add relative profit, private interoperability investment, endogenous network intensity, policy costs, transfers, dynamics, lobbying, topology choice or additional countries before the novelty re-kill is completed.
