@@ -20,6 +20,8 @@ jobs:
           pip install -r requirements.txt
       - name: Run frozen verification gates
         run: make verify
+      - name: Run Stage-11 hostile referee diagnostic
+        run: python verification/stage11_cesd_referee_audit.py
       - name: Regenerate manuscript-facing outputs
         run: make outputs
       - name: Install LaTeX
