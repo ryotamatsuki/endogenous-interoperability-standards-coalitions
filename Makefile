@@ -9,6 +9,7 @@ verify:
 	$(PYTHON) verification/stage04_cesd_minimal.py
 	$(PYTHON) verification/stage04r_cesd_continuation_repair.py
 	$(PYTHON) verification/stage07_cesd_welfare_generality.py
+	$(PYTHON) verification/stage07r_cesd_welfare_refresh.py
 	$(PYTHON) tests/test_freeze_consistency.py
 
 outputs:
