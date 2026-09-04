@@ -11,6 +11,7 @@ verify:
 	$(PYTHON) verification/stage07_cesd_welfare_generality.py
 	$(PYTHON) verification/stage07r_cesd_welfare_refresh.py
 	$(PYTHON) verification/stage11r_cesd_referee_audit.py
+	$(PYTHON) verification/stage11r2_local_robustness.py
 	$(PYTHON) tests/test_freeze_consistency.py
 
 outputs:
