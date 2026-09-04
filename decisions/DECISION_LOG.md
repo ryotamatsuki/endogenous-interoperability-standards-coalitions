@@ -26,25 +26,29 @@ Treat this as a research-development repository. Do not build the production man
 ## D-004 — Early endogenous-interoperability kill gate
 
 Date: 2026-09-04
-Decision: REFINED BY STAGE 0
+Decision: REFINED BY STAGE 0 AND STAGE 1
 
 Initialization required a nonempty parameter region with `0 < a_o* < 1` plus a distinct coalition/welfare threshold `â` whose ordering relative to `a_o*` changes a strategically meaningful equilibrium or welfare result.
 
-Stage 0 preliminary prior-art checking shows that an interior degree of compatibility is already explicitly derived in close literature. Therefore `0 < a_o* < 1` remains a **viability condition only**, not a novelty signal. The surviving gate is whether the private implementation choice and the government coalition-stability threshold are economically distinct and jointly generate a full-game coalition/stability result not already in the literature.
+Stage 0 established that interior compatibility is already old and therefore is a viability condition only. Stage 1 further established that neither `a_o*` nor `â` should be treated as primitive scalar objects. The primitive objects are regime-specific implementation equilibria `a*(rho;theta)` and government continuation-value differences `Delta_i(rho,rho';theta)`.
+
+A scalar `â` is admissible only as a later derived threshold after monotonicity and uniqueness are proved.
 
 ## D-005 — Salop and network effects are candidates, not commitments
 
 Date: 2026-09-04
-Decision: ACCEPTED / STRENGTHENED BY STAGE 0
+Decision: ACCEPTED / STRENGTHENED
 
-Use Salop differentiation and network effects as candidate mechanisms only. Stage 0 found direct prior art combining compatibility choice, horizontal differentiation, network effects, and downstream competition. Salop and network effects therefore have no presumptive contribution value and should be dropped unless they are indispensable to the surviving mechanism.
+Use Salop differentiation and network effects as candidate mechanisms only. Close prior work already combines compatibility choice, horizontal differentiation, network effects, and downstream competition. They have no presumptive contribution value and should be dropped unless indispensable to a surviving full-game result.
 
 ## D-006 — No artificial interiority
 
 Date: 2026-09-04
-Decision: ACCEPTED
+Decision: ACCEPTED / STRENGTHENED BY MATHEMATICAL AUDIT
 
 Do not add convex interoperability cost or another curvature term solely to force an interior solution. Any such term requires an independent economic/technological interpretation and robustness check.
+
+Stage 1's symbolic audit of Stadler et al. shows why this discipline matters: even a familiar quadratic compatibility cost plus a correct symmetric FOC does not remove the need to verify SOC/global best responses and corners.
 
 ## D-007 — Reject the original ingredient-combination contribution
 
@@ -53,33 +57,86 @@ Decision: REJECTED AS CONTRIBUTION CLAIM
 
 Do not claim novelty from `Salop + network effects + endogenous partial interoperability + price competition`.
 
-Reason: preliminary Stage 0 verification found close prior work already containing continuous/endogenous compatibility, differentiated competition, network effects, downstream price/quantity competition, interior partial compatibility, welfare comparisons, and common standardization/network-alliance objects.
-
-## D-008 — Surviving Stage 0 research object
+## D-008 — Stage-0 surviving actor/timing object
 
 Date: 2026-09-04
-Decision: ACCEPTED FOR AUDIT ONLY
+Decision: REJECTED AS NOVELTY CLAIM / RETAINED AS GAME SKELETON
 
-Reframe the project around the actor/timing separation:
+Stage 0 retained:
 
 `formal standards coalition / government membership -> privately controlled interoperability implementation -> downstream competition -> national welfare -> coalition participation/deviation stability`.
 
-This is not yet a novelty claim. It is the only research object authorized for Stage 1 audit.
+Stage 1 found that the project's own frozen benchmark already has the analogous timing with binary private adoption. Therefore actor/timing separation is not itself a contribution. It remains the skeleton in which a continuous generalization would have to generate a genuinely new result.
 
 ## D-009 — Interpretation of the government threshold
 
 Date: 2026-09-04
-Decision: ACCEPTED FOR AUDIT
+Decision: REPLACED BY STAGE 1
 
-If the notation `â` is retained, define it primarily as a **coalition-stability threshold** determined by a government's membership-versus-deviation indifference condition, not automatically as the government's welfare-maximizing interoperability level.
+Do not presume a scalar government threshold `â`.
 
-Reason: this creates a conceptually distinct object from the firm's profit-maximizing implementation `a_o*` and directly connects endogenous implementation to coalition stability.
+Primitive stability condition:
+
+`Delta_i(rho,rho';theta) = V_i(rho;theta) - V_i(rho';theta) >= 0`,
+
+where each continuation value uses its own regime-specific private implementation and product-market equilibrium.
+
+Only if a later model proves continuity, monotonicity, and a unique root may a scalar `â` be introduced as a derived representation.
 
 ## D-010 — Stage 0 verdict
 
 Date: 2026-09-04
 Decision: `GO TO AUDIT`
 
-The broad original mechanism is substantially preempted, but the narrower post-agreement private-implementation / national-coalition-stability feedback is sufficiently precise and economically nontrivial to justify a Stage 1 source and mathematical audit.
+The broad original mechanism was substantially preempted, but a narrower research object justified a source and mathematical audit.
+
+## D-011 — Own frozen paper is a mandatory nested benchmark
+
+Date: 2026-09-04
+Decision: ACCEPTED
+
+Treat `ryotamatsuki/private-compatibility-standards-coalitions` as benchmark B0 in all later novelty analysis.
+
+Its Stage-8 canonical model already contains:
+
+`formal government partition -> private standard adoption -> Cournot competition -> national welfare -> coalition stability`.
+
+The new project must not modify this frozen theory. It must recover or contrast it as a nested benchmark.
+
+## D-012 — Klimenko (2009) is a mandatory continuous-government benchmark
+
+Date: 2026-09-04
+Decision: ACCEPTED
+
+Treat Klimenko's 2009 papers on technical compatibility standards, compatibility-enhancing effort, strategic government policy and international agreements as benchmark B2.
+
+Implication: `continuous partial compatibility + government policy + international coordination` is not a viable contribution claim. Any surviving result must depend on endogenous standards-coalition membership/stability and private continuation implementation in a way unavailable in Klimenko-type policy games.
+
+## D-013 — Symmetric FOC is never sufficient for implementation equilibrium
+
+Date: 2026-09-04
+Decision: ACCEPTED
+
+For any future endogenous interoperability choice, require SOC/concavity or KKT/global optimization, asymmetric unilateral deviations, feasibility, and boundary comparisons.
+
+Reason: the Stage-1 SymPy audit exactly reproduced the Stadler et al. price equilibrium and symmetric first-stage FOC but produced an admissible parameter counterexample in which the reported interior stationary point has a positive own second derivative and is not a best response.
+
+## D-014 — Freeze residual project as a generalization/unification candidate
+
+Date: 2026-09-04
+Decision: ACCEPTED FOR STAGE 2 ONLY
+
+Freeze the Stage-2 comparison object as:
+
+> Does endogenizing a continuous post-agreement private interoperability implementation margin inside a government standards-coalition game generate a coalition-stability result unavailable in both the binary private-adoption coalition benchmark and continuous compatibility/government-policy models considered separately?
+
+No functional-form model is frozen.
+
+## D-015 — Stage 1 verdict
+
+Date: 2026-09-04
+Decision: `GO TO NOVELTY GATE`
+
+The audit produced a coherent residual game, corrected the stability formulation, and identified the necessary nested benchmarks. Remaining uncertainty is primarily whole-game prior-art absorption, which belongs to Stage 2.
 
 Novelty remains UNRESOLVED.

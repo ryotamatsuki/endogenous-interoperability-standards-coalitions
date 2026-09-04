@@ -5,13 +5,13 @@ Last updated: 2026-09-04
 ## Canonical status
 
 - Project: Endogenous Interoperability and Standards Coalitions
-- Last completed stage: Stage 0 — Idea / Motivation Intake
-- Stage 0 execution status: COMPLETED
-- Stage 0 report: `reviews/STAGE_00_IDEA_INTAKE_2026-09-04.md`
-- Stage 0 canonical verdict: `GO TO AUDIT`
-- Current canonical stage: Stage 1 — Source & Mathematical Audit
-- Stage 1 status: AUTHORIZED / NOT YET RUN
-- Current route: theory candidate — REFRAMED AT STAGE 0
+- Last completed stage: Stage 1 — Source & Mathematical Audit
+- Stage 1 execution status: COMPLETED
+- Stage 1 report: `reviews/STAGE_01_SOURCE_MATHEMATICAL_AUDIT_2026-09-04.md`
+- Stage 1 canonical verdict: `GO TO NOVELTY GATE`
+- Current canonical stage: Stage 2 — Literature Frontier / Novelty Kill Gate
+- Stage 2 status: AUTHORIZED / NOT YET RUN
+- Current route: theory candidate — GENERALIZATION / UNIFICATION CANDIDATE
 - Production manuscript authorized: NO
 - Theory frozen: NO
 - Target journal: UNRESOLVED
@@ -21,71 +21,76 @@ Last updated: 2026-09-04
 - Repository: `ryotamatsuki/research-paper-workflow`
 - Version: `v1.1`
 - Release SHA: `488e5ab06c207909296a7564eaf9066f7f94319c`
-- Stage 0 template: `templates/STAGE_00_IDEA_INTAKE.md`
-- Next template: `templates/STAGE_01_AUDIT.md`
+- Stage 1 template: `templates/STAGE_01_AUDIT.md`
+- Next template: `templates/STAGE_02_NOVELTY_GATE.md`
 
 ## Frozen project boundary
 
-This project is independent from `private-compatibility-standards-coalitions`. The earlier paper may serve only as an explicitly documented benchmark or nested comparison. Its frozen theory is not the canonical model here and must not be modified through this project.
+This project remains independent from `private-compatibility-standards-coalitions`. The earlier paper is now a **mandatory nested benchmark** for novelty analysis, but its Stage-8 frozen theory must not be altered through this repository.
 
-## Stage 0 surviving research question
+## Stage 1 audited residual research question
 
-When a formal standards coalition fixes participation but member firms retain control over implementation-level interoperability, under what conditions does the profit-maximizing interoperability choice differ from the national-welfare threshold required for coalition stability enough to change whether the coalition persists or unravels?
+> Does endogenizing a continuous post-agreement private interoperability implementation margin inside a government standards-coalition game generate a coalition-stability result that is unavailable in both (i) binary private-adoption coalition models and (ii) continuous compatibility / government-policy models considered separately?
 
-This replaces the broader initialization question for purposes of Stage 1 audit.
+This replaces the Stage-0 wording for Stage 2 purposes.
 
-## Stage 0 finding that constrains all later work
+## Stage 1 findings binding on later work
 
-Preliminary external verification found close prior literature already containing much of the original proposed package:
+### 1. Actor/timing separation is not a novelty claim
 
-- continuous/endogenous compatibility choice;
-- horizontal differentiation / Hotelling-style competition;
-- network externalities;
-- compatibility before price competition;
-- interior partial compatibility;
-- private-versus-welfare comparisons;
-- common standardization / network alliance concepts.
+The frozen benchmark `private-compatibility-standards-coalitions` already has the timing
 
-The closest preliminary hits include Stadler, Tobler Trexler & Unsorg (2022), Foros & Hansen (2001), and Toshimitsu (2018). Therefore:
+`formal government partition -> private standard adoption -> Cournot competition -> national welfare -> coalition stability`.
 
-1. `0 < a_o* < 1` is a viability condition, not a novelty signal.
-2. `Salop + network effects + endogenous interoperability` is not an acceptable contribution claim.
-3. The project survives only if actor separation and timing — government/formal coalition first, private implementation second, coalition stability after anticipated continuation — generate a genuinely new full-game strategic or welfare result.
+Therefore the new project cannot claim novelty merely because governments choose a formal coalition and firms move later.
 
-## Current economic kill tests
+### 2. Continuous compatibility plus government policy is also occupied
 
-Before investing in a canonical minimal model, Stage 1/2 must determine whether the surviving whole game can escape absorption.
+Klimenko (2009) studies partial technical compatibility, government compatibility standards/policies, compatibility-enhancing effort, international competition, national policy incentives, and international coordination. The residual contribution, if any, must involve endogenous **coalition membership/stability** combined with private continuous implementation.
 
-Required surviving properties are now:
+### 3. The scalar threshold `â` is not primitive
 
-1. A credible institutional reason that formal standard adoption leaves privately controlled interoperability implementation discretion.
-2. A private equilibrium interoperability object `a_o*` derived from firm incentives.
-3. A distinct government coalition-stability threshold `â`, preferably defined by a membership/deviation indifference condition rather than simply by welfare maximization over `a`.
-4. A parameter region in which the ordering of `a_o*` and `â` changes coalition participation/deviation incentives or another full-game equilibrium regime.
-5. A mechanism not reducible to a standard continuous-compatibility model plus government vocabulary.
-6. No artificial curvature introduced solely to force an interior solution.
+Coalition stability must first be evaluated using regime-specific continuation equilibria:
 
-If a close paper already contains government/formal-coalition membership, privately chosen post-agreement interoperability, downstream competition, national welfare, and coalition stability with the same strategic feedback, the project should be killed or radically reframed rather than enlarged.
+`Delta_i(rho,rho';theta) = V_i(rho;theta) - V_i(rho';theta)`.
 
-## Candidate architecture — still not frozen
+A scalar `â` may be defined only if a later model proves continuity, monotonicity, and a unique root in an economically meaningful scalar implementation statistic.
 
-- Salop circular differentiation remains optional, not canonical.
-- Network externalities remain optional, not canonical.
-- A non-network switching/data-portability route is admissible but must be audited against Jeon, Menicucci & Nasr (2023).
-- A pairwise/network-topology interoperability route is admissible but must be audited against current interoperability-network work, including Huang, Tan, Teh & Zhou (2026).
-- The strongest surviving timing candidate is:
-  1. governments/countries choose or inherit formal coalition membership;
-  2. firms choose implementation-level interoperability;
-  3. firms compete in the product market;
-  4. consumers choose;
-  5. national welfare and membership/deviation payoffs are evaluated.
+### 4. `a_o*` is not primitive either
+
+The general object is a regime-specific implementation vector `a*(rho;theta)`. A scalar `a_o*` requires a proved symmetric or one-dimensional reduction.
+
+### 5. Symmetric FOC is insufficient for interoperability equilibrium
+
+The Stage-1 SymPy audit of Stadler, Tobler Trexler & Unsorg (2022) exactly reproduces their price equilibrium and symmetric compatibility FOC, but finds that the stated interiority condition alone does not guarantee the own SOC/global best response for all admissible installed bases. Later project work must verify SOC, global best responses, asymmetric deviations, and corners.
+
+Verification artifact: `verification/stage01_stadler_sympy.py`.
+
+### 6. Transport-cost-only interoperability remains a kill route
+
+If `a` enters the product market only through an effective coefficient such as `t_eff=t(a)`, the downstream block is a change of variable. Foros-type compatibility models make this risk explicit. A paper contribution requires an independently interpretable interaction between formal state `rho` and private implementation `a`.
+
+## Stage 1 audited representation
+
+See:
+
+`model/AUDITED_STAGE1_REPRESENTATION.md`.
+
+No specific Salop/Cournot/Bertrand/network-effect/cost functional form is canonical at this stage.
+
+## Stage 2 mandatory nested benchmarks
+
+- **B0:** `private-compatibility-standards-coalitions` — binary private adoption within government standards coalitions.
+- **B1:** continuous private compatibility — Stadler et al.; Foros & Hansen; de Palma et al.; Garcia; Toshimitsu; Jeon et al.
+- **B2:** government continuous compatibility / international coordination — especially Klimenko (2009), plus related policy-intervention work.
+- **B3:** government standardization unions — especially Gandal & Shy (2001).
+
+## Stage 2 primary kill test
+
+Kill the branch if the proposed continuous model can be obtained by taking B0, inserting a standard continuous-compatibility block from B1/B2, and merely smoothing/relabeling the existing binary stability thresholds without producing a new full-game strategic or welfare result.
 
 ## Next action
 
-Instantiate and execute Stage 1 — Source & Mathematical Audit using the canonical v1.1 template.
+Instantiate and execute Stage 2 — Literature Frontier / Novelty Kill Gate using the canonical v1.1 template.
 
-Stage 1 must focus on the surviving research object:
-
-`formal standards coalition / government membership -> private interoperability implementation -> downstream competition -> national welfare -> coalition participation/deviation stability`.
-
-Stage 1 must obtain and inspect the closest full texts identified in the Stage 0 report before any minimal model is promoted to canonical status.
+Stage 2 may compare literature and determine whole-game absorption. It may not add complexity merely to evade prior art.
