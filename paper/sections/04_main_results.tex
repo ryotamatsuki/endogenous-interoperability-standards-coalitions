@@ -2,11 +2,11 @@
 
 The contribution is an interaction result. We therefore compare the full game with two mandatory nested benchmarks that shut down one endogenous margin at a time.
 
-\paragraph{Benchmark B-T.} Standard depth is endogenous but product locations are fixed at inherited anchors, $x_i=h_i$.
+\paragraph{Benchmark B-T.} Additional harmonization depth is endogenous for non-singleton blocs, but product locations are fixed at inherited anchors, $x_i=h_i$.
 
-\paragraph{Benchmark B-X.} Product locations are endogenous but all standard-depth choices are fixed at zero, $s_C=0$.
+\paragraph{Benchmark B-X.} Product locations are endogenous, but the additional harmonization depth of every non-singleton bloc is fixed at zero. Singleton blocs have zero depth by definition in all versions of the model.
 
-\paragraph{FULL.} Both standard depth and product locations are endogenous.
+\paragraph{FULL.} Both non-singleton harmonization depth and product locations are endogenous.
 
 For a symmetric prospective union, define the member gain relative to international standardization as
 \begin{equation}\label{eq:delta-member}
@@ -23,13 +23,15 @@ At the canonical parameter vector
 \begin{equation}\label{eq:witness}
 (\bar t,v,\gamma,\bar s)=(1,0.04,0.11,0.25),
 \end{equation}
-the FULL policy profiles are
+the FULL policy choices are
 \[
-s_I=\bar s,\qquad
-(s_{12},s_3)=(\bar s,0),\qquad
-(s_1,s_2,s_3)_{SW}=(0,0,0).
+s_I^*=\bar s,
+\qquad
+s_{12}^*=\bar s,
+\qquad
+s_3=0\ \text{under }SU_{12}\text{ by the singleton action-set definition},
 \]
-Under $SU_{12}$, the product-location equilibrium is approximately
+and $SW$ has no continuous depth choice because all three blocs are singletons. Under $SU_{12}$, the product-location equilibrium is approximately
 \[
 x^{SU}=(0.084567,\,0.582100,\,0.833333).
 \]
@@ -43,7 +45,7 @@ The two nested benchmarks do not generate the regional-union result. At \eqref{e
 \qquad
 \Delta_M^{B-X}=-0.000434<0,
 \]
-so international standardization is stable when only standard depth or only product positioning is endogenous. In the full model,
+so international standardization is stable when only harmonization depth or only product positioning is endogenous. In the full model,
 \[
 \Delta_M^{FULL}=0.001571>0.
 \]
@@ -60,10 +62,10 @@ In that region, the nested benchmarks select international standardization, wher
 \end{proposition}
 
 \paragraph{Status of Proposition \ref{prop:reversal}.}
-The proposition is constructive rather than a global closed-form classification. The parameter vector in \eqref{eq:witness} satisfies all regularity conditions, including the whole-circle unilateral location-deviation test. The inequalities are strict. Continuity on the selected regular branch therefore implies a nonempty open neighborhood. Direct numerical audits confirm the same sign pattern and global location-best-response condition at 23 of 27 nearby grid points and 108 of 125 points on a wider grid. We do not claim that the result holds for all parameter values or that every local location stationary point is globally stable.
+The proposition is constructive rather than a global closed-form classification. At the parameter vector in \eqref{eq:witness}, the repaired v2 action set satisfies the regularity conditions used in the computation. In particular, for every feasible $IS$ and $SU$ harmonization depth at the canonical primitives, the verification searches the relevant cyclic-order and circular-anchor branches and checks whole-circle unilateral location deviations after re-solving the price subgame; the resulting policy choices are then obtained by global scalar optimization over the repaired action sets. The three inequalities above are strict. Conditional on persistence of the selected regular continuation branch, continuity therefore implies a nonempty local neighborhood with the same sign pattern. We do not claim a global parameter-space theorem, nor do we claim that every local location stationary point is globally stable.
 
 The coalition-stability logic at the witness is transparent. In B-T and B-X, an $SU$ member is worse off than under $IS$, so no pair blocks international standardization. In FULL, $W_M^{SU}>W^{IS}$ while the outsider remains worse off than under $IS$ and members also prefer $SU$ to $SW$. Thus an $SU$ is not unanimously blocked by $IS$ and its members do not wish to dissolve it into $SW$. By symmetry, all three two-country unions are stable.
 
-The result isolates the strategic complementarity between the two endogenous margins. Endogenous policy depth alone does not overturn the international-standardization outcome, and endogenous location alone does not overturn it. The reversal appears only because policy-induced compression of standard differentiation changes firms' incentives to re-differentiate on the product dimension.
+The result isolates the strategic complementarity between the two endogenous margins. Endogenous harmonization depth alone does not overturn the international-standardization outcome, and endogenous location alone does not overturn it. The reversal appears only because policy-induced compression of standard differentiation changes firms' incentives to re-differentiate on the product dimension.
 
 \IfFileExists{../tables/generated_results.tex}{\input{../tables/generated_results.tex}}{}
