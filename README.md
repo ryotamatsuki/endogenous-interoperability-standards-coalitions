@@ -4,27 +4,30 @@ Theory paper on endogenous standards depth, strategic product repositioning, net
 
 ## Canonical status
 
-- Theory freeze: `CESD-THEORY-FREEZE-2026-09-04-v1`
+- Theory freeze: `CESD-THEORY-FREEZE-2026-09-04-v2`
 - Workflow: `ryotamatsuki/research-paper-workflow` v1.1
 - Workflow SHA: `488e5ab06c207909296a7564eaf9066f7f94319c`
-- Current production route: Stage 9 reproducibility setup → Stage 10 manuscript construction
-- Recommended journal level: IJIO / field-journal full paper
+- Current production route: Stage 9R reproducibility refresh -> Stage 10R manuscript refresh -> Stage 11R referee gate
+- Journal positioning: unresolved until repeated Stage 11R
 
-The sole authorized main contribution is the interaction-induced coalition-stability reversal documented in the Stage-8 freeze. Do not infer novelty from individual ingredients.
+The sole authorized main contribution is the interaction-induced coalition-stability reversal documented in the v2 freeze. Do not infer novelty from individual ingredients.
+
+The repaired policy object is **additional within-coalition harmonization depth**: non-singleton standards blocs choose depth, while singleton blocs have no positive depth instrument. Production claims must use verified downstream whole-circle location Nash continuations.
 
 ## Repository map
 
-- `theory/` — frozen theory specification, propositions, parameter/welfare/verification register
-- `verification/` — canonical Stage-4 and Stage-7 mathematical/numerical checks
+- `theory/` — frozen v2 theory specification, propositions, parameter/welfare/verification register
+- `verification/` — Stage-4/4R and Stage-7/7R mathematical/numerical checks
 - `scripts/` — deterministic serialization/generation utilities only
-- `tests/` — cheap production/freeze consistency gates
-- `paper/` — modular LaTeX manuscript scaffold
+- `tests/` — v2 production/freeze consistency gates
+- `paper/` — modular LaTeX manuscript source pending Stage 10R refresh
 - `references/` — BibTeX source
 - `tables/` — generated manuscript-facing tables (not hand edited)
 - `literature/` — prior-art and institutional evidence records
 - `reviews/` — canonical stage reports
 - `decisions/` — research and production decisions
 - `docs/REPRODUCIBILITY.md` — environment and commands
+- `docs/STAGE10R_WRITING_CONTRACT.md` — manuscript-refresh contract
 - `PROVENANCE.md` — project lineage and source-of-truth boundaries
 
 ## Reproduce
@@ -46,8 +49,8 @@ Or run the full gate:
 make all
 ```
 
-`make verify` executes the frozen Stage-4 equilibrium/global-deviation checks, Stage-7 welfare/generality checks, and Stage-8 freeze-consistency test. `make outputs` generates manuscript-facing CSV/TeX directly from those verification modules. `make paper` compiles the current manuscript scaffold using `latexmk`.
+`make verify` executes Stage-4 baseline checks, the Stage-4R repaired policy/continuation audit, Stage-7 welfare checks, the Stage-7R repaired welfare refresh, and the v2 freeze-consistency test. `make outputs` generates manuscript-facing CSV/TeX from the repaired Stage-7R chain. `make paper` compiles the current manuscript source using `latexmk`.
 
 ## Theory change control
 
-The theory is frozen. Any change to players, timing, policy map, utility/demand, costs, equilibrium concept, proposition statements, welfare claims, or post-freeze exclusions requires a formal theory-change record and re-running the affected workflow gates. Stage 10 may write; it may not silently redesign the model.
+The theory is frozen under v2. Any change to players, timing, policy map, utility/demand, costs, equilibrium concept, proposition statements, welfare claims, or post-freeze exclusions requires a formal theory-change record and re-running the affected workflow gates. Stage 10R may refresh writing; it may not silently redesign the model.
