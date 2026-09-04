@@ -5,14 +5,15 @@ Last updated: 2026-09-04
 ## Canonical status
 
 - Project: Endogenous Interoperability and Standards Coalitions
-- Last completed stage: Stage 2 — Literature Frontier / Novelty Kill Gate
-- Stage 2 execution status: COMPLETED
-- Stage 2 report: `reviews/STAGE_02_NOVELTY_KILL_GATE_2026-09-04.md`
-- Stage 2 canonical verdict: `GO`
-- Stage 2 route: `GO TO MECHANISM SEARCH`
-- Current canonical stage: Stage 3 — Candidate Mechanism Search
-- Stage 3 status: AUTHORIZED / NOT YET RUN
+- Last completed stage: Stage 3 — Candidate Mechanism Search
+- Stage 3 execution status: COMPLETED
+- Stage 3 report: `reviews/STAGE_03_MECHANISM_SEARCH_2026-09-04.md`
+- Stage 3 canonical verdict: `GO`
+- Stage 3 route: `GO TO MINIMAL MODEL`
+- Current canonical stage: Stage 4 — Minimal Model
+- Stage 4 status: AUTHORIZED / NOT YET RUN
 - Current route: theory candidate — GENERALIZATION / UNIFICATION ONLY
+- Selected mechanism: **Coalition-Scope Implementation Crowd-Out (CSIC)**
 - Production manuscript authorized: NO
 - Theory frozen: NO
 - Target journal: UNRESOLVED
@@ -22,81 +23,114 @@ Last updated: 2026-09-04
 - Repository: `ryotamatsuki/research-paper-workflow`
 - Version: `v1.1`
 - Release SHA: `488e5ab06c207909296a7564eaf9066f7f94319c`
-- Stage 2 template: `templates/STAGE_02_NOVELTY_GATE.md`
-- Next template: `templates/STAGE_03_MECHANISM_SEARCH.md`
+- Stage 3 template: `templates/STAGE_03_MECHANISM_SEARCH.md`
+- Next template: `templates/STAGE_04_MINIMAL_MODEL.md`
 
 ## Frozen project boundary
 
-This project remains independent from `private-compatibility-standards-coalitions`. That frozen paper is benchmark B0 and must not be modified here.
+This project remains independent from `private-compatibility-standards-coalitions`. That paper remains benchmark B0 and must not be modified here.
 
-## Stage 2 novelty verdict
+## Stage-2 restrictions remain binding
 
-The broad contribution is killed. No later stage may claim novelty from any of the following alone:
+No later stage may claim novelty from continuous compatibility, interiority, network effects plus compatibility, downstream competition after compatibility, private/social compatibility wedges, standards coalition formation, government standardization unions, government compatibility policy/international coordination, coalition-proof partial compatibility, or pairwise/weighted interoperability by themselves.
 
-- continuous/partial interoperability;
-- network effects plus product differentiation;
-- interoperability before price/quantity competition;
-- interior private interoperability;
-- private-versus-welfare interoperability wedges;
-- standards coalition formation;
-- government standardization unions;
-- coalition-proof partial compatibility;
-- continuous compatibility plus government policy/international coordination;
-- pairwise or weighted interoperability networks.
+## Stage-3 candidate search result
 
-The literature audit found no single prior model that reproduces the complete Stage-1 audited whole game, but several models are structurally very close.
+Ten candidates were compared using fixed ex-ante weights:
 
-## Mandatory nested benchmarks after Stage 2
+- whole-game prior-art survival 25%;
+- theorem sharpness 20%;
+- tractability 20%;
+- mechanism clarity 15%;
+- welfare content 10%;
+- institutional relevance 10%.
 
-- **B0:** `private-compatibility-standards-coalitions` — government formal partition → binary private adoption → competition → national welfare → stability.
-- **B1:** continuous private compatibility literature — Stadler et al.; Foros & Hansen; de Palma et al.; Garcia; Toshimitsu; Jeon et al.
-- **B2:** government continuous compatibility / international coordination — Klimenko (2009 JIE and related work).
-- **B3:** government standardization unions — Gandal & Shy (2001).
-- **B4:** firm standards-coalition formation — Economides & Skrzypacz (2003).
-- **B5:** modern coalition/platform interoperability — Ding, Ko & Shen (2022); Huang, Tan, Teh & Zhou (2026); related 2025–2026 interoperability papers.
+TOP 3:
 
-See `literature/NESTED_BENCHMARK_MAP.md`.
+1. **C1 — Coalition-scope network/reach vs competition exposure** — selected.
+2. C2 — bilateral implementation public-good/free-riding — fallback only.
+3. C3 — national-incidence/cross-border rent-shifting — rejected as core mechanism but retained in welfare accounting where mechanically present.
 
-## Strongest prior-art threat
+Scoring and diagnostic artifact:
 
-A referee can reconstruct most of the intended architecture by combining:
+`verification/stage03_candidate_scoring.py`.
 
-1. B0 for the government coalition/private continuation/stability skeleton;
-2. Klimenko-type models for continuous compatibility and government/international policy;
-3. Economides–Skrzypacz for endogenous standards-coalition formation and the network-benefit versus intensified-competition trade-off.
+## Selected mechanism — Coalition-Scope Implementation Crowd-Out
 
-Therefore a longer model is not enough. Stage 3 must produce a distinct full-game result.
+A formal standards coalition changes the number/scope of interoperability partners reached by a firm's implementation. Broader scope may raise interoperability/network value but also magnify the product-market rent loss from making more rivals effectively compatible. Firms maximize profit while governments evaluate national welfare.
 
-## Only surviving Stage-3 research object
+Required feedback:
 
-> Can regime-specific continuous private interoperability implementation reverse government coalition participation/deviation incentives relative to binary or exogenous-implementation benchmarks because a deviation changes the private continuation implementation equilibrium itself?
+`rho -> interoperability scope -> a*(rho) -> downstream equilibrium -> W_i(rho) -> government deviation incentives`.
 
-Primitive stability remains:
+The same implementation technology and cost function must apply under every formal regime. Regime dependence must be derived from coalition scope and the downstream game, not imposed through regime-specific cost coefficients.
 
-`Delta_i(rho,rho';theta) = V_i(rho;theta) - V_i(rho';theta)`.
+## Stage-4 minimal skeleton
 
-Each continuation value must substitute its own verified private implementation equilibrium `a*(rho;theta)` or `a*(rho';theta)`.
+Players:
 
-## Stage-3 theorem target
+- countries/governments `1,2,3`;
+- one domestic firm per country;
+- symmetric national consumer markets, with all firms active in each market.
 
-Preferred target: **implementation-induced stability reversal**.
+Formal regimes for the first test:
 
-Find a nonempty parameter region in which
+- `rho^IS={{1,2,3}}`;
+- `rho_12^SU={{1,2},{3}}`, interpreted as the continuation after country 3 leaves IS.
 
-`sign Delta_i^endo(rho,rho';theta) != sign Delta_i^benchmark(rho,rho';theta)`.
+Timing:
 
-A stronger target is a non-monotone or disconnected coalition-stability region in a primitive parameter that cannot occur in B0.
+1. formal regime fixed;
+2. firms choose `a_i in [0,1]`;
+3. Cournot competition;
+4. national welfare;
+5. government deviation/stability comparison.
 
-This is a candidate theorem, not an established result.
+First downstream candidate:
 
-## Stage-3 hard kill condition
+`p_i^k = 1 - Q^k + v a_i sum_{j in C_i(rho),j!=i} q_j^k`.
 
-Return `NO-GO` if a minimal continuous implementation model only smooths/relabels B0's binary thresholds or reproduces a known Klimenko/Economides/Toshimitsu/Ding-style comparative static.
+First implementation-cost candidate:
 
-Do not rescue failure by adding topology, dynamics, switching costs, installed bases, extra countries, or arbitrary curvature.
+`C(a_i)=kappa a_i^2/2`.
+
+Both are Stage-4 test primitives, not frozen results.
+
+## Stage-4 headline objects
+
+Private continuation equilibrium:
+
+`a*(rho)`.
+
+Government stability:
+
+`Delta_3^endo = W_3(rho^IS;a*(rho^IS)) - W_3(rho_12^SU;a*(rho_12^SU))`.
+
+Benchmark:
+
+`Delta_3^full` under fixed/full implementation and, where cleanly recoverable, a binary B0-style implementation benchmark.
+
+## Stage-4 required candidate results
+
+1. verified implementation equilibrium under each regime, including SOC/KKT/global/corners;
+2. genuine regime dependence of `a*(rho)` from coalition scope;
+3. preferably a nonempty region with `a_IS* < a_SU*` — coalition-scope implementation crowd-out;
+4. **headline kill test:** a nonempty region with
+   `sign Delta_3^endo != sign Delta_3^full`;
+5. proof that any reversal is not merely a smooth relabeling of a B0 threshold.
+
+## Hard kill / no-rescue rule
+
+Return NO-GO for C1 if the selected minimal model:
+
+- needs arbitrary curvature solely for interiority;
+- makes the scope effect an assumed regime coefficient rather than a derived market effect;
+- only smooths B0's binary threshold;
+- produces no stability reversal or comparably sharp new full-game result;
+- requires importing bilateral free-riding, trade policy, switching costs, topology, dynamics, installed bases, extra countries, or other Stage-3 candidates to work.
+
+If C1 fails, return to Stage 3 before testing C2. Do not hybridize mechanisms silently.
 
 ## Next action
 
-Instantiate and execute Stage 3 — Candidate Mechanism Search using the canonical v1.1 template.
-
-Stage 3 may search only for the minimal mechanism generating a regime-dependent implementation feedback and a new stability result. It may not revive any Stage-2 killed claim.
+Instantiate and execute Stage 4 — Minimal Model using only the CSIC skeleton in `model/STAGE3_PREFERRED_MECHANISM.md`.
