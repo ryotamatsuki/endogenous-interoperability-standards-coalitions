@@ -5,15 +5,18 @@ Last updated: 2026-09-04
 ## Canonical status
 
 - Project: Endogenous Interoperability and Standards Coalitions
-- Last completed stage: **Stage 11R — Repeated Robustness / Referee Attack Gate**
-- Stage-11R report: `reviews/STAGE_11R_REFEREE_GATE_CESD_2026-09-04.md`
-- Stage-11R decisions: `decisions/STAGE11R_CESD_DECISIONS.md`
+- Last completed stage: **Stage 6R2 — Post-Repair Novelty Re-Kill**
+- Stage-6R2 report: `reviews/STAGE_06R2_POST_REPAIR_NOVELTY_REKILL_CESD_2026-09-04.md`
+- Stage-6R2 decisions: `decisions/STAGE6R2_CESD_DECISIONS.md`
+- Stage-6R2 closest-paper matrix: `literature/STAGE6R2_CESD_CLOSEST_PAPER_MATRIX.md`
+- Stage-6R2 search log: `literature/STAGE6R2_CESD_SEARCH_LOG.md`
 - Canonical model freeze: `theory/THEORY_FREEZE_CESD_2026-09-04_v2.md`
 - Current model-freeze ID: **`CESD-THEORY-FREEZE-2026-09-04-v2`**
 - Model primitives under v2: **STILL FROZEN**
-- Main-contribution freeze under v2: **SUSPENDED BY STAGE 11R**
-- Stage-11R verdict: **REOPEN EARLIER STAGE — STAGE 6R2 CONTRIBUTION RE-KILL / BENCHMARK IDENTIFICATION REPAIR**
-- Current canonical stage: **Stage 6R2 — Contribution Re-Kill / Benchmark Identification Repair**
+- Main-contribution freeze under v2: **NOT YET RESTORED**
+- Stage-6R2 verdict: **CONDITIONAL GO — NARROWER CLAIM REQUIRED**
+- Novelty confidence: **MEDIUM**
+- Current canonical route: **contribution/benchmark refresh -> repeated Stage 11R**
 - Production manuscript submission-ready: **NO**
 - Stage 12 journal positioning authorized: **NO**
 - Target journal: **UNRESOLVED**
@@ -74,55 +77,55 @@ Existing welfare and coalition-ranking numbers remain numerically valid:
 - `Delta_M^(B-X0)≈-0.000434`;
 - `Delta_M^(FULL)≈+0.001571`.
 
-## Stage-11R contribution-identification finding
+## Stage-11R contribution-identification finding remains binding
 
-Stage 11R introduced a hostile benchmark `B-EQ`:
-
-- non-singleton harmonization depths are **exogenous**;
-- they are fixed at the FULL equilibrium values (`s_I=s_SU=s_bar`);
-- product locations remain endogenous.
-
-Because FULL itself chooses the cap for both IS and SU, `B-EQ` is exactly the same downstream game as FULL at the canonical witness.
-
-Therefore:
+Stage 11R introduced `B-EQ`: non-singleton harmonization depths are exogenous and fixed at the FULL equilibrium values while product locations remain endogenous. Because FULL chooses the cap for both IS and SU at the canonical witness,
 
 `Delta_M^(B-EQ)=Delta_M^(FULL)>0`.
 
-Canonical diagnostic: `verification/stage11r_cesd_referee_audit.py`.
+Therefore the old headline that policy endogeneity and product-position endogeneity are jointly necessary for the reversal is **not identified**. `B-X0` remains an auxiliary zero-harmonization benchmark only.
 
-### Implication
+## Stage-6R2 novelty finding
 
-The old frozen headline
+A hostile multi-literature search re-opened Gandal & Shy (2001), Ruiz (2004), Klimenko (2009), compatibility × endogenous-differentiation papers, standards-coalition models, and the 2024–2026 interoperability frontier.
 
-> policy endogeneity alone and product-position endogeneity alone leave IS stable, while their interaction makes SU stable
+No directly absorbing result was located in the audited search as of 2026-09-04. The strongest reconstruction threat is **Gandal & Shy (2001) + Ruiz (2004)**:
 
-is **not identified by the canonical witness**. Policy endogeneity is not necessary for the reversal because exogenously fixing policy at the FULL equilibrium depth reproduces FULL.
+- Gandal-Shy supplies the three-country standards-union / national-welfare / coalition architecture;
+- Ruiz supplies government standards policy -> endogenous product characteristics -> prices and excessive differentiation.
 
-B-X with zero additional depth remains a legitimate zero-harmonization benchmark, but it cannot be interpreted as establishing necessity of policy endogeneity.
+However, Ruiz's endogenous-location extension reports qualitatively similar government-policy outcomes rather than a standards-policy ranking reversal, and Gandal-Shy has no post-policy endogenous product-repositioning stage. The surviving result is therefore not an immediate proposition-level corollary of the audited predecessors.
 
-## Surviving candidate contribution for Stage 6R2
+The 2024–2026 frontier further kills any setup-level claim: Huang et al. (2026) covers weighted interoperability-network design; Kretschmer et al. (2025) covers strategic response to mandated interoperability. Neither audited record contains the C-ESD national standards-coalition ranking reversal.
 
-The model may still support the narrower result-level contribution:
+## Surviving contribution after Stage 6R2
 
-> **Policy-induced strategic product re-differentiation can reverse standards-coalition stability.** Evaluating standards policy with inherited/fixed product positions selects IS, while allowing firms to reposition after the same standards architecture can raise member producer rents enough to reverse the national IS/SU ranking and stabilize SU. At the canonical witness this occurs despite member consumer losses and despite world welfare favoring IS.
+The only authorized main contribution language is the narrower result-level claim:
 
-The central causal comparison becomes **B-T versus FULL**.
+> **Allowing firms to strategically re-differentiate after a standards policy can reverse the national-welfare ranking between international standardization and a regional standards union relative to a fixed-position evaluation of the same standards architecture, making the regional union stable through producer-rent gains despite member consumer losses and lower global welfare than under international standardization.**
 
-`B-X0` may remain auxiliary. `B-EQ` or an equivalent explicit statement must be acknowledged so the paper does not overclaim necessity of policy endogeneity.
+The central causal comparison is **B-T versus FULL**. `B-EQ` must be acknowledged explicitly. No claim may state that endogenous policy depth itself is necessary for the reversal at the canonical witness.
 
-## Novelty status reopened
+## Permanently killed novelty claims
 
-The narrower candidate claim must be re-killed against at least:
+No novelty claim is authorized for:
 
-- Gandal & Shy (2001), *Standardization Policy and International Trade*;
-- Ruiz (2004), *Mix-and-Match and International Standardization Policy*;
-- Klimenko (2009), *Policies and International Trade Agreements on Technical Compatibility for Industries with Network Externalities*;
-- Huang, Tan, Teh & Zhou (2026), *A Network Approach to Interoperability*;
-- Kretschmer, Rasch, Shekhar & Wenzel (2025), *Strategic Response to Mandated Interoperability: Privacy Spillovers in Network Markets*.
+1. government standards policy affecting product differentiation;
+2. compatibility/network effects interacting with differentiation;
+3. partial compatibility or standards-union stability;
+4. continuous compatibility policy;
+5. strategic response to interoperability regulation;
+6. coalition versus industry-wide interoperability affecting price/welfare;
+7. Salop + network effects + compatibility;
+8. endogenous positioning under network effects;
+9. producer-rent versus consumer-surplus conflict generally;
+10. regional standards coalitions;
+11. the coalition-level harmonization-depth instrument itself;
+12. joint necessity of harmonization-depth endogeneity and product-position endogeneity at the current witness.
 
-No ingredient-level novelty claim is authorized.
+Prohibited language includes `first model`, `first paper`, `first to show`, and `novel framework` unless a later audit provides substantially stronger evidence.
 
-## Mathematical status after Stage 11R
+## Mathematical status
 
 Resolved:
 
@@ -170,18 +173,15 @@ Active verification chain:
 4. `tests/test_freeze_consistency.py`;
 5. `scripts/generate_outputs.py`.
 
-The Stage-11R audit is expected to confirm the benchmark-identification objection; this is a successful hostile diagnostic, not a numerical failure.
-
 ## Required next sequence
 
-1. **Stage 6R2 — Contribution Re-Kill / Benchmark Identification Repair** on the narrower claim.
-2. If the narrower claim survives, conduct a renewed freeze/full-paper decision before restoring submission authority.
-3. Refresh manuscript contribution language and benchmarks.
-4. Repeat the referee gate.
-5. Stage 12 remains blocked until a repeated referee gate returns `GO TO JOURNAL POSITIONING`.
+1. Refresh manuscript contribution language and benchmark interpretation around the Stage-6R2 surviving claim.
+2. Conduct a renewed freeze/full-paper decision if required by the workflow.
+3. Rerun **Stage 11R — Repeated Robustness / Referee Attack Gate** against the refreshed manuscript.
+4. Stage 12 remains blocked until the repeated referee gate returns `GO TO JOURNAL POSITIONING`.
 
 ## Current verdict
 
-**STAGE 11R COMPLETE — MODEL SURVIVES, CURRENT CONTRIBUTION LABEL DOES NOT.**
+**STAGE 6R2 COMPLETE — CONDITIONAL NOVELTY SURVIVAL UNDER A NARROWER RESULT-LEVEL CLAIM.**
 
-Proceed to Stage 6R2. Do not change the repaired model merely to recover the superseded two-endogeneity narrative.
+Do not modify the repaired v2 model to recover the superseded two-endogeneity narrative.
