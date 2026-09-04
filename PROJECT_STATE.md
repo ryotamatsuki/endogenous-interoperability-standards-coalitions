@@ -5,35 +5,32 @@ Last updated: 2026-09-04
 ## Canonical status
 
 - Project: Endogenous Interoperability and Standards Coalitions
-- Last completed stage: **Stage 7 — Welfare / Generality**
-- Stage-7 report: `reviews/STAGE_07_WELFARE_GENERALITY_CESD_2026-09-04.md`
-- Stage-7 institutional validation: `literature/STAGE7_CESD_INSTITUTIONAL_VALIDATION.md`
-- Stage-7 verification: `verification/stage07_cesd_welfare_generality.py`
-- Stage-7 decisions: `decisions/STAGE7_CESD_DECISIONS.md`
-- C-ESD canonical verdict: **GO TO STAGE 7.5**
-- Current canonical stage: **Stage 7.5 — Freeze Decision**
-- Current route: C1 TERMINATED / C2 TERMINATED / C-RP TERMINATED / C-ESD SURVIVED STAGE 7
-- Production manuscript authorized: NO
+- Last completed stage: **Stage 7.5 — Full-Theory Freeze Decision**
+- Stage-7.5 report: `reviews/STAGE_075_FREEZE_DECISION_CESD_2026-09-04.md`
+- Stage-7.5 decisions: `decisions/STAGE75_CESD_DECISIONS.md`
+- C-ESD canonical verdict: **GO TO FULL PAPER**
+- Current canonical stage: **Stage 8 — Theory Freeze**
+- Current route: C1 TERMINATED / C2 TERMINATED / C-RP TERMINATED / C-ESD APPROVED FOR FULL PAPER
+- Production manuscript authorized: **YES, subject to Stage-8 theory freeze**
 - Theory frozen: NO
-- Target journal: UNRESOLVED
+- Recommended journal level: **IJIO / field-journal full paper**
+- Target journal: not yet permanently locked
 
 ## Canonical workflow
 
 - Repository: `ryotamatsuki/research-paper-workflow`
 - Version: `v1.1`
 - Release SHA: `488e5ab06c207909296a7564eaf9066f7f94319c`
-- Stage-7 template: `templates/STAGE_07_WELFARE_GENERALITY.md`
-- Stage-7 route on GO: Stage 7.5 — Freeze Decision
+- Stage-7.5 template: `templates/STAGE_075_FREEZE_DECISION.md`
+- Stage-7.5 GO route: Stage 8 — Theory Freeze
 
 ## Frozen project boundary
 
-`ryotamatsuki/private-compatibility-standards-coalitions` remains the frozen Stage-8 mandatory institutional/coalition benchmark B0 and must not be modified.
+`ryotamatsuki/private-compatibility-standards-coalitions` remains the frozen Stage-8 institutional/coalition benchmark B0 and must not be modified.
 
-C-ESD does not algebraically nest B0. B0 remains an institutional IS/SU/SW coalition benchmark only.
+C-ESD does not algebraically nest B0. B0 remains an institutional IS/SU/SW benchmark only.
 
-## Frozen C-ESD game
-
-C-ESD — **Endogenous Standard Differentiation × Strategic Product Repositioning**.
+## C-ESD game approved for freeze
 
 Timing:
 
@@ -43,51 +40,50 @@ Policy map:
 
 - same bloc `C`: `tau_ij=t_bar-s_C`;
 - different blocs `C,D`: `tau_ij=t_bar+(s_C+s_D)/2`;
-- bloc `C` maximizes `sum_{i in C} W_i`; blocs choose simultaneously.
+- bloc `C` maximizes `sum_{i in C} W_i`;
+- standards blocs choose depths simultaneously.
 
-Formal partition determines the compatibility network; network coefficient `v` is fixed with respect to depth. No direct policy cost exists.
+Formal partition determines the compatibility network and fixed network coefficient `v`. Firms choose costly horizontal product repositioning on a unit Salop circle after observing policy depth.
 
-Consumers are uniform on a unit Salop circle and each country owns one third of consumer mass. Firm redesign/repositioning cost in the baseline is
+## Frozen main contribution
 
-`gamma d_c(x_i,h_i)^2/2`,
+Only the following main contribution is authorized:
 
-with anchors `h=(1/6,1/2,5/6)`.
+> **Interaction-induced coalition-stability reversal.** Endogenous government standard depth and endogenous firm product positioning each separately leave international standardization stable, but together can induce SU members to re-differentiate sufficiently to reverse their national-welfare ranking and make regional standards unions stable while IS becomes pair-blockable.
 
-## Stage-6 surviving main contribution
+Canonical sign pattern:
 
-Only the following novelty claim remains authorized:
+`Delta_M^(B-T)<0`,
 
-> **Interaction-induced coalition-stability reversal.** Endogenous government standard depth and endogenous firm product positioning each separately leave international standardization stable, but together induce regional-standardization members to re-differentiate enough to reverse their national-welfare ranking and destabilize international standardization in favor of regional standards unions.
+`Delta_M^(B-X)<0`,
 
-At the canonical witness:
+`Delta_M^(FULL)>0`.
 
-`Delta_M^(B-T)=-0.010167`,
+At the canonical witness `(t_bar,v,gamma,s_bar)=(1,0.04,0.11,0.25)`:
 
-`Delta_M^(B-X)=-0.000434`,
+- `Delta_M^(B-T)=-0.010167`;
+- `Delta_M^(B-X)=-0.000434`;
+- `Delta_M^(FULL)=+0.001571`.
 
-`Delta_M^(FULL)=+0.001571`.
+The result is a constructive nonempty-region result, not a claimed global parameter classification.
 
-## Stage-7 welfare decomposition
+## Frozen welfare package
 
-Exact national member condition:
+Exact member identity:
 
 `Delta_M = Delta Pi_M + Delta CS/3`.
 
-At `(t_bar,v,gamma,s_bar)=(1,0.04,0.11,0.25)`:
+At the witness:
 
 - `Delta CS/3=-0.0325785`;
 - `Delta Pi_M=+0.0341498`;
 - `Delta_M=+0.0015713`.
 
-Thus the coalition reversal is a domestic-producer-rent effect that narrowly outweighs the member consumer loss.
+Thus the coalition reversal is driven by domestic producer-rent gains that narrowly exceed member consumer losses.
 
-## Stage-7 global welfare result
-
-Exact global identity:
+Exact world-welfare identity:
 
 `GW=A+v q'Gq-TC-sum_i C_i^D`.
-
-Price payments cancel globally as transfers.
 
 At the witness:
 
@@ -95,45 +91,49 @@ At the witness:
 - `GW_SU=-0.0586685`;
 - `GW_SW=-0.0700000`.
 
-Hence the decentralized stable SU set is globally welfare-inferior to IS in the canonical region.
+Hence decentralized SU stability can be globally inefficient relative to IS.
 
-## Stage-7 private/social location wedge
+At fixed canonical SU policy:
 
-At fixed canonical SU policy `(s_12,s_3)=(0.25,0)`:
+- inherited member distance `0.333333`;
+- constrained social distance `0.431427`;
+- private equilibrium distance `0.497533`.
 
-- inherited member distance: `0.333333`;
-- constrained social-location distance: `0.431427`;
-- private equilibrium member distance: `0.497533`.
+Firms over-re-differentiate relative to the constrained social benchmark.
 
-Firms therefore over-re-differentiate relative to the constrained social benchmark.
+## Essential assumptions
 
-## Stage-7 generality condition
+1. Policy-controlled standards depth.
+2. SU within-bloc versus cross-bloc friction asymmetry.
+3. A distinct horizontal product-characteristic margin.
+4. Positive but costly repositioning with intermediate effective curvature.
+5. Network effects.
+6. National welfare includes domestic producer rents but excludes foreign producer rents.
+7. Government standards decisions precede firm product-position and price choices.
 
-The quadratic redesign cost provides tractability but is not the conceptual source of the mechanism. For a regular convex repositioning cost, the Stage-3 SU marginal operating-profit force produces positive re-differentiation when `C'(0)=0` and local curvature is finite.
+## Tractability / normalization assumptions
 
-The reversal requires an intermediate effective adjustment-cost curvature:
+- three symmetric countries/firms;
+- Salop circle and symmetric inherited anchors;
+- quadratic baseline repositioning cost;
+- symmetric national `CS/3` allocation;
+- full coverage;
+- zero marginal production cost;
+- fixed `v` conditional on the formal compatibility graph;
+- no direct policy cost;
+- `1/2` cross-bloc coefficient as a symmetric mean-preserving normalization.
 
-1. too high -> repositioning too weak -> `Delta_M<0`;
-2. intermediate -> domestic rent gain exceeds member CS loss -> `Delta_M>0`;
-3. too low -> global location jumps can invalidate the selected branch.
+## Main remaining referee risks
 
-For `v=0.04,s_bar=0.25`, the upper welfare threshold is
+1. Ruiz (2004) + Gandal–Shy (2001) synthesis attack.
+2. No closed-form global lower `gamma_GBR` threshold because circle-order changes create nonsmooth deviations.
+3. Symmetric national consumer-surplus incidence.
+4. Policy-map normalization must not be sold as a primitive fact.
+5. Institutional sources validate policy-controlled interoperability, not observed strategic re-differentiation.
 
-`gamma_W=0.132983`,
+These are major limitations but not Stage-7.5 blockers.
 
-while the audited global-best-response transition is around `gamma≈0.10`.
-
-## Institutional validation
-
-Primary-source analogues:
-
-- EU AFIR EV-charging rules: policy-controlled technical interoperability margin — **ESTABLISHED**; strategic product repositioning — **UNVERIFIED**.
-- EU DMA Article 7 messaging interoperability: technical interoperability interfaces — **ESTABLISHED**; strategic non-interface repositioning — **UNVERIFIED**.
-- EU common-charger rules: common USB-C interface — **ESTABLISHED**; post-standardization re-differentiation — **UNVERIFIED**.
-
-These sources support theoretical plausibility, not empirical proof of the C-ESD response.
-
-## Stage-6 killed claims remain dead
+## Permanently killed novelty claims
 
 Do not claim novelty from:
 
@@ -141,15 +141,15 @@ Do not claim novelty from:
 - continuous government compatibility policy;
 - Salop + network effects + compatibility;
 - partial compatibility / SU stability itself;
-- strategic response to interoperability in a broad sense;
+- broad strategic response to interoperability;
 - coalitional interoperability price/welfare effects.
 
-## Stage-7 verdict
+## Stage-7.5 verdict
 
-**GO TO STAGE 7.5.**
+**GO TO FULL PAPER.**
 
 ## Next action
 
-Execute **Stage 7.5 — Freeze Decision**.
+Execute **Stage 8 — Theory Freeze** exactly on the Stage-7.5 package.
 
-Stage 7.5 may not add extensions. It must decide whether the surviving theorem/welfare package is sufficiently sharp to freeze for theory development and later manuscript investment.
+Stage 8 may clarify notation and theorem packaging but may not add relative profit, private interoperability investment, endogenous network intensity, policy costs, transfers, lobbying, dynamics, topology choice, additional countries, heterogeneous national CS incidence, or alternative spatial geometries.
