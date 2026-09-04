@@ -5,19 +5,19 @@ Last updated: 2026-09-04
 ## Canonical status
 
 - Project: Endogenous Interoperability and Standards Coalitions
-- Last completed stage: **Stage 8R — Theory Re-Freeze**
-- Stage-8R report: `reviews/STAGE_08R_THEORY_REFREEZE_CESD_2026-09-04.md`
-- Stage-8R decisions: `decisions/STAGE8R_CESD_DECISIONS.md`
+- Last completed stage: **Stage 9R — Repository / Reproducibility Refresh**
+- Stage-9R report: `reviews/STAGE_09R_REPRODUCIBILITY_REFRESH_CESD_2026-09-04.md`
+- Stage-9R decisions: `decisions/STAGE9R_CESD_DECISIONS.md`
 - Canonical theory freeze: `theory/THEORY_FREEZE_CESD_2026-09-04_v2.md`
 - Canonical proposition register: `theory/PROPOSITION_REGISTER_CESD_2026-09-04_v2.md`
 - Canonical parameter/welfare register: `theory/PARAMETER_WELFARE_VERIFICATION_REGISTER_CESD_2026-09-04_v2.md`
 - Current freeze ID: **`CESD-THEORY-FREEZE-2026-09-04-v2`**
 - Historical freeze ID: `CESD-THEORY-FREEZE-2026-09-04-v1` — **SUPERSEDED / PROVENANCE ONLY**
-- Stage-8R verdict: **THEORY FROZEN — GO TO STAGE 9R REPRODUCIBILITY REFRESH**
-- Current canonical stage: **Stage 9R — Repository / Reproducibility Refresh**
-- Production manuscript submission-ready: **NO until Stage 9R/10R refresh and repeated Stage 11**
+- Stage-9R verdict: **REPRODUCIBILITY REFRESH READY — GO TO STAGE 10R MANUSCRIPT REFRESH**
+- Current canonical stage: **Stage 10R — Manuscript Refresh**
+- Production manuscript submission-ready: **NO until Stage 10R refresh and repeated Stage 11R**
 - Stage 12 journal positioning authorized: **NO**
-- Target journal: **UNRESOLVED pending repeated Stage 11**
+- Target journal: **UNRESOLVED pending repeated Stage 11R**
 
 ## Canonical workflow
 
@@ -63,7 +63,7 @@ Under `SU_12`:
 
 Formal regime membership determines the binary compatibility/network graph. `s=0` means zero **additional harmonization depth**, not zero compatibility.
 
-## Stage-4R continuation repair incorporated into freeze
+## Stage-4R continuation repair incorporated into v2
 
 Stage 11 found that v1 incorrectly gave singleton blocs positive harmonization-depth instruments, creating off-path policy values without verified downstream pure location equilibria.
 
@@ -78,7 +78,7 @@ At `(t_bar,v,gamma,s_bar)=(1,0.04,0.11,0.25)`, canonical Stage-4R verification e
 5. global scalar policy optimization on repaired action sets;
 6. B-T/B-X/FULL interaction signs and coalition-stability inequalities.
 
-Canonical verification: `verification/stage04r_cesd_continuation_repair.py`.
+Canonical continuation verification: `verification/stage04r_cesd_continuation_repair.py`.
 
 ## Canonical witness
 
@@ -170,6 +170,28 @@ Private/social member-product distances:
 
 The upper welfare threshold remains `gamma_W≈0.132983` at `v=0.04`, `s_bar=0.25`. No structural closed-form lower `gamma_GBR` threshold is part of v2.
 
+## Stage-9R reproducibility authority
+
+The active production chain is now:
+
+1. v2 theory/proposition/parameter registers;
+2. `verification/stage04r_cesd_continuation_repair.py` for repaired continuations;
+3. `verification/stage07r_cesd_welfare_refresh.py` for repaired welfare outputs;
+4. `scripts/generate_outputs.py` for manuscript-facing serialization;
+5. `tests/test_freeze_consistency.py` for v2 production consistency;
+6. `docs/REPRODUCIBILITY.md` for environment/build instructions;
+7. `docs/STAGE10R_WRITING_CONTRACT.md` for manuscript refresh.
+
+On Stage-9R PR #47, CI passed:
+
+- Stage-4/4R and Stage-7/7R verification;
+- v2 freeze consistency;
+- repaired generated outputs;
+- LaTeX installation;
+- manuscript PDF build.
+
+Historical v1 records remain provenance only and may not drive production tests or generated manuscript outputs.
+
 ## Institutional / novelty interpretation
 
 - `s_C` is coalition-level additional harmonization depth.
@@ -201,16 +223,15 @@ No excluded element may enter the manuscript without theory-change control.
 
 Execute in order:
 
-1. **Stage 9R — Repository / Reproducibility Refresh**: point tests, generated outputs, documentation and build authority to v2;
-2. **Stage 10R — Manuscript Refresh**: replace v1 singleton-depth wording and update proof-status/welfare wording;
-3. **Stage 11R — Repeated Robustness / Referee Attack Gate**.
+1. **Stage 10R — Manuscript Refresh**: align all paper text/equations/proof-status/welfare wording with v2 and repaired singleton action sets;
+2. **Stage 11R — Repeated Robustness / Referee Attack Gate**.
 
 Stage 6 novelty re-kill need not be repeated unless a later stage changes the mechanism or contribution.
 
-Stage 12 remains blocked until repeated Stage 11 returns `GO TO JOURNAL POSITIONING`.
+Stage 12 remains blocked until repeated Stage 11R returns `GO TO JOURNAL POSITIONING`.
 
 ## Current verdict
 
-**STAGE 8R COMPLETE — THEORY RE-FROZEN UNDER v2.**
+**STAGE 9R COMPLETE — REPRODUCIBILITY / PRODUCTION AUTHORITY MIGRATED TO v2.**
 
-Proceed to Stage 9R. No theory changes are authorized during reproducibility refresh.
+Proceed to Stage 10R. No theory changes are authorized during manuscript refresh.
