@@ -5,15 +5,13 @@ Last updated: 2026-09-04
 ## Canonical status
 
 - Project: Endogenous Interoperability and Standards Coalitions
-- Last completed stage: Stage 3 — Candidate Mechanism Search
-- Stage 3 execution status: COMPLETED
-- Stage 3 report: `reviews/STAGE_03_MECHANISM_SEARCH_2026-09-04.md`
-- Stage 3 canonical verdict: `GO`
-- Stage 3 route: `GO TO MINIMAL MODEL`
-- Current canonical stage: Stage 4 — Minimal Model
-- Stage 4 status: AUTHORIZED / NOT YET RUN
-- Current route: theory candidate — GENERALIZATION / UNIFICATION ONLY
-- Selected mechanism: **Coalition-Scope Implementation Crowd-Out (CSIC)**
+- Last completed stage: Stage 4 — Minimal Model Gate (C1 / CSIC)
+- Stage 4 execution status: COMPLETED
+- Stage 4 report: `reviews/STAGE_04_MINIMAL_MODEL_CSIC_2026-09-04.md`
+- Stage 4 canonical verdict: `NO-GO`
+- Stage 4 route: terminate C1; return to Stage 3 before any distinct mechanism is tested
+- Current canonical stage: Stage 3 — Candidate Mechanism Search (RE-ENTRY REQUIRED FOR PIVOT)
+- Current route: theory candidate — C1 TERMINATED
 - Production manuscript authorized: NO
 - Theory frozen: NO
 - Target journal: UNRESOLVED
@@ -23,8 +21,8 @@ Last updated: 2026-09-04
 - Repository: `ryotamatsuki/research-paper-workflow`
 - Version: `v1.1`
 - Release SHA: `488e5ab06c207909296a7564eaf9066f7f94319c`
-- Stage 3 template: `templates/STAGE_03_MECHANISM_SEARCH.md`
-- Next template: `templates/STAGE_04_MINIMAL_MODEL.md`
+- Stage 4 template: `templates/STAGE_04_MINIMAL_MODEL.md`
+- Stage-4 rule applied: `NO-GO` terminates the tested branch; a distinct pivot must re-enter Stage 3 or Stage 0.
 
 ## Frozen project boundary
 
@@ -32,105 +30,118 @@ This project remains independent from `private-compatibility-standards-coalition
 
 ## Stage-2 restrictions remain binding
 
-No later stage may claim novelty from continuous compatibility, interiority, network effects plus compatibility, downstream competition after compatibility, private/social compatibility wedges, standards coalition formation, government standardization unions, government compatibility policy/international coordination, coalition-proof partial compatibility, or pairwise/weighted interoperability by themselves.
+No future pivot may claim novelty from continuous compatibility, interiority, network effects plus compatibility, downstream competition after compatibility, private/social compatibility wedges, standards coalition formation, government standardization unions, government compatibility policy/international coordination, coalition-proof partial compatibility, or pairwise/weighted interoperability by themselves.
 
-## Stage-3 candidate search result
+## Stage-4 tested mechanism
 
-Ten candidates were compared using fixed ex-ante weights:
+C1 — **Coalition-Scope Implementation Crowd-Out (CSIC)**.
 
-- whole-game prior-art survival 25%;
-- theorem sharpness 20%;
-- tractability 20%;
-- mechanism clarity 15%;
-- welfare content 10%;
-- institutional relevance 10%.
+Frozen test primitive:
 
-TOP 3:
+`p_i^k = 1-Q^k + v a_i sum_{j in C_i(rho),j!=i} q_j^k`,
 
-1. **C1 — Coalition-scope network/reach vs competition exposure** — selected.
-2. C2 — bilateral implementation public-good/free-riding — fallback only.
-3. C3 — national-incidence/cross-border rent-shifting — rejected as core mechanism but retained in welfare accounting where mechanically present.
+with regime-independent cost
 
-Scoring and diagnostic artifact:
+`C_i(a_i)=kappa a_i^2/2`.
 
-`verification/stage03_candidate_scoring.py`.
-
-## Selected mechanism — Coalition-Scope Implementation Crowd-Out
-
-A formal standards coalition changes the number/scope of interoperability partners reached by a firm's implementation. Broader scope may raise interoperability/network value but also magnify the product-market rent loss from making more rivals effectively compatible. Firms maximize profit while governments evaluate national welfare.
-
-Required feedback:
-
-`rho -> interoperability scope -> a*(rho) -> downstream equilibrium -> W_i(rho) -> government deviation incentives`.
-
-The same implementation technology and cost function must apply under every formal regime. Regime dependence must be derived from coalition scope and the downstream game, not imposed through regime-specific cost coefficients.
-
-## Stage-4 minimal skeleton
-
-Players:
-
-- countries/governments `1,2,3`;
-- one domestic firm per country;
-- symmetric national consumer markets, with all firms active in each market.
-
-Formal regimes for the first test:
+Regimes:
 
 - `rho^IS={{1,2,3}}`;
-- `rho_12^SU={{1,2},{3}}`, interpreted as the continuation after country 3 leaves IS.
+- `rho_12^SU={{1,2},{3}}`.
 
-Timing:
+Regular exact comparison domain:
 
-1. formal regime fixed;
-2. firms choose `a_i in [0,1]`;
-3. Cournot competition;
-4. national welfare;
-5. government deviation/stability comparison.
+`0<v<=1/4`, `kappa>0`.
 
-First downstream candidate:
+## Binding Stage-4 mathematical findings
 
-`p_i^k = 1 - Q^k + v a_i sum_{j in C_i(rho),j!=i} q_j^k`.
+### 1. Cournot continuation is tractable
 
-First implementation-cost candidate:
+At symmetric implementation `a`:
 
-`C(a_i)=kappa a_i^2/2`.
+- IS firm quantity: `q_I=1/[2(2-va)]`;
+- SU member quantity: `q_M=1/[2(2-va)]`;
+- SU outsider quantity: `q_O=(1-va)/[2(2-va)]`.
 
-Both are Stage-4 test primitives, not frozen results.
+The SU outsider has no partner and therefore chooses `a_3^SU=0`.
 
-## Stage-4 headline objects
+### 2. C1 crowd-out is false
 
-Private continuation equilibrium:
+Symmetric implementation equilibrium conditions are generated by
 
-`a*(rho)`.
+`K_I(a)=3v(3-va)/[2a(2-va)^3(1+va)]`,
 
-Government stability:
+`K_U(a)=9v/[4a(2-va)^3(1+va)]`.
 
-`Delta_3^endo = W_3(rho^IS;a*(rho^IS)) - W_3(rho_12^SU;a*(rho_12^SU))`.
+Exact ratio:
 
-Benchmark:
+`K_I(a)/K_U(a)=2(3-va)/3>1`.
 
-`Delta_3^full` under fixed/full implementation and, where cleanly recoverable, a binary B0-style implementation benchmark.
+On `0<v<=1/4`, both `K_I` and `K_U` are strictly decreasing, and own reduced implementation payoffs are globally single-peaked. Therefore
 
-## Stage-4 required candidate results
+`a_IS* >= a_SU*`,
 
-1. verified implementation equilibrium under each regime, including SOC/KKT/global/corners;
-2. genuine regime dependence of `a*(rho)` from coalition scope;
-3. preferably a nonempty region with `a_IS* < a_SU*` — coalition-scope implementation crowd-out;
-4. **headline kill test:** a nonempty region with
-   `sign Delta_3^endo != sign Delta_3^full`;
-5. proof that any reversal is not merely a smooth relabeling of a B0 threshold.
+strict unless both regimes are at `a=1`.
 
-## Hard kill / no-rescue rule
+The selected primitive generates coalition-scope implementation **crowd-in**, not crowd-out.
 
-Return NO-GO for C1 if the selected minimal model:
+### 3. The intended competition-exposure channel is absent
 
-- needs arbitrary curvature solely for interiority;
-- makes the scope effect an assumed regime coefficient rather than a derived market effect;
-- only smooths B0's binary threshold;
-- produces no stability reversal or comparably sharp new full-game result;
-- requires importing bilateral free-riding, trade policy, switching costs, topology, dynamics, installed bases, extra countries, or other Stage-3 candidates to work.
+Firm i's `a_i` raises only firm i's own network/demand term. It does not directly raise rivals' network value. Larger coalition scope therefore increases the private reach return but does not introduce the bilateral competition-exposure cost required by C1.
 
-If C1 fails, return to Stage 3 before testing C2. Do not hybridize mechanisms silently.
+### 4. Consumer-surplus microfoundation fails off the symmetric path
+
+For coalition partners 1 and 2,
+
+`partial p_1/partial q_2 - partial p_2/partial q_1 = v(a_1-a_2)`.
+
+Thus the inverse-demand system is not the gradient of a `C^2` representative utility for unilateral implementation deviations `a_1 != a_2`. The intended national-welfare objective `W_i=CS_i+Pi_i` is therefore not globally microfounded under the frozen one-sided primitive.
+
+### 5. Equilibrium-consistent welfare diagnostic does not rescue C1
+
+If a symmetric-profile utility potential is constructed only as a diagnostic, then throughout `0<v<=1/4`, `kappa>0`,
+
+`Delta_3^endo = W_3(IS)-W_3(SU outsider) > 0`.
+
+Endogenous implementation never makes country 3 prefer leaving IS in this domain.
+
+### 6. Apparent benchmark reversal is mechanical
+
+If full implementation `a=1` is mandated and the firm is forced to bear the cost, then
+
+`Delta_3^full,cost = 7v/[8(2-v)] - kappa/2`,
+
+which can be negative for high `kappa` while `Delta_3^endo>0`.
+
+But if full interoperability is treated as costless/exogenous technology,
+
+`Delta_3^full,tech = 7v/[8(2-v)] > 0`,
+
+so the reversal disappears.
+
+The sign reversal is therefore implementation-cost avoidance, not a CSIC reach-versus-competition result.
+
+## Verification artifacts
+
+- Full Stage-4 derivation: `model/STAGE4_MINIMAL_MODEL_CSIC.md`.
+- SymPy and numerical audit: `verification/stage04_csic_sympy.py`.
+- Gate report: `reviews/STAGE_04_MINIMAL_MODEL_CSIC_2026-09-04.md`.
+
+Numerical audit: 6,000 parameter points over `v in (0,1/4]` and `kappa in [10^-4,10]` found:
+
+- 0 cases with `a_IS<a_SU`;
+- 0 cases with `Delta_3^endo<0`;
+- 2,428 sign reversals only against the cost-bearing full mandate;
+- 0 sign reversals against the costless/exogenous full-interoperability benchmark.
+
+## C1 disposition
+
+**TERMINATED / NO-GO.**
+
+Do not proceed to Stage 5 or Stage 6 on C1.
+
+Do not repair C1 by silently introducing bilateral implementation, free riding, topology, switching costs, dynamics, policy instruments, regime-specific costs, or additional countries.
 
 ## Next action
 
-Instantiate and execute Stage 4 — Minimal Model using only the CSIC skeleton in `model/STAGE3_PREFERRED_MECHANISM.md`.
+If the project continues, re-enter **Stage 3 — Candidate Mechanism Search** and explicitly decide whether to test C2 (bilateral implementation public-good/free-riding) or another genuinely distinct mechanism.
