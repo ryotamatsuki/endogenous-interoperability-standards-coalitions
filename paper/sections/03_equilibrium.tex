@@ -79,15 +79,19 @@ The FOC system is linear in $x$ and therefore gives a closed-form conditional lo
 For any fixed cyclic ordering and regular downstream price system, an interior location candidate satisfying \eqref{eq:location-foc} is characterized by a linear system. If \eqref{eq:location-soc} holds for every firm, this candidate is a strict local best response within that ordering.
 \end{proposition}
 
-A local candidate is not sufficient for equilibrium on the circle. A firm can jump across a rival and change the cyclic ordering. Accordingly, throughout the main result we impose an additional global-best-response requirement: no firm may profitably relocate to any point on the circle after re-solving the price subgame. The canonical witness and all reported neighborhood checks satisfy this condition. Low-redesign-cost parameterizations that fail the whole-circle check are excluded rather than repaired.
+A local candidate is not sufficient for equilibrium on the circle. A firm can jump across a rival and change the cyclic ordering. Accordingly, a continuation is admitted for policy-stage evaluation only if no firm can profitably relocate to any point on the circle after the price subgame is re-solved. The canonical v2 verification enumerates cyclic-order and circular-anchor branches and applies continuous whole-circle unilateral-deviation checks. At the canonical primitives, the repaired $IS$ and $SU$ action sets have verified regular whole-circle location-Nash continuations throughout the feasible policy domain; $SW$ has no continuous depth action. This continuation-validity statement is computational at the canonical primitives, not a global analytic theorem.
 
 \subsection{Policy stage and regime values}
 
-Let $x^*(\rho,s)$ and $p^*(\rho,s)$ denote a regular continuation equilibrium that satisfies both the conditional location conditions and the whole-circle deviation test. A standards bloc $C$ chooses $s_C$ to maximize
+Let $x^*(\rho,s)$ and $p^*(\rho,s)$ denote a regular continuation equilibrium that satisfies both the conditional location conditions and the whole-circle deviation test. If $\rho$ contains a non-singleton bloc $C$, that bloc chooses its additional harmonization depth to solve
 \[
-\Omega_C(s_C,s_{-C};\rho)=\sum_{i\in C}W_i\bigl(\rho,s,x^*(\rho,s),p^*(\rho,s)\bigr).
+\max_{s_C\in[0,\bar s]}
+\Omega_C(s_C;\rho)
+=
+\max_{s_C\in[0,\bar s]}
+\sum_{i\in C}W_i\bigl(\rho,s_C,x^*(\rho,s_C),p^*(\rho,s_C)\bigr),
 \]
-The policy profile $s^*(\rho)$ is a Nash equilibrium among blocs. The resulting regime value for country $i$ is
+where all singleton-bloc depths are fixed at zero by definition. Thus the present three-country model has a scalar policy problem under $IS$, a scalar policy problem under each $SU$, and no depth decision under $SW$. Denote the resulting regime-specific choice by $s^*(\rho)$, with $s^*(SW)=0$ by definition. The resulting regime value for country $i$ is
 \begin{equation}\label{eq:regime-value}
 V_i(\rho)=W_i\bigl(\rho,s^*(\rho),x^*(\rho,s^*),p^*(\rho,s^*)\bigr).
 \end{equation}
