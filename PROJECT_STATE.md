@@ -5,15 +5,17 @@ Last updated: 2026-09-04
 ## Canonical status
 
 - Project: Endogenous Interoperability and Standards Coalitions
-- Last completed stage: **Stage 4R — Continuation-Existence / Policy-Stage Repair**
+- Last completed stage: **Stage 7R — Welfare / Generality Refresh**
+- Stage-7R report: `reviews/STAGE_07R_WELFARE_GENERALITY_REFRESH_CESD_2026-09-04.md`
+- Stage-7R decisions: `decisions/STAGE7R_CESD_DECISIONS.md`
+- Stage-7R verification: `verification/stage07r_cesd_welfare_refresh.py`
+- Stage-7R institutional refresh: `literature/STAGE7R_CESD_INSTITUTIONAL_REFRESH.md`
 - Stage-4R report: `reviews/STAGE_04R_CONTINUATION_POLICY_REPAIR_2026-09-04.md`
-- Stage-4R decisions: `decisions/STAGE4R_CESD_DECISIONS.md`
-- Stage-4R model note: `model/STAGE4R_CESD_CONTINUATION_POLICY_REPAIR.md`
 - Stage-4R verification: `verification/stage04r_cesd_continuation_repair.py`
 - Stage-11 trigger report: `reviews/STAGE_11_REFEREE_GATE_CESD_2026-09-04.md`
-- Historical freeze ID: `CESD-THEORY-FREEZE-2026-09-04-v1` — **SUSPENDED pending re-freeze**
-- Stage-4R verdict: **REPAIR PASSES — CORE MECHANISM PRESERVED**
-- Current canonical stage: **Stage 7R — Welfare / Generality Refresh**
+- Historical freeze ID: `CESD-THEORY-FREEZE-2026-09-04-v1` — **SUSPENDED pending Stage 8R re-freeze**
+- Stage-7R verdict: **GO TO STAGE 8R — THEORY RE-FREEZE**
+- Current canonical stage: **Stage 8R — Theory Re-Freeze**
 - Production manuscript submission-ready: **NO until downstream refresh and repeated Stage 11**
 - Stage 12 journal positioning authorized: **NO**
 - Target journal: **UNRESOLVED pending repeated Stage 11**
@@ -36,14 +38,14 @@ Timing:
 
 `rho -> harmonization depths of non-singleton blocs -> pairwise Tau(rho,s) -> product locations x_i -> prices -> W_i -> coalition stability`.
 
-The continuous policy variable `s_C` is now defined strictly as **within-coalition harmonization depth**.
+The policy variable `s_C` is **additional within-coalition harmonization depth conditional on the formal regime**.
 
 Feasible action set:
 
 - `s_C in [0,s_bar]` if `|C|>=2`;
 - `s_C=0` if `|C|=1`.
 
-Pairwise friction map remains unchanged:
+Pairwise friction map:
 
 - same bloc `C`: `tau_ij=t_bar-s_C`;
 - different blocs `C,D`: `tau_ij=t_bar+(s_C+s_D)/2`.
@@ -51,8 +53,8 @@ Pairwise friction map remains unchanged:
 Therefore:
 
 - IS: the grand coalition chooses `s_I in [0,s_bar]`;
-- `SU_12`: coalition `{1,2}` chooses `s_12 in [0,s_bar]`, outsider singleton has `s_3=0` by definition;
-- SW: every bloc is a singleton, so all depth variables equal zero.
+- `SU_12`: coalition `{1,2}` chooses `s_12 in [0,s_bar]`, outsider singleton has `s_3=0`;
+- SW: all blocs are singletons, so all depth variables equal zero.
 
 Under `SU_12`:
 
@@ -60,56 +62,32 @@ Under `SU_12`:
 
 `tau_13=tau_23=t_bar+s_12/2`.
 
-Thus the within-bloc convergence / cross-bloc divergence mechanism is unchanged.
+The within-bloc convergence / cross-bloc divergence mechanism is unchanged. Formal regime membership determines the binary compatibility/network graph. `s=0` means zero **additional harmonization depth**, not zero compatibility.
 
-Formal regime membership determines the binary compatibility/network graph. `s=0` means zero **additional harmonization depth conditional on the regime**, not zero compatibility.
+## Stage-4R continuation repair
 
-## Why Stage 4R fixes the Stage-11 failure
+Stage 11 found that the historical action set incorrectly gave singleton blocs positive harmonization-depth instruments and thereby created off-path policy values without verified downstream pure location equilibria.
 
-Stage 11 found that the historical action set gave an SU outsider a positive depth instrument even though a singleton has no within-coalition harmonization relation. Off-path choices such as `(s_12,s_3)=(0.25,0.20)` could then leave the whole-circle pure location-equilibrium domain.
+Stage 4R repaired this by removing singleton depth instruments and requiring actual whole-circle location Nash continuations inside policy evaluation.
 
-The repair removes that economically misclassified singleton instrument rather than reducing `s_bar` or adding a policy cost.
+At `(t_bar,v,gamma,s_bar)=(1,0.04,0.11,0.25)`, Stage-4R verification establishes:
 
-The historical cap remains `s_bar=0.25` at the canonical witness.
+1. continuous whole-circle location best responses over every feasible repaired IS/SU policy depth;
+2. all cyclic orders and circular-anchor branches on a dense policy grid;
+3. one regular whole-circle location equilibrium at every audited IS/SU depth and in SW;
+4. global scalar policy optimization on repaired action sets;
+5. the B-T/B-X/FULL interaction signs and coalition-stability inequalities.
 
-The repaired policy stage never assigns welfare to a fixed-order location candidate unless it passes continuous whole-circle unilateral best-response checks.
-
-## Stage-4R continuation verification
-
-Canonical verification: `verification/stage04r_cesd_continuation_repair.py`.
-
-At `(t_bar,v,gamma,s_bar)=(1,0.04,0.11,0.25)` it verifies:
-
-1. continuous whole-circle location best responses for the repaired continuation;
-2. joint global search over feasible policy depth and unilateral deviation location for IS and SU, with maximum gains zero up to numerical precision;
-3. all cyclic orders and circular-anchor branches on a dense 51-point feasible-depth grid, with exactly one regular interior whole-circle location equilibrium at every audited IS/SU depth;
-4. one regular whole-circle location equilibrium in SW;
-5. global scalar policy optimization on the repaired action sets;
-6. B-T/B-X/FULL interaction signs and coalition-stability inequalities.
-
-The Stage-4R verification is now included in the root `make verify` gate.
-
-## Repaired canonical witness
-
-The canonical parameter vector remains
-
-`(t_bar,v,gamma,s_bar)=(1,0.04,0.11,0.25)`.
-
-Repaired FULL policy choices remain:
+The canonical equilibrium path remains unchanged:
 
 - `s_I*=0.25`;
-- `s_12*=0.25`, outsider depth fixed at `0`;
-- `s_SW=0`.
-
-FULL `SU_12` product locations remain approximately
-
-`(0.084567, 0.582100, 0.833333)`.
-
-The repair therefore leaves the historical equilibrium path unchanged.
+- `s_12*=0.25`, outsider depth `0`;
+- `s_SW=0`;
+- `x_SU≈(0.084567,0.582100,0.833333)`.
 
 ## Main contribution after repair
 
-The interaction-induced coalition-stability reversal survives unchanged:
+The interaction-induced coalition-stability reversal survives:
 
 `Delta_M^(B-T)<0`,
 
@@ -123,66 +101,90 @@ At the repaired canonical witness:
 - `Delta_M^(B-X)≈-0.000434`;
 - `Delta_M^(FULL)≈+0.001571`.
 
-The repaired FULL ranking remains
+FULL ranking:
 
 `W_M^SU > W^IS > W_O^SU`, and `W_M^SU > W^SW`.
 
-Hence B-T and B-X continue to select IS, while FULL makes the three two-country SUs stable and IS pair-blockable.
+Hence B-T and B-X select IS, while FULL makes the three two-country SUs stable and IS pair-blockable.
 
-The surviving contribution is still only the **FULL-only interaction result**. No ingredient-level novelty claim is revived.
+The surviving contribution remains only the **FULL-only interaction result**. No ingredient-level novelty claim is revived.
 
-## Theory-change classification
+## Stage-7R welfare / generality refresh
 
-Stage 4R is a bounded **action-set clarification**:
+The Stage-4R repair does not alter the Stage-7 welfare package.
 
-Changed:
+Exact identities retained:
 
-- singleton blocs no longer have a positive harmonization-depth action;
-- downstream continuation validity is imposed inside policy evaluation rather than checked only after selecting the policy path.
+- `Delta_M = Delta Pi_M + Delta CS/3`;
+- `GW = A + v q'Gq - TC - sum_i C_i^D`.
 
-Unchanged:
+At the repaired canonical witness:
 
-- IS/SU/SW partitions;
-- pairwise friction formula and `1/2` normalization;
-- compatibility/network graphs;
-- Salop product-positioning game;
-- redesign cost;
-- price competition;
-- national welfare `CS/3 + Pi_i`;
-- coalition-stability rule;
-- canonical parameter vector and equilibrium path;
-- Stage-6 novelty result.
+- `Delta CS/3≈-0.0325785`;
+- `Delta Pi_M≈+0.0341498`;
+- `Delta_M≈+0.0015713`.
 
-Because the historical freeze explicitly allowed every bloc to choose depth, the historical Stage-8 freeze is suspended and must be refreshed.
+Thus SU becomes nationally attractive through domestic producer-rent capture rather than consumer gains.
+
+Global welfare, reported net of the common baseline utility `A`:
+
+- `GW_IS≈-0.0225000`;
+- `GW_SU≈-0.0586685`;
+- `GW_SW≈-0.0700000`.
+
+Hence `GW_IS>GW_SU>GW_SW` at the witness.
+
+Private/social member-product distances under repaired canonical SU policy:
+
+- inherited: `D0=1/3`;
+- constrained social: `D_social≈0.431427`;
+- private: `D_private≈0.497533`.
+
+Thus `D_private>D_social>D0`: some re-differentiation is socially useful, but firms over-re-differentiate.
+
+The repaired upper welfare threshold remains `gamma_W≈0.132983` at `v=0.04`, `s_bar=0.25`. The historical approximate lower `gamma_GBR` language is no longer treated as a structural closed-form threshold; Stage-4R direct continuation verification is authoritative for regularity at the canonical witness.
+
+## Institutional interpretation after repair
+
+The Stage-7 primary-source classifications remain unchanged. Stage 4R improves semantic discipline:
+
+- `s_C` is coalition-level additional harmonization depth;
+- singleton blocs have no internal harmonization margin;
+- the exact cross-bloc `1/2` coefficient remains a stylized normalization;
+- strategic product re-differentiation remains a model prediction, not an established empirical fact.
+
+Institutional records:
+
+- `literature/STAGE7_CESD_INSTITUTIONAL_VALIDATION.md`;
+- `literature/STAGE7R_CESD_INSTITUTIONAL_REFRESH.md`.
 
 ## Remaining Stage-11 attacks retained
 
-The mathematical continuation/SPNE attack that triggered Stage 4R is repaired at the canonical constructive witness. The following remain for downstream refresh / repeated Stage 11:
+The fatal continuation/SPNE attack is repaired. Remaining items for re-freeze / manuscript refresh / repeated Stage 11:
 
 - Ruiz (2004) + Gandal–Shy (2001) synthesis risk;
-- claim discipline / sensitivity around the `1/2` cross-bloc normalization;
-- explicit interpretation of binary formal compatibility graph versus continuous additional harmonization depth;
-- symmetric `CS/3` incidence as an external-validity limitation;
+- claim discipline / bounded sensitivity around the `1/2` cross-bloc normalization;
+- binary formal compatibility graph versus continuous additional harmonization depth must be explicit;
+- symmetric `CS/3` incidence is a limitation;
 - institutional examples do not verify the exact cross-bloc derivative or observed strategic re-differentiation;
-- reported welfare levels should be labeled net of common baseline utility `A`;
+- welfare levels should be labeled net of common baseline utility `A`;
 - IJIO-level fit remains unresolved.
 
 ## Required downstream refresh
 
-Because the action set changed, execute in order:
+Execute in order:
 
-1. **Stage 7R — Welfare / Generality Refresh**;
-2. **Stage 8R — Theory Re-Freeze**;
-3. **Stage 9R — Repository / Reproducibility Refresh**;
-4. **Stage 10R — Manuscript Refresh**;
-5. **Stage 11R — Repeated Robustness / Referee Attack Gate**.
+1. **Stage 8R — Theory Re-Freeze**;
+2. **Stage 9R — Repository / Reproducibility Refresh**;
+3. **Stage 10R — Manuscript Refresh**;
+4. **Stage 11R — Repeated Robustness / Referee Attack Gate**.
 
-Stage 6 novelty re-kill does not need repetition unless a later stage changes the economic mechanism or surviving contribution.
+Stage 6 novelty re-kill does not need repetition unless a later stage changes the mechanism or surviving contribution.
 
 Stage 12 remains blocked until repeated Stage 11 returns `GO TO JOURNAL POSITIONING`.
 
 ## Current verdict
 
-**STAGE 4R REPAIR PASSES — CORE MECHANISM PRESERVED.**
+**STAGE 7R GO — WELFARE / GENERALITY PACKAGE PRESERVED.**
 
-The fatal Stage-11 off-path continuation failure is repaired without changing the canonical witness or tuning the policy cap. The project now advances to Stage 7R welfare/generality refresh under the repaired action set.
+Proceed to Stage 8R theory re-freeze. No extensions are authorized during re-freeze.
