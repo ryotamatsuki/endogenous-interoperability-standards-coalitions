@@ -304,3 +304,39 @@ Reasons:
 Do not proceed to Stage 5 or Stage 6 from C1.
 
 Any continuation must re-enter Stage 3 and explicitly select/redesign a genuinely distinct mechanism before further modeling.
+
+## D-029 — Stage 3 re-entry verdict for C2
+
+Date: 2026-09-04
+Decision: `NO-GO`
+
+C2 — bilateral implementation public-good/free-riding — is terminated as a standalone mechanism.
+
+The strongest natural smooth bilateral technology `A_ij=a_i+a_j-a_i a_j` repairs C1's consumer-surplus integrability problem but gives stronger implementation incentives under IS than SU. Independent bilateral links do not create regime-dependent per-link implementation, and standard public-good free-riding does not make aggregate provision fall with coalition size under conventional assumptions. A 6,000-point diagnostic found no `a_IS<a_SU`, no `Delta_3<0`, and no reversal against costless full interoperability.
+
+Do not proceed to Stage 4 on C2.
+
+## D-030 — Stage 3 re-entry verdict for C-RP
+
+Date: 2026-09-04
+Decision: `NO-GO`
+
+C-RP — Relative-Profit-Induced Interoperability Restraint — is terminated as a standalone mechanism.
+
+Use the fixed global objective
+
+`U_i=Pi_i-(alpha/2)sum_{j!=i}Pi_j`, `0<=alpha<1`,
+
+rather than a coalition-dependent comparator.
+
+The candidate preserves the bilateral welfare microfoundation but fails its strategic-feedback test. When RP is applied only to implementation while ordinary-profit Cournot is held fixed, the exact IS/SU implementation marginal-return ratio remains
+
+`2/(1+z)`, `z=v(2a-a^2)`,
+
+and is independent of `alpha`. Thus the direct rival-profit penalty does not create a regime-differential restraint. When RP is applied consistently to both implementation and quantity choices, the IS/SU marginal-return ratio remains above one and is weakly larger than at the profit-maximizing baseline over the audited regular domain.
+
+A 6,000-point diagnostic over `v in [0.005,0.25]`, `alpha in [0,0.95]`, `kappa in [10^-3,10]` found zero cases of `a_IS<a_SU`, zero `Delta_3<0`, zero stability reversals relative to `alpha=0`, and zero reversals relative to costless full interoperability.
+
+Prior-art pressure is also substantial because Matsumura–Matsushima–Cato already study two-stage R&D under relative profit, Shibata adds R&D spillovers to a relative-profit competition parameter, and Sun–Zhao study RPE with effort spillovers in networks.
+
+Therefore the user-authorized `Stage 3R GO -> Stage 4` condition is not met. Do not execute Stage 4 for C-RP. Any further continuation requires a genuinely distinct Stage-3 mechanism.
