@@ -6,117 +6,199 @@ Workflow release SHA: `488e5ab06c207909296a7564eaf9066f7f94319c`
 Template authority: `templates/STAGE_075_FREEZE_DECISION.md`
 Theory authority: `CESD-THEORY-FREEZE-2026-09-04-v2`
 Trigger: Stage 6R2 — Post-Repair Novelty Re-Kill
-Status: **IN PROGRESS**
+Status: **COMPLETE**
 
-## 0. Stage contract
+## 0. Executive freeze verdict
 
-This is a contribution re-freeze only. No theory change is authorized.
+**GO TO FULL PAPER.**
 
-Allowed: clarification, compression, contribution reclassification, benchmark hierarchy repair, literature-positioning repair.
+The theory remains unchanged. The contribution is re-frozen in a narrower form.
 
-Prohibited: new variables, new timing, new policy instruments, extensions, new theorem engineering, robustness additions, or any change to the Stage-4R / Stage-7R / Stage-8R / Stage-9R / Stage-10R repaired model.
+The old claim that endogenous harmonization choice and endogenous product positioning are jointly necessary for the coalition-stability reversal remains permanently rejected because `B-EQ` reproduces FULL at the canonical witness. The surviving contribution is instead the effect of **post-policy strategic product repositioning** on the national-welfare ranking of international standardization versus a regional standards union.
 
-## 1. Canonical inputs
+At the canonical witness, the same standards architecture evaluated with inherited/fixed product positions favors international standardization (`Delta_M^(B-T)<0`), while allowing firms to reposition after policy reverses the member-country ranking (`Delta_M^(FULL)=Delta_M^(B-EQ)>0`) and stabilizes the regional union. The reversal is economically interpretable: member consumer surplus falls, but domestic producer rents rise by more and overturn the national ranking, even though world welfare remains highest under international standardization.
 
-- Stage 6R2 verdict: **CONDITIONAL GO — NARROWER CLAIM REQUIRED**.
-- Novelty confidence: **MEDIUM**.
-- Binding Stage 11R identification result: `B-EQ` fixes non-singleton harmonization depths exogenously at the FULL equilibrium values while leaving product locations endogenous; at the canonical witness `B-EQ` reproduces FULL.
-- Therefore the old two-endogeneity headline is permanently unauthorized.
-- Central causal benchmark: **B-T versus FULL / B-EQ**.
-- Auxiliary benchmark: **B-X0** only.
-- Canonical witness remains `(t_bar,v,gamma,s_bar)=(1,0.04,0.11,0.25)`.
-- Theory primitives and verified numerical results remain unchanged.
+This result survives the Stage 6R2 result-level novelty re-kill. Ruiz (2004), Gandal & Shy (2001), Takarada et al. (2020), and the 2024–2026 interoperability frontier collectively make the ingredients and broad setup non-novel, but the audited literature does not directly establish this post-policy repositioning-induced IS/SU national-welfare and coalition-stability reversal. The contribution is therefore defensible only at this narrow result/mechanism level.
 
-## 2. Candidate contribution to be re-frozen
+Novelty confidence carried forward: **MEDIUM**.
 
-> **Policy-induced strategic re-differentiation coalition-stability reversal.** There exists a regular parameter region in which a regional harmonization architecture that is not preferred to international standardization when product positions are fixed becomes nationally preferred once firms can reposition after the same standards architecture, because member re-differentiation raises domestic producer rents enough to overturn the IS–SU welfare ranking and stabilize the regional standards union.
+## 1. Final mechanism card
 
-This wording deliberately does **not** claim that endogenous harmonization choice is necessary.
+- **Phenomenon:** A regional standards union can become nationally stable even when international standardization is preferred if product positions are treated as fixed.
+- **Friction:** Harmonization changes effective competitive distances within and across standards blocs.
+- **Strategic response:** After the standards architecture is set, firms reposition in product space; union members re-differentiate strategically.
+- **Equilibrium effect:** Repositioning softens product-market competition enough to raise domestic producer rents for member countries.
+- **Welfare effect:** The producer-rent gain can exceed the member consumer-surplus loss, reversing the member-country IS/SU welfare ranking and coalition incentive, while international standardization can still maximize world welfare.
+- **Empirical/policy implication:** Comparative evaluations that hold products fixed can mis-rank governments' incentives to join regional versus multilateral interoperability arrangements when firms can redesign or reposition products after policy.
 
-## 3. Candidate mechanism card
+## 2. Mandatory Stage 7.5R questions
 
-- Phenomenon: a regional standards union can become nationally stable even though international standardization is preferred under inherited/fixed product positions.
-- Friction: standards harmonization changes within-bloc and cross-bloc competitive distances.
-- Strategic response: after standards policy, member firms reposition in product space and re-differentiate.
-- Equilibrium effect: strategic repositioning softens competition sufficiently to raise member producer rents.
-- Welfare effect: producer-rent gains can exceed member consumer-surplus losses, reversing the national IS–SU ranking, even while world welfare remains higher under IS.
-- Empirical implication: fixed-position evaluations of interoperability/standards reforms can mis-rank coalition incentives when firms can redesign or reposition products after the policy.
+### Q1. Can the mechanism be explained without notation?
 
-## 4. Permanently killed claims
+**Yes.** Harmonization does not merely alter compatibility. It changes the competitive environment in which firms subsequently choose where to position their products. When firms can respond, members of a regional agreement may spread apart enough to soften competition. Governments then value the resulting producer-rent gain, and that gain can overturn the ranking obtained when product positions are treated as inherited. Thus a policy evaluation that freezes firm design can predict the wrong coalition incentive.
 
-The renewed freeze must not restore any of the following:
+### Q2. What is the minimal causal chain?
 
-1. policy endogeneity and product-position endogeneity are jointly necessary for the reversal;
-2. endogenous harmonization choice is essential at the canonical witness;
-3. government standards policy affecting differentiation is novel;
-4. regional-versus-multilateral standards stability is setup novelty;
-5. coalition-level harmonization intensity is novel;
-6. generic strategic response to interoperability mandates is novel;
-7. `first model`, `first paper`, `first to show`, or `novel framework` language.
+Standards architecture -> changed effective competitive distances -> post-policy product repositioning -> softer competition/member producer-rent increase -> national welfare reversal -> regional-union stability.
 
-## 5. Closest-paper burden
+No policy-endogeneity-necessity step is part of the frozen mechanism.
 
-The renewed freeze must survive the following combined attack:
+### Q3. Which assumptions are essential, and which are normalizations/tractability devices?
 
-- Gandal & Shy (2001): three-country standards unions, network effects/conversion costs, national welfare, coalition incentives.
-- Ruiz (2004): government standards policy -> endogenous product characteristics -> price competition -> national welfare; strategic excessive differentiation.
-- Takarada, Kawabata, Yanase & Kurata (2020): multilateralism versus regionalism, continuous standards, joint regional standards choice, national welfare, core/blocking.
-- Kawabata & Takarada (2021): deep trade agreements and harmonization of standards.
-- Huang, Tan, Teh & Zhou (2026): coalitional and industry-wide interoperability, prices and welfare.
-- Kretschmer, Rasch, Shekhar & Wenzel (2025): strategic firm response to mandated interoperability.
+**Essential for the verified mechanism:**
 
-The candidate contribution survives only if the distinction is stated at result level: none of the audited papers directly establishes the B-T -> FULL/B-EQ national-welfare ranking reversal generated by post-policy horizontal repositioning inside an international standards-coalition game.
+1. firms choose horizontal product positions after the standards architecture is determined;
+2. standards policy changes effective competitive distances in a way that affects location incentives;
+3. governments value domestic producer rents as part of national welfare;
+4. coalition stability is evaluated from member national welfare, not world welfare alone.
 
-## 6. Mandatory Stage 7.5R questions
+**Not established as essential:**
 
-The stage must answer, using only already verified evidence:
+- endogenous choice of harmonization depth itself;
+- network effects `v>0` as a necessary condition;
+- the exact cross-bloc coefficient `1/2`.
 
-1. Can the mechanism be explained without notation?
-2. What is the minimal causal chain?
-3. Which assumption is essential and which are normalizations/tractability devices?
-4. Does the result survive at least one credible already-tested alternative formulation?
-5. Is the welfare implication substantive rather than mechanical?
-6. Can the closest-paper distinction be stated in one precise paragraph?
-7. Would a skeptical field referee see more than a parameter exercise?
-8. Is the contribution broad enough for a full IJIO-style paper, or only a shorter outlet?
-9. Is the candidate claim fully backed by verified propositions/numerics, with no unresolved conjecture promoted into the contribution?
-10. What exact wording should be frozen for Abstract, Introduction, and Conclusion?
+**Normalization / tractability features in the current model:**
 
-## 7. Kill tests for this renewed freeze
+- the exact pairwise friction-map coefficient `1/2`;
+- symmetric three-country structure;
+- circular horizontal product space;
+- symmetric-incidence `CS/3` allocation;
+- bounded harmonization depth and the canonical cap.
 
-Return `NO-GO / RESEARCH NOTE / PIVOT` if any of the following holds:
+These features are part of the frozen model but are not to be advertised as general necessity conditions.
 
-- the surviving distinction from Ruiz + Gandal–Shy + Takarada et al. is cosmetic;
-- the B-T -> FULL/B-EQ reversal is only a knife-edge numerical artifact;
-- the welfare reversal cannot be explained as a general strategic mechanism;
-- the contribution requires restoring the killed policy-endogeneity-necessity claim;
-- the paper cannot state a defensible contribution without priority language.
+### Q4. Does the result survive at least one credible already-tested alternative formulation?
 
-## 8. Required output at completion
+**Yes, in the sense relevant to the identification challenge already tested.** The Stage 11R `B-EQ` benchmark removes harmonization-depth endogeneity while preserving endogenous product locations and fixes policy at the FULL equilibrium depth. It reproduces the FULL reversal at the canonical witness. This demonstrates that the narrowed result is not an artifact of endogenous policy choice and identifies the continuation response as the relevant margin.
 
-1. Executive freeze verdict.
-2. Final mechanism card.
-3. Essential vs tractability assumptions.
-4. Core result/proof-status table.
-5. Closest-paper distinction paragraph.
-6. Welfare/generality assessment.
-7. Referee risks.
-8. Full-paper value assessment.
-9. Recommended journal level.
-10. Exact contribution freeze wording to feed the manuscript refresh.
+The current evidence does **not** authorize broader claims about alternative demand systems, reversed timing, or `v=0`.
 
-Final verdict must be exactly one of:
+### Q5. Is the welfare implication substantive rather than mechanical?
 
-- `GO TO FULL PAPER`
-- `CONDITIONAL GO`
-- `NO-GO / RESEARCH NOTE / PIVOT`
+**Yes.** At the witness,
 
-## 9. Downstream contract
+- `Delta CS/3 ≈ -0.0325785`;
+- `Delta Pi_M ≈ +0.0341498`;
+- `Delta_M ≈ +0.0015713`.
 
-If Stage 7.5R returns `GO TO FULL PAPER`, do **not** alter the existing theory freeze. Instead:
+Thus the regional union is not selected because consumers gain. Member consumers lose, but domestic producer rents rise slightly more. At the same time,
 
-1. record the renewed contribution freeze;
-2. refresh the production manuscript around the frozen narrower claim;
-3. explicitly include `B-EQ` and the strengthened closest-paper discussion;
-4. repeat Stage 11R hostile referee/robustness gate;
-5. keep Stage 12 blocked until repeated Stage 11R returns `GO TO JOURNAL POSITIONING`.
+`GW_IS > GW_SU > GW_SW`.
+
+The paper therefore separates **national coalition incentives** from **global efficiency**. This is a substantive political-economy/industrial-organization wedge, not merely a relabeling of the same welfare ranking.
+
+### Q6. Can the closest-paper distinction be stated precisely?
+
+**Yes.** Gandal & Shy (2001) provide the three-country standards-union and national-welfare coalition architecture; Ruiz (2004) shows that government standards policy can be followed by endogenous product characteristics and strategic excessive differentiation; and Takarada et al. (2020) analyze continuous standards choice, regional versus multilateral harmonization, national welfare, and blocking. Hence none of those ingredients is itself the contribution. The residual result is that, holding the standards architecture fixed, allowing firms to reposition on a separate horizontal product dimension after policy can reverse the member-country welfare ranking between international standardization and a regional standards union relative to a fixed-position evaluation, thereby changing coalition stability through producer-rent gains. The Stage 6R2 hostile search did not locate this result as a proposition or immediate corollary of the closest papers.
+
+### Q7. Would a skeptical field referee see more than a parameter exercise?
+
+**Yes, but only if the manuscript is disciplined.** The economic content is the mis-ranking generated by suppressing an endogenous continuation response. The decomposition into consumer losses, producer gains, national stability, and global welfare provides a coherent mechanism. A referee could still object that the quantitative witness is model-specific; that is a robustness concern for repeated Stage 11R, not a reason to deny full-paper investment at this freeze stage.
+
+### Q8. Is the contribution broad enough for a full IJIO-style paper, or only a shorter outlet?
+
+**Full-paper investment is justified; IJIO placement is not yet authorized.** The combination of standards coalition formation, endogenous post-policy product positioning, national versus global welfare, and a reversal of coalition incentives supports a full theoretical paper. However, Stage 6R2 novelty confidence is only MEDIUM and the closest literature is structurally very close. Journal level must remain unresolved until the manuscript is refreshed and repeated Stage 11R passes.
+
+### Q9. Is the candidate claim fully backed by verified results?
+
+**Yes, with bounded wording.** The frozen claim is supported by the verified B-T/FULL/B-EQ comparisons and welfare decomposition. It must be stated as an existence/result-level mechanism in the verified parameter region. It must not be upgraded into claims that policy endogeneity is necessary, that the mechanism disappears at `v=0`, or that the exact friction map is uniquely responsible.
+
+### Q10. What wording is frozen for the manuscript?
+
+See Section 8 below. The wording is intentionally result-level, avoids priority claims, and explicitly distinguishes fixed-position evaluation from post-policy strategic repositioning.
+
+## 3. Core result / proof-status table
+
+| Item | Status | Authorized use |
+|---|---|---|
+| `Delta_M^(B-T)<0` at canonical witness | Verified | Central fixed-position benchmark |
+| `Delta_M^(B-X0)<0` | Verified | Auxiliary zero-additional-harmonization benchmark only |
+| `Delta_M^(FULL)>0` | Verified | Central full-game result |
+| `Delta_M^(B-EQ)=Delta_M^(FULL)>0` | Verified at witness | Identification correction; policy-depth endogeneity not necessary |
+| Member `Delta CS/3<0` | Verified | Welfare mechanism |
+| Member `Delta Pi_M>0` and dominates CS loss | Verified | Welfare mechanism |
+| `GW_IS>GW_SU>GW_SW` | Verified | National/global wedge |
+| FULL SU member re-differentiation | Verified | Strategic-response mechanism |
+| Policy endogeneity necessary | Rejected | Prohibited |
+| Mechanism disappears at `v=0` | Not established | Prohibited |
+| Exact `1/2` cross-bloc coefficient essential | Not established | Prohibited |
+| Broad generality across demand/timing variants | Not established | Prohibited |
+
+## 4. Closest-paper assessment
+
+The combined closest-paper attack is severe but not fatal. Gandal & Shy remove institutional/coalition novelty; Ruiz removes novelty in government standards policy followed by endogenous characteristics; Takarada et al. remove novelty in regional-versus-multilateral continuous standards policy and blocking; Huang et al. and Kretschmer et al. remove broad claims about coalitional interoperability welfare and strategic response to interoperability mandates. Consequently the paper cannot sell a new setup. It can sell only the **equilibrium-ranking consequence of the continuation response**: post-policy horizontal repositioning can change which standards coalition governments prefer relative to a fixed-position evaluation of the same standards architecture.
+
+The Ruiz + Gandal–Shy synthesis remains the strongest hostile reconstruction. It is not, however, an immediate theorem-level absorption: Ruiz's endogenous-characteristics extension preserves its qualitative policy result rather than deriving the present IS/SU coalition reversal, while Gandal & Shy have no post-policy product-position stage. The paper must make this distinction transparently rather than claim priority.
+
+## 5. Welfare and generality assessment
+
+The contribution has a substantive welfare interpretation because private member incentives and world welfare point in different directions. The result warns against evaluating interoperability/standards policy solely with inherited product configurations: firms' strategic response can redistribute surplus toward domestic producers and thereby alter government coalition choices even when aggregate global efficiency deteriorates.
+
+The generality claim must remain modest. The model identifies an economic channel, not a universal theorem about standards agreements. The exact parameter domain, alternative geometries, and other timing structures remain matters for robustness/referee assessment, not frozen contribution claims.
+
+## 6. Fatal and major referee risks
+
+No fatal risk remains at Stage 7.5R, but four major risks must be carried to repeated Stage 11R:
+
+1. **Ruiz + Gandal–Shy + Takarada synthesis:** a referee may view the contribution as an expected combination of known ingredients.
+2. **Magnitude/robustness:** the canonical national-welfare reversal is quantitatively small, so the referee may ask whether the sign reversal persists over a meaningful parameter region.
+3. **Functional-form dependence:** the pairwise friction map and circular differentiation geometry may be seen as driving the location response.
+4. **Policy interpretation:** because `B-EQ` reproduces FULL, the paper must never imply that endogenous harmonization choice causes the reversal; the causal emphasis is the post-policy firm response.
+
+These are manuscript/referee-gate issues, not reasons to reopen theory in Stage 7.5R.
+
+## 7. Full-paper value assessment and journal level
+
+**Full-paper value: YES.** The project has a compact mechanism, verified welfare decomposition, a coalition-stability implication, and a clear closest-paper distinction at result level.
+
+**Journal level: UNRESOLVED.** IJIO remains a plausible aspiration, but Stage 7.5R does not authorize target-journal commitment. Repeated Stage 11R must first test whether the narrowed contribution and robustness package survive a skeptical field-referee standard.
+
+## 8. Renewed contribution freeze
+
+### 8.1 Frozen one-sentence contribution
+
+> **Allowing firms to reposition after a standards policy can reverse the member-country welfare ranking between international standardization and a regional standards union relative to a fixed-position evaluation of the same standards architecture, making the regional union stable through producer-rent gains even though member consumers lose and world welfare remains higher under international standardization.**
+
+### 8.2 Frozen abstract-level wording
+
+> We study international standards coalitions when firms can reposition horizontally after standards policy. A regional standards union that is not preferred to international standardization when product positions are held fixed can become nationally preferred once firms strategically re-differentiate. The reversal is driven by higher domestic producer rents that outweigh member consumer losses, even while international standardization yields higher world welfare. The result shows that fixed-product evaluations of interoperability policy can mis-rank governments' coalition incentives when firms adjust product positioning after policy.
+
+### 8.3 Frozen introduction-level positioning
+
+> The contribution is not the introduction of standards coalitions, continuous harmonization, or endogenous product differentiation separately. Existing work already studies international standardization unions and national welfare, government standards policy followed by endogenous product characteristics, and regional versus multilateral standards harmonization. Our result concerns the interaction between a given standards architecture and firms' subsequent product-position response: relative to an evaluation that holds product positions fixed, strategic post-policy re-differentiation can reverse member governments' ranking of international standardization and a regional standards union and thereby change coalition stability.
+
+### 8.4 Frozen conclusion-level wording
+
+> The analysis identifies a limitation of fixed-product evaluations of standards policy. Once firms can reposition after harmonization, the induced change in product-market competition can shift surplus toward domestic producers enough to alter governments' preferred standards coalition. In the model, this makes a regional union nationally stable even though its members' consumers lose relative to international standardization and global welfare is lower. The implication is not that endogenous harmonization choice is necessary, but that post-policy firm repositioning can materially change coalition incentives.
+
+## 9. Permanently prohibited contribution language
+
+Do not claim:
+
+- policy endogeneity and location endogeneity are jointly necessary;
+- endogenous harmonization choice is essential;
+- the paper is the first model/paper to study any ingredient;
+- the paper introduces a novel framework for interoperability;
+- regional-versus-multilateral standards stability itself is novel;
+- continuous coalition-level harmonization itself is novel;
+- the mechanism is proven to disappear without network effects;
+- the result is general beyond the verified model/parameter evidence.
+
+## 10. Stage 7.5R final verdict
+
+**GO TO FULL PAPER.**
+
+Contribution freeze status: **RE-FROZEN** around the narrower post-policy strategic re-differentiation coalition-stability reversal.
+
+Theory freeze status: **UNCHANGED — `CESD-THEORY-FREEZE-2026-09-04-v2` remains canonical.**
+
+## 11. Downstream contract
+
+Proceed in this order only:
+
+1. refresh the production manuscript around the frozen wording above;
+2. make `B-T` versus FULL / `B-EQ` the central benchmark discussion and keep `B-X0` auxiliary;
+3. update the literature section around Ruiz (2004), Gandal & Shy (2001), Takarada et al. (2020), Kawabata & Takarada (2021), and the 2024–2026 frontier;
+4. repeat Stage 11R hostile referee / robustness gate on the refreshed manuscript;
+5. keep Stage 12 journal positioning blocked until repeated Stage 11R returns `GO TO JOURNAL POSITIONING`.
