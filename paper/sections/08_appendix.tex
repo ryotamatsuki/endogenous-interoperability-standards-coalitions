@@ -18,7 +18,7 @@ For zero marginal production cost, firm $i$ maximizes $p_iq_i$. Since $\partial 
 
 For the cyclic order $1\to2\to3\to1$, geometric Voronoi shares are affine in $x$, which gives \eqref{eq:b-linear}. Because $K$ is fixed conditional on $(\rho,s)$, $q=K(b_0+Bx)=c+Rx$. The price FOC implies $p_i=M_{ii}q_i$, so operating profit is $M_{ii}q_i^2$. Adding the redesign cost gives \eqref{eq:location-profit}. Differentiating with respect to $x_i$ gives \eqref{eq:location-foc}, and differentiating again gives \eqref{eq:location-soc}. The collection of FOCs is linear in $x$. This proves Proposition \ref{prop:location} as a conditional fixed-order result.
 
-The conditional proof does not establish a global location Nash equilibrium on the circle. The computations underlying Proposition \ref{prop:reversal} therefore evaluate each firm's profit after unilateral relocation across the entire circle, recomputing geometric order, demand, and the price equilibrium for every candidate deviation. The canonical witness has no profitable whole-circle deviation. Parameterizations that violate this condition are excluded from the regular result.
+The conditional proof does not establish a global location Nash equilibrium on the circle. The computations underlying Proposition \ref{prop:reversal} therefore evaluate each firm's profit after unilateral relocation across the entire circle, recomputing geometric order, demand, and the price equilibrium for every candidate deviation. The v2 repair additionally requires this downstream whole-circle equilibrium to exist at every feasible policy depth used in the policy-stage optimization. At the canonical primitives, the Stage-4R verification checks all feasible $IS$ and $SU$ depths, enumerates cyclic-order and circular-anchor branches on a dense policy grid, applies continuous whole-circle deviation searches, and performs global scalar policy optimization. $SW$ contains only singleton blocs and therefore has no continuous harmonization-depth action. This full-policy-domain continuation statement is computational at the canonical primitives rather than a global analytic theorem.
 
 \subsection{Welfare identities}
 
@@ -40,7 +40,7 @@ GW
   +\sum_i(p_iq_i-C_i^D)\\
 &=A+vq'G_\rho q-TC-\sum_iC_i^D.
 \end{align*}
-Thus price payments cancel exactly as transfers. The ranking in Proposition \ref{prop:global-wedge} is obtained by evaluating this identity at the canonical verified continuation equilibria.
+Thus price payments cancel exactly as transfers. The ranking in Proposition \ref{prop:global-wedge} is obtained by evaluating this identity at the canonical verified continuation equilibria. Numerical world-welfare levels reported in the text are expressed net of the common baseline $A$.
 
 \subsection{Constructive regular-region verification}
 
@@ -48,7 +48,7 @@ The main reversal uses the canonical parameter vector
 \[
 (\bar t,v,\gamma,\bar s)=(1,0.04,0.11,0.25).
 \]
-The frozen verification code solves the bloc-depth game, the conditional location system, and the price game; checks positivity and arc interiority; and then performs whole-circle unilateral location-deviation searches. At this vector it obtains
+Under the repaired v2 action set, the grand coalition chooses $s_I\in[0,\bar s]$, the member pair in an $SU$ chooses its single depth $s_{ij}\in[0,\bar s]$, and singleton blocs have zero depth by definition. The Stage-4R verification solves the repaired policy problem using only downstream continuations that pass the whole-circle location-Nash check. At the canonical vector it obtains
 \[
 \Delta_M^{B-T}=-0.010167,
 \qquad
@@ -56,6 +56,6 @@ The frozen verification code solves the bloc-depth game, the conditional locatio
 \qquad
 \Delta_M^{FULL}=0.001571.
 \]
-All inequalities are strict. Since the selected branch is regular at the witness, continuity implies that the same sign pattern holds on some neighborhood until a regularity boundary is reached. The numerical neighborhood audit reported in Section \ref{sec:results} is a robustness check on the size of that region, not a substitute for a global analytic classification.
+All inequalities are strict. Conditional on persistence of the selected regular continuation branch, continuity implies that the same sign pattern holds on some neighborhood until a regularity boundary is reached. This establishes the constructive local-region interpretation; it is not a global analytic parameter classification.
 
-The computational sources are \texttt{verification/stage04\_cesd\_minimal.py} and \texttt{verification/stage07\_cesd\_welfare\_generality.py}. Manuscript-facing numerical tables are generated directly from those sources.
+The submission-authoritative computational chain is \texttt{verification/stage04r\_cesd\_continuation\_repair.py} for repaired continuations and policy choices, followed by \texttt{verification/stage07r\_cesd\_welfare\_refresh.py} for the repaired welfare objects. Manuscript-facing numerical tables are generated by \texttt{scripts/generate\_outputs.py} from that repaired chain. The earlier Stage-4/Stage-7 scripts remain provenance and supporting verification, but they are not the production authority for the v2 manuscript.
