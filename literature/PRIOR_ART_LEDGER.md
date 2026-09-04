@@ -1,71 +1,77 @@
 # Prior-Art Ledger
 
-Status: **Stage 1 source/math audit completed; Stage 2 whole-game novelty audit not yet run**  
+Status: **Stage 2 whole-game novelty audit completed**  
 Date: 2026-09-04
 
-This ledger distinguishes what Stage 1 has already verified from what Stage 2 still must establish. No entry below is a final novelty verdict unless explicitly marked as a rejected contribution claim.
+The canonical novelty conclusion is narrow: no single audited prior model reproduces the complete candidate game, but every ingredient-level claim is already known. The project survives only as a generalization/unification candidate whose Stage-3 burden is to produce a new coalition-stability result.
 
-| Benchmark family | Close source / project | Stage-1 verified overlap | Stage-1 status | Stage-2 absorption question |
+| Benchmark family | Close source / project | Verified overlap | Stage-2 classification | Binding implication |
 |---|---|---|---|---|
-| **B0 — binary private adoption inside government standards coalitions** | `ryotamatsuki/private-compatibility-standards-coalitions` | Formal government partition → private adoption → Cournot → national welfare → coalition stability | **MANDATORY NESTED BENCHMARK** | Does continuous implementation do more than smooth/relabel B0 thresholds? |
-| Continuous private compatibility + price competition | Stadler, Tobler Trexler & Unsorg (2022), DOI `10.1007/s11067-022-09572-x` | `k_i∈[0,1]`, network effects, Hotelling-type differentiation, compatibility first, prices second, partial compatibility, common firm standardization | **HIGH-RISK / FULL MODEL INSPECTED** | Does the new model add a full-game coalition-stability result rather than another compatibility FOC? |
-| Compatibility level + Hotelling + welfare | Foros & Hansen (2001), DOI `10.1016/S0167-6245(01)00044-0` | Compatibility/interconnection before Hotelling pricing; private vs welfare investment; `t` and `k` enter an effective substitutability composite in accessible precursor | **HIGH-RISK / REPARAMETERIZATION BENCHMARK** | Is any `t(a)` model merely this logic under new notation? |
-| Compatibility + alliance stability + welfare | Toshimitsu (2018), DOI `10.1007/s10842-017-0264-1` | Differentiated Cournot, network effects, strategic compatibility, stable/socially optimal network alliance; providers control compatibility absent intervention | **HIGH-RISK / FULL EQUATIONS STILL REQUIRED FOR STAGE 2** | Is government coalition stability substantively different from a firm network alliance? |
-| Partial compatibility + network externalities | de Palma, Leruth & Regibeau (1999), DOI `10.1016/S0167-6245(99)00006-2` | Degree of compatibility is endogenous product design under network externalities | **CLOSE** | Does continuous implementation add anything beyond classic partial-compatibility design? |
-| Compatibility before Bertrand pricing | Garcia (2016), DOI `10.1111/jems.12146` | Differentiated network products; compatibility choice before Bertrand pricing; private/social incentives | **CLOSE** | Is downstream pricing a contribution-relevant channel or standard background? |
-| Switching costs / portability | Jeon, Menicucci & Nasr (2023), DOI `10.1257/mic.20200309` | Dynamic compatibility choice, switching costs, data portability | **HIGH-RISK FOR NON-NETWORK ROUTE** | Is a switching/portability extension already absorbed? |
-| Pairwise/network interoperability | Huang, Tan, Teh & Zhou (2026), *A Network Approach to Interoperability* | Weighted interoperability network among competing platforms; prices and welfare | **CURRENT HIGH-RISK** | Would pairwise `A_ij` add anything after this paper? |
-| Platform partial compatibility | Peitz (2026), *Asymmetric Platform Oligopoly* | Continuous share of compatible functionalities with network effects; prices/shares/user surplus | **CURRENT CLOSE** | Is functionality-share interoperability already standard? |
-| **B3 — government standardization unions** | Gandal & Shy (2001), DOI `10.1016/S0022-1996(00)00067-2` | Governments recognize foreign standards and form standardization unions; horizontal differentiation; conversion costs/network effects | **MANDATORY GOVERNMENT-COALITION BENCHMARK** | Does a continuous private continuation choice create a new stability result beyond binary recognition/adoption? |
-| **B2 — government continuous-compatibility policy / international coordination** | Klimenko (2009 JIE), DOI `10.1016/j.jinteco.2008.08.005` | Partial technical compatibility, government minimum compatibility standard, compatibility-enhancing effort, strategic policy, international coordination/agreement | **VERY HIGH-RISK / MANDATORY BENCHMARK** | Does endogenous coalition membership/stability add a non-nested strategic feedback? |
-| Government interoperability standard + trade taxes | Klimenko (2009 IREF), DOI `10.1016/j.iref.2008.09.015` | Government minimum interoperability standard; foreign compatibility policy/investment; international duopoly | **HIGH-RISK** | Can the proposed government–firm wedge be reconstructed as a policy game rather than coalition game? |
-| Interconnection agreement + policy intervention | Ji & Daitoh (2008), DOI `10.1111/j.1468-5876.2007.00408.x` | ISP interconnection agreement under network externalities; optimal government intervention; international extension | **CLOSE** | Does policy intervention plus private interconnection absorb the wedge? |
-| Systems / mix-and-match compatibility | Matutes & Regibeau and related systems literature | Compatibility expands feasible combinations/complement access | **FAMILY BENCHMARK** | Is any complement-access route classic systems compatibility? |
+| **B0 — binary private adoption inside government standards coalitions** | `ryotamatsuki/private-compatibility-standards-coalitions` | Government partition → private adoption → Cournot → national welfare → stability | **STRUCTURALLY VERY CLOSE / MANDATORY NESTED BENCHMARK** | Continuous implementation must do more than smooth B0 thresholds. |
+| **B1 — continuous private compatibility** | Stadler, Tobler Trexler & Unsorg (2022), DOI `10.1007/s11067-022-09572-x` | Continuous `k_i`, network effects, differentiation, compatibility then prices, partial compatibility | **COMPONENT OVERLAP / VERY CLOSE** | Interiority and continuous FOCs are not novelty. |
+| B1 | Foros & Hansen (2001), DOI `10.1016/S0167-6245(01)00044-0` | Compatibility before Hotelling competition; private vs welfare; transport/compatibility composite | **STRUCTURALLY VERY CLOSE / REPARAMETERIZATION THREAT** | A pure `t(a)` representation is not contribution-worthy. |
+| B1 | de Palma, Leruth & Regibeau (1999), DOI `10.1016/S0167-6245(99)00006-2` | Partial compatibility under network externalities | **COMPONENT OVERLAP** | Degree-of-compatibility as product design is old. |
+| B1 | Garcia (2016), DOI `10.1111/jems.12146` | Compatibility before Bertrand pricing; private/social incentives | **COMPONENT OVERLAP** | Downstream pricing after compatibility is old. |
+| B1 | Toshimitsu (2018), DOI `10.1007/s10842-017-0264-1` | Strategic compatibility, network effects, differentiated Cournot, stable/socially optimal network alliance | **STRUCTURALLY VERY CLOSE** | Alliance stability plus compatibility is old; government/national objective must matter. |
+| B1 | Jeon, Menicucci & Nasr (2023), DOI `10.1257/mic.20200309` | Dynamic compatibility choice, switching costs, data portability | **COMPONENT OVERLAP / HIGH-RISK FOR SWITCHING ROUTE** | Switching/portability is not a novelty escape hatch. |
+| **B2 — government continuous compatibility / international coordination** | Klimenko (2009 JIE), DOI `10.1016/j.jinteco.2008.08.005` | Partial compatibility; firm compatibility-enhancing activity; government minimum standard and compatibility policy; national incentives; international agreement | **STRUCTURALLY VERY CLOSE / MANDATORY** | Continuous compatibility + government policy + international coordination is already occupied. |
+| B2 | Klimenko (2009 IREF), DOI `10.1016/j.iref.2008.09.015` | Government interoperability standard, trade-tax interaction, international duopoly | **STRUCTURALLY VERY CLOSE** | Government–firm compatibility wedge can be a policy-game result rather than coalition result. |
+| **B3 — government standardization unions** | Gandal & Shy (2001), DOI `10.1016/S0022-1996(00)00067-2` | Three-country government recognition policy; standardization unions; network effects/conversion costs | **STRUCTURALLY VERY CLOSE / MANDATORY** | Government union formation is old; only post-union private intensive implementation can differ. |
+| **B4 — firm standards-coalition formation** | Economides & Skrzypacz (2003), SSRN `378340` | Endogenous standards-platform coalitions; network benefits vs within-platform competition; oligopoly continuation; stationary coalition equilibrium | **STRUCTURALLY VERY CLOSE / MANDATORY** | Coalition formation driven by compatibility/competition is old. Distinct government objectives and post-coalition private intensity are required. |
+| **B5 — coalition-proof/platform partial compatibility** | Ding, Ko & Shen (2022), DOI `10.1016/j.econmod.2022.105989` | Partial compatibility, three platforms, coalition-proof market outcome, welfare | **STRUCTURALLY VERY CLOSE** | Coalition-proof partial compatibility is already an explicit result class. |
+| B5 | Huang, Tan, Teh & Zhou (2026), SSRN `6244719` | Weighted interoperability network; coalitional configurations; equilibrium prices; welfare | **CURRENT STRUCTURALLY CLOSE FRONTIER** | Pairwise/weighted topology is not an easy pivot. |
+| B5 | Ekmekci, White & Wu (2025), DOI `10.1287/mnsc.2023.02810` | Platform competition and interoperability regulation | **COMPONENT OVERLAP** | Regulation/interoperability welfare is current literature. |
+| B5 | Bourreau, Raizonville & Thébaudin (2026), DOI `10.1111/joie.70018` | Endogenous platform interoperability, installed-base asymmetry, welfare | **COMPONENT OVERLAP / CURRENT** | Endogenous interoperability and asymmetry are current frontier topics. |
+| B5 | Kim (2026), DOI `10.1111/jems.12643` | Data portability/interoperability regulation, switching costs, network effects | **COMPONENT OVERLAP / CURRENT** | Portability/regulatory interoperability is occupied. |
+| SSO membership/governance | Fiedler, Larrain & Prüfer (2023), DOI `10.1016/j.respol.2023.104761` | Endogenous SSO participation, implementation motives, governance | **MERELY RELATED / INSTITUTIONAL BENCHMARK** | Endogenous membership itself is not new. |
+| Product-standards agreements | Geng (2019), DOI `10.1111/ecin.12785` | International standards agreements, national welfare, NT vs MR; vertical standards | **MERELY RELATED** | Useful agreement benchmark, not direct horizontal compatibility absorption. |
 
-## Stage-1 mathematical audit finding — Stadler et al. (2022)
+## Stage-2 whole-game finding
 
-The project has a reproducible SymPy audit at:
+No single source above contains all of the following simultaneously:
 
-`verification/stage01_stadler_sympy.py`.
+1. countries/governments as formal standards-coalition members;
+2. distinct private firms as downstream actors;
+3. a continuous private interoperability implementation choice made after the formal regime is determined;
+4. downstream market competition;
+5. national welfare rather than firm-profit or world-welfare coalition payoffs;
+6. a government deviation that changes the regime and therefore changes the private implementation continuation equilibrium;
+7. coalition stability evaluated using those regime-specific continuation values.
 
-Verified:
+Therefore there is **no Stage-2 EXACT PRIOR ART finding for the whole game**.
 
-- published price equilibrium: exact;
-- published symmetric compatibility FOC: exact;
-- reported interior root: exact stationary point.
+This does not establish novelty. The closest absorption argument combines B0 + B2 + B4 and asks whether the proposed paper merely inserts a standard continuous compatibility block into the existing binary coalition skeleton.
 
-But the stated condition `gamma > beta(5+4b)/12` does not by itself guarantee the own SOC/global best response for all reported `b>=0`. An exact admissible counterexample is recorded in the script and Stage-1 report.
+## Permanently killed contribution claims
 
-Implication for this project: no symmetric FOC may be promoted to an interoperability equilibrium without SOC/KKT/global/corner checks.
+Do not later claim novelty from:
 
-## Stage-1 reparameterization finding
+- continuous or partial interoperability;
+- interior interoperability;
+- network effects plus compatibility;
+- price/quantity competition after compatibility;
+- private/social compatibility wedges;
+- standards coalition formation;
+- government standardization unions;
+- coalition-proof partial compatibility;
+- government continuous-compatibility policy;
+- international compatibility agreements;
+- pairwise/weighted/coalitional interoperability networks.
 
-A Foros-type Hotelling representation uses the composite
+## Surviving Stage-3 question
 
-`t - beta(1-k)`.
+> Can a government coalition regime change firms' post-agreement continuous implementation incentives enough that the regime-specific continuation equilibria reverse a government's participation/deviation incentive relative to binary or exogenous-implementation benchmarks?
 
-If the new interoperability variable only replaces a transport/substitutability coefficient, the product-market block is a change of variable. Such a representation can be used as a benchmark but not as the core contribution mechanism.
+Primitive stability object:
 
-## Stage-1 correction to the coalition-threshold idea
+`Delta_i(rho,rho';theta) = V_i(rho;theta) - V_i(rho';theta)`.
 
-The primitive government stability object is
+The preferred Stage-3 target is a nonempty parameter region with
 
-`Delta_i(rho,rho';theta) = V_i(rho;theta) - V_i(rho';theta)`,
+`sign Delta_i^endo != sign Delta_i^benchmark`.
 
-where each `V_i` uses its own regime-specific private implementation and product-market continuation equilibrium.
+## Stage-3 kill standard
 
-Do **not** assume a scalar `â` exists. It is a permissible derived object only if continuity, monotonicity, and a unique root are proved after continuation equilibria are substituted.
+Return `NO-GO` if continuous implementation only produces a smooth threshold in place of B0's binary threshold or reproduces a known comparative static from B1–B5.
 
-## Stage-2 frozen comparison question
-
-> Does endogenizing a continuous post-agreement private interoperability implementation margin inside a government standards-coalition game generate a coalition-stability result that is unavailable in both B0 (binary private-adoption coalition models) and B1/B2 (continuous compatibility/private or government-policy models) considered separately?
-
-## Stage-2 kill standard
-
-Return `NO-GO` if the candidate whole game can be generated by:
-
-1. taking B0's government-coalition / private-adoption / stability architecture;
-2. replacing binary adoption with a standard continuous compatibility-investment block from B1/B2;
-3. obtaining the same qualitative stability logic after a smooth change of thresholds.
-
-A surviving generalization/unification route requires at least one full-model strategic or welfare result unavailable in the nested benchmarks alone.
+See `literature/NESTED_BENCHMARK_MAP.md` and `reviews/STAGE_02_NOVELTY_KILL_GATE_2026-09-04.md`.

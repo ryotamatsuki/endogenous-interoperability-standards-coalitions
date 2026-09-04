@@ -140,3 +140,52 @@ Decision: `GO TO NOVELTY GATE`
 The audit produced a coherent residual game, corrected the stability formulation, and identified the necessary nested benchmarks. Remaining uncertainty is primarily whole-game prior-art absorption, which belongs to Stage 2.
 
 Novelty remains UNRESOLVED.
+
+## D-016 — Economides–Skrzypacz is a mandatory coalition benchmark
+
+Date: 2026-09-04
+Decision: ACCEPTED
+
+Add Economides & Skrzypacz (2003), *Standards Coalitions Formation and Market Structure in Network Industries*, as benchmark B4.
+
+Reason: it directly models endogenous technical-standards coalitions followed by oligopoly and makes coalition membership trade off network benefits against intensified competition. However, coalition members are firms, affiliation itself determines the common standard, and the objective is firm profit rather than national welfare. It does not contain a separate government coalition stage followed by an independent continuous private implementation choice.
+
+## D-017 — Modern interoperability frontier is a mandatory benchmark family
+
+Date: 2026-09-04
+Decision: ACCEPTED
+
+Add benchmark B5 covering Ding–Ko–Shen (2022), Huang–Tan–Teh–Zhou (2026), Bourreau–Raizonville–Thébaudin (2026), Ekmekci–White–Wu (2025), Kim (2026), and closely related current interoperability work.
+
+Implication: pairwise, weighted, coalitional, platform, or regulated interoperability cannot be used as an easy novelty pivot.
+
+## D-018 — Kill all ingredient-level novelty claims
+
+Date: 2026-09-04
+Decision: ACCEPTED
+
+The following are permanently rejected as standalone contribution claims: continuous interoperability, interior interoperability, network effects plus compatibility, price competition after compatibility, private/social wedges, standards coalition formation, government standardization unions, coalition-proof partial compatibility, government compatibility policy, and weighted/pairwise interoperability.
+
+They may appear only as modeling ingredients or nested benchmarks.
+
+## D-019 — Stage-3 surviving mechanism target
+
+Date: 2026-09-04
+Decision: ACCEPTED FOR MECHANISM SEARCH ONLY
+
+The only authorized Stage-3 mechanism is the regime-dependent private implementation feedback:
+
+`rho -> a*(rho;theta) -> downstream equilibrium -> V_i(rho;theta) -> government deviation incentives`.
+
+Preferred candidate theorem: **implementation-induced stability reversal**, meaning a nonempty parameter region in which endogenous continuous implementation changes the sign of a government's coalition participation/deviation payoff relative to a binary or exogenous-implementation benchmark.
+
+A stronger admissible target is a non-monotone or disconnected stability region that cannot arise in B0.
+
+## D-020 — Stage 2 verdict
+
+Date: 2026-09-04
+Decision: `GO` → `GO TO MECHANISM SEARCH`
+
+No single audited prior model reproduces the complete government-coalition / distinct-private-continuous-implementation / downstream-competition / national-welfare / regime-specific-stability game after direct relabeling. The project therefore survives as a narrow generalization/unification candidate.
+
+This is not a novelty finding. Stage 3 must produce a new full-game result. If a minimal model merely smooths or relabels B0 thresholds, return `NO-GO` rather than add complexity.
