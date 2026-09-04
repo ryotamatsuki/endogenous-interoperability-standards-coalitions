@@ -5,15 +5,15 @@ Last updated: 2026-09-04
 ## Canonical status
 
 - Project: Endogenous Interoperability and Standards Coalitions
-- Last completed stage: **Stage 9 — Repository / Reproducibility Setup**
-- Stage-9 report: `reviews/STAGE_09_REPRODUCIBILITY_SETUP_2026-09-04.md`
-- Stage-9 decisions: `decisions/STAGE9_CESD_DECISIONS.md`
+- Last completed stage: **Stage 10 — Section-by-Section Paper Construction**
+- Stage-10 report: `reviews/STAGE_10_PAPER_CONSTRUCTION_CESD_2026-09-04.md`
+- Stage-10 decisions: `decisions/STAGE10_CESD_DECISIONS.md`
 - Freeze specification: `theory/THEORY_FREEZE_CESD_2026-09-04.md`
 - Proposition register: `theory/PROPOSITION_REGISTER_CESD_2026-09-04.md`
 - Freeze ID: `CESD-THEORY-FREEZE-2026-09-04-v1`
-- C-ESD canonical verdict: **REPRODUCIBILITY BASELINE READY**
-- Current canonical stage: **Stage 10 — Section-by-Section Paper Construction**
-- Current route: C1 TERMINATED / C2 TERMINATED / C-RP TERMINATED / C-ESD THEORY FROZEN + REPRODUCIBILITY READY
+- C-ESD canonical verdict: **FULL DRAFT READY FOR REFEREE GATE**
+- Current canonical stage: **Stage 11 — Robustness / Referee Attack Gate**
+- Current route: C1 TERMINATED / C2 TERMINATED / C-RP TERMINATED / C-ESD THEORY FROZEN + REPRODUCIBILITY READY + FULL DRAFT READY
 - Production manuscript authorized: **YES**
 - Theory frozen: **YES**
 - Recommended journal level: **IJIO / field-journal full paper**
@@ -24,10 +24,9 @@ Last updated: 2026-09-04
 - Repository: `ryotamatsuki/research-paper-workflow`
 - Version: `v1.1`
 - Release SHA: `488e5ab06c207909296a7564eaf9066f7f94319c`
-- Stage-9 template: `templates/STAGE_09_REPRODUCIBILITY_SETUP.md`
-- Stage-9 starting main SHA: `95755cb82bceb136626279c5ff65fe1f1149afaa`
-- Stage-9 verdict: `REPRODUCIBILITY BASELINE READY`
-- Next canonical stage: Stage 10 — Section-by-Section Paper Construction
+- Stage-8 theory freeze remains the sole theory authority.
+- Stage-9 reproducibility baseline remains the sole production/verification authority.
+- Next canonical stage: Stage 11 — Robustness / Referee Attack Gate.
 
 ## Frozen project boundary
 
@@ -52,7 +51,7 @@ Formal partition determines the compatibility graph and fixed network coefficien
 
 ## Frozen main contribution
 
-Only the following main contribution is authorized:
+Only the following main contribution is authorized and is now written in the manuscript:
 
 > **Interaction-induced coalition-stability reversal.** Endogenous government standard depth and endogenous firm product positioning each separately leave international standardization stable, but together can induce SU members to re-differentiate sufficiently to reverse their national-welfare ranking and make regional standards unions stable while IS becomes pair-blockable.
 
@@ -94,22 +93,29 @@ Production sources:
 - `verification/stage07_cesd_welfare_generality.py`;
 - `scripts/generate_outputs.py`;
 - `tests/test_freeze_consistency.py`;
-- `paper/` modular LaTeX scaffold;
 - `references/references.bib`;
-- `requirements.txt` + `.python-version`;
 - root `Makefile`;
-- `.github/workflows/reproducibility.yml`;
-- `docs/REPRODUCIBILITY.md`;
-- `docs/STAGE10_WRITING_CONTRACT.md`.
+- `.github/workflows/reproducibility.yml`.
 
-Build gates:
+Build gates remain `make verify`, `make outputs`, `make paper`, and `make all`.
 
-- `make verify`;
-- `make outputs`;
-- `make paper`;
-- `make all`.
+## Stage-10 manuscript
 
-The initial clean GitHub Actions run passed frozen verification, deterministic output generation, and LaTeX scaffold compilation.
+Current production manuscript:
+
+- `paper/main.tex`;
+- `paper/sections/01_introduction.tex`;
+- `paper/sections/02_model.tex`;
+- `paper/sections/03_equilibrium.tex`;
+- `paper/sections/04_main_results.tex`;
+- `paper/sections/05_welfare.tex`;
+- `paper/sections/06_related_literature.tex`;
+- `paper/sections/07_conclusion.tex`;
+- `paper/sections/08_appendix.tex`.
+
+The paper was constructed in dependency order and preserves the Stage-8 proof-status boundary. The main benchmarks B-T and B-X remain in the main text. The welfare section makes the domestic-rent / consumer-loss incidence explicit. The appendix separates analytic proofs from the computational whole-circle verification supporting the constructive regular-region result.
+
+GitHub Actions passed the frozen verification gates, deterministic output generation, and full LaTeX manuscript compilation on the Stage-10 manuscript head.
 
 ## Explicit post-freeze exclusions
 
@@ -117,12 +123,12 @@ No silent addition of relative-profit objectives, private interoperability inves
 
 Any such change requires a formal theory-change record and rerunning affected gates.
 
-## Stage-9 verdict
+## Stage-10 verdict
 
-**REPRODUCIBILITY BASELINE READY.**
+**FULL DRAFT READY FOR REFEREE GATE.**
 
 ## Next action
 
-Execute **Stage 10 — Section-by-Section Paper Construction** in the dependency order fixed in `docs/STAGE10_WRITING_CONTRACT.md`.
+Execute **Stage 11 — Robustness / Referee Attack Gate** on the manuscript as written.
 
-Stage 10 may write against the frozen theory; it may not change the model, upgrade proof-status claims, or hand-edit generated numerical results.
+Stage 11 must attack mathematical correctness, whole-circle location equilibrium, policy-stage equilibrium, coalition stability, welfare accounting, proof-status wording, robustness of the regular region, Ruiz + Gandal–Shy synthesis risk, exposition and IJIO-level contribution strength. It may recommend revisions consistent with the freeze; substantive theory changes require formal change control.

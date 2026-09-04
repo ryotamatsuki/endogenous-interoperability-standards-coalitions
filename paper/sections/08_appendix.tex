@@ -1,0 +1,61 @@
+\section{Proofs and Verification Details}\label{app:proofs}
+
+\subsection{Demand and price characterization}
+
+For an arc $ij$, the indifferent consumer in \eqref{eq:indifferent} allocates the arc between the two adjacent firms. Relative to the midpoint allocation, the boundary shift equals
+\[
+\frac{p_j-p_i+v(n_i-n_j)}{2\tau_{ij}}.
+\]
+Summing the two boundary shifts relevant to each firm yields the weighted-Laplacian expression
+\[
+q=b-\frac12Lp+\frac v2LG_\rho q,
+\]
+which is \eqref{eq:affine-demand}. If $A_\rho=I-(v/2)LG_\rho$ is nonsingular, rearrangement yields \eqref{eq:demand-reduced}.
+
+For zero marginal production cost, firm $i$ maximizes $p_iq_i$. Since $\partial q_i/\partial p_i=D_{ii}$, the FOC is $q_i+D_{ii}p_i=0$. Under $D_{ii}<0$, the own-price second derivative is $2D_{ii}<0$. Defining $M=\operatorname{diag}(-1/D_{ii})$ gives $p=Mq$. Substitution into demand gives $(I-DM)q=A_\rho^{-1}b$. Nonsingularity of $I-DM$ yields the unique regular interior solution in \eqref{eq:price-system}. This proves Proposition \ref{prop:price} on the stated domain.
+
+\subsection{Conditional location system}
+
+For the cyclic order $1\to2\to3\to1$, geometric Voronoi shares are affine in $x$, which gives \eqref{eq:b-linear}. Because $K$ is fixed conditional on $(\rho,s)$, $q=K(b_0+Bx)=c+Rx$. The price FOC implies $p_i=M_{ii}q_i$, so operating profit is $M_{ii}q_i^2$. Adding the redesign cost gives \eqref{eq:location-profit}. Differentiating with respect to $x_i$ gives \eqref{eq:location-foc}, and differentiating again gives \eqref{eq:location-soc}. The collection of FOCs is linear in $x$. This proves Proposition \ref{prop:location} as a conditional fixed-order result.
+
+The conditional proof does not establish a global location Nash equilibrium on the circle. The computations underlying Proposition \ref{prop:reversal} therefore evaluate each firm's profit after unilateral relocation across the entire circle, recomputing geometric order, demand, and the price equilibrium for every candidate deviation. The canonical witness has no profitable whole-circle deviation. Parameterizations that violate this condition are excluded from the regular result.
+
+\subsection{Welfare identities}
+
+Integrating gross network value, price payments, and linear adaptation losses over all arcs yields
+\[
+CS=A+vq'G_\rho q-\sum_i p_iq_i-TC.
+\]
+Country $i$ receives one third of aggregate consumer surplus and owns firm $i$, so $W_i=CS/3+\Pi_i$. Taking the difference between $SU$ and $IS$ for a member yields
+\[
+\Delta_M=\Delta\Pi_M+\frac{\Delta CS}{3},
+\]
+which immediately gives Proposition \ref{prop:member-threshold}.
+
+For world welfare,
+\begin{align*}
+GW
+&=CS+\sum_i\Pi_i\\
+&=A+vq'G_\rho q-\sum_i p_iq_i-TC
+  +\sum_i(p_iq_i-C_i^D)\\
+&=A+vq'G_\rho q-TC-\sum_iC_i^D.
+\end{align*}
+Thus price payments cancel exactly as transfers. The ranking in Proposition \ref{prop:global-wedge} is obtained by evaluating this identity at the canonical verified continuation equilibria.
+
+\subsection{Constructive regular-region verification}
+
+The main reversal uses the canonical parameter vector
+\[
+(\bar t,v,\gamma,\bar s)=(1,0.04,0.11,0.25).
+\]
+The frozen verification code solves the bloc-depth game, the conditional location system, and the price game; checks positivity and arc interiority; and then performs whole-circle unilateral location-deviation searches. At this vector it obtains
+\[
+\Delta_M^{B-T}=-0.010167,
+\qquad
+\Delta_M^{B-X}=-0.000434,
+\qquad
+\Delta_M^{FULL}=0.001571.
+\]
+All inequalities are strict. Since the selected branch is regular at the witness, continuity implies that the same sign pattern holds on some neighborhood until a regularity boundary is reached. The numerical neighborhood audit reported in Section \ref{sec:results} is a robustness check on the size of that region, not a substitute for a global analytic classification.
+
+The computational sources are \texttt{verification/stage04\_cesd\_minimal.py} and \texttt{verification/stage07\_cesd\_welfare\_generality.py}. Manuscript-facing numerical tables are generated directly from those sources.

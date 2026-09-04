@@ -1,3 +1,69 @@
-\section{Main Results}
-% Stage 10 only. Generated numerical objects below come from frozen verification code.
+\section{Main Results}\label{sec:results}
+
+The contribution is an interaction result. We therefore compare the full game with two mandatory nested benchmarks that shut down one endogenous margin at a time.
+
+\paragraph{Benchmark B-T.} Standard depth is endogenous but product locations are fixed at inherited anchors, $x_i=h_i$.
+
+\paragraph{Benchmark B-X.} Product locations are endogenous but all standard-depth choices are fixed at zero, $s_C=0$.
+
+\paragraph{FULL.} Both standard depth and product locations are endogenous.
+
+For a symmetric prospective union, define the member gain relative to international standardization as
+\begin{equation}\label{eq:delta-member}
+\Delta_M^k=W_M^{SU,k}-W^{IS,k},
+\qquad k\in\{B\text{-}T,B\text{-}X,FULL\}.
+\end{equation}
+The main question is whether the sign of \eqref{eq:delta-member} can differ only when both margins are endogenous.
+
+\subsection{Policy-induced re-differentiation}
+
+Under $SU_{12}$, deeper union integration lowers $\tau_{12}$ while increasing $\tau_{13}$ and $\tau_{23}$. Holding product locations fixed, this compresses one source of differentiation between member firms 1 and 2. Because product location remains a separate strategic margin, the member firms can respond by moving apart on the circle. The canonical continuation equilibrium exhibits exactly this response.
+
+At the canonical parameter vector
+\begin{equation}\label{eq:witness}
+(\bar t,v,\gamma,\bar s)=(1,0.04,0.11,0.25),
+\end{equation}
+the FULL policy profiles are
+\[
+s_I=\bar s,\qquad
+(s_{12},s_3)=(\bar s,0),\qquad
+(s_1,s_2,s_3)_{SW}=(0,0,0).
+\]
+Under $SU_{12}$, the product-location equilibrium is approximately
+\[
+x^{SU}=(0.084567,\,0.582100,\,0.833333).
+\]
+Relative to the inherited locations $(1/6,1/2,5/6)$, the two union members move outward while the outsider remains at its anchor. Thus the standardization union compresses standard-based differentiation inside the bloc but induces additional differentiation on the remaining horizontal product dimension.
+
+\subsection{Interaction-induced coalition reversal}
+
+The two nested benchmarks do not generate the regional-union result. At \eqref{eq:witness},
+\[
+\Delta_M^{B-T}=-0.010167<0,
+\qquad
+\Delta_M^{B-X}=-0.000434<0,
+\]
+so international standardization is stable when only standard depth or only product positioning is endogenous. In the full model,
+\[
+\Delta_M^{FULL}=0.001571>0.
+\]
+Hence each prospective union pair strictly prefers forming an $SU$ to remaining in $IS$.
+
+\begin{proposition}[Constructive regular-region coalition reversal]\label{prop:reversal}
+There exists a nonempty regular parameter region in which
+\[
+\Delta_M^{B-T}<0,\qquad
+\Delta_M^{B-X}<0,\qquad
+\Delta_M^{FULL}>0.
+\]
+In that region, the nested benchmarks select international standardization, whereas the full game makes the three two-country standardization unions stable and renders international standardization pair-blockable.
+\end{proposition}
+
+\paragraph{Status of Proposition \ref{prop:reversal}.}
+The proposition is constructive rather than a global closed-form classification. The parameter vector in \eqref{eq:witness} satisfies all regularity conditions, including the whole-circle unilateral location-deviation test. The inequalities are strict. Continuity on the selected regular branch therefore implies a nonempty open neighborhood. Direct numerical audits confirm the same sign pattern and global location-best-response condition at 23 of 27 nearby grid points and 108 of 125 points on a wider grid. We do not claim that the result holds for all parameter values or that every local location stationary point is globally stable.
+
+The coalition-stability logic at the witness is transparent. In B-T and B-X, an $SU$ member is worse off than under $IS$, so no pair blocks international standardization. In FULL, $W_M^{SU}>W^{IS}$ while the outsider remains worse off than under $IS$ and members also prefer $SU$ to $SW$. Thus an $SU$ is not unanimously blocked by $IS$ and its members do not wish to dissolve it into $SW$. By symmetry, all three two-country unions are stable.
+
+The result isolates the strategic complementarity between the two endogenous margins. Endogenous policy depth alone does not overturn the international-standardization outcome, and endogenous location alone does not overturn it. The reversal appears only because policy-induced compression of standard differentiation changes firms' incentives to re-differentiate on the product dimension.
+
 \IfFileExists{../tables/generated_results.tex}{\input{../tables/generated_results.tex}}{}
