@@ -1,19 +1,20 @@
 \section{Main Results}\label{sec:results}
 
-The contribution is an interaction result. We therefore compare the full game with two mandatory nested benchmarks that shut down one endogenous margin at a time.
+The contribution concerns the effect of post-policy product repositioning on governments' standards-coalition ranking. We therefore organize the comparison around one central fixed-position benchmark, one hostile identification benchmark, and one auxiliary benchmark.
 
-\paragraph{Benchmark B-T.} Additional harmonization depth is endogenous for non-singleton blocs, but product locations are fixed at inherited anchors, $x_i=h_i$.
+\paragraph{Benchmark B-T.} Additional harmonization depth is endogenous for non-singleton blocs, but product locations are fixed at inherited anchors, $x_i=h_i$. This is the central fixed-product evaluation.
 
-\paragraph{Benchmark B-X.} Product locations are endogenous, but the additional harmonization depth of every non-singleton bloc is fixed at zero. Singleton blocs have zero depth by definition in all versions of the model.
+\paragraph{Benchmark B-EQ.} Harmonization depths of non-singleton blocs are exogenous and fixed at the values selected in FULL, while product locations remain endogenous. This benchmark tests whether endogenous harmonization choice itself is necessary for the reversal.
+
+\paragraph{Benchmark B-X0.} Product locations are endogenous, but the additional harmonization depth of every non-singleton bloc is fixed at zero. Singleton blocs have zero depth by definition in all versions of the model. B-X0 is an auxiliary zero-additional-harmonization benchmark rather than the central identification comparison.
 
 \paragraph{FULL.} Both non-singleton harmonization depth and product locations are endogenous.
 
 For a symmetric prospective union, define the member gain relative to international standardization as
 \begin{equation}\label{eq:delta-member}
-\Delta_M^k=W_M^{SU,k}-W^{IS,k},
-\qquad k\in\{B\text{-}T,B\text{-}X,FULL\}.
+\Delta_M^k=W_M^{SU,k}-W^{IS,k}.
 \end{equation}
-The main question is whether the sign of \eqref{eq:delta-member} can differ only when both margins are endogenous.
+The main question is whether allowing firms to reposition after a given standards architecture can change the sign of this national-welfare comparison relative to an evaluation that holds product positions fixed.
 
 \subsection{Policy-induced re-differentiation}
 
@@ -37,35 +38,43 @@ x^{SU}=(0.084567,\,0.582100,\,0.833333).
 \]
 Relative to the inherited locations $(1/6,1/2,5/6)$, the two union members move outward while the outsider remains at its anchor. Thus the standardization union compresses standard-based differentiation inside the bloc but induces additional differentiation on the remaining horizontal product dimension.
 
-\subsection{Interaction-induced coalition reversal}
+\subsection{Post-policy repositioning and coalition reversal}
 
-The two nested benchmarks do not generate the regional-union result. At \eqref{eq:witness},
+The central fixed-position benchmark and the full game rank the regimes differently. At \eqref{eq:witness},
 \[
 \Delta_M^{B-T}=-0.010167<0,
 \qquad
-\Delta_M^{B-X}=-0.000434<0,
-\]
-so international standardization is stable when only harmonization depth or only product positioning is endogenous. In the full model,
-\[
 \Delta_M^{FULL}=0.001571>0.
 \]
-Hence each prospective union pair strictly prefers forming an $SU$ to remaining in $IS$.
+Thus international standardization is preferred by a prospective member when product positions are held fixed, whereas the regional standards union becomes nationally preferred once firms can reposition after policy.
 
-\begin{proposition}[Constructive regular-region coalition reversal]\label{prop:reversal}
+The hostile B-EQ benchmark sharpens the interpretation. At the canonical witness, FULL chooses the harmonization cap under both $IS$ and $SU$. Fixing those depths exogenously therefore leaves exactly the same downstream location and price game as FULL, so
+\[
+\Delta_M^{B-EQ}=\Delta_M^{FULL}>0.
+\]
+Endogenous harmonization choice is consequently not necessary for the reversal at the witness. The relevant identified margin is the post-policy product-position response.
+
+For completeness, the auxiliary zero-additional-harmonization benchmark gives
+\[
+\Delta_M^{B-X0}=-0.000434<0.
+\]
+This comparison is informative about the zero-depth environment, but it does not establish that policy-depth endogeneity is necessary.
+
+\begin{proposition}[Constructive post-policy coalition reversal]\label{prop:reversal}
 There exists a nonempty regular parameter region in which
 \[
-\Delta_M^{B-T}<0,\qquad
-\Delta_M^{B-X}<0,\qquad
+\Delta_M^{B-T}<0,
+\qquad
 \Delta_M^{FULL}>0.
 \]
-In that region, the nested benchmarks select international standardization, whereas the full game makes the three two-country standardization unions stable and renders international standardization pair-blockable.
+In that region, a fixed-position evaluation favors international standardization, whereas allowing firms to reposition after standards policy makes the regional standards union nationally preferred and can render international standardization pair-blockable. At the canonical witness, $\Delta_M^{B-EQ}=\Delta_M^{FULL}>0$, so the reversal does not require endogenous harmonization-depth choice.
 \end{proposition}
 
 \paragraph{Status of Proposition \ref{prop:reversal}.}
-The proposition is constructive rather than a global closed-form classification. At the parameter vector in \eqref{eq:witness}, the repaired v2 action set satisfies the regularity conditions used in the computation. In particular, for every feasible $IS$ and $SU$ harmonization depth at the canonical primitives, the verification searches the relevant cyclic-order and circular-anchor branches and checks whole-circle unilateral location deviations after re-solving the price subgame; the resulting policy choices are then obtained by global scalar optimization over the repaired action sets. The three inequalities above are strict. Conditional on persistence of the selected regular continuation branch, continuity therefore implies a nonempty local neighborhood with the same sign pattern. We do not claim a global parameter-space theorem, nor do we claim that every local location stationary point is globally stable.
+The proposition is constructive rather than a global closed-form classification. At the parameter vector in \eqref{eq:witness}, the repaired v2 action set satisfies the regularity conditions used in the computation. In particular, for every feasible $IS$ and $SU$ harmonization depth at the canonical primitives, the verification searches the relevant cyclic-order and circular-anchor branches and checks whole-circle unilateral location deviations after re-solving the price subgame; the resulting policy choices are then obtained by global scalar optimization over the repaired action sets. The B-T and FULL inequalities are strict. Conditional on persistence of the selected regular continuation branch, continuity therefore implies a nonempty local neighborhood with the same sign pattern. We do not claim a global parameter-space theorem, nor do we claim that B-EQ reproduces FULL away from parameter values at which the fixed exogenous depths coincide with the full-game policy choices.
 
-The coalition-stability logic at the witness is transparent. In B-T and B-X, an $SU$ member is worse off than under $IS$, so no pair blocks international standardization. In FULL, $W_M^{SU}>W^{IS}$ while the outsider remains worse off than under $IS$ and members also prefer $SU$ to $SW$. Thus an $SU$ is not unanimously blocked by $IS$ and its members do not wish to dissolve it into $SW$. By symmetry, all three two-country unions are stable.
+The coalition-stability logic at the witness is transparent. In B-T, an $SU$ member is worse off than under $IS$, so no pair blocks international standardization. In FULL, $W_M^{SU}>W^{IS}$ while the outsider remains worse off than under $IS$ and members also prefer $SU$ to $SW$. Thus an $SU$ is not unanimously blocked by $IS$ and its members do not wish to dissolve it into $SW$. By symmetry, all three two-country unions are stable. B-EQ reproduces this downstream ranking at the witness despite removing policy-depth endogeneity.
 
-The result isolates the strategic complementarity between the two endogenous margins. Endogenous harmonization depth alone does not overturn the international-standardization outcome, and endogenous location alone does not overturn it. The reversal appears only because policy-induced compression of standard differentiation changes firms' incentives to re-differentiate on the product dimension.
+The result therefore isolates a continuation-response mechanism rather than a two-endogeneity interaction. Standards harmonization changes effective competitive distances; firms then strategically re-differentiate on the remaining product dimension; the resulting competition-softening raises member producer rents enough to change the national-welfare and coalition-stability ranking relative to a fixed-position evaluation.
 
 \IfFileExists{../tables/generated_results.tex}{\input{../tables/generated_results.tex}}{}
