@@ -9,6 +9,12 @@ Nash equilibrium, but for sufficiently large outsider-depth deviations the
 fixed-order continuation candidate used by the Stage-4 policy routine ceases
 to be a global location Nash equilibrium. This creates an unresolved off-path
 continuation/SPNE issue.
+
+The script also records a bounded repair diagnostic: at the same v and gamma
+with a smaller policy cap sbar=0.20, the headline B-T/B-X/FULL sign pattern
+survives and a dense audit of the SU policy square finds no whole-circle
+continuation failure on the selected interior branch. This is evidence that
+the mechanism may survive a Stage-4 repair; it is not itself a new theorem.
 """
 from __future__ import annotations
 
@@ -31,6 +37,7 @@ SPEC.loader.exec_module(s4)
 V = 0.04
 GAMMA = 0.11
 SBAR = 0.25
+REPAIR_SBAR = 0.20
 H = s4.H.copy()
 
 
@@ -74,7 +81,7 @@ def best_deviation_continuous(pos, reg, s, vv, gamma, i):
 
 
 def affine_b_for_order(order):
-    """Recover exact piecewise-affine Voronoi map numerically within one order."""
+    """Recover the piecewise-affine Voronoi map within one order."""
     ref = np.empty(3)
     for k, i in enumerate(order):
         ref[i] = (0.12, 0.43, 0.77)[k]
@@ -145,7 +152,6 @@ canonical_gaps = np.array([
 assert np.max(canonical_gaps) < 1e-8
 
 # 2. Selected policy directions that remain regular on the audited branch.
-# IS: common bloc depth is maximized at sbar.
 is_vals = []
 for z in np.linspace(0, SBAR, 26):
     w = s4.welfare("IS", [z], V, GAMMA, True)
@@ -156,7 +162,6 @@ for z in np.linspace(0, SBAR, 26):
     is_vals.append(float(w[0][0] + w[0][1] + w[0][2]))
 assert int(np.argmax(is_vals)) == len(is_vals) - 1
 
-# SW: a unilateral singleton-depth deviation from zero lowers own welfare on grid.
 sw_vals = []
 for z in np.linspace(0, SBAR, 26):
     s = [z, 0.0, 0.0]
@@ -168,8 +173,6 @@ for z in np.linspace(0, SBAR, 26):
     sw_vals.append(float(w[0][0]))
 assert int(np.argmax(sw_vals)) == 0
 
-# SU member bloc: with outsider depth zero, all audited member-depth deviations
-# have regular whole-circle continuations and the member objective peaks at sbar.
 su_member_vals = []
 for z in np.linspace(0, SBAR, 26):
     s = [z, 0.0]
@@ -181,8 +184,8 @@ for z in np.linspace(0, SBAR, 26):
     su_member_vals.append(float(w[0][0] + w[0][1]))
 assert int(np.argmax(su_member_vals)) == len(su_member_vals) - 1
 
-# 3. Fatal current-gap diagnostic: outsider-depth deviations can leave the
-# regular pure location-equilibrium domain. At s3=.20, the Stage-4 fixed-order
+# 3. Current-gap diagnostic: outsider-depth deviations can leave the regular
+# pure location-equilibrium domain. At s3=.20, the Stage-4 fixed-order
 # candidate is not a global best response and no alternative *interior*
 # stationary candidate over all cyclic orders/anchor branches passes the
 # continuous whole-circle best-response test.
@@ -199,7 +202,6 @@ candidates = stationary_candidates_all_orders("SU", offpath_s, V, GAMMA)
 regular_pure_ne = [c for c in candidates if np.max(c[1]) < 1e-8]
 assert len(regular_pure_ne) == 0
 
-# Locate the approximate onset of the outsider-jump problem.
 lo, hi = 0.13, 0.16
 for _ in range(45):
     mid = 0.5 * (lo + hi)
@@ -212,6 +214,37 @@ for _ in range(45):
         lo = mid
 jump_onset = hi
 
+# 4. Bounded repair diagnostic, not a theory change in this audit.
+# At sbar=.20 the headline signs survive.
+s_repair_f, su_repair_f = s4.su_policy(V, GAMMA, REPAIR_SBAR, True)
+s_repair_t, su_repair_t = s4.su_policy(V, GAMMA, REPAIR_SBAR, False)
+is_repair_f = s4.welfare("IS", [REPAIR_SBAR], V, GAMMA, True)
+is_repair_t = s4.welfare("IS", [REPAIR_SBAR], V, GAMMA, False)
+is_repair_x = s4.welfare("IS", [0], V, GAMMA, True)
+su_repair_x = s4.welfare("SU", [0, 0], V, GAMMA, True)
+repair_delta_t = float(su_repair_t[0][0] - is_repair_t[0][0])
+repair_delta_x = float(su_repair_x[0][0] - is_repair_x[0][0])
+repair_delta_f = float(su_repair_f[0][0] - is_repair_f[0][0])
+assert repair_delta_t < 0
+assert repair_delta_x < 0
+assert repair_delta_f > 0
+assert np.allclose(s_repair_f, [REPAIR_SBAR, 0], atol=1e-6)
+
+# Dense SU policy-square diagnostic at the smaller cap.
+repair_invalid = []
+for s12 in np.linspace(0, REPAIR_SBAR, 21):
+    for s3 in np.linspace(0, REPAIR_SBAR, 21):
+        ss = [float(s12), float(s3)]
+        w = s4.welfare("SU", ss, V, GAMMA, True)
+        if w is None:
+            repair_invalid.append((s12, s3, "ordered"))
+            continue
+        gaps = [best_deviation_continuous(w[1], "SU", ss, V, GAMMA, i)[0]
+                for i in range(3)]
+        if max(gaps) > 1e-8:
+            repair_invalid.append((s12, s3, max(gaps)))
+assert len(repair_invalid) == 0
+
 if __name__ == "__main__":
     print("canonical continuous whole-circle gaps:", canonical_gaps)
     print("IS policy-grid argmax depth:", np.linspace(0, SBAR, 26)[np.argmax(is_vals)])
@@ -222,4 +255,7 @@ if __name__ == "__main__":
     print("all-order interior stationary candidates:", len(candidates))
     print("all-order regular pure location NE:", len(regular_pure_ne))
     print("approx outsider-depth jump onset:", jump_onset)
-    print("STAGE-11 DIAGNOSTIC: unresolved off-path continuation/SPNE gap")
+    print("repair sbar:", REPAIR_SBAR)
+    print("repair deltas B-T/B-X/FULL:", repair_delta_t, repair_delta_x, repair_delta_f)
+    print("repair SU policy-square invalid grid points:", len(repair_invalid))
+    print("STAGE-11 DIAGNOSTIC: current off-path SPNE gap; bounded Stage-4 repair appears viable")
