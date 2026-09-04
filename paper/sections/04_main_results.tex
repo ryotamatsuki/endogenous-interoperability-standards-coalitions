@@ -73,6 +73,36 @@ In that region, a fixed-position evaluation favors international standardization
 \paragraph{Status of Proposition \ref{prop:reversal}.}
 The proposition is constructive rather than a global closed-form classification. At the parameter vector in \eqref{eq:witness}, the repaired v2 action set satisfies the regularity conditions used in the computation. In particular, for every feasible $IS$ and $SU$ harmonization depth at the canonical primitives, the verification searches the relevant cyclic-order and circular-anchor branches and checks whole-circle unilateral location deviations after re-solving the price subgame; the resulting policy choices are then obtained by global scalar optimization over the repaired action sets. The B-T and FULL inequalities are strict. Conditional on persistence of the selected regular continuation branch, continuity therefore implies a nonempty local neighborhood with the same sign pattern. We do not claim a global parameter-space theorem, nor do we claim that B-EQ reproduces FULL away from parameter values at which the fixed exogenous depths coincide with the full-game policy choices.
 
+\subsection{Pre-specified local robustness}
+
+The numerical reversal is small in FULL, so a single witness would leave open a knife-edge concern. Before re-running the model, we therefore pre-specified a nine-point local grid around \eqref{eq:witness}, varying the network-effect parameter $v$, redesign-cost curvature $\gamma$, and the harmonization cap $\bar s$ individually and jointly. At every point the verification re-solves the global B-T and FULL policy problems and checks the downstream continuation using the same whole-circle deviation standard as at the canonical witness. No failed or inconvenient point is dropped.
+
+\begin{table}[htbp]
+\centering
+\caption{Pre-specified local robustness of the coalition reversal}\label{tab:local-robustness}
+\begin{tabular}{lccccc}
+\toprule
+Case & $v$ & $\gamma$ & $\bar s$ & $\Delta_M^{B-T}$ & $\Delta_M^{FULL}$ \\
+\midrule
+Canonical   & 0.040 & 0.110 & 0.250 & -0.010167 & 0.001571 \\
+$v$ low     & 0.035 & 0.110 & 0.250 & -0.009635 & 0.001584 \\
+$v$ high    & 0.045 & 0.110 & 0.250 & -0.010699 & 0.001549 \\
+$\gamma$ low  & 0.040 & 0.105 & 0.250 & -0.010167 & 0.001967 \\
+$\gamma$ high & 0.040 & 0.115 & 0.250 & -0.010167 & 0.001196 \\
+$\bar s$ low  & 0.040 & 0.110 & 0.225 & -0.009569 & 0.001307 \\
+$\bar s$ high & 0.040 & 0.110 & 0.275 & -0.010780 & 0.001837 \\
+Joint low   & 0.035 & 0.105 & 0.225 & -0.009031 & 0.001695 \\
+Joint high  & 0.045 & 0.115 & 0.275 & -0.011307 & 0.001421 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+All nine points produce valid continuations and all nine preserve
+\[
+\Delta_M^{B-T}<0<\Delta_M^{FULL}.
+\]
+The exercise is deliberately local: it establishes that the sign reversal is not confined to the canonical calibration, but it is not a global comparative-statics or parameter-space classification. It also leaves the harmonization cap binding in the reported local grid, so the robustness evidence does not convert policy-depth endogeneity into a necessary mechanism.
+
 The coalition-stability logic at the witness is transparent. In B-T, an $SU$ member is worse off than under $IS$, so no pair blocks international standardization. In FULL, $W_M^{SU}>W^{IS}$ while the outsider remains worse off than under $IS$ and members also prefer $SU$ to $SW$. Thus an $SU$ is not unanimously blocked by $IS$ and its members do not wish to dissolve it into $SW$. By symmetry, all three two-country unions are stable. B-EQ reproduces this downstream ranking at the witness despite removing policy-depth endogeneity.
 
 The result therefore isolates a continuation-response mechanism rather than a two-endogeneity interaction. Standards harmonization changes effective competitive distances; firms then strategically re-differentiate on the remaining product dimension; the resulting competition-softening raises member producer rents enough to change the national-welfare and coalition-stability ranking relative to a fixed-position evaluation.
