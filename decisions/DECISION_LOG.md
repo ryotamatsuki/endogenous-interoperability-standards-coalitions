@@ -229,3 +229,78 @@ Date: 2026-09-04
 Decision: `GO` → `GO TO MINIMAL MODEL`
 
 Stage 3 identified one minimal implementable mechanism with a coherent full-game feedback and a diagnostic parameter region consistent with implementation-induced stability reversal. The diagnostic is not a theorem; Stage 4 must derive the effect from a genuine product-market model and kill C1 if it only smooths B0 or requires engineered curvature.
+
+## D-025 — Stage-4 exact implementation ordering
+
+Date: 2026-09-04
+Decision: VERIFIED / C1 PREDICTION REJECTED
+
+For the frozen one-sided Stage-4 demand primitive, the symmetric implementation equilibrium satisfies
+
+`a_IS* >= a_SU*`
+
+on the audited regular domain `0<v<=1/4`, with strict inequality unless both regimes are at full implementation.
+
+Exact reason:
+
+`K_I(a)/K_U(a)=2(3-va)/3>1`,
+
+and both equilibrium maps are strictly decreasing in `a`.
+
+Thus the model produces coalition-scope implementation crowd-in, not the selected CSIC crowd-out effect.
+
+## D-026 — One-sided implementation demand fails the welfare microfoundation
+
+Date: 2026-09-04
+Decision: REJECTED AS CANONICAL WELFARE PRIMITIVE
+
+Under the frozen inverse demand,
+
+`partial p_i/partial q_j - partial p_j/partial q_i = v(a_i-a_j)`
+
+for formal partners. Since implementation best responses require unilateral deviations with `a_i != a_j`, the inverse-demand system is not globally integrable into a `C^2` quasilinear representative utility.
+
+Therefore `CS_i` and hence `W_i=CS_i+Pi_i` are not globally microfounded under C1 as written.
+
+A bilateral repair would be a substantive mechanism change and is not authorized in Stage 4.
+
+## D-027 — Reject the apparent full-implementation stability reversal
+
+Date: 2026-09-04
+Decision: REJECTED AS MECHANICAL
+
+An equilibrium-consistent symmetric welfare diagnostic gives
+
+`Delta_3^endo>0`
+
+throughout `0<v<=1/4`, `kappa>0`.
+
+A sign reversal arises only relative to a benchmark that mandates `a=1` and forces the IS firm to bear `kappa/2`:
+
+`Delta_3^full,cost=7v/[8(2-v)]-kappa/2`.
+
+When full interoperability is instead a costless/exogenous technological benchmark,
+
+`Delta_3^full,tech=7v/[8(2-v)]>0`,
+
+and no reversal exists.
+
+The observed reversal is therefore implementation-cost avoidance, not the Stage-3 reach-versus-competition-exposure mechanism.
+
+## D-028 — Stage 4 verdict for C1
+
+Date: 2026-09-04
+Decision: `NO-GO`
+
+C1 is terminated.
+
+Reasons:
+
+1. its headline implementation crowd-out prediction is analytically false under the frozen primitive;
+2. the intended competition-exposure channel is absent from own implementation incentives;
+3. the one-sided inverse-demand system lacks a coherent off-equilibrium consumer-surplus microfoundation;
+4. the only sign reversal is benchmark-cost accounting, not a new full-game strategic result.
+
+Do not proceed to Stage 5 or Stage 6 from C1.
+
+Any continuation must re-enter Stage 3 and explicitly select/redesign a genuinely distinct mechanism before further modeling.
