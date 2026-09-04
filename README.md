@@ -1,60 +1,53 @@
 # Endogenous Interoperability and Standards Coalitions
 
-Private research-development repository for a theory project on endogenous partial interoperability, network effects, product differentiation, price competition, national welfare, and standards-coalition stability.
+Theory paper on endogenous standards depth, strategic product repositioning, network effects, national welfare, and standards-coalition stability.
 
-## Research status
+## Canonical status
 
-- Working title: *Endogenous Interoperability and Standards Coalitions*
-- Field: Industrial Organization / Economics of Standards / Network Economics / Spatial Competition
-- Current stage: Stage 0 — Idea / Motivation Intake
-- Canonical workflow: `ryotamatsuki/research-paper-workflow`
-- Workflow version: `v1.1`
-- Workflow release SHA: `488e5ab06c207909296a7564eaf9066f7f94319c`
-- Target journal: `UNRESOLVED`
-- Repository role: research-development repository; not yet a production manuscript repository
-- Initialized: 2026-09-04
+- Theory freeze: `CESD-THEORY-FREEZE-2026-09-04-v1`
+- Workflow: `ryotamatsuki/research-paper-workflow` v1.1
+- Workflow SHA: `488e5ab06c207909296a7564eaf9066f7f94319c`
+- Current production route: Stage 9 reproducibility setup → Stage 10 manuscript construction
+- Recommended journal level: IJIO / field-journal full paper
 
-## Core research program
+The sole authorized main contribution is the interaction-induced coalition-stability reversal documented in the Stage-8 freeze. Do not infer novelty from individual ingredients.
 
-The project studies the sequence
+## Repository map
 
-`formal standards coalition → endogenous interoperability a → network effects + product differentiation → price competition → national welfare → coalition stability`.
+- `theory/` — frozen theory specification, propositions, parameter/welfare/verification register
+- `verification/` — canonical Stage-4 and Stage-7 mathematical/numerical checks
+- `scripts/` — deterministic serialization/generation utilities only
+- `tests/` — cheap production/freeze consistency gates
+- `paper/` — modular LaTeX manuscript scaffold
+- `references/` — BibTeX source
+- `tables/` — generated manuscript-facing tables (not hand edited)
+- `literature/` — prior-art and institutional evidence records
+- `reviews/` — canonical stage reports
+- `decisions/` — research and production decisions
+- `docs/REPRODUCIBILITY.md` — environment and commands
+- `PROVENANCE.md` — project lineage and source-of-truth boundaries
 
-The central economic margin is that interoperability is not merely binary. Firms may choose an interoperability intensity `a`, potentially trading off access to network benefits and lower switching/mismatch frictions against product differentiation or strategic insulation.
+## Reproduce
 
-## Early kill conditions
+Python 3.12 is recorded in `.python-version`; Python packages are pinned in `requirements.txt`.
 
-The project should not be expanded unless a minimal model can generate a nonempty parameter region with an interior private interoperability choice,
+```bash
+python3.12 -m venv .venv
+. .venv/bin/activate
+pip install -r requirements.txt
+make verify
+make outputs
+make paper
+```
 
-`0 < a_o* < 1`,
+Or run the full gate:
 
-and a distinct government/coalition-relevant interoperability threshold `â` such that the ordering
+```bash
+make all
+```
 
-`a_o* ≷ â`
+`make verify` executes the frozen Stage-4 equilibrium/global-deviation checks, Stage-7 welfare/generality checks, and Stage-8 freeze-consistency test. `make outputs` generates manuscript-facing CSV/TeX directly from those verification modules. `make paper` compiles the current manuscript scaffold using `latexmk`.
 
-changes coalition stability, welfare, or another strategically meaningful equilibrium outcome.
+## Theory change control
 
-If endogenous partial interoperability is generically corner-valued, or if the private optimum and coalition/welfare threshold collapse to the same object, the added model complexity requires re-justification.
-
-## Repository structure
-
-- `PROJECT_STATE.md` — canonical current status and next-stage contract
-- `PROVENANCE.md` — origin, workflow, and boundary with prior projects
-- `notes/IDEA_SEED.md` — motivating idea and research question
-- `model/MINIMAL_MODEL_HYPOTHESES.md` — non-canonical candidate architecture and kill tests
-- `literature/PRIOR_ART_LEDGER.md` — Stage 1/2 literature-audit ledger
-- `prompts/STAGE_00_IDEA_INTAKE.md` — instantiated executable Stage 0 prompt
-- `reviews/` — Stage reports once executed
-- `decisions/DECISION_LOG.md` — accepted/rejected research decisions
-
-## Boundary with prior standards-coalition paper
-
-This repository is separate from `private-compatibility-standards-coalitions`. The prior paper's frozen theory must not be silently altered or treated as the canonical model here. Results may be used only as an explicitly documented benchmark or nested comparison after provenance and novelty checks.
-
-## Governance
-
-Follow the hierarchy in the canonical workflow:
-
-`GOVERNANCE.md → THEORY_PAPER_RESEARCH_PIPELINE.md → stage template → checklist`.
-
-Weak branches should be killed early. Unknown items are recorded as `UNRESOLVED`; novelty is not inferred from ingredient combination alone; and rejected mechanisms remain part of the research record.
+The theory is frozen. Any change to players, timing, policy map, utility/demand, costs, equilibrium concept, proposition statements, welfare claims, or post-freeze exclusions requires a formal theory-change record and re-running the affected workflow gates. Stage 10 may write; it may not silently redesign the model.
