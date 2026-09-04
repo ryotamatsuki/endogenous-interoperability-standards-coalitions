@@ -189,3 +189,43 @@ Decision: `GO` → `GO TO MECHANISM SEARCH`
 No single audited prior model reproduces the complete government-coalition / distinct-private-continuous-implementation / downstream-competition / national-welfare / regime-specific-stability game after direct relabeling. The project therefore survives as a narrow generalization/unification candidate.
 
 This is not a novelty finding. Stage 3 must produce a new full-game result. If a minimal model merely smooths or relabels B0 thresholds, return `NO-GO` rather than add complexity.
+
+## D-021 — Fixed Stage-3 scoring rule
+
+Date: 2026-09-04
+Decision: ACCEPTED
+
+Use ex-ante candidate weights: whole-game prior-art survival 25%, theorem sharpness 20%, tractability 20%, mechanism clarity 15%, welfare content 10%, institutional relevance 10%.
+
+Ten candidates were scored under these weights. The reproducible scoring artifact is `verification/stage03_candidate_scoring.py`.
+
+## D-022 — Select Coalition-Scope Implementation Crowd-Out
+
+Date: 2026-09-04
+Decision: ACCEPTED FOR STAGE 4 TEST
+
+Select C1 — **Coalition-Scope Implementation Crowd-Out (CSIC)** — as the single preferred minimal mechanism.
+
+Core loop:
+
+`rho -> interoperability partner scope -> private a*(rho) -> downstream competition -> national welfare -> stability`.
+
+Reason: C1 uses the same implementation technology under every regime and lets the formal coalition alter only the scope of interoperability relationships. It therefore gives the cleanest chance to derive, rather than assume, regime-dependent implementation and a stability reversal.
+
+C2 bilateral implementation free-riding is ranked second and may be revisited only if C1 is formally rejected and the workflow returns to Stage 3. C3 national-incidence/rent-shifting is not a separate Stage-4 mechanism.
+
+## D-023 — Freeze Stage-4 no-hybridization rule
+
+Date: 2026-09-04
+Decision: ACCEPTED
+
+Stage 4 may test only C1. Do not import bilateral weakest-link/free-riding, coalition-dependent implementation costs, government compatibility floors, trade policy, private bypass, switching costs, dynamics, installed bases, directional link matrices, topology, or additional countries to rescue C1.
+
+If C1 fails, report failure and return to Stage 3 before testing C2.
+
+## D-024 — Stage 3 verdict
+
+Date: 2026-09-04
+Decision: `GO` → `GO TO MINIMAL MODEL`
+
+Stage 3 identified one minimal implementable mechanism with a coherent full-game feedback and a diagnostic parameter region consistent with implementation-induced stability reversal. The diagnostic is not a theorem; Stage 4 must derive the effect from a genuine product-market model and kill C1 if it only smooths B0 or requires engineered curvature.
