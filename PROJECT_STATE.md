@@ -5,14 +5,13 @@ Last updated: 2026-09-04
 ## Canonical status
 
 - Project: Endogenous Interoperability and Standards Coalitions
-- Last completed stage: **Stage 4 — C-ESD Minimal Model**
-- Stage-4 report: `reviews/STAGE_04_MINIMAL_MODEL_CESD_2026-09-04.md`
-- Stage-4 model source: `model/STAGE4_MINIMAL_MODEL_CESD.md`
-- Stage-4 verification: `verification/stage04_cesd_minimal.py`
-- Stage-4 decisions: `decisions/STAGE4_CESD_DECISIONS.md`
+- Last completed stage: **Stage 6 — C-ESD Novelty Re-Kill**
+- Stage-6 report: `reviews/STAGE_06_NOVELTY_REKILL_CESD_2026-09-04.md`
+- Stage-6 closest-paper matrix: `literature/STAGE6_CESD_CLOSEST_PAPER_MATRIX.md`
+- Stage-6 decisions: `decisions/STAGE6_CESD_DECISIONS.md`
 - C-ESD canonical verdict: **GO**
-- Current canonical stage: **Stage 6 — Novelty Re-Kill**
-- Current route: C1 TERMINATED / C2 TERMINATED / C-RP TERMINATED / C-ESD SURVIVED STAGE 4
+- Current canonical stage: **Stage 7 — Welfare / Generality**
+- Current route: C1 TERMINATED / C2 TERMINATED / C-RP TERMINATED / C-ESD SURVIVED STAGE 6
 - Production manuscript authorized: NO
 - Theory frozen: NO
 - Target journal: UNRESOLVED
@@ -22,8 +21,8 @@ Last updated: 2026-09-04
 - Repository: `ryotamatsuki/research-paper-workflow`
 - Version: `v1.1`
 - Release SHA: `488e5ab06c207909296a7564eaf9066f7f94319c`
-- Stage-4 template: `templates/STAGE_04_MINIMAL_MODEL.md`
-- Stage-4 route on GO: Stage 6 — Novelty Re-Kill
+- Stage-6 template: `templates/STAGE_06_NOVELTY_REKILL.md`
+- Stage-6 route on GO: Stage 7 — Welfare / Generality
 
 ## Frozen project boundary
 
@@ -31,7 +30,7 @@ Last updated: 2026-09-04
 
 C-ESD does not algebraically nest B0. B0 uses different demand, conversion-cost and private-adoption primitives.
 
-## C-ESD frozen mechanism
+## Frozen C-ESD game
 
 C-ESD — **Endogenous Standard Differentiation × Strategic Product Repositioning**.
 
@@ -39,151 +38,94 @@ Timing:
 
 `rho -> bloc depths s_C -> pairwise Tau(rho,s) -> product locations x_i -> prices -> W_i -> coalition stability`.
 
-### Policy map
+Policy map:
 
-For each formal standards bloc `C`, `s_C in [0,s_bar]`, `s_bar<t_bar`.
+- same bloc `C`: `tau_ij=t_bar-s_C`;
+- different blocs `C,D`: `tau_ij=t_bar+(s_C+s_D)/2`;
+- bloc `C` maximizes `sum_{i in C} W_i` and blocs choose simultaneously.
 
-Same bloc:
+Formal partition determines the compatibility network; network coefficient `v` is fixed with respect to depth. No direct policy cost exists.
 
-`tau_ij=t_bar-s_C`.
-
-Different blocs `C,D`:
-
-`tau_ij=t_bar+(s_C+s_D)/2`.
-
-Bloc `C` maximizes `sum_{i in C} W_i`; blocs choose simultaneously.
-
-The formal partition determines the compatibility-network graph and network coefficient `v` is fixed with respect to policy depth.
-
-No direct policy cost is present.
-
-## Stage-4 Salop microfoundation
-
-Consumers are uniformly distributed on a unit product-characteristic circle. Country of origin is independent of product taste; each country owns one third of consumer mass.
-
-On arc `ij`:
-
-`u_i=A-p_i-tau_ij y+v n_i`.
-
-The exact weighted-Laplacian demand is
-
-`q=b-(1/2)L(Tau)p+(v/2)L(Tau)G_rho q`.
-
-Price and location continuations are solved by backward induction. Firm redesign/repositioning cost remains
+Consumers are uniformly distributed on a unit Salop circle and each country owns one third of consumer mass. Firm repositioning cost is substantive:
 
 `gamma d_c(x_i,h_i)^2/2`,
 
-with inherited anchors
+with anchors `h=(1/6,1/2,5/6)`.
 
-`h=(1/6,1/2,5/6)`.
+## Stage-4 headline result retained through Stage 6
 
-Every certified location witness must pass whole-circle unilateral-deviation checks, not only local FOCs/SOCs.
+At the regular witness `t_bar=1`, `v=0.04`, `gamma=0.11`, `s_bar=0.25`:
 
-## Stage-4 exact benchmark results
+### B-T — endogenous policy, fixed locations
 
-At equal spacing and common friction `t`:
+Stable set: `{IS}`.
 
-IS:
+`Delta_M^(B-T)=-0.010167`.
 
-`q_i=1/3`, `p_i=t/3`, `W_i=v/3-t/36`.
+### B-X — zero policy depth, endogenous locations
 
-Thus `s_I*=s_bar`.
+Stable set: `{IS}`.
 
-Symmetric SW:
-
-`q_i=1/3`, `p_i=(2t-3v)/6`, `W_i=v/9-t/36`.
-
-In the Stage-4 result region, the SW singleton-policy equilibrium is `s_i=0`.
-
-## Stage-4 witness
-
-Normalize
-
-`t_bar=1`, `v=0.04`, `gamma=0.11`, `s_bar=0.25`.
-
-### B-T — endogenous policy, fixed product positions
-
-- IS: `W=-0.007500`
-- SU member: `W=-0.017667`
-- SU outsider: `W=-0.025410`
-- SW: `W=-0.023333`
-
-Stable set:
-
-`{IS}`.
-
-### B-X — zero policy depth, endogenous product positions
-
-- IS: `W=-0.014444`
-- SU member: `W=-0.014878`
-- SU outsider: `W=-0.033413`
-- SW: `W=-0.023333`
-
-Stable set:
-
-`{IS}`.
+`Delta_M^(B-X)=-0.000434`.
 
 ### FULL
 
-Policy equilibrium:
-
-- IS: `s_I=0.25`
-- SU_12: `(s_12,s_3)=(0.25,0)`
-- SW: `(0,0,0)`
-
-SU location equilibrium:
-
-`x=(0.084567,0.582100,0.833333)`.
-
-Welfare:
-
-- IS: `W=-0.007500`
-- SU member: `W=-0.005929`
-- SU outsider: `W=-0.046811`
-- SW: `W=-0.023333`
-
-Therefore
-
-`W_M^FULL > W_I^FULL > W_O^FULL`,
-
-and `W_M^FULL>W_W^FULL`.
-
-Stable set:
+SU members strategically re-differentiate. Stable set:
 
 `{SU_12,SU_13,SU_23}`.
 
-## Headline interaction
-
-Define
-
-`Delta_M=W_SU_member-W_IS`.
-
-At the Stage-4 witness:
-
-`Delta_M^(B-T)=-0.010167`,
-
-`Delta_M^(B-X)=-0.000434`,
-
 `Delta_M^(FULL)=+0.001571`.
 
-Thus neither government policy choice alone nor product repositioning alone generates the coalition reversal. The interaction does.
+A local 3x3x3 audit passes 23/27 points and a wider 5x5x5 audit passes 108/125 points, subject to whole-circle unilateral location-deviation checks. Low-gamma local stationary points with profitable jumps are rejected.
 
-## Robustness / regularity audit
+## Stage-6 killed novelty claims
 
-A local 3x3x3 grid around the witness passes the strict FULL-only reversal plus whole-circle SU location best-response checks at 23/27 points. A wider 5x5x5 audit passes at 108/125 points.
+The following are permanently unavailable as main contribution claims:
 
-Low-`gamma` counterexamples exist where an SU local stationary point fails because the outsider has a profitable jump around the circle. Those points are rejected; no new primitive is added to rescue them.
+1. government standards policy affects endogenous product differentiation — Ruiz (2004) already contains this timing;
+2. compatibility/network effects interact with product differentiation — broad prior literature;
+3. partial compatibility / standards unions can be stable — Gandal–Shy, Matutes–Padilla, Economides–Skrzypacz, Ding–Ko–Shen and others;
+4. continuous government compatibility policy — Klimenko (2009);
+5. coalition-based interoperability has distinct price/welfare effects — current weighted-network interoperability literature;
+6. interoperability regulation can induce strategic firm responses or unintended effects in a broad sense — current mandated-interoperability literature;
+7. Salop/circle + compatibility + network effects is novel.
 
-## Stage-4 verdict
+## Stage-6 surviving contribution
+
+Only one main contribution candidate survives:
+
+> **Interaction-induced coalition-stability reversal.** Endogenous government standard depth and endogenous firm product positioning each separately leave international standardization stable, but together induce regional-standardization members to re-differentiate enough to reverse their national-welfare ranking and destabilize international standardization in favor of regional standards unions.
+
+Formal sign pattern:
+
+`Delta_M^(B-T)<0`,
+
+`Delta_M^(B-X)<0`,
+
+`Delta_M^(FULL)>0`.
+
+This is classified as a **NEW INTERACTION RESULT / MECHANISM**, not setup novelty.
+
+## Strongest novelty threats
+
+1. **Ruiz (2004) + Gandal & Shy (2001) synthesis attack**: Ruiz has policy -> endogenous product characteristics -> price competition; Gandal–Shy has three-country government standardization unions and coalition incentives. No audited theorem directly contains the FULL-only interaction reversal, but a referee may regard the architecture as a natural synthesis.
+2. **Huang, Tan, Teh & Zhou (2026)**: current weighted-interoperability-network frontier includes coalitional configurations, prices and welfare, but not endogenous product positioning driving national government coalition stability.
+3. **Kretschmer et al. (2025)**: mandated interoperability can trigger strategic firm responses that offset regulation, so the broad strategic-response narrative is old.
+
+## Stage-6 verdict
 
 **GO**.
 
-The FULL architecture generates a coalition-stability result unavailable from both nested benchmarks.
+The surviving FULL-only sign reversal is not directly absorbed by the audited literature or by either nested benchmark.
 
 ## Next action
 
-Execute **Stage 6 — Novelty Re-Kill** on the actual surviving proposition:
+Execute **Stage 7 — Welfare / Generality** on the surviving interaction result only.
 
-> Endogenous government standard depth and endogenous firm product repositioning interact to reverse standards-coalition stability: B-T and B-X select international standardization, while the FULL game makes regional standardization unions stable and IS pair-blockable.
+Stage 7 must:
 
-Do not add relative profit, private interoperability investment, endogenous network intensity, policy costs, transfers, dynamics, lobbying, topology choice or additional countries before the novelty re-kill is completed.
+1. characterize the economic condition/region for the reversal beyond the numerical witness;
+2. test dependence on the quadratic redesign cost and anchored Salop regularization without changing the core timing;
+3. decompose consumer-surplus versus domestic-profit channels;
+4. establish how general the `B-T=IS`, `B-X=IS`, `FULL=SU` ranking is;
+5. keep every Stage-6 killed novelty claim dead.
