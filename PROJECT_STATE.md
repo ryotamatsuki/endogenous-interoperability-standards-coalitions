@@ -10,15 +10,13 @@ Last updated: 2026-09-04
 - Workflow release SHA: `488e5ab06c207909296a7564eaf9066f7f94319c`
 - Theory freeze: **`CESD-THEORY-FREEZE-2026-09-04-v2`**
 - Theory status: **FROZEN — unchanged**
-- Production manuscript refresh: **COMPLETE AND MERGED**
-- Repeated referee gate: **Stage 11R2 COMPLETE**
-- Stage 11R2 final verdict: **GO TO JOURNAL POSITIONING**
-- Stage 12 journal positioning: **COMPLETE ON `stage12-journal-positioning`**
-- Stage 12 verdict: **PRIMARY JOURNAL SELECTED — GO TO INTEGRATION**
+- Stage 11R2: **COMPLETE — GO TO JOURNAL POSITIONING**
+- Stage 12: **COMPLETE — PRIMARY JOURNAL SELECTED: IJIO**
+- Stage 13: **IN PROGRESS — IJIO FULL-PAPER INTEGRATION**
 - Primary target journal: **International Journal of Industrial Organization (IJIO)**
-- Default submission ladder: **IJIO -> Review of Industrial Organization -> Journal of Industry, Competition and Trade**
+- Submission ladder: **IJIO -> Review of Industrial Organization -> Journal of Industry, Competition and Trade**
 - Optional stretch: **The Journal of Industrial Economics**
-- Next formal stage: **Stage 13 — Full Paper Integration for IJIO**
+- Stage 14 submission QA authorized: **NO — pending Stage 13 CI/build closure**
 
 ## Frozen contribution
 
@@ -85,44 +83,34 @@ World welfare:
 
 ## Stage 11R2 robustness closure
 
-The pre-specified local parameter-region audit varied `v`, `gamma`, and `s_bar` separately and jointly before results were observed.
-
-GitHub Actions workflow run `33874450205` completed successfully with:
+Pre-specified local audit over `v`, `gamma`, and `s_bar`:
 
 - `valid_points=9/9`;
-- `reversal_points=9/9`.
+- `reversal_points=9/9`;
+- every tested point satisfies `Delta_M^(B-T) < 0 < Delta_M^(FULL)`.
 
-Every pre-specified point satisfies:
+This closes the principal knife-edge witness attack locally. It does not establish global robustness or generality across alternative demand systems, reversed timing, or `v=0`.
 
-`Delta_M^(B-T) < 0 < Delta_M^(FULL)`.
+## Stage 13 IJIO integration
 
-This closes the principal knife-edge numerical-witness attack. It does not establish global robustness or generality across alternative demand systems, reversed timing, or `v=0`.
+Implemented on branch `stage13-ijio-full-paper-integration`:
 
-Authority: `reviews/STAGE_11R2_FINAL_CLOSURE_CESD_2026-09-04.md`.
-
-## Stage 12 journal positioning
-
-Primary target: **International Journal of Industrial Organization**.
-
-Reason: the paper is fundamentally an IO theory paper about strategic product repositioning, price competition and welfare after standards policy; IJIO explicitly welcomes theoretical work on strategic behavior, market structure, regulation and technological change, and recent IJIO work confirms active interoperability/network-effects fit.
-
-Journal ladder:
-
-1. Optional stretch — **The Journal of Industrial Economics**
-2. Primary — **International Journal of Industrial Organization**
-3. Realistic fallback — **Review of Industrial Organization**
-4. Safety net — **Journal of Industry, Competition and Trade**
-
-`Information Economics and Policy` was considered but excluded from the main ladder because choosing it would push the paper toward an unnecessarily digital/information-industry-specific framing.
+1. integrated the full nine-point pre-specified robustness table into Main Results;
+2. aligned Introduction and Conclusion with the verified local robustness evidence;
+3. preserved B-T vs FULL/B-EQ as the central benchmark hierarchy;
+4. reorganized Related Literature by conceptual relationship rather than paper-by-paper cataloguing;
+5. updated appendix verification authority through Stage 11R2;
+6. added the current Elsevier-style generative-AI declaration reflecting actual manuscript-preparation use of ChatGPT;
+7. made no change to primitives, timing, policy map, welfare definition, equilibrium concept, canonical witness, or substantive theory.
 
 Authority:
 
-- `reviews/STAGE_12_JOURNAL_POSITIONING_CESD_2026-09-04.md`
-- `decisions/STAGE12_CESD_DECISIONS.md`
+- `reviews/STAGE_13_IJIO_FULL_PAPER_INTEGRATION_2026-09-04.md`
+- `decisions/STAGE13_CESD_DECISIONS.md`
 
 ## Permanently prohibited claims
 
-Do not claim novelty from the setup ingredients alone, including government standards policy, compatibility/network effects, partial compatibility, continuous harmonization, strategic response to interoperability, Salop/network structures, endogenous positioning under network effects, regional standards coalitions, or regional blocking of multilateral standards.
+Do not claim novelty from setup ingredients alone, including government standards policy, compatibility/network effects, partial compatibility, continuous harmonization, strategic response to interoperability, Salop/network structures, endogenous positioning under network effects, regional standards coalitions, or regional blocking of multilateral standards.
 
 Do not use `first model`, `first paper`, `first to show`, `novel framework`, or equivalent priority language.
 
@@ -148,21 +136,6 @@ Tractability features remain the symmetric three-country circular structure, `CS
 
 No broad generality claim over alternative demand systems or reversed timing is authorized.
 
-## Stage 13 contract
-
-Stage 13 may integrate and polish the full manuscript for IJIO, but may not change the frozen theory without reopening an earlier stage.
-
-Stage 13 must:
-
-1. foreground strategic post-policy product repositioning;
-2. keep B-T vs FULL/B-EQ as the central comparison;
-3. integrate the 9/9 robustness result into the manuscript/appendix;
-4. preserve the consumer-loss / producer-rent / world-welfare decomposition;
-5. retain explicit closest-paper differentiation;
-6. preserve limitation language around normalization and scope;
-7. add the current Elsevier generative-AI disclosure reflecting actual use;
-8. keep CI/reproducibility green.
-
 ## Current verdict
 
-**STAGE 12 COMPLETE — PRIMARY JOURNAL SELECTED: IJIO — GO TO STAGE 13 FULL PAPER INTEGRATION.**
+**STAGE 13 IN PROGRESS — INTEGRATION COMPLETE IN CONTENT; CI/BUILD CONFIRMATION REQUIRED BEFORE STAGE 14.**
