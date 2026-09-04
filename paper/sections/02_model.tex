@@ -8,10 +8,15 @@ A formal standards regime is a partition
 \[
 \rho\in\{IS,SU_{12},SU_{13},SU_{23},SW\},
 \]
-where $IS$ is international standardization, $SU_{ij}$ is a two-country standardization union with the remaining country outside, and $SW$ is a standards war with three singleton blocs. Each bloc $C\in\rho$ chooses a standard-depth variable $s_C\in[0,\bar s]$, where
+where $IS$ is international standardization, $SU_{ij}$ is a two-country standardization union with the remaining country outside, and $SW$ is a standards war with three singleton blocs. The policy variable $s_C$ measures \emph{additional within-coalition harmonization depth} conditional on the formal regime. A non-singleton bloc $C$ chooses
 \[
-0\leq \bar s<\bar t,\qquad \bar t>0.
+s_C\in[0,\bar s],
+\qquad
+0\leq \bar s<\bar t,
+\qquad \bar t>0,
 \]
+whereas a singleton bloc has $s_C=0$ by definition and has no positive harmonization-depth instrument.
+
 The baseline friction between products $i$ and $j$ is transformed by bloc depth according to
 \begin{equation}\label{eq:tau-map}
 \tau_{ij}(\rho,s)=
@@ -20,14 +25,16 @@ The baseline friction between products $i$ and $j$ is transformed by bloc depth 
 \bar t+\dfrac{s_C+s_D}{2}, & i\in C,\ j\in D,\ C\neq D.
 \end{cases}
 \end{equation}
-Thus deeper integration compresses standard-based differentiation inside a bloc while raising relative separation across bloc boundaries. The coefficient $1/2$ is a symmetric mean-preserving normalization; the economic restriction is the within-versus-cross-bloc asymmetry, not that particular coefficient.
+Thus deeper integration compresses standard-based differentiation inside a non-singleton bloc while raising relative separation across its bloc boundary. The coefficient $1/2$ is a symmetric mean-preserving normalization; the economic restriction is the within-versus-cross-bloc asymmetry, not that particular coefficient.
 
-For example, under $SU_{12}$,
+For example, under $SU_{12}$ the member bloc chooses $s_{12}\in[0,\bar s]$ while outsider country 3 is a singleton and therefore has $s_3=0$. Hence
 \[
 \tau_{12}=\bar t-s_{12},\qquad
-\tau_{13}=\tau_{23}=\bar t+\frac{s_{12}+s_3}{2}.
+\tau_{13}=\tau_{23}=\bar t+\frac{s_{12}}{2}.
 \]
-Hence an increase in $s_{12}$ simultaneously lowers the standard friction between member firms 1 and 2 and raises their standard friction relative to outsider 3. Each bloc chooses depth to maximize the sum of national welfare of its members,
+An increase in $s_{12}$ simultaneously lowers the standard friction between member firms 1 and 2 and raises their standard friction relative to outsider 3. Under $IS$, the grand coalition chooses a single depth $s_I\in[0,\bar s]$. Under $SW$, every bloc is a singleton, so there is no continuous depth choice and all $s_C$ equal zero by definition.
+
+Whenever a non-singleton bloc $C$ is present, its governments jointly choose depth to maximize the sum of national welfare of its members,
 \begin{equation}\label{eq:bloc-objective}
 \Omega_C=\sum_{i\in C}W_i.
 \end{equation}
@@ -96,7 +103,7 @@ The sequence of play is
 \[
 \rho
 \;\longrightarrow\;
-\{s_C\}_{C\in\rho}
+\{s_C\}_{C\in\rho:\,|C|\geq2}
 \;\longrightarrow\;
 \Tau(\rho,s)
 \;\longrightarrow\;
@@ -104,6 +111,6 @@ The sequence of play is
 \;\longrightarrow\;
 \{p_i\}_{i=1}^3.
 \]
-All previous-stage choices are observed. Standards blocs choose depth simultaneously conditional on the partition; firms then choose product locations; price competition follows. We solve the continuation game by backward induction and evaluate regime stability using the resulting national welfare levels.
+All previous-stage choices are observed. Conditional on the partition, each non-singleton standards bloc chooses its additional harmonization depth; singleton blocs have no depth action. In the three-country regimes considered here, this leaves one scalar policy choice under $IS$, one scalar policy choice under an $SU$, and no depth choice under $SW$. Firms then choose product locations and price competition follows. We solve the continuation game by backward induction and evaluate regime stability using the resulting national welfare levels.
 
-The equilibrium concept is subgame-perfect Nash equilibrium together with strict-blocking, exclusive-membership stability across $IS$, the three $SU$s, and $SW$. In particular, $IS$ is blocked by an $SU$-forming pair if both prospective members strictly prefer the union; an existing $SU$ is blocked by $IS$ only if all three countries strictly gain from moving to $IS$.
+The equilibrium concept is subgame-perfect Nash equilibrium together with strict-blocking, exclusive-membership stability across $IS$, the three $SU$s, and $SW$. Policy-stage comparisons use downstream continuation equilibria that satisfy the whole-circle location best-response requirement described in Section \ref{sec:equilibrium}. In particular, $IS$ is blocked by an $SU$-forming pair if both prospective members strictly prefer the union; an existing $SU$ is blocked by $IS$ only if all three countries strictly gain from moving to $IS$.
