@@ -5,32 +5,36 @@ Last updated: 2026-09-04
 ## Canonical status
 
 - Project: Endogenous Interoperability and Standards Coalitions
-- Last completed stage: **Stage 7.5 — Full-Theory Freeze Decision**
-- Stage-7.5 report: `reviews/STAGE_075_FREEZE_DECISION_CESD_2026-09-04.md`
-- Stage-7.5 decisions: `decisions/STAGE75_CESD_DECISIONS.md`
-- C-ESD canonical verdict: **GO TO FULL PAPER**
-- Current canonical stage: **Stage 8 — Theory Freeze**
-- Current route: C1 TERMINATED / C2 TERMINATED / C-RP TERMINATED / C-ESD APPROVED FOR FULL PAPER
-- Production manuscript authorized: **YES, subject to Stage-8 theory freeze**
-- Theory frozen: NO
+- Last completed stage: **Stage 8 — Canonical Theory Freeze**
+- Freeze specification: `theory/THEORY_FREEZE_CESD_2026-09-04.md`
+- Proposition register: `theory/PROPOSITION_REGISTER_CESD_2026-09-04.md`
+- Parameter/welfare/verification register: `theory/PARAMETER_WELFARE_VERIFICATION_REGISTER_CESD_2026-09-04.md`
+- Stage-8 decisions: `decisions/STAGE8_CESD_DECISIONS.md`
+- Freeze ID: `CESD-THEORY-FREEZE-2026-09-04-v1`
+- C-ESD canonical verdict: **THEORY FROZEN — GO TO REPRODUCIBILITY SETUP**
+- Current canonical stage: **Stage 9 — Repository / Reproducibility Setup**
+- Current route: C1 TERMINATED / C2 TERMINATED / C-RP TERMINATED / C-ESD THEORY FROZEN
+- Production manuscript authorized: **YES after Stage-9 reproducibility setup; Stage 10 construction follows**
+- Theory frozen: **YES**
 - Recommended journal level: **IJIO / field-journal full paper**
-- Target journal: not yet permanently locked
+- Target journal: not permanently locked
 
 ## Canonical workflow
 
 - Repository: `ryotamatsuki/research-paper-workflow`
 - Version: `v1.1`
 - Release SHA: `488e5ab06c207909296a7564eaf9066f7f94319c`
-- Stage-7.5 template: `templates/STAGE_075_FREEZE_DECISION.md`
-- Stage-7.5 GO route: Stage 8 — Theory Freeze
+- Stage-8 template: `templates/STAGE_08_THEORY_FREEZE.md`
+- Stage-8 verdict: `THEORY FROZEN — GO TO REPRODUCIBILITY SETUP`
+- Next canonical stage: Stage 9 — Repository / Reproducibility Setup
 
 ## Frozen project boundary
 
-`ryotamatsuki/private-compatibility-standards-coalitions` remains the frozen Stage-8 institutional/coalition benchmark B0 and must not be modified.
+`ryotamatsuki/private-compatibility-standards-coalitions` remains the frozen institutional IS/SU/SW benchmark B0 and must not be modified.
 
-C-ESD does not algebraically nest B0. B0 remains an institutional IS/SU/SW benchmark only.
+C-ESD does not algebraically nest B0. B0 is an institutional/coalition benchmark only.
 
-## C-ESD game approved for freeze
+## Frozen C-ESD game
 
 Timing:
 
@@ -43,7 +47,9 @@ Policy map:
 - bloc `C` maximizes `sum_{i in C} W_i`;
 - standards blocs choose depths simultaneously.
 
-Formal partition determines the compatibility network and fixed network coefficient `v`. Firms choose costly horizontal product repositioning on a unit Salop circle after observing policy depth.
+Formal partition determines the compatibility graph and fixed network coefficient `v`. Firms choose costly horizontal product repositioning on a unit Salop circle after observing policy depth. Baseline redesign cost is quadratic around inherited anchors `h=(1/6,1/2,5/6)`.
+
+National welfare is `W_i=CS/3+Pi_i`. Coalition stability uses strict-blocking exclusive-membership logic.
 
 ## Frozen main contribution
 
@@ -63,15 +69,23 @@ At the canonical witness `(t_bar,v,gamma,s_bar)=(1,0.04,0.11,0.25)`:
 
 - `Delta_M^(B-T)=-0.010167`;
 - `Delta_M^(B-X)=-0.000434`;
-- `Delta_M^(FULL)=+0.001571`.
+- `Delta_M^(FULL)=+0.001571`;
+- `S_B-T=S_B-X={IS}`;
+- `S_FULL={SU_12,SU_13,SU_23}`.
 
-The result is a constructive nonempty-region result, not a claimed global parameter classification.
+Proof-status rule: this reversal is frozen as a **CONDITIONAL constructive regular-region result**, not as a global closed-form theorem. The lower whole-circle global-BR boundary is computationally verified rather than analytically characterized.
+
+## Frozen exact analytic results
+
+The following are `PROVED` on their stated regular domains:
+
+1. weighted-Laplacian affine demand system;
+2. regular interior price-equilibrium characterization;
+3. fixed-cyclic-order location FOC/SOC system;
+4. exact member welfare decomposition `Delta_M=Delta Pi_M+Delta CS/3`;
+5. exact world-welfare identity `GW=A+v q'Gq-TC-sum_i C_i^D`.
 
 ## Frozen welfare package
-
-Exact member identity:
-
-`Delta_M = Delta Pi_M + Delta CS/3`.
 
 At the witness:
 
@@ -81,17 +95,13 @@ At the witness:
 
 Thus the coalition reversal is driven by domestic producer-rent gains that narrowly exceed member consumer losses.
 
-Exact world-welfare identity:
-
-`GW=A+v q'Gq-TC-sum_i C_i^D`.
-
-At the witness:
+World welfare at the witness:
 
 - `GW_IS=-0.0225000`;
 - `GW_SU=-0.0586685`;
 - `GW_SW=-0.0700000`.
 
-Hence decentralized SU stability can be globally inefficient relative to IS.
+This ranking is witness-specific / computational, not a global welfare theorem.
 
 At fixed canonical SU policy:
 
@@ -99,7 +109,7 @@ At fixed canonical SU policy:
 - constrained social distance `0.431427`;
 - private equilibrium distance `0.497533`.
 
-Firms over-re-differentiate relative to the constrained social benchmark.
+This private/social positioning comparison is also witness-specific.
 
 ## Essential assumptions
 
@@ -119,9 +129,9 @@ Firms over-re-differentiate relative to the constrained social benchmark.
 - symmetric national `CS/3` allocation;
 - full coverage;
 - zero marginal production cost;
-- fixed `v` conditional on the formal compatibility graph;
+- fixed `v` conditional on the compatibility graph;
 - no direct policy cost;
-- `1/2` cross-bloc coefficient as a symmetric mean-preserving normalization.
+- cross-bloc coefficient `1/2` as a symmetric mean-preserving normalization.
 
 ## Main remaining referee risks
 
@@ -131,7 +141,7 @@ Firms over-re-differentiate relative to the constrained social benchmark.
 4. Policy-map normalization must not be sold as a primitive fact.
 5. Institutional sources validate policy-controlled interoperability, not observed strategic re-differentiation.
 
-These are major limitations but not Stage-7.5 blockers.
+These are frozen limitations, not unresolved Stage-8 blockers.
 
 ## Permanently killed novelty claims
 
@@ -144,12 +154,31 @@ Do not claim novelty from:
 - broad strategic response to interoperability;
 - coalitional interoperability price/welfare effects.
 
-## Stage-7.5 verdict
+## Explicit post-freeze exclusions
 
-**GO TO FULL PAPER.**
+No silent addition of:
+
+- relative-profit objectives;
+- private interoperability investment;
+- endogenous network intensity;
+- policy costs;
+- transfers/side payments;
+- lobbying;
+- dynamics;
+- topology choice;
+- additional countries;
+- heterogeneous national CS incidence;
+- alternative spatial geometries;
+- empirical estimation.
+
+Any such change requires a formal theory-change record and rerunning affected gates.
+
+## Stage-8 verdict
+
+**THEORY FROZEN — GO TO REPRODUCIBILITY SETUP.**
 
 ## Next action
 
-Execute **Stage 8 — Theory Freeze** exactly on the Stage-7.5 package.
+Execute **Stage 9 — Repository / Reproducibility Setup** without changing the frozen theory.
 
-Stage 8 may clarify notation and theorem packaging but may not add relative profit, private interoperability investment, endogenous network intensity, policy costs, transfers, lobbying, dynamics, topology choice, additional countries, heterogeneous national CS incidence, or alternative spatial geometries.
+Stage 9 should organize modular LaTeX, bibliography, symbolic/numerical verification, deterministic tables/figures, dependency/environment specification, build orchestration, tests/CI where feasible, and provenance/decision records. Stage 10 manuscript construction must use the Stage-8 freeze as the sole theory authority.
