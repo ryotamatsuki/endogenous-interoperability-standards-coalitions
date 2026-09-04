@@ -5,12 +5,13 @@ Last updated: 2026-09-04
 ## Canonical status
 
 - Project: Endogenous Interoperability and Standards Coalitions
-- Last completed stage: Stage 3 Re-entry — C2 Bilateral Implementation Public-Good / Free-Riding
-- C2 re-entry execution status: COMPLETED
-- C2 report: `reviews/STAGE_03R_C2_REEVALUATION_2026-09-04.md`
-- C2 canonical verdict: `NO-GO`
+- Last completed stage: Stage 3 Re-entry — C-RP Relative-Profit-Induced Interoperability Restraint
+- C-RP execution status: COMPLETED
+- C-RP report: `reviews/STAGE_03R_CRP_MECHANISM_SEARCH_2026-09-04.md`
+- C-RP canonical verdict: `NO-GO`
 - Current canonical stage: Stage 3 — Candidate Mechanism Search
-- Current route: theory candidate — C1 TERMINATED / C2 TERMINATED / DISTINCT MECHANISM REQUIRED
+- Current route: theory candidate — C1 TERMINATED / C2 TERMINATED / C-RP TERMINATED / DISTINCT MECHANISM REQUIRED
+- Stage 4 authorized for C-RP: NO
 - Production manuscript authorized: NO
 - Theory frozen: NO
 - Target journal: UNRESOLVED
@@ -27,126 +28,117 @@ Last updated: 2026-09-04
 
 This project remains independent from `private-compatibility-standards-coalitions`. That paper remains benchmark B0 and must not be modified here.
 
-## Stage-2 restrictions remain binding
+Stage-2 killed ingredient-level novelty claims remain binding.
 
-No future pivot may claim novelty from continuous compatibility, interiority, network effects plus compatibility, downstream competition after compatibility, private/social compatibility wedges, standards coalition formation, government standardization unions, government compatibility policy/international coordination, coalition-proof partial compatibility, or pairwise/weighted interoperability by themselves.
+## Prior failed mechanisms
 
-## C1 disposition — binding
+### C1 — Coalition-Scope Implementation Crowd-Out
 
-C1 — Coalition-Scope Implementation Crowd-Out (CSIC) — failed Stage 4 and is **TERMINATED / NO-GO**.
+Stage 4 verdict: **NO-GO**.
 
-The frozen one-sided demand generated `a_IS*>=a_SU*`, lacked the intended competition-exposure channel, failed the off-equilibrium consumer-surplus microfoundation, and produced only a mechanical cost-bearing benchmark reversal.
+The one-sided implementation primitive generated `a_IS>=a_SU`, omitted the intended competition-exposure channel, failed off-equilibrium consumer-surplus integrability, and produced only a mechanical cost-bearing benchmark reversal.
 
-Do not repair or reuse C1 silently.
+### C2 — Bilateral Implementation Public-Good / Free-Riding
 
-## C2 re-entry question
+Stage 3 re-entry verdict: **NO-GO**.
 
-C2 asked whether bilateral post-agreement implementation creates a public-good/free-riding problem strong enough to make regime-specific private interoperability reverse government coalition stability.
+The integrable bilateral technology `A_ij=a_i+a_j-a_i a_j` repaired C1's welfare defect but still generated stronger implementation incentives under IS; standard public-good free-riding did not produce a larger-coalition collapse or stability reversal.
 
-Core loop tested:
+## C-RP question
 
-`rho -> bilateral contribution game -> effective interoperability -> product competition -> national welfare -> stability`.
+C-RP asked whether a fixed global relative-profit objective could turn the positive rival-profit spillover from interoperability into a sufficiently strong private implementation penalty under the broader formal coalition.
 
-## C2 technology audit
+Preferred firm objective:
 
-### Classic max/min routes
+`U_i=Pi_i-(alpha/2)sum_{j!=i}Pi_j`, `0<=alpha<1`.
 
-- `A_ij=max{a_i,a_j}`: unilateral/no-veto converter provision; heavily exposed to de Palma–Leruth–Regibeau and Garcia–Vergari.
-- `A_ij=min{a_i,a_j}` or product analogues: mutual-veto / weakest-link coordination rather than pure free-riding; also heavily exposed to the consensus/veto literature.
+The reference set was fixed globally and deliberately kept independent of the formal coalition.
 
-Neither is promoted.
-
-### Independent pairwise contributions
-
-With identical independent links and no common capacity/scope cost, a given pair solves the same implementation game under IS and SU. Coalition size changes the number of links but not per-link implementation intensity. This does not supply the required regime-dependent intensive continuation feedback.
-
-### Standard coalition-wide public good
-
-For `pi_i=B(G)-c(e_i)`, `G=sum e_i`, with `B''<=0` and `c''>0`, symmetric aggregate provision satisfies
-
-`dG_n/dn>0`.
-
-Ordinary free-riding can lower individual effort but does not by itself make effective aggregate implementation fall when coalition size increases.
-
-## Strongest pure-C2 diagnostic
-
-The most defensible smooth bilateral substitute-contribution technology is
+The C2 bilateral technology was reused only as an integrable technology:
 
 `A_ij=a_i+a_j-a_i a_j`.
 
-It has symmetric bilateral effects and repairs C1's integrability problem:
+Government objective remained actual national welfare:
 
-`partial p_i/partial q_j=partial p_j/partial q_i=-1+vA_ij`.
+`W_i=CS_i+Pi_i`.
 
-Using B0-style Cournot inverse demand
+## C-RP prior-art burden
 
-`p_i=1-Q+v sum_{j in C_i(rho),j!=i}A_ij q_j`,
+C-RP entered a crowded family:
 
-and `kappa a_i^2/2`, define at symmetric member implementation `a`
+- Matsumura, Matsushima and Cato (2013): two-stage R&D under relative-profit objectives, oligopoly and joint R&D;
+- Shibata (2014): relative-profit/competition parameter together with R&D investment spillovers;
+- Sun and Zhao (2024): relative performance evaluation with effort spillovers in networks.
 
-`x=v(2a-a^2)`.
+Therefore only a new government standards-coalition stability result could qualify.
 
-Exact private marginal operating-profit returns are
+## C-RP exact reduced diagnostic
 
-`MB_I(a)=3v(1-a)/[(1+x)(2-x)^3]`,
+Let
 
-`MB_U(a)=3v(1-a)/[2(2-x)^3]`.
+`z=v(2a-a^2)`.
 
-Therefore
+Under consistent relative-profit quantity competition:
 
-`MB_I/MB_U=2/(1+x)`.
+`q_I=1/[4-alpha-(2-alpha)z]`,
 
-On the regular weak-network domain `0<v<=1/4`, `x<=1/4`, so
+`q_M=(alpha+2)/[8-4z+2alpha(1+z)-alpha^2]`,
 
-`MB_I/MB_U>=8/5>1`.
+`q_O=[2-2z+alpha(1+z)]/[8-4z+2alpha(1+z)-alpha^2]`.
 
-The natural smooth bilateral free-riding model therefore gives a stronger implementation incentive under three-country IS than under two-country SU, not a larger-coalition implementation collapse.
+Symmetric implementation marginal returns are recorded in `model/STAGE3R_CRP_MECHANISM.md` and reproduced by `verification/stage03r_crp_diagnostic.py`.
 
-## C2 numerical diagnostic
+At `alpha=0`, the exact ratio collapses to the C2 benchmark:
 
-Artifact: `verification/stage03r_c2_diagnostic.py`.
+`MB_I/MB_U=2/(1+z)>1`.
 
-6,000 points over
+On a dense diagnostic grid over `alpha in [0,0.999]`, `z in [0,1/4]`, the minimum ratio remained `1.6`. Relative-performance concern did not overturn the larger-coalition implementation advantage.
+
+## Decisive artifact test
+
+Holding the downstream product market at ordinary-profit Cournot and applying relative profit only to the implementation evaluation gives
+
+`MB_I^impl=3v(1-a)(2-alpha z)/[2(1+z)(2-z)^3]`,
+
+`MB_U^impl=3v(1-a)(2-alpha z)/[4(2-z)^3]`.
+
+Hence
+
+`MB_I^impl/MB_U^impl=2/(1+z)`,
+
+exactly independent of `alpha`.
+
+Thus the direct rival-profit penalty itself does not create the required regime-differential implementation restraint. Applying relative profit consistently to the quantity stage adds the familiar tougher-competition channel, which moves the IS/SU implementation ratio further in the wrong direction.
+
+## Numerical audit
+
+Artifact: `verification/stage03r_crp_diagnostic.py`.
+
+6,000 points over:
 
 - `v in [0.005,0.25]`;
+- `alpha in [0,0.95]`;
 - `kappa in [10^-3,10]`.
 
 Results:
 
 - `a_IS<a_SU`: 0;
 - `Delta_3^endo<0`: 0;
-- sign reversal against costless/exogenous full interoperability: 0.
+- stability reversal relative to `alpha=0`: 0;
+- stability reversal relative to costless/exogenous full interoperability at the same `alpha`: 0.
 
-This is diagnostic rather than a global impossibility proof, but it provides no positive signal sufficient for Stage 4.
+## C-RP disposition
 
-## C2 disposition
+**C-RP — TERMINATED / NO-GO AT STAGE 3 RE-ENTRY.**
 
-**C2 — Bilateral Implementation Public-Good / Free-Riding: TERMINATED / NO-GO AT STAGE 3 RE-ENTRY.**
+C-RP preserves a coherent welfare microfoundation but fails the strategic-feedback test. It generates no qualifying implementation-induced coalition-stability result beyond known relative-profit investment/spillover mechanisms.
 
-Reasons:
+Do not proceed to Stage 4 on C-RP.
 
-1. its primitive converter/consensus technologies are already well occupied;
-2. independent bilateral links do not create the required coalition-size intensive feedback;
-3. standard public-good free-riding does not make aggregate implementation decline with group size under standard assumptions;
-4. the strongest natural smooth bilateral technology gives implementation crowd-in and no stability reversal in the audited regular domain;
-5. variants that can force the desired sign require a new mechanism such as dilution, common capacity/scope costs, or coalition-wide shared infrastructure.
-
-Do not proceed to Stage 4 on C2.
-
-## Potential distinct mechanism identified but not selected
-
-A **common interoperability infrastructure / shared gateway** contribution game is conceptually distinct from bilateral C2. A coalition-wide technology such as `A_C=1-product_i(1-a_i)` can generate stronger contribution substitution and may produce different coalition-size behavior, but one member's effort then improves a shared coalition artifact rather than a bilateral endpoint relationship.
-
-This must be treated as a new Stage-3 candidate and compared against C3 rather than silently relabeled as C2.
+Do not rescue C-RP by making the relative-profit reference group coalition-dependent, endogenizing `alpha`, or adding capacity/scope costs, shared gateways, topology, dynamics, or policy instruments. Those are distinct mechanisms.
 
 ## Next action
 
-Remain at Stage 3.
+Remain at **Stage 3 — Candidate Mechanism Search**.
 
-If the project continues, run a fresh candidate comparison among at least:
-
-- C3 — national-incidence / cross-border rent-shifting;
-- common interoperability infrastructure / shared gateway contribution;
-- any other genuinely distinct mechanism surviving Stage-2 prior-art constraints.
-
-Do not automatically promote C3 and do not combine mechanisms before selection.
+If the project continues, run a fresh comparison of genuinely distinct candidates. A shared interoperability infrastructure / common gateway remains one possible candidate, but it must be compared against C3 national-incidence/rent-shifting and any other surviving mechanism rather than automatically promoted.
