@@ -6,21 +6,21 @@ Last updated: 2026-09-04
 
 - Project: Endogenous Interoperability and Standards Coalitions
 - Last completed gate: **Stage 7.5R — Renewed Contribution Freeze Decision**
-- Stage-7.5R report: `reviews/STAGE_075R_CONTRIBUTION_REFREEZE_CESD_2026-09-04.md`
-- Stage-7.5R decisions: `decisions/STAGE075R_CESD_DECISIONS.md`
 - Stage-7.5R verdict: **GO TO FULL PAPER**
 - Contribution freeze status: **RE-FROZEN — NARROWER CLAIM**
+- Production manuscript refresh: **COMPLETE — pending PR/CI integration**
+- Production refresh decisions: `decisions/PRODUCTION_MANUSCRIPT_REFRESH_2026-09-04.md`
 - Novelty confidence carried forward: **MEDIUM**
 - Prior novelty gate: **Stage 6R2 — Post-Repair Novelty Re-Kill — COMPLETE**
-- Prior downstream referee gate: **Stage 11R — Repeated Robustness / Referee Attack Gate — COMPLETE, but must be repeated after manuscript refresh**
+- Prior downstream referee gate: **Stage 11R — COMPLETE, but must be repeated on refreshed manuscript**
 - Canonical model freeze: `theory/THEORY_FREEZE_CESD_2026-09-04_v2.md`
 - Current model-freeze ID: **`CESD-THEORY-FREEZE-2026-09-04-v2`**
 - Model primitives under v2: **STILL FROZEN**
-- Production manuscript submission-ready: **NO — manuscript refresh required**
+- Production manuscript submission-ready: **NO — repeated Stage 11R required**
 - Stage 12 journal positioning authorized: **NO**
 - Target journal: **UNRESOLVED**
 
-Stage 7.5R re-freezes only the contribution. It does not alter any primitive, timing, policy map, welfare definition, equilibrium concept, or verification chain. The next task is a production-manuscript refresh around the narrower contribution, followed by a repeated Stage 11R hostile referee/robustness gate.
+Stage 7.5R re-froze only the contribution. The production manuscript has now been refreshed around that narrower contribution without altering any primitive, timing, policy map, welfare definition, equilibrium concept, canonical witness, or verification chain. The next gate is repeated Stage 11R.
 
 ## Canonical workflow
 
@@ -122,9 +122,22 @@ Endogenous harmonization-depth choice is not part of the necessary causal chain.
 2. **B-X0** — auxiliary only.
 3. **B-EQ** — mandatory disclosure showing that policy-depth endogeneity is not necessary at the witness.
 
+## Production manuscript refresh — completed content changes
+
+The production branch `stage10r-production-manuscript-refresh` now contains the following repairs:
+
+1. Title changed to `Standards Coalitions and Strategic Product Repositioning`.
+2. Abstract rewritten around the Stage-7.5R frozen claim and explicit B-EQ identification correction.
+3. Introduction rewritten so the central result is fixed-position B-T versus post-policy repositioning in FULL/B-EQ.
+4. Main Results adds B-EQ formally, demotes B-X0 to auxiliary status, and replaces the superseded two-endogeneity interpretation with a constructive post-policy coalition reversal.
+5. Related Literature now foregrounds Gandal & Shy (2001), Ruiz (2004), Takarada et al. (2020), Kawabata & Takarada (2021), Klimenko (2009), and the 2025–2026 interoperability frontier.
+6. Conclusion explicitly states that endogenous harmonization-depth choice is not necessary for the identified reversal.
+7. Bibliography updated for the strengthened closest-paper set.
+8. No theory or verified numerical result changed.
+
 ## Closest-paper burden retained from Stage 6R2
 
-The refreshed manuscript must position explicitly against:
+The refreshed manuscript positions explicitly against:
 
 - Gandal & Shy (2001): three-country standards unions, network effects/conversion costs, national welfare, coalition incentives;
 - Ruiz (2004): government standards policy -> endogenous product characteristics -> price competition -> national welfare and excessive differentiation;
@@ -196,8 +209,6 @@ Private/social member-product distances remain:
 - constrained social `≈0.431427`;
 - private `≈0.497533`.
 
-The contribution therefore includes a substantive wedge between national coalition incentives and global efficiency: member consumers lose under SU relative to IS, but producer rents rise enough to make SU nationally preferred while IS remains globally superior.
-
 ## Mathematical / verification status
 
 Theory is unchanged.
@@ -233,17 +244,22 @@ Stage 7.5R authority:
 1. `reviews/STAGE_075R_CONTRIBUTION_REFREEZE_CESD_2026-09-04.md`;
 2. `decisions/STAGE075R_CESD_DECISIONS.md`.
 
+Production refresh authority:
+
+1. `decisions/PRODUCTION_MANUSCRIPT_REFRESH_2026-09-04.md`;
+2. refreshed `paper/main.tex` and manuscript sections;
+3. refreshed `references/references.bib`.
+
 ## Required next sequence
 
-1. **Refresh the production manuscript** around the Stage-7.5R frozen contribution.
-2. Rewrite Abstract, Introduction, literature positioning, benchmark hierarchy, result interpretation, and Conclusion so they explicitly acknowledge `B-EQ`, foreground `B-T` vs FULL/B-EQ, and do not restore killed novelty claims.
-3. **Repeat Stage 11R hostile referee / robustness gate** on the refreshed manuscript, especially the Ruiz + Gandal–Shy + Takarada synthesis attack, small-reversal/parameter-region robustness, and functional-form dependence.
-4. Stage 12 remains blocked until repeated Stage 11R returns `GO TO JOURNAL POSITIONING`.
+1. Complete PR/CI verification of the production manuscript refresh.
+2. **Repeat Stage 11R hostile referee / robustness gate** on the refreshed manuscript, especially the Ruiz + Gandal–Shy + Takarada synthesis attack, small-reversal/parameter-region robustness, and functional-form dependence.
+3. Stage 12 remains blocked until repeated Stage 11R returns `GO TO JOURNAL POSITIONING`.
 
 ## Current verdict
 
-**STAGE 7.5R COMPLETE — GO TO FULL PAPER UNDER THE NARROWER CONTRIBUTION FREEZE.**
+**PRODUCTION MANUSCRIPT REFRESH COMPLETE — REPEATED STAGE 11R IS NEXT.**
 
 Theory freeze `CESD-THEORY-FREEZE-2026-09-04-v2` remains unchanged.
 
-Production manuscript is not yet submission-ready. The immediate next stage is manuscript refresh, not theory repair and not journal positioning.
+Production manuscript is not yet submission-ready because the refreshed wording has not yet passed the repeated Stage 11R referee gate.
