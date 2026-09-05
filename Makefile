@@ -4,12 +4,13 @@ LATEXMK ?= latexmk
 .PHONY: all verify verify-legacy outputs paper clean
 
 # During Stage 4RR the old production chain is not submission-authoritative.
-# `verify` checks the reopen regression and repository consistency only.
+# `verify` checks the reopen regressions and repository consistency only.
 all: verify
 
 verify:
 	$(PYTHON) verification/stage04rr_price_continuation_counterexample.py
-	@echo "STAGE 4RR MAJOR-REOPEN: legacy SPNE certification is suspended"
+	$(PYTHON) verification/stage04rr_localized_choice_regression.py
+	@echo "STAGE 4RR CONDITIONAL GO: all-product counterexample reproduced; localized-choice exact deviation regression passes; global active-set continuation still requires Stage 5RR"
 
 # Historical/conditional checks retained for provenance.  These reproduce the
 # maintained adjacent-interior branch but MUST NOT be interpreted as proving

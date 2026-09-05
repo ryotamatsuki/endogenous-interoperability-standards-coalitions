@@ -6,68 +6,86 @@ Last updated: 2026-09-05
 
 - Project: Endogenous Interoperability and Standards Coalitions
 - Working title: **Standards Coalitions and Strategic Product Repositioning**
-- Canonical workflow: `ryotamatsuki/research-paper-workflow` v1.1
-- Workflow release SHA: `488e5ab06c207909296a7564eaf9066f7f94319c`
+- Canonical workflow: `ryotamatsuki/research-paper-workflow` **v1.2**
+- Workflow release tag: `v1.2`
 - Previous theory freeze: `CESD-THEORY-FREEZE-2026-09-04-v2`
-- Theory status: **MAJOR-REOPEN — PRICE CONTINUATION EQUILIBRIUM NOT YET VALIDATED**
-- Stage 11R2: **REOPENED AS DOWNSTREAM OF THE PRICE-CONTINUATION FAILURE**
-- Stage 12 journal positioning: **administratively complete, but submission authorization suspended**
-- Stage 13: **CLOSURE REVOKED pending repaired continuation game**
+- Theory status: **REOPENED — LOCALIZED-COMPETITION CONTINUATION HARDENING REQUIRED**
+- Stage 4RR: **CONDITIONAL GO — one blocker identified**
+- Stage 11R2: **STALE / REOPENED downstream of continuation failure**
+- Stage 12 journal positioning: **administratively complete, submission authorization suspended**
+- Stage 13: **CLOSURE REVOKED**
 - Stage 14 submission QA authorized: **NO**
 - Primary intended target after successful repair: **International Journal of Industrial Organization (IJIO)**
 
-## Reopen trigger
+## Stage 4RR result
 
-A hostile audit of main commit `461b7486807ebb22e8ce26227f7f9a9ddbae8adf` identified a valid off-path price deviation under the standard all-product Salop interpretation.
+The hostile all-product counterexample remains valid and permanently rejects the old claim that the local interior price system supplies a valid continuation after every feasible location deviation.
 
-At canonical IS policy `s_I=0.25` and locations
+The preferred all-product weighted-geodesic extension is coherent as a global choice model but is **not certified**: Stage 4RR could not establish the pure price continuation required for every off-path location history, and the old FOC/SOC/interiority system cannot substitute for that proof.
 
-`x=(0.4, 0.5, 5/6)`,
+Stage 4RR therefore selected one bounded repair candidate for hardening:
 
-the manuscript's local-adjacent price system returns
+> **Explicit localized competition.** A consumer on an arc between adjacent product positions considers exactly the two products bounding that arc. If one product captures the whole arc after a price deviation, demand is clipped at the boundary rather than returning `None`. Location-order changes rebuild the adjacency graph.
 
-`p=(0.25, 0.215, 0.285)` and `q=(1/3, 43/150, 19/50)`.
+This is a substantive consideration-set primitive and must be stated and defended. It is not to be described as unrestricted all-product Salop choice.
 
-If firm 2 instead chooses `p_2=0.174`, direct all-product consumer choice gives
+## Regression evidence
 
-`q_2=81/125=0.648`,
+Canonical hostile history:
 
-so operating profit rises from approximately `0.0616333` to `0.112752`.
+- IS, `s_I=0.25`;
+- `x=(0.4,0.5,5/6)`;
+- old candidate `p=(0.25,0.215,0.285)`;
+- old firm-2 operating profit `0.0616333...`.
 
-Therefore the reported local price candidate is not a price Nash equilibrium at that off-path location profile under the standard Salop choice set.
+All-product deviation `p_2'=0.174`:
 
-Regression authority: `verification/stage04rr_price_continuation_counterexample.py`.
+- `q_2'=81/125=0.648`;
+- `pi_2'=0.112752`;
+- therefore the old price candidate is not Nash under all-product choice.
 
-## Code-level failure
+Explicit localized competition, same deviation:
 
-`verification/stage04_cesd_minimal.py::profits_general` returns `None` when the adjacent-arc interior conditions fail. `verification/stage04r_cesd_continuation_repair.py::best_deviation_continuous` and `max_policy_continuation_gain` then omit such deviations from the profitability comparison. The former "whole-circle" audit therefore verified only deviations whose downstream price candidate stayed on the local interior branch; it did not establish the correct price continuation for every location deviation.
+- `q_2'=511/1500≈0.3406667`;
+- `pi_2'=14819/250000=0.059276`;
+- therefore this exact hostile deviation is not profitable under the localized primitive.
 
-## What remains valid conditionally
+Authorities:
 
-The following objects were independently reproduced on the maintained interior branch and are not presently alleged to contain arithmetic errors:
+- `verification/stage04rr_price_continuation_counterexample.py`
+- `verification/stage04rr_localized_choice_regression.py`
+- `reviews/STAGE_04RR_GLOBAL_PRICE_CONTINUATION_REPAIR_2026-09-05.md`
+- `decisions/STAGE04RR_CESD_DECISIONS.md`
+
+## Remaining single blocker
+
+Before any new freeze or downstream welfare/stability work, Stage 5RR must complete a fail-closed active-set continuation solver for the explicit localized game:
+
+1. sort locations and construct arcs;
+2. enumerate left-capture / interior / right-capture statuses for all arcs (`3^3=27` before tie refinements);
+3. solve the network-share fixed point conditional on each active set;
+4. verify active-set inequalities;
+5. globally solve each firm's price best response across all active sets;
+6. classify each continuation as `SOLVED_EQUILIBRIUM`, `MULTIPLE_EQUILIBRIA`, `SOLVED_NO_EQUILIBRIUM`, `UNRESOLVED`, or `NUMERICAL_FAILURE`;
+7. define and test coincident-location/tie cases;
+8. use the repaired price continuation to re-run the full unilateral location-deviation problem.
+
+No additional model primitive is authorized in Stage 5RR.
+
+## What remains valid only conditionally
+
+The following old-branch objects remain diagnostics, not theorem/SPNE evidence:
 
 - `Delta_M^(B-T)≈-0.010167`;
 - `Delta_M^(FULL)≈+0.001571`;
-- the reported member welfare decomposition;
-- the reported world-welfare ordering at the canonical branch;
-- the 9/9 sign robustness conditional on the same continuation branch.
+- reported member welfare decomposition;
+- reported world-welfare ordering;
+- 9/9 local sign robustness conditional on the old branch.
 
-These are no longer sufficient to support an SPNE or coalition-stability claim until the price continuation is repaired.
-
-## Repair contract
-
-Before any new freeze or submission authorization:
-
-1. Define consumer choice and generalized travel/adaptation cost for **all products** at every location profile, including non-neighbor choice, coincident locations, and order changes; or explicitly adopt and economically defend a different choice-set model.
-2. Characterize or globally solve the price subgame for every location profile required by unilateral location deviations. A failed local interior branch may not be treated as an unprofitable deviation.
-3. Recompute location best responses using the repaired price continuation.
-4. Recompute policy choices, B-T/FULL/B-EQ/B-X0 rankings, welfare decomposition, and coalition blocking.
-5. Only if the reversal survives, rerun local robustness and the hostile referee gate.
-6. Distinguish `FULL SU vs IS consumer loss` from the causal effect of repositioning (`FULL vs B-T` within a regime).
-7. Treat the domestic-profit-incidence sensitivity as a scope limitation; do not claim ownership robustness without re-solving the game under alternative ownership structures.
+They must all be recomputed if the repaired continuation changes location or policy equilibrium.
 
 ## Current verdict
 
-**MAJOR-REOPEN — DO NOT SUBMIT.**
+**STAGE 4RR CONDITIONAL GO — DO NOT SUBMIT.**
 
-The next active research stage is **Stage 4RR — Global Price-Continuation Repair**. Stage 13 and Stage 14 are blocked until Stage 4RR and all affected downstream stages are revalidated.
+Next formal stage: **Stage 5RR — Localized-Competition Continuation Hardening**.
