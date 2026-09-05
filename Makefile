@@ -1,11 +1,20 @@
 PYTHON ?= python3
 LATEXMK ?= latexmk
 
-.PHONY: all verify outputs paper clean
+.PHONY: all verify verify-legacy outputs paper clean
 
-all: verify outputs paper
+# During Stage 4RR the old production chain is not submission-authoritative.
+# `verify` checks the reopen regression and repository consistency only.
+all: verify
 
 verify:
+	$(PYTHON) verification/stage04rr_price_continuation_counterexample.py
+	@echo "STAGE 4RR MAJOR-REOPEN: legacy SPNE certification is suspended"
+
+# Historical/conditional checks retained for provenance.  These reproduce the
+# maintained adjacent-interior branch but MUST NOT be interpreted as proving
+# the unrestricted price/location continuation after the Stage 4RR counterexample.
+verify-legacy:
 	$(PYTHON) verification/stage04_cesd_minimal.py
 	$(PYTHON) verification/stage04r_cesd_continuation_repair.py
 	$(PYTHON) verification/stage07_cesd_welfare_generality.py
@@ -14,6 +23,8 @@ verify:
 	$(PYTHON) verification/stage11r2_local_robustness.py
 	$(PYTHON) tests/test_freeze_consistency.py
 
+# Manuscript-facing outputs and PDF can still be regenerated for forensic
+# comparison, but they are not submission-authoritative while Stage 4RR is open.
 outputs:
 	$(PYTHON) scripts/generate_outputs.py
 
