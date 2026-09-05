@@ -4,7 +4,8 @@ LATEXMK ?= latexmk
 .PHONY: all verify verify-legacy outputs paper clean
 
 # The old production chain remains non-authoritative. `verify` runs the
-# continuation-reopen regressions and exact continuation kill tests.
+# continuation-reopen regressions, terminated-architecture kill tests, and the
+# current Stage 4R4A affine-demand Bertrand gate.
 all: verify
 
 verify:
@@ -12,7 +13,8 @@ verify:
 	$(PYTHON) verification/stage04rr_localized_choice_regression.py
 	$(PYTHON) verification/stage05rr_localized_price_nonexistence.py
 	$(PYTHON) verification/stage04r3q_quadratic_price_nonexistence.py
-	@echo "STAGE 4R3Q NO-GO: pure-quadratic localized architecture has no pure price continuation at the hostile feasible IS history"
+	$(PYTHON) verification/stage04r4a_affine_bertrand_gate.py
+	@echo "STAGE 4R4A CURRENT GATE: affine-demand Bertrand continuation and endogenous-repositioning witness verified"
 
 # Historical/conditional checks retained for provenance. These reproduce the
 # former maintained branch but MUST NOT be interpreted as SPNE certification.
