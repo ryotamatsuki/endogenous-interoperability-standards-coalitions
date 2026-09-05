@@ -1,121 +1,162 @@
 # Project State
 
-Last updated: 2026-09-05
+Last updated: 2026-09-06
 
 ## Canonical status
 
 - Project: Endogenous Interoperability and Standards Coalitions
 - Working title: **Standards Coalitions and Strategic Product Repositioning**
 - Canonical workflow: `ryotamatsuki/research-paper-workflow` **v1.2**
-- Workflow release tag: `v1.2`
-- Previous theory freeze: `CESD-THEORY-FREEZE-2026-09-04-v2`
-- Theory status: **REOPENED — SPATIAL CONTINUATION FAMILY TERMINATED; AFFINE-DEMAND BERTRAND RE-FOUNDATION SELECTED**
+- Workflow release SHA: `944e6bace951e13645b02200a63bf25363dc7242`
+- Previous theory freeze: `CESD-THEORY-FREEZE-2026-09-04-v2` — **REOPENED / NON-AUTHORITATIVE**
+- Theory status: **REOPENED — AFFINE-DEMAND BERTRAND RE-FOUNDATION SURVIVES CONTINUATION SUBGATE**
 - Stage 5RR: **NO-GO — linear localized continuation terminated**
-- Stage 3R3: **GO — pure-quadratic localized transport selected for kill test**
-- Stage 4R3Q: **NO-GO — Q1 continuation existence fails at first hostile feasible history**
-- Stage 3R4: **GO — quadratic representative-consumer / affine-demand Bertrand selected**
-- Stage 11R2: **STALE / REOPENED downstream of continuation failure**
+- Stage 4R3Q: **NO-GO — pure-quadratic localized continuation terminated**
+- Stage 3R4: **GO — affine-demand Bertrand re-foundation selected**
+- Stage 4R4A: **GO — continuation/demand/repositioning subgate passes; novelty survives narrowly**
+- Stage 11R2: **STALE / REOPENED**
 - Stage 12 journal positioning: **administratively complete, submission authorization suspended**
 - Stage 13: **CLOSURE REVOKED**
 - Stage 14 submission QA authorized: **NO**
-- Primary intended target only if the rebuilt theory survives: **International Journal of Industrial Organization (IJIO)**
+- Primary intended target only if rebuilt theory survives: **International Journal of Industrial Organization (IJIO)**
 
-## Binding continuation failures
+## Terminated spatial architectures
 
-Three versions of the spatial location-then-price family have failed the globally complete pure-continuation requirement:
+The project has permanently terminated three pure-strategy spatial price-continuation implementations:
 
-1. unrestricted all-product linear Salop continuation;
-2. explicit localized linear continuation;
-3. explicit localized pure-quadratic continuation.
+1. unrestricted all-product linear Salop;
+2. explicit localized linear competition;
+3. explicit localized pure-quadratic competition.
 
-At the feasible IS history `s_I=1/4`, `x=(2/5,1/2,5/6)`, both localized variants have no pure price Nash equilibrium under exact finite candidate enumeration.
+No additional transport-curvature or consideration-set patch is authorized.
 
-Stage 4R3Q authority:
+## Current Stage 4R4A architecture
 
-- `verification/stage04r3q_quadratic_price_nonexistence.py`
-- `reviews/STAGE_04R3Q_PURE_QUADRATIC_GLOBAL_CONTINUATION_2026-09-05.md`
-- `decisions/STAGE04R3Q_CESD_DECISIONS.md`
+Consumers are no longer allocated to Salop arcs. The circle is retained as a smooth product-characteristic space.
 
-The repeated failure is now treated as architecture-level evidence. No additional transport-curvature or localized-consideration patch is authorized.
+For positions `x`, define
 
-## Stage 3R4 architecture re-selection II
+`delta_ij(x)=1-cos(2*pi*(x_i-x_j))`.
 
-Stage 3R4 compared the two remaining serious continuation families:
+Retain the frozen standards-depth map `tau_ij(rho,s)` and formal compatibility network `G_rho` from `model/STAGE3R_CESD_POLICY_MAP.md`.
 
-1. mixed-price continuation under the original linear spatial model;
-2. a broader competition-stage redesign with conventional pure Bertrand continuation.
+Representative-consumer utility is
 
-### Mixed-price route
+`U(q)=a*1'q-(1/2)q'Bq+(v/2)q'G_rho q`, `q>=0`,
 
-Mixed pricing remains theoretically legitimate and is retained only as a reserve. Classical Hotelling work establishes mixed price equilibria when pure equilibria fail, including location-price SPNE constructions in simpler two-firm environments.
+where
 
-It is not selected because the present upstream game requires a well-defined expected continuation payoff for every relevant three-firm off-path location history with policy-dependent compatibility and network effects. Existence of some mixed equilibrium is insufficient if equilibrium payoffs or supports are non-unique. Characterizing that correspondence would become the main technical contribution of a different paper.
+`B_ii=1`,
 
-### Selected route
+`B_ij=beta/[1+tau_ij+delta_ij]`, `i != j`,
 
-Stage 3R4 selects:
+and
 
-> **quadratic representative-consumer / globally nonnegative affine-demand Bertrand competition with endogenous product repositioning and standards-dependent pairwise substitutability/network structure.**
+`K=B-vG_rho`.
 
-The circle remains a product-characteristic space used to define pairwise proximity and repositioning cost, but consumers are no longer partitioned into local arcs. A strictly concave quadratic utility produces globally defined differentiated-product demand.
+The globally nonnegative affine-demand object is used; negative quantities are never treated as economic demand.
 
-A provisional Stage 4 object is
+## Global regularity result
 
-`U(q;rho,s,x) = a' q - (1/2) q' B(rho,s,x) q + (v/2) q' G_rho q`,
+Let
 
-with `q>=0`, and effective curvature
+`m_min=1/(3+t_bar+s_bar)`,
 
-`K(rho,s,x)=B(rho,s,x)-v G_rho`.
+`m_max=1/(1+t_bar-s_bar)`,
 
-Stage 4 must choose one minimal pre-registered map from standards regime/depth and circular product positions into `B`, then prove `K` positive definite over the complete upstream strategy domain. Nonnegative demand and all zero-demand active sets must be handled globally.
+`k_min=beta*m_min-v`,
 
-Firms then compete in prices. Repositioning cost remains `gamma d_c(x_i,h_i)^2/2` unless Stage 4 independently kills that primitive.
+`k_max=beta*m_max`.
 
-## Prior-art risk created by the redesign
+In the sufficient region
 
-The selected architecture is conventional enough to avoid inventing a bespoke continuation device, but it creates a new novelty threat.
+- `0<v<beta*m_min`;
+- `2*k_max<1`;
+- `k_min>k_max^2`,
 
-Closest families include:
+`K` is uniformly positive definite for every admissible regime, policy-depth vector and location profile. `H=K^{-1}` has positive diagonal and strictly negative off-diagonal entries, so demand is globally gross-substitute.
 
-- product-variety networks with linear-quadratic preferences and unique Bertrand equilibrium;
-- compatibility decisions with network externalities and endogenous differentiation;
-- international standards with redesign costs and network effects;
-- differentiated price/quantity competition with network compatibility effects.
+For the transparent normalization
 
-Therefore the paper cannot claim novelty from affine demand, product networks, compatibility, network effects, or differentiation separately.
+`t_bar=1`, `s_bar=1/4`, `beta=1/5`, `v=1/50`,
 
-The project survives only if the solved full game delivers a distinct joint loop:
+`m_min=4/17`, `m_max=4/7`, `k_min=23/850`, `k_max=4/35`, and the inequalities hold exactly.
 
-`standards coalition -> compatibility/substitutability structure -> costly strategic repositioning -> changed Bertrand competition -> welfare/profit feedback -> coalition stability`,
+## Bertrand continuation
 
-and at least one substantive theorem/result disappears when either standards coalition choice or endogenous repositioning is removed.
+For positive quantities,
 
-## Stage 4R4A contract
+`q=H(a*1-p)`, `H=K^{-1}`.
 
-Next formal stage: **Stage 4R4A — Affine-Demand Bertrand Continuation & Novelty Gate**.
+Let `D=diag(H_ii)`. The one-product-per-firm zero-cost Bertrand solution is
 
-Lexicographic gates:
+`p*=(D+H)^(-1)H(a*1)`,
 
-1. **Demand well-posedness:** pre-register one minimal `(rho,s,x)->B` map and prove global strict concavity / positive definiteness; define nonnegative demand for all histories.
-2. **Price continuation:** prove or exactly certify globally complete, payoff-unique Bertrand equilibrium including zero-demand active sets.
-3. **Repositioning:** only after 1–2 pass, solve the location/repositioning game globally and require nondegenerate strategic repositioning.
-4. **Novelty kill:** attack the actual solved full game against the closest product-variety-network and compatibility/differentiation literature.
-5. **Economic continuation:** only after 1–4 pass may policy depth, welfare, reversal, and coalition stability be recomputed.
+with
 
-If any of Gates 1–4 fails, the default canonical recommendation is **TERMINATE THIS PAPER**, not another automatic Stage 3 repair cycle.
+`q*=Dp*`.
 
-## What remains historical only
+The maintained global substitute structure permits use of the Farahat–Perakis (2010) nonnegative affine-demand result: the Bertrand equilibrium exists and is unique and coincides with the affine-demand equilibrium.
 
-The following old-branch objects are not theorem/SPNE evidence:
+Continuation status throughout the maintained region:
 
-- `Delta_M^(B-T)≈-0.010167`;
-- `Delta_M^(FULL)≈+0.001571`;
-- reported member welfare decomposition;
-- reported world-welfare ordering;
-- 9/9 local sign robustness conditional on the old linear branch.
+**`SOLVED_EQUILIBRIUM`**.
 
-## Current verdict
+## Repositioning result
 
-**STAGE 3R4 GO — DO NOT SUBMIT.**
+Write `y_i in [-1/2,1/2]`, `x_i=(h_i+y_i) mod 1`, with repositioning cost `gamma*y_i^2/2`.
 
-Proceed to **Stage 4R4A — Affine-Demand Bertrand Continuation & Novelty Gate**.
+Operating profit after the unique Bertrand continuation is smooth on the compact displacement cube. If
+
+`M=max_i sup_y |d^2 pi_i^B/dy_i^2|`,
+
+then `M<infinity`, and for `gamma>M` each firm payoff is strictly concave in its own displacement. Hence a pure repositioning Nash equilibrium exists for every standards history in this sufficient region.
+
+Exact SU_12 anchor differentiation at the transparent normalization shows:
+
+- member 1 has a strictly negative displacement gradient;
+- member 2 has the symmetric positive gradient;
+- the outsider gradient is zero;
+- increasing `s_12` from zero to `1/4` makes the member outward gradient strictly stronger.
+
+Thus repositioning is nondegenerate and standards depth changes the repositioning incentive.
+
+Authorities:
+
+- `model/STAGE4R4A_AFFINE_DEMAND_BERTRAND.md`
+- `verification/stage04r4a_affine_bertrand_gate.py`
+- `reviews/STAGE_04R4A_AFFINE_DEMAND_BERTRAND_CONTINUATION_NOVELTY_2026-09-06.md`
+- `decisions/STAGE04R4A_CESD_DECISIONS.md`
+
+## Novelty status
+
+Broad claims are killed by prior art:
+
+- Farahat–Perakis (2010): nonnegative affine demand / unique Bertrand;
+- Ushchev–Zenou (2018): product-variety networks / Bertrand;
+- Baake–Boom (2001): compatibility, network externalities, endogenous differentiation and price competition;
+- Barrett–Yang (2001): international standards, redesign costs and network effects;
+- Cheng–Huang (2025): compatibility interacting with quality competition and expanded differentiation;
+- Rodrigues (2026): endogenous product design under linear demand with product characteristics shaping competitive interactions.
+
+Therefore the only surviving contribution route is narrow:
+
+`government standards-bloc depth -> post-policy costly horizontal repositioning -> changed Bertrand competition/welfare -> coalition stability`.
+
+Current novelty classification: **DISTINCT BUT NARROW — NOT YET IJIO-SUFFICIENT**.
+
+## Historical outputs remain invalid
+
+All old spatial-model policy optima, locations, welfare decompositions, reversal values and coalition-stability results remain historical diagnostics only. They may not be transplanted into the affine model.
+
+## Current verdict and routing
+
+**STAGE 4R4A GO — CONTINUE WITHIN STAGE 4 — DO NOT SUBMIT.**
+
+Stage 4R4A is a project-specific subgate, not completed canonical Stage 4.
+
+Next formal project substage:
+
+**Stage 4R4B — Affine-Demand Policy, Welfare, Reversal & Coalition Reconstruction.**
+
+Stage 4R4B must solve the bloc-depth/repositioning continuation under the new demand system, derive consumer surplus and national welfare, compare `B-T`, `B-X`, and `FULL`, and produce at least one welfare or coalition-stability result requiring both endogenous standards depth and endogenous repositioning. If it cannot, terminate the paper rather than launching another architecture repair.
