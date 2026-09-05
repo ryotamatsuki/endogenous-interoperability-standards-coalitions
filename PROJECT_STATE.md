@@ -9,75 +9,101 @@ Last updated: 2026-09-05
 - Canonical workflow: `ryotamatsuki/research-paper-workflow` **v1.2**
 - Workflow release tag: `v1.2`
 - Previous theory freeze: `CESD-THEORY-FREEZE-2026-09-04-v2`
-- Theory status: **REOPENED — CURRENT CONTINUATION ARCHITECTURE FAILED**
-- Stage 4RR: **CONDITIONAL GO completed; localized repair sent to Stage 5RR**
-- Stage 5RR: **NO-GO — localized consideration does not restore pure price continuation**
+- Theory status: **REOPENED — NEW CONTINUATION ARCHITECTURE SELECTED FOR MINIMAL-MODEL KILL TEST**
+- Stage 5RR: **NO-GO — linear localized continuation terminated**
+- Stage 3R3: **GO — pure-quadratic localized transport selected**
 - Stage 11R2: **STALE / REOPENED downstream of continuation failure**
 - Stage 12 journal positioning: **administratively complete, submission authorization suspended**
 - Stage 13: **CLOSURE REVOKED**
 - Stage 14 submission QA authorized: **NO**
-- Primary intended target only if a new architecture survives: **International Journal of Industrial Organization (IJIO)**
+- Primary intended target only if the rebuilt theory survives: **International Journal of Industrial Organization (IJIO)**
 
-## Stage 5RR result
+## Binding failure from the terminated architecture
 
-Stage 5RR tested exactly one authorized repair: explicit localized competition, where consumers on each positive-length arc compare only the two firms bounding that arc.
-
-This repair fails at the same feasible hostile IS location history:
+The feasible hostile IS history
 
 - `s_I=1/4`;
-- `x=(2/5,1/2,5/6)`;
-- old price candidate `p=(1/4,43/200,57/200)`.
+- `x=(2/5,1/2,5/6)`
 
-Even under localized choice, firm 1 (index 0) can raise price from `1/4` to `71/200`, abandon the short `1/10` arc, retain demand `71/300` on its long arc, and raise operating profit from
+has no pure Nash equilibrium in the linear localized price subgame. Stage 5RR established this by exact finite enumeration of all 27 arc active states and all necessary piecewise-quadratic best-response candidate equations, solving 2440 nonsingular candidate systems and finding zero pure equilibria.
 
-`1/12 = 0.083333...`
-
-to
-
-`5041/60000 = 0.0840166...`.
-
-More importantly, the localized IS price subgame at this history has no pure Nash equilibrium.
-
-Because each firm's localized demand is the sum of two clipped affine arc shares, each own-price profit is continuous and piecewise quadratic. Any pure best response must therefore lie at an interior FOC, `p_i=0`, or one of four incident arc-share kinks. The exact Stage 5RR verifier enumerates all 27 global arc states and all six necessary optimality equations per firm, solves **2440 nonsingular candidate systems** exactly, and checks every candidate against the exact global best-response correspondence.
-
-Pure price Nash equilibria found: **0**.
-
-Authority:
+Authorities:
 
 - `verification/stage05rr_localized_price_nonexistence.py`
 - `reviews/STAGE_05RR_LOCALIZED_COMPETITION_HARDENING_2026-09-05.md`
 - `decisions/STAGE05RR_CESD_DECISIONS.md`
 
-## Interpretation
+The linear all-product and linear localized architectures are therefore both non-authoritative for the paper's pure-strategy SPNE claim.
 
-The Stage 4RR localized repair removed the originally identified large price-cut deviation by firm 2, but that was not enough. Stage 5RR finds a different exact profitable deviation and then establishes pure-equilibrium nonexistence at the hostile off-path history.
+## Stage 3R3 architecture search
 
-This is a continuation-existence failure, not a small robustness issue. Since the original location game allows this history, the paper cannot claim a pure-strategy SPNE under the localized repair.
+Stage 3R3 compared distinct continuation architectures rather than stacking another Stage 5 repair.
 
-Mixed price equilibria are not ruled out. However, moving to mixed continuation, changing transport-cost curvature, restricting the location strategy domain, or replacing the competition microfoundation would be a distinct model architecture. Under canonical workflow v1.2, a second unrelated repair may not be stacked inside Stage 5.
+Rejected as the primary route:
 
-## Literature status of the repair primitive
+- linear + small quadratic term: not a generic existence guarantee;
+- bounded relocation radius: vulnerable to an engineered-strategy-set objection;
+- convex production cost: unrelated existence-restoring channel;
+- simultaneous location and price: changes the strategic question;
+- fixed/regulated prices: removes too much IO content;
+- standard logit/random utility: requires redesign of the existing pairwise compatibility primitive.
 
-Localized/limited-information circular competition is a recognized theoretical device. de Frutos, Hamoudi and Jarque (2002, *Regional Science and Urban Economics*, 32(4), 531–540, DOI `10.1016/S0166-0462(01)00094-1`) analyze an oligopoly extension under limited consumer information in which consumers compare only the two closest firms.
+Reserve architectures:
 
-Their oligopoly section fixes firms at equidistant locations. It therefore does not provide the missing endogenous-location continuation result needed here.
+- mixed price continuation under linear transport;
+- broader redesign of the competition stage.
 
-## What remains valid only conditionally
+Selected architecture:
 
-The following old-branch objects remain historical diagnostics, not theorem/SPNE evidence:
+> **Pure-quadratic localized circular competition with the existing policy-dependent pair friction `tau_ij`.**
+
+For an arc of length `ell` between adjacent products `i,j`, a consumer at distance `y` from `i` compares
+
+`u_i = A - p_i - tau_ij y^2 + v n_i`,
+
+`u_j = A - p_j - tau_ij (ell-y)^2 + v n_j`.
+
+The raw boundary is therefore
+
+`y_ij = ell/2 + [p_j-p_i + v(n_i-n_j)]/[2 tau_ij ell]`,
+
+clipped to `[0,ell]` at full-arc capture.
+
+Everything else remains frozen for the first minimal-model test: regimes, standards-depth map into `tau_ij`, network matrix, anchors, timing, repositioning cost, and welfare ownership convention.
+
+## Literature rationale
+
+Quadratic distance disutility is a recognized equilibrium-existence architecture in spatial competition rather than an assumption invented for this paper. d'Aspremont, Gabszewicz and Thisse (1979), Economides (1986), and de Frutos, Hamoudi and Jarque (1999) provide the relevant classical existence rationale.
+
+However, those results do **not** certify this project's heterogeneous, policy-dependent pair-friction game. The new Stage 4 must prove or refute continuation completeness from the actual primitives.
+
+## Stage 4R3Q contract
+
+Next formal stage: **Stage 4R3Q — Pure-Quadratic Global Continuation Minimal Model Gate**.
+
+Lexicographic gate:
+
+1. Define the quadratic localized price game globally, including corners and coincident locations.
+2. Test the former hostile location history first.
+3. Establish or refute pure price continuation for every feasible location history required by unilateral location deviations.
+4. No `None`, branch failure, or solver nonconvergence may be interpreted as an unprofitable deviation.
+5. One feasible history with no required pure continuation returns `NO-GO` immediately.
+6. Only after continuation completeness passes may the stage solve location best responses.
+7. Only after the location game passes may policy, welfare, reversal, and coalition stability be recomputed.
+8. Preservation of the old numerical reversal is not an acceptance criterion.
+
+## What remains historical only
+
+The following old-branch objects are not theorem/SPNE evidence:
 
 - `Delta_M^(B-T)≈-0.010167`;
 - `Delta_M^(FULL)≈+0.001571`;
 - reported member welfare decomposition;
 - reported world-welfare ordering;
-- 9/9 local sign robustness conditional on the old branch.
-
-They cannot be used for submission unless a new continuation architecture is solved and all downstream equilibrium/welfare objects are recomputed.
+- 9/9 local sign robustness conditional on the old linear branch.
 
 ## Current verdict
 
-**STAGE 5RR NO-GO — DO NOT SUBMIT.**
+**STAGE 3R3 GO — DO NOT SUBMIT.**
 
-Stage 6 is not authorized. The current localized-consideration branch terminates here.
-
-Next permissible research action: **return to Stage 3 and compare genuinely distinct continuation architectures, or terminate the paper.**
+Proceed to **Stage 4R3Q — Pure-Quadratic Global Continuation Minimal Model Gate**.
