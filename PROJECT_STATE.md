@@ -9,88 +9,80 @@ Last updated: 2026-09-05
 - Canonical workflow: `ryotamatsuki/research-paper-workflow` **v1.2**
 - Workflow release tag: `v1.2`
 - Previous theory freeze: `CESD-THEORY-FREEZE-2026-09-04-v2`
-- Theory status: **REOPENED — NEW CONTINUATION ARCHITECTURE SELECTED FOR MINIMAL-MODEL KILL TEST**
+- Theory status: **REOPENED — PURE-QUADRATIC LOCALIZED ARCHITECTURE FAILED**
 - Stage 5RR: **NO-GO — linear localized continuation terminated**
-- Stage 3R3: **GO — pure-quadratic localized transport selected**
+- Stage 3R3: **GO — pure-quadratic localized transport selected for kill test**
+- Stage 4R3Q: **NO-GO — Q1 continuation existence fails at first hostile feasible history**
 - Stage 11R2: **STALE / REOPENED downstream of continuation failure**
 - Stage 12 journal positioning: **administratively complete, submission authorization suspended**
 - Stage 13: **CLOSURE REVOKED**
 - Stage 14 submission QA authorized: **NO**
-- Primary intended target only if the rebuilt theory survives: **International Journal of Industrial Organization (IJIO)**
+- Primary intended target only if a rebuilt theory survives: **International Journal of Industrial Organization (IJIO)**
 
-## Binding failure from the terminated architecture
+## Stage 4R3Q result
 
-The feasible hostile IS history
+Stage 4R3Q tested exactly the architecture selected at Stage 3R3: pure-quadratic localized circular competition with the existing policy-dependent pair friction map.
+
+At the feasible IS history
 
 - `s_I=1/4`;
-- `x=(2/5,1/2,5/6)`
+- `x=(2/5,1/2,5/6)`;
+- common `tau=3/4`;
+- arc lengths `(1/10,1/3,17/30)`;
 
-has no pure Nash equilibrium in the linear localized price subgame. Stage 5RR established this by exact finite enumeration of all 27 arc active states and all necessary piecewise-quadratic best-response candidate equations, solving 2440 nonsingular candidate systems and finding zero pure equilibria.
+a consumer on an arc of length `ell` between adjacent firms `i,j` uses
 
-Authorities:
+`u_i=A-p_i-tau*y^2+v*n_i`,
 
-- `verification/stage05rr_localized_price_nonexistence.py`
-- `reviews/STAGE_05RR_LOCALIZED_COMPETITION_HARDENING_2026-09-05.md`
-- `decisions/STAGE05RR_CESD_DECISIONS.md`
+`u_j=A-p_j-tau*(ell-y)^2+v*n_j`.
 
-The linear all-product and linear localized architectures are therefore both non-authoritative for the paper's pure-strategy SPNE claim.
+Under IS the network term is common and cancels pairwise. The raw localized share is
 
-## Stage 3R3 architecture search
+`ell/2 + (p_j-p_i)/(2*tau*ell)`,
 
-Stage 3R3 compared distinct continuation architectures rather than stacking another Stage 5 repair.
+clipped to `[0,ell]`.
 
-Rejected as the primary route:
+The unique all-interior stationary price candidate is
 
-- linear + small quadratic term: not a generic existence guarantee;
-- bounded relocation radius: vulnerable to an engineered-strategy-set objection;
-- convex production cost: unrelated existence-restoring channel;
-- simultaneous location and price: changes the strategic question;
-- fixed/regulated prices: removes too much IO content;
-- standard logit/random utility: requires redesign of the existing pairwise compatibility primitive.
+`p=(816/17975,1167/28760,7939/86280)`.
 
-Reserve architectures:
+It is not Nash. Firm 0 can move from
 
-- mixed price continuation under linear transport;
-- broader redesign of the competition stage.
+`p_0=816/17975 ≈ 0.0453964`
 
-Selected architecture:
+to its exact global best response
 
-> **Pure-quadratic localized circular competition with the existing policy-dependent pair friction `tau_ij`.**
+`p_0'=95727/575200 ≈ 0.166424`,
 
-For an arc of length `ell` between adjacent products `i,j`, a consumer at distance `y` from `i` compares
+raising operating profit from
 
-`u_i = A - p_i - tau_ij y^2 + v n_i`,
+`208896/12924025 ≈ 0.0161634`
 
-`u_j = A - p_j - tau_ij (ell-y)^2 + v n_j`.
+to
 
-The raw boundary is therefore
+`539038737/16542752000 ≈ 0.0325846`.
 
-`y_ij = ell/2 + [p_j-p_i + v(n_i-n_j)]/[2 tau_ij ell]`,
+More importantly, the exact Stage 4R3Q verifier enumerates the full finite candidate set for pure Nash equilibrium:
 
-clipped to `[0,ell]` at full-arc capture.
+- 27 global arc active states;
+- six necessary best-response modes per firm: interior FOC, zero price, four incident arc-share kinks;
+- 2440 nonsingular candidate systems solved exactly with SymPy rationals;
+- every surviving candidate checked against the exact global best-response correspondence;
+- pure price Nash equilibria found: **0**.
 
-Everything else remains frozen for the first minimal-model test: regimes, standards-depth map into `tau_ij`, network matrix, anchors, timing, repositioning cost, and welfare ownership convention.
+Authority:
 
-## Literature rationale
+- `verification/stage04r3q_quadratic_price_nonexistence.py`
+- `reviews/STAGE_04R3Q_PURE_QUADRATIC_GLOBAL_CONTINUATION_2026-09-05.md`
+- `decisions/STAGE04R3Q_CESD_DECISIONS.md`
 
-Quadratic distance disutility is a recognized equilibrium-existence architecture in spatial competition rather than an assumption invented for this paper. d'Aspremont, Gabszewicz and Thisse (1979), Economides (1986), and de Frutos, Hamoudi and Jarque (1999) provide the relevant classical existence rationale.
+## Interpretation
 
-However, those results do **not** certify this project's heterogeneous, policy-dependent pair-friction game. The new Stage 4 must prove or refute continuation completeness from the actual primitives.
+The classical quadratic-distance existence rationale was a legitimate reason to test this architecture, but it is not a theorem for this three-firm localized circular game with unequal off-path arc lengths and policy-dependent pair frictions.
 
-## Stage 4R3Q contract
+Q1 from Stage 3R3 is false: not every feasible location history admits the pure price continuation required for the intended pure-strategy SPNE.
 
-Next formal stage: **Stage 4R3Q — Pure-Quadratic Global Continuation Minimal Model Gate**.
-
-Lexicographic gate:
-
-1. Define the quadratic localized price game globally, including corners and coincident locations.
-2. Test the former hostile location history first.
-3. Establish or refute pure price continuation for every feasible location history required by unilateral location deviations.
-4. No `None`, branch failure, or solver nonconvergence may be interpreted as an unprofitable deviation.
-5. One feasible history with no required pure continuation returns `NO-GO` immediately.
-6. Only after continuation completeness passes may the stage solve location best responses.
-7. Only after the location game passes may policy, welfare, reversal, and coalition stability be recomputed.
-8. Preservation of the old numerical reversal is not an acceptance criterion.
+The failure occurs at the first hostile history, so Stage 4R3Q stops immediately. No further location, policy, welfare, reversal, or coalition-stability calculations are authorized under this architecture.
 
 ## What remains historical only
 
@@ -104,6 +96,13 @@ The following old-branch objects are not theorem/SPNE evidence:
 
 ## Current verdict
 
-**STAGE 3R3 GO — DO NOT SUBMIT.**
+**STAGE 4R3Q NO-GO — DO NOT SUBMIT.**
 
-Proceed to **Stage 4R3Q — Pure-Quadratic Global Continuation Minimal Model Gate**.
+Do not proceed to Stage 5 on this architecture.
+
+If the project continues, the next formal research action is **Stage 3R4 — Continuation Architecture Re-Selection II**.
+
+Priority reserve families:
+
+1. mixed-price continuation under the original linear architecture;
+2. broader redesign of the competition stage with globally defined pure continuation.
