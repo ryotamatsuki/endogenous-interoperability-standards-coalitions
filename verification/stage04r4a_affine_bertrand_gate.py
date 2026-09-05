@@ -6,9 +6,10 @@ This script verifies three things for the transparent normalization
 1. The global sufficient regularity inequalities hold exactly.
 2. At the inherited anchors in SU_12, the positive-demand Bertrand equilibrium
    satisfies the closed-form FOCs with strictly positive prices and quantities.
-3. The exact operating-profit displacement derivative for member 1 is negative
-   both at zero depth and at s_12=1/4, and deeper SU integration makes that
-   outward-repositioning incentive strictly stronger in absolute value.
+3. The exact own operating-profit displacement derivatives are computed mover
+   by mover. Member 1 moves outward, member 2 mirrors it, the outsider is
+   locally stationary, and deeper SU integration strengthens the members'
+   outward-repositioning incentive.
 
 The derivative calculation uses exact matrix differentiation at the anchor
 history; it does not use finite differences or numerical optimization.
@@ -44,10 +45,11 @@ assert 2 * K_MAX < 1
 assert K_MIN > K_MAX**2
 
 H_ANCHORS = [R(1, 6), R(1, 2), R(5, 6)]
+PAIRS = ((0, 1), (0, 2), (1, 2))
 
 
-def build_anchor_objects(s12: sp.Rational):
-    """Return K, dK/dx0 at inherited anchors for SU_12."""
+def build_anchor_objects(s12: sp.Rational, mover: int):
+    """Return K and dK/dx_mover at inherited anchors for SU_12."""
     tau = {
         (0, 1): T_BAR - s12,
         (0, 2): T_BAR + s12 / 2,
@@ -59,23 +61,27 @@ def build_anchor_objects(s12: sp.Rational):
     K = sp.eye(3)
     Kp = sp.zeros(3)
 
-    for i, j in ((0, 1), (0, 2), (1, 2)):
+    for i, j in PAIRS:
         diff = H_ANCHORS[i] - H_ANCHORS[j]
         delta = 1 - sp.cos(2 * sp.pi * diff)
         denom = 1 + tau[(i, j)] + delta
         m = 1 / denom
         K[i, j] = K[j, i] = sp.simplify(BETA * m - V * g[i, j])
 
-        if i == 0:
-            ddelta_dx0 = 2 * sp.pi * sp.sin(2 * sp.pi * diff)
-            dm_dx0 = -ddelta_dx0 / denom**2
-            Kp[i, j] = Kp[j, i] = sp.simplify(BETA * dm_dx0)
+        if mover == i or mover == j:
+            other = j if mover == i else i
+            ddelta = 2 * sp.pi * sp.sin(
+                2 * sp.pi * (H_ANCHORS[mover] - H_ANCHORS[other])
+            )
+            dm = -ddelta / denom**2
+            Kp[i, j] = Kp[j, i] = sp.simplify(BETA * dm)
 
     return K, Kp
 
 
-def price_quantities_and_profit_gradient(s12: sp.Rational):
-    K, Kp = build_anchor_objects(s12)
+def price_quantities_and_own_profit_gradient(s12: sp.Rational, mover: int):
+    """Return equilibrium objects and d pi_mover / d x_mover exactly."""
+    K, Kp = build_anchor_objects(s12, mover)
     H = K.inv()
     Hp = -H * Kp * H
 
@@ -92,12 +98,19 @@ def price_quantities_and_profit_gradient(s12: sp.Rational):
     q = H * (A * ones - p)
     qp = Hp * (A * ones - p) - H * pp
 
-    dpi = [sp.factor(pp[i] * q[i] + p[i] * qp[i]) for i in range(3)]
-    return K, H, p, q, dpi
+    own_grad = sp.factor(pp[mover] * q[mover] + p[mover] * qp[mover])
+    return K, H, p, q, own_grad
 
 
-K0, H0, P0, Q0, DPI0 = price_quantities_and_profit_gradient(R(0))
-K1, H1, P1, Q1, DPI1 = price_quantities_and_profit_gradient(S_BAR)
+# Equilibrium objects are mover-independent; use mover 0 for the baseline matrices.
+K0, H0, P0, Q0, G00 = price_quantities_and_own_profit_gradient(R(0), 0)
+K1, H1, P1, Q1, G10 = price_quantities_and_own_profit_gradient(S_BAR, 0)
+
+# Compute genuine own-location derivatives for the other two firms.
+_, _, _, _, G01 = price_quantities_and_own_profit_gradient(R(0), 1)
+_, _, _, _, G11 = price_quantities_and_own_profit_gradient(S_BAR, 1)
+_, _, _, _, G02 = price_quantities_and_own_profit_gradient(R(0), 2)
+_, _, _, _, G12 = price_quantities_and_own_profit_gradient(S_BAR, 2)
 
 # At s_12=1/4 the anchor K matrix is exact and strictly positive definite.
 assert K1 == sp.Matrix(
@@ -107,7 +120,9 @@ assert K1 == sp.Matrix(
         [R(8, 145), R(8, 145), 1],
     ]
 )
-assert all(m > 0 for m in K1.det().as_ordered_factors() if m.is_number)
+assert K1.det() > 0
+assert K1[:1, :1].det() > 0
+assert K1[:2, :2].det() > 0
 
 # Gross-substitute sign structure at the witness.
 for i in range(3):
@@ -126,20 +141,20 @@ for i in range(3):
 assert sp.simplify(P1[0] - P1[1]) == 0
 assert sp.simplify(Q1[0] - Q1[1]) == 0
 
-# Exact local repositioning incentive.
-g0 = DPI0[0]
-g1 = DPI1[0]
+# Exact local repositioning incentives, now with each firm's own location derivative.
+g0 = G00
+g1 = G10
 assert g0 < 0
 assert g1 < 0
-assert g1 < g0  # deeper integration strengthens member 1's outward incentive
+assert g1 < g0  # deeper integration strengthens firm 0's outward incentive
 
-# Member 2 mirrors member 1; outsider is locally stationary.
-assert sp.simplify(DPI0[1] + DPI0[0]) == 0
-assert sp.simplify(DPI1[1] + DPI1[0]) == 0
-assert sp.simplify(DPI0[2]) == 0
-assert sp.simplify(DPI1[2]) == 0
+# Firm 1 is the mirror member; the outsider is locally stationary.
+assert sp.simplify(G01 + G00) == 0
+assert sp.simplify(G11 + G10) == 0
+assert sp.simplify(G02) == 0
+assert sp.simplify(G12) == 0
 
-# Pin the exact signs to permanent regression expressions.
+# Pin member-0 exact signs to permanent regression expressions.
 EXPECTED_G0 = -R(32149849595931108145632, 486430409433760152272091875) * sp.sqrt(3) * sp.pi
 EXPECTED_G1 = -R(
     75651293074675407069532145098524269426176,
@@ -157,6 +172,10 @@ if __name__ == "__main__":
     print("K_MIN > K_MAX^2:", bool(K_MIN > K_MAX**2))
     print("SU_12 anchor prices at s=1/4:", [float(z) for z in P1])
     print("SU_12 anchor quantities at s=1/4:", [float(z) for z in Q1])
-    print("member-1 d operating profit/dx at s=0:", float(g0))
-    print("member-1 d operating profit/dx at s=1/4:", float(g1))
+    print("member-0 own profit gradient at s=0:", float(G00))
+    print("member-0 own profit gradient at s=1/4:", float(G10))
+    print("member-1 own profit gradient at s=0:", float(G01))
+    print("member-1 own profit gradient at s=1/4:", float(G11))
+    print("outsider own profit gradient at s=0:", float(G02))
+    print("outsider own profit gradient at s=1/4:", float(G12))
     print("STAGE 4R4A PASS: global regularity region is nonempty, Bertrand continuation is well behaved, and repositioning is nondegenerate")
