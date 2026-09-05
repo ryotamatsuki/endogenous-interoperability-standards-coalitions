@@ -4,8 +4,8 @@ LATEXMK ?= latexmk
 .PHONY: all verify verify-legacy outputs paper clean
 
 # The old production chain remains non-authoritative. `verify` runs the
-# continuation-reopen regressions, exact continuation kill tests, and the
-# current Stage 4R4A affine-demand continuation/mechanism gate.
+# continuation-reopen regressions, exact continuation kill tests, the affine
+# continuation gate, and the final Stage 4R4B economic reconstruction gate.
 all: verify
 
 verify:
@@ -14,7 +14,9 @@ verify:
 	$(PYTHON) verification/stage05rr_localized_price_nonexistence.py
 	$(PYTHON) verification/stage04r3q_quadratic_price_nonexistence.py
 	$(PYTHON) verification/stage04r4a_affine_bertrand_gate.py
-	@echo "STAGE 4R4A GO: affine-demand Bertrand continuation gate passes; proceed within Stage 4 to policy/welfare/coalition reconstruction"
+	$(PYTHON) verification/stage04r4b_policy_welfare_coalition.py
+	$(PYTHON) verification/stage04r4b_sw_full_policy_check.py
+	@echo "STAGE 4R4B NO-GO: affine-demand repair fixes continuation but yields no full-model-only welfare/coalition result; terminate paper"
 
 # Historical/conditional checks retained for provenance. These reproduce the
 # former maintained branch but MUST NOT be interpreted as SPNE certification.
