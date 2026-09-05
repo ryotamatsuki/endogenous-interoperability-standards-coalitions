@@ -1,6 +1,6 @@
 # Project State
 
-Last updated: 2026-09-04
+Last updated: 2026-09-05
 
 ## Canonical status
 
@@ -8,72 +8,66 @@ Last updated: 2026-09-04
 - Working title: **Standards Coalitions and Strategic Product Repositioning**
 - Canonical workflow: `ryotamatsuki/research-paper-workflow` v1.1
 - Workflow release SHA: `488e5ab06c207909296a7564eaf9066f7f94319c`
-- Theory freeze: **`CESD-THEORY-FREEZE-2026-09-04-v2`**
-- Theory status: **FROZEN — unchanged**
-- Stage 11R2: **COMPLETE — GO TO JOURNAL POSITIONING**
-- Stage 12: **COMPLETE — PRIMARY JOURNAL SELECTED: IJIO**
-- Stage 13: **COMPLETE — INTEGRATED MANUSCRIPT READY FOR SUBMISSION QA**
-- Primary target journal: **International Journal of Industrial Organization (IJIO)**
-- Submission ladder: **IJIO -> Review of Industrial Organization -> Journal of Industry, Competition and Trade**
-- Optional stretch: **The Journal of Industrial Economics**
-- Stage 14 submission QA authorized: **YES**
+- Previous theory freeze: `CESD-THEORY-FREEZE-2026-09-04-v2`
+- Theory status: **MAJOR-REOPEN — PRICE CONTINUATION EQUILIBRIUM NOT YET VALIDATED**
+- Stage 11R2: **REOPENED AS DOWNSTREAM OF THE PRICE-CONTINUATION FAILURE**
+- Stage 12 journal positioning: **administratively complete, but submission authorization suspended**
+- Stage 13: **CLOSURE REVOKED pending repaired continuation game**
+- Stage 14 submission QA authorized: **NO**
+- Primary intended target after successful repair: **International Journal of Industrial Organization (IJIO)**
 
-## Frozen contribution
+## Reopen trigger
 
-> **Allowing firms to reposition after a standards policy can reverse the member-country welfare ranking between international standardization and a regional standards union relative to a fixed-position evaluation of the same standards architecture, making the regional union stable through producer-rent gains even though member consumers lose and world welfare remains higher under international standardization.**
+A hostile audit of main commit `461b7486807ebb22e8ce26227f7f9a9ddbae8adf` identified a valid off-path price deviation under the standard all-product Salop interpretation.
 
-## Frozen mechanism
+At canonical IS policy `s_I=0.25` and locations
 
-Standards architecture -> changed effective competitive distances -> post-policy product repositioning -> softer competition and member producer-rent gain -> national welfare reversal -> coalition-stability reversal.
+`x=(0.4, 0.5, 5/6)`,
 
-Endogenous harmonization-depth choice is not part of the necessary causal chain.
+the manuscript's local-adjacent price system returns
 
-## Central identification hierarchy
+`p=(0.25, 0.215, 0.285)` and `q=(1/3, 43/150, 19/50)`.
 
-1. **B-T vs FULL / B-EQ** — central identifying comparison.
-2. **B-X0** — auxiliary zero-additional-harmonization benchmark only.
-3. **B-EQ** — mandatory disclosure showing policy-depth endogeneity is not necessary at the witness.
+If firm 2 instead chooses `p_2=0.174`, direct all-product consumer choice gives
 
-The superseded claim that policy endogeneity and product-position endogeneity are jointly necessary is permanently unauthorized.
+`q_2=81/125=0.648`,
 
-## Canonical witness and welfare
+so operating profit rises from approximately `0.0616333` to `0.112752`.
 
-Canonical witness: `(t_bar,v,gamma,s_bar)=(1,0.04,0.11,0.25)`.
+Therefore the reported local price candidate is not a price Nash equilibrium at that off-path location profile under the standard Salop choice set.
+
+Regression authority: `verification/stage04rr_price_continuation_counterexample.py`.
+
+## Code-level failure
+
+`verification/stage04_cesd_minimal.py::profits_general` returns `None` when the adjacent-arc interior conditions fail. `verification/stage04r_cesd_continuation_repair.py::best_deviation_continuous` and `max_policy_continuation_gain` then omit such deviations from the profitability comparison. The former "whole-circle" audit therefore verified only deviations whose downstream price candidate stayed on the local interior branch; it did not establish the correct price continuation for every location deviation.
+
+## What remains valid conditionally
+
+The following objects were independently reproduced on the maintained interior branch and are not presently alleged to contain arithmetic errors:
 
 - `Delta_M^(B-T)≈-0.010167`;
-- `Delta_M^(B-X0)≈-0.000434`;
-- `Delta_M^(B-EQ)=Delta_M^(FULL)≈+0.001571`;
-- `Delta CS/3≈-0.0325785`;
-- `Delta Pi_M≈+0.0341498`;
-- `GW_IS > GW_SU > GW_SW` at the witness.
+- `Delta_M^(FULL)≈+0.001571`;
+- the reported member welfare decomposition;
+- the reported world-welfare ordering at the canonical branch;
+- the 9/9 sign robustness conditional on the same continuation branch.
 
-## Stage 11R2 robustness closure
+These are no longer sufficient to support an SPNE or coalition-stability claim until the price continuation is repaired.
 
-Pre-specified local audit over `v`, `gamma`, and `s_bar`:
+## Repair contract
 
-- `valid_points=9/9`;
-- `reversal_points=9/9`;
-- every tested point satisfies `Delta_M^(B-T) < 0 < Delta_M^(FULL)`.
+Before any new freeze or submission authorization:
 
-This closes the principal knife-edge witness attack locally. It does not establish global robustness or generality across alternative demand systems, reversed timing, or `v=0`.
-
-## Stage 13 IJIO integration — closed
-
-Stage 13 integrated the nine-point robustness evidence into Main Results, aligned the Introduction and Conclusion, reorganized Related Literature by conceptual relationship, updated appendix verification authority through Stage 11R2, and added the Elsevier-style generative-AI declaration. No primitive, timing, policy map, welfare definition, equilibrium concept, canonical witness, or substantive theory changed.
-
-CI authority: GitHub Actions workflow run `33878203913` completed **success**, including frozen verification, manuscript-facing output regeneration, and LaTeX build.
-
-Authority:
-
-- `reviews/STAGE_13_IJIO_FULL_PAPER_INTEGRATION_2026-09-04.md`
-- `decisions/STAGE13_CESD_DECISIONS.md`
-
-## Permanently prohibited claims
-
-Do not claim setup novelty or priority; do not use `first model`, `first paper`, `first to show`, `novel framework`, or equivalents. Do not claim policy-depth endogeneity is necessary. Do not claim global generality over alternative demand systems, reversed timing, or zero network effects.
+1. Define consumer choice and generalized travel/adaptation cost for **all products** at every location profile, including non-neighbor choice, coincident locations, and order changes; or explicitly adopt and economically defend a different choice-set model.
+2. Characterize or globally solve the price subgame for every location profile required by unilateral location deviations. A failed local interior branch may not be treated as an unprofitable deviation.
+3. Recompute location best responses using the repaired price continuation.
+4. Recompute policy choices, B-T/FULL/B-EQ/B-X0 rankings, welfare decomposition, and coalition blocking.
+5. Only if the reversal survives, rerun local robustness and the hostile referee gate.
+6. Distinguish `FULL SU vs IS consumer loss` from the causal effect of repositioning (`FULL vs B-T` within a regime).
+7. Treat the domestic-profit-incidence sensitivity as a scope limitation; do not claim ownership robustness without re-solving the game under alternative ownership structures.
 
 ## Current verdict
 
-**STAGE 13 COMPLETE — INTEGRATED MANUSCRIPT READY FOR SUBMISSION QA.**
+**MAJOR-REOPEN — DO NOT SUBMIT.**
 
-Next formal stage: **Stage 14 — Submission QA for IJIO**.
+The next active research stage is **Stage 4RR — Global Price-Continuation Repair**. Stage 13 and Stage 14 are blocked until Stage 4RR and all affected downstream stages are revalidated.
