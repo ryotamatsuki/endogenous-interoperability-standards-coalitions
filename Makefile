@@ -16,6 +16,7 @@ verify:
 	$(PYTHON) verification/stage04r4a_affine_bertrand_gate.py
 	$(PYTHON) verification/stage04r4b_policy_welfare_coalition.py
 	$(PYTHON) verification/stage04r4b_sw_full_policy_check.py
+	$(PYTHON) verification/stage04r4b_regular_parameter_scan.py
 	@echo "STAGE 4R4B NO-GO: affine-demand repair fixes continuation but yields no full-model-only welfare/coalition result; terminate paper"
 
 # Historical/conditional checks retained for provenance. These reproduce the
