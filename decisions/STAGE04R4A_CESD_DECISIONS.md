@@ -89,33 +89,57 @@ The strict reversal survives all 9 points in the pre-specified local box
 
 `v in {0.07,0.08,0.09}` and `gamma in {0.025,0.030,0.035}`.
 
-This is the only Stage 4R4A economic result authorized for downstream development.
+This is an authorized downstream diagnostic, but after the closest-paper re-kill it is **not by itself a publication-level novelty result**.
 
-## Decision 7 — novelty classification
+## Decision 7 — binding novelty re-kill
 
-Current classification: **DISTINCT BUT NARROW**.
+The binding addendum is
 
-Do not claim novelty from any of the following separately:
+`reviews/STAGE_04R4A_NOVELTY_REKILL_WOECKENER_2026-09-05.md`.
 
-- affine demand / quadratic representative consumer;
-- unique differentiated-product Bertrand equilibrium;
-- compatibility and network effects;
-- product-variety networks;
-- standards-coalition formation;
-- endogenous product differentiation or redesign costs.
+Woeckener (1999), *Network effects, compatibility decisions, and horizontal product differentiation*, materially absorbs the generic mechanism
 
-The candidate contribution is only the full timing/result loop:
+`compatibility commitment first -> later product-location differentiation -> softened downstream competition`.
 
-`standards architecture -> costly post-standard repositioning -> endogenous substitutability network -> Bertrand competition -> regime/member-welfare reversal -> coalition-stability implication`.
+Gabszewicz, Marini and Tarola additionally absorb the generic timing claim that an upstream coalition structure can change later endogenous differentiation and prices.
 
-The strongest identified threats remain Ushchev–Zenou (2018), Economides–Skrzypacz (2003 working paper), Baake–Boom (2001), Barrett–Yang (2001), and earlier compatibility/endogenous-differentiation work.
+Therefore the following are prohibited as headline novelty claims:
 
-## Decision 8 — downstream authority
+- standards/compatibility chosen first induces later differentiation;
+- compatibility becomes more attractive because firms can subsequently differentiate;
+- coalition formation changes later differentiation and prices.
 
-Stage 4R4A verdict: **GO — GO TO FULL POLICY / COALITION REBUILD**.
+Current classification remains **DISTINCT BUT NARROW**, but only conditionally. The surviving candidate contribution is narrower:
+
+`technical standards coalition -> post-standard costly repositioning -> endogenous substitutability network -> changed national welfare/blocking incentives -> different stable standards coalition or stability threshold`.
+
+The closest-paper set now explicitly includes Woeckener (1999) and Gabszewicz–Marini–Tarola in addition to Ushchev–Zenou, Economides–Skrzypacz, Baake–Boom, Barrett–Yang, and earlier compatibility/endogenous-differentiation work.
+
+## Decision 8 — revised Stage 4R4A verdict
+
+Stage 4R4A verdict is revised to:
+
+**CONDITIONAL GO — CONTINUATION AND REPOSITIONING PASS; PUBLICATION-LEVEL NOVELTY DEPENDS ENTIRELY ON THE STANDARDS-COALITION STABILITY RESULT AT STAGE 5R4.**
+
+This supersedes any earlier Stage 4R4A text that labels the novelty gate an unconditional PASS.
+
+## Decision 9 — Stage 5R4 fatal novelty contract
 
 Next formal stage: **Stage 5R4 — Endogenous Standards-Depth, Welfare & Coalition Reconstruction**.
 
-All old Salop policy optima, welfare tables, reversal magnitudes, coalition thresholds, theory freeze, referee gates, and submission artifacts remain stale.
+Using only the new affine-demand architecture, Stage 5R4 must:
 
-If Stage 5R4 fails to produce a nondegenerate coalition/stability result under the new architecture, the default route is termination rather than another continuation refoundation.
+1. solve standards-depth choices globally for `IS`, each `SU_ij`, and `SW`;
+2. re-solve the location game after every material standards-depth deviation;
+3. compute national and world welfare from representative-consumer surplus plus operating profits net of repositioning costs;
+4. rebuild strict-blocking coalition stability from scratch;
+5. compare the endogenous-position model with an otherwise identical fixed-position benchmark;
+6. establish on a nondegenerate parameter region at least one coalition-level result that disappears under fixed positions: a different stable partition, a strict stability-threshold shift, a blocking reversal, or a private-versus-social stability wedge caused specifically by post-standard repositioning.
+
+If Stage 5R4 produces only the Woeckener-type result that compatibility induces more differentiation and can become more attractive, the required verdict is:
+
+**NO-GO — TERMINATE THIS PAPER.**
+
+No further continuation refoundation or automatic Stage 3 repair is authorized after such a failure.
+
+All old Salop policy optima, welfare tables, reversal magnitudes, coalition thresholds, theory freeze, referee gates, and submission artifacts remain stale.
