@@ -9,11 +9,11 @@ Last updated: 2026-09-05
 - Canonical workflow: `ryotamatsuki/research-paper-workflow` **v1.2**
 - Workflow release tag: `v1.2`
 - Previous theory freeze: `CESD-THEORY-FREEZE-2026-09-04-v2` — **STALE**
-- Theory status: **REOPENED — AFFINE-DEMAND BERTRAND RE-FOUNDATION PASSED MINIMAL MODEL GATE**
+- Theory status: **REOPENED — AFFINE-DEMAND BERTRAND CONTINUATION PASSES; PUBLICATION NOVELTY CONDITIONALLY OPEN**
 - Stage 5RR: **NO-GO — linear localized continuation terminated**
 - Stage 4R3Q: **NO-GO — pure-quadratic localized continuation terminated**
 - Stage 3R4: **GO — affine-demand Bertrand re-foundation selected**
-- Stage 4R4A: **GO — continuation, repositioning, and result-level novelty gate passed**
+- Stage 4R4A: **CONDITIONAL GO — continuation/repositioning pass; coalition-level novelty unresolved**
 - Stage 11R2: **STALE / REOPENED**
 - Stage 12 journal positioning: **administratively complete, submission authorization suspended**
 - Stage 13: **CLOSURE REVOKED**
@@ -30,7 +30,7 @@ The following pure-strategy spatial continuation architectures are permanently n
 
 The repeated continuation failures are treated as architecture-level evidence. No further transport-curvature or consideration-set patch is authorized.
 
-## Current architecture
+## Current affine-demand architecture
 
 Stage 4R4A replaces discrete spatial consumer allocation with a quadratic representative-consumer demand system while keeping the circle as product-characteristic space.
 
@@ -62,7 +62,7 @@ Stage 4R4A witness parameters are
 
 These replace the old Salop calibration for the rebuilt branch.
 
-## Stage 4R4A Gate A — demand well-posedness
+## Gate A — demand well-posedness: PASS
 
 Across the complete Stage 4 policy/location domain,
 
@@ -80,13 +80,11 @@ The global inequalities
 
 `b-2c_max+c_min>0`
 
-imply strict positive definiteness of `K`, negative off-diagonal elements of `D=K^{-1}`, and positive row sums of `D`. Hence the interior affine system has ordinary substitute signs and the consumer quadratic program has a unique solution for every nonnegative price vector.
+imply strict positive definiteness of `K`, negative off-diagonal elements of `D=K^{-1}`, and positive row sums of `D`. Hence the consumer quadratic program has a unique solution for every nonnegative price vector and the interior affine system has ordinary substitute signs.
 
 Nonnegative demand is defined globally from KKT active sets. Negative-demand truncation and solver filtering are prohibited.
 
-Gate A: **PASS**.
-
-## Stage 4R4A Gate B — Bertrand continuation
+## Gate B — Bertrand continuation: PASS
 
 For an interior history,
 
@@ -100,9 +98,7 @@ The current primitive domain produces positive equilibrium prices and quantities
 
 The affine-demand continuation is an infrastructure primitive, not a novelty claim.
 
-Gate B: **PASS**.
-
-## Stage 4R4A Gate C — strategic repositioning
+## Gate C — strategic repositioning: PASS
 
 Whole-circle best-response verification gives the qualitative Stage 4R4A location pattern:
 
@@ -120,9 +116,7 @@ versus
 
 Repositioning is therefore nondegenerate and standards-contingent.
 
-Gate C: **PASS**.
-
-## Stage 4R4A Gate D — minimal reversal and novelty
+## Minimal welfare reversal
 
 At fixed anchors, member-1 national welfare satisfies
 
@@ -141,28 +135,39 @@ The outsider loses under the bilateral standard. The strict fixed-negative/full-
 
 `v in {0.07,0.08,0.09}` × `gamma in {0.025,0.030,0.035}`.
 
-Closest prior-art threats include:
+This is an authoritative diagnostic under the rebuilt architecture, but **not yet a publication-level novelty result**.
 
-- Ushchev–Zenou (2018): Bertrand competition on an exogenous product-variety network;
-- Economides–Skrzypacz (2003 working paper): standards-coalition formation and network competition;
-- Baake–Boom (2001): compatibility, network effects, endogenous quality/differentiation, and later prices;
-- Barrett–Yang (2001): international standards, redesign costs, network effects, and multi-attribute competition;
-- earlier compatible differentiated-product models with endogenous differentiation.
+## Gate D — binding novelty re-kill: CONDITIONAL
 
-None of these may be described as absent. Current novelty classification remains:
+A broader hostile search identified a materially closer paper:
 
-**DISTINCT BUT NARROW**.
+- Woeckener (1999), *Network effects, compatibility decisions, and horizontal product differentiation*.
 
-The only candidate contribution is the full timing/result loop
+That paper already contains the core generic feedback that committing to compatibility before product designs are fixed can induce later product-location differentiation and soften competition. Therefore this paper may not claim novelty from
 
-`standards architecture -> costly post-standard repositioning -> endogenous substitutability network -> Bertrand competition -> member regime-ranking reversal -> coalition-stability implication`.
+`standards/compatibility first -> later differentiation/repositioning -> softened competition`
 
-Gate D: **PASS, narrow**.
+alone.
+
+Gabszewicz, Marini and Tarola's alliance-formation model further absorbs the generic claim that an upstream coalition structure can alter later endogenous product differentiation and prices.
+
+The remaining candidate contribution is narrower and specifically coalition-level:
+
+`technical standards coalition -> costly post-standard repositioning -> endogenous substitutability network -> changed national welfare/blocking incentives -> different stable standards coalition or stability threshold`.
+
+Other closest threats remain Ushchev–Zenou, Economides–Skrzypacz, Baake–Boom, Barrett–Yang, Kim–Choi, and earlier compatibility/endogenous-differentiation work.
+
+Current novelty classification: **DISTINCT BUT NARROW — CONDITIONAL ON STAGE 5R4 COALITION RESULT.**
+
+Binding addendum:
+
+- `reviews/STAGE_04R4A_NOVELTY_REKILL_WOECKENER_2026-09-05.md`
 
 ## Authoritative Stage 4R4A artifacts
 
 - `verification/stage04r4a_affine_bertrand_gate.py`
 - `reviews/STAGE_04R4A_AFFINE_DEMAND_BERTRAND_CONTINUATION_NOVELTY_2026-09-05.md`
+- `reviews/STAGE_04R4A_NOVELTY_REKILL_WOECKENER_2026-09-05.md`
 - `decisions/STAGE04R4A_CESD_DECISIONS.md`
 
 ## What remains stale
@@ -179,10 +184,12 @@ All old Salop-branch equilibrium, welfare, policy, coalition-stability, theory-f
 
 ## Current verdict
 
-**STAGE 4R4A GO — DO NOT SUBMIT.**
+**STAGE 4R4A CONDITIONAL GO — DO NOT SUBMIT.**
 
 Next formal stage:
 
 **Stage 5R4 — Endogenous Standards-Depth, Welfare & Coalition Reconstruction.**
 
-Stage 5R4 must rebuild policy depth, location continuation after policy deviations, national/world welfare, and strict-blocking coalition stability from the new affine-demand model only. If the coalition result collapses, default routing is termination rather than another continuation refoundation.
+Stage 5R4 must rebuild policy depth, location continuation after policy deviations, national/world welfare, and strict-blocking standards-coalition stability from the new affine-demand model only. It must compare endogenous and fixed product positions and establish a nondegenerate difference in stable coalition structure, stability threshold, blocking behavior, or a repositioning-generated private/social stability wedge.
+
+If Stage 5R4 merely reproduces the already-known Woeckener mechanism without a coalition-level result, the mandatory verdict is **NO-GO — TERMINATE THIS PAPER**. No further continuation refoundation is authorized.
