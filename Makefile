@@ -3,18 +3,18 @@ LATEXMK ?= latexmk
 
 .PHONY: all verify verify-legacy outputs paper clean
 
-# During Stage 4RR the old production chain is not submission-authoritative.
-# `verify` checks the reopen regressions and repository consistency only.
+# The old production chain remains non-authoritative. `verify` runs only the
+# continuation-reopen regressions and the exact Stage 5RR pure-price kill test.
 all: verify
 
 verify:
 	$(PYTHON) verification/stage04rr_price_continuation_counterexample.py
 	$(PYTHON) verification/stage04rr_localized_choice_regression.py
-	@echo "STAGE 4RR CONDITIONAL GO: all-product counterexample reproduced; localized-choice exact deviation regression passes; global active-set continuation still requires Stage 5RR"
+	$(PYTHON) verification/stage05rr_localized_price_nonexistence.py
+	@echo "STAGE 5RR NO-GO: localized-consideration repair has no pure price continuation at the hostile feasible IS history"
 
-# Historical/conditional checks retained for provenance.  These reproduce the
-# maintained adjacent-interior branch but MUST NOT be interpreted as proving
-# the unrestricted price/location continuation after the Stage 4RR counterexample.
+# Historical/conditional checks retained for provenance. These reproduce the
+# former maintained branch but MUST NOT be interpreted as SPNE certification.
 verify-legacy:
 	$(PYTHON) verification/stage04_cesd_minimal.py
 	$(PYTHON) verification/stage04r_cesd_continuation_repair.py
@@ -25,7 +25,7 @@ verify-legacy:
 	$(PYTHON) tests/test_freeze_consistency.py
 
 # Manuscript-facing outputs and PDF can still be regenerated for forensic
-# comparison, but they are not submission-authoritative while Stage 4RR is open.
+# comparison, but they are not submission-authoritative while theory is open.
 outputs:
 	$(PYTHON) scripts/generate_outputs.py
 

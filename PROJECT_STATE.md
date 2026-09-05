@@ -9,72 +9,62 @@ Last updated: 2026-09-05
 - Canonical workflow: `ryotamatsuki/research-paper-workflow` **v1.2**
 - Workflow release tag: `v1.2`
 - Previous theory freeze: `CESD-THEORY-FREEZE-2026-09-04-v2`
-- Theory status: **REOPENED — LOCALIZED-COMPETITION CONTINUATION HARDENING REQUIRED**
-- Stage 4RR: **CONDITIONAL GO — one blocker identified**
+- Theory status: **REOPENED — CURRENT CONTINUATION ARCHITECTURE FAILED**
+- Stage 4RR: **CONDITIONAL GO completed; localized repair sent to Stage 5RR**
+- Stage 5RR: **NO-GO — localized consideration does not restore pure price continuation**
 - Stage 11R2: **STALE / REOPENED downstream of continuation failure**
 - Stage 12 journal positioning: **administratively complete, submission authorization suspended**
 - Stage 13: **CLOSURE REVOKED**
 - Stage 14 submission QA authorized: **NO**
-- Primary intended target after successful repair: **International Journal of Industrial Organization (IJIO)**
+- Primary intended target only if a new architecture survives: **International Journal of Industrial Organization (IJIO)**
 
-## Stage 4RR result
+## Stage 5RR result
 
-The hostile all-product counterexample remains valid and permanently rejects the old claim that the local interior price system supplies a valid continuation after every feasible location deviation.
+Stage 5RR tested exactly one authorized repair: explicit localized competition, where consumers on each positive-length arc compare only the two firms bounding that arc.
 
-The preferred all-product weighted-geodesic extension is coherent as a global choice model but is **not certified**: Stage 4RR could not establish the pure price continuation required for every off-path location history, and the old FOC/SOC/interiority system cannot substitute for that proof.
+This repair fails at the same feasible hostile IS location history:
 
-Stage 4RR therefore selected one bounded repair candidate for hardening:
+- `s_I=1/4`;
+- `x=(2/5,1/2,5/6)`;
+- old price candidate `p=(1/4,43/200,57/200)`.
 
-> **Explicit localized competition.** A consumer on an arc between adjacent product positions considers exactly the two products bounding that arc. If one product captures the whole arc after a price deviation, demand is clipped at the boundary rather than returning `None`. Location-order changes rebuild the adjacency graph.
+Even under localized choice, firm 1 (index 0) can raise price from `1/4` to `71/200`, abandon the short `1/10` arc, retain demand `71/300` on its long arc, and raise operating profit from
 
-This is a substantive consideration-set primitive and must be stated and defended. It is not to be described as unrestricted all-product Salop choice.
+`1/12 = 0.083333...`
 
-## Regression evidence
+to
 
-Canonical hostile history:
+`5041/60000 = 0.0840166...`.
 
-- IS, `s_I=0.25`;
-- `x=(0.4,0.5,5/6)`;
-- old candidate `p=(0.25,0.215,0.285)`;
-- old firm-2 operating profit `0.0616333...`.
+More importantly, the localized IS price subgame at this history has no pure Nash equilibrium.
 
-All-product deviation `p_2'=0.174`:
+Because each firm's localized demand is the sum of two clipped affine arc shares, each own-price profit is continuous and piecewise quadratic. Any pure best response must therefore lie at an interior FOC, `p_i=0`, or one of four incident arc-share kinks. The exact Stage 5RR verifier enumerates all 27 global arc states and all six necessary optimality equations per firm, solves **2440 nonsingular candidate systems** exactly, and checks every candidate against the exact global best-response correspondence.
 
-- `q_2'=81/125=0.648`;
-- `pi_2'=0.112752`;
-- therefore the old price candidate is not Nash under all-product choice.
+Pure price Nash equilibria found: **0**.
 
-Explicit localized competition, same deviation:
+Authority:
 
-- `q_2'=511/1500≈0.3406667`;
-- `pi_2'=14819/250000=0.059276`;
-- therefore this exact hostile deviation is not profitable under the localized primitive.
+- `verification/stage05rr_localized_price_nonexistence.py`
+- `reviews/STAGE_05RR_LOCALIZED_COMPETITION_HARDENING_2026-09-05.md`
+- `decisions/STAGE05RR_CESD_DECISIONS.md`
 
-Authorities:
+## Interpretation
 
-- `verification/stage04rr_price_continuation_counterexample.py`
-- `verification/stage04rr_localized_choice_regression.py`
-- `reviews/STAGE_04RR_GLOBAL_PRICE_CONTINUATION_REPAIR_2026-09-05.md`
-- `decisions/STAGE04RR_CESD_DECISIONS.md`
+The Stage 4RR localized repair removed the originally identified large price-cut deviation by firm 2, but that was not enough. Stage 5RR finds a different exact profitable deviation and then establishes pure-equilibrium nonexistence at the hostile off-path history.
 
-## Remaining single blocker
+This is a continuation-existence failure, not a small robustness issue. Since the original location game allows this history, the paper cannot claim a pure-strategy SPNE under the localized repair.
 
-Before any new freeze or downstream welfare/stability work, Stage 5RR must complete a fail-closed active-set continuation solver for the explicit localized game:
+Mixed price equilibria are not ruled out. However, moving to mixed continuation, changing transport-cost curvature, restricting the location strategy domain, or replacing the competition microfoundation would be a distinct model architecture. Under canonical workflow v1.2, a second unrelated repair may not be stacked inside Stage 5.
 
-1. sort locations and construct arcs;
-2. enumerate left-capture / interior / right-capture statuses for all arcs (`3^3=27` before tie refinements);
-3. solve the network-share fixed point conditional on each active set;
-4. verify active-set inequalities;
-5. globally solve each firm's price best response across all active sets;
-6. classify each continuation as `SOLVED_EQUILIBRIUM`, `MULTIPLE_EQUILIBRIA`, `SOLVED_NO_EQUILIBRIUM`, `UNRESOLVED`, or `NUMERICAL_FAILURE`;
-7. define and test coincident-location/tie cases;
-8. use the repaired price continuation to re-run the full unilateral location-deviation problem.
+## Literature status of the repair primitive
 
-No additional model primitive is authorized in Stage 5RR.
+Localized/limited-information circular competition is a recognized theoretical device. de Frutos, Hamoudi and Jarque (2002, *Regional Science and Urban Economics*, 32(4), 531–540, DOI `10.1016/S0166-0462(01)00094-1`) analyze an oligopoly extension under limited consumer information in which consumers compare only the two closest firms.
+
+Their oligopoly section fixes firms at equidistant locations. It therefore does not provide the missing endogenous-location continuation result needed here.
 
 ## What remains valid only conditionally
 
-The following old-branch objects remain diagnostics, not theorem/SPNE evidence:
+The following old-branch objects remain historical diagnostics, not theorem/SPNE evidence:
 
 - `Delta_M^(B-T)≈-0.010167`;
 - `Delta_M^(FULL)≈+0.001571`;
@@ -82,10 +72,12 @@ The following old-branch objects remain diagnostics, not theorem/SPNE evidence:
 - reported world-welfare ordering;
 - 9/9 local sign robustness conditional on the old branch.
 
-They must all be recomputed if the repaired continuation changes location or policy equilibrium.
+They cannot be used for submission unless a new continuation architecture is solved and all downstream equilibrium/welfare objects are recomputed.
 
 ## Current verdict
 
-**STAGE 4RR CONDITIONAL GO — DO NOT SUBMIT.**
+**STAGE 5RR NO-GO — DO NOT SUBMIT.**
 
-Next formal stage: **Stage 5RR — Localized-Competition Continuation Hardening**.
+Stage 6 is not authorized. The current localized-consideration branch terminates here.
+
+Next permissible research action: **return to Stage 3 and compare genuinely distinct continuation architectures, or terminate the paper.**
