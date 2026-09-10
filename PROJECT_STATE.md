@@ -14,7 +14,8 @@ Last updated: 2026-09-10
 - Workflow authority commit: `f48984013898696f010f0437a8cfed6b5b54bdc2`
 - Revival Stage 0: **GO TO AUDIT**
 - Revival Stage 1: **GO TO NOVELTY GATE**
-- Next canonical stage: **Stage 2 — Literature Frontier / Novelty Kill Gate**
+- Revival Stage 2: **GO — GO TO MECHANISM SEARCH**
+- Next canonical stage: **Stage 3 — Candidate Mechanism Search**
 - Submission authorization: **NO**
 - Theory freeze: **NONE FOR REVIVAL TRACK**
 - Historical IJIO target: **context only; not binding**
@@ -39,8 +40,6 @@ Live research question:
 
 > **When standards blocs choose standards depth optimally before firms reposition products, under what economically defensible conditions does post-policy product repositioning change the stable standards-coalition set rather than being absorbed by the blocs' policy adjustment?**
 
-The candidate mechanisms recorded at Stage 0 remain unselected and unauthorized until Stage 3.
-
 ## Stage 1 authority
 
 - `model/REVIVAL_STAGE1_AUDITED_REPRESENTATION_2026-09-10.md`
@@ -50,108 +49,117 @@ The candidate mechanisms recorded at Stage 0 remain unselected and unauthorized 
 
 Stage 1 verdict: **GO TO NOVELTY GATE**.
 
-## Stage 1 main findings
+### Stage 1 binding findings
 
-### S1-1 — PR #65 fixed-depth reversal survives
+- The historical fixed-depth #65 welfare reversal is reproducible.
+- Under the source architecture, IS lower-bound depth is structurally implied along the symmetric-anchor continuation: `dW_IS/ds<0`, hence `s_I*=0`.
+- The economic source is the separation between a discrete compatibility graph `G(rho)` and a continuous depth variable that changes `Tau` / competitive substitutability but does not increase the direct compatibility/network benefit.
+- This depth interpretation is mathematically coherent but **economically restrictive / ad hoc**.
+- The endogenous-depth source diagnostic leaves IS preferred to SU, so no coalition reversal exists at the canonical #65 witness.
+- National-welfare aggregation and the full blocking correspondence require explicit treatment before any later stability theorem.
 
-Fresh reconstruction reproduces the historical fixed-depth result:
+## Stage 2 authority
 
-- fixed positions: `W_member(SU)-W(IS) approximately -0.0002086344`;
-- endogenous product positions at the same fixed depths: approximately `+0.0002663570`;
-- bilateral-union location: approximately `(0.140386,0.526280,0.833333)`.
+- `docs/REVIVAL_STAGE2_PRIOR_ART_MATRIX_2026-09-10.md`
+- `reviews/STAGE_02_REVIVAL_NOVELTY_GATE_2026-09-10.md`
+- `decisions/STAGE02_REVIVAL_DECISIONS.md`
 
-Classification: **CORRECT computational source witness; not a general theorem**.
+Stage 2 verdict: **GO — GO TO MECHANISM SEARCH**.
 
-### S1-2 — IS lower-bound depth is structural in the source architecture
+## Stage 2 main findings
 
-At symmetric IS anchors, all pair proximities satisfy `phi=1/4`. Define
+### S2-1 — generic compatibility-induced differentiation is occupied
 
-`c(s)=c0+lambda/[4(t_bar-s)]-v`.
+Woeckener (1999) is binding prior art for
 
-The symmetric Bertrand continuation gives
+`compatibility first -> later product differentiation -> softened competition`.
 
-`p=a(b-c)/(2b)`,
+Ruiz (2004), Baake & Boom (2001), and related work further occupy broad claims that standards/compatibility and endogenous product characteristics interact.
 
-`q=a(b+c)/[2b(b+2c)]`,
+### S2-2 — standards-coalition formation/stability is occupied
 
-and retained per-country welfare
+Gandal & Shy (2001), Economides & Skrzypacz (2003/2004), Takarada (2020), and related standards/trade work already analyze standards coalitions, network/competition tradeoffs, regional versus multilateral regimes, and blocking/stability questions.
 
-`W_IS(c)=a^2(3b^2+2bc-c^2)/[8b^2(b+2c)]`.
+### S2-3 — continuous government compatibility policy is occupied
 
-Exact differentiation yields
+Klimenko (2009) explicitly studies strategic government policy over partial technical compatibility in network industries.
 
-`dW_IS/dc=-a^2(2b^2+bc+c^2)/[4b^2(b+2c)^2]<0`,
+### S2-4 — post-coalition endogenous action is also occupied
 
-while `dc/ds=lambda/[4(t_bar-s)^2]>0`.
+Guo, Liu & Nault (2024) analyze interoperability coalition formation followed by endogenous coalition resource investment and characterize equilibrium coalition size.
 
-Therefore `dW_IS/ds<0` on the positive regular domain conditional on the symmetric-anchor continuation, so the IS bloc selects `s_I*=0`.
+Huang, Tan, Teh & Zhou (2026) analyze interoperability strength/configuration, including coalition-based structures, and derive platform-pricing and welfare effects.
 
-The committed verifier also attacks whole-circle location deviations at eleven policy nodes across `[0,s_bar]` and finds no profitable deviation from the anchors.
+Therefore the revival cannot rely on `coalition -> later endogenous choice` or `coalitional interoperability -> competition/welfare` as novelty.
 
-This means the IS policy response is **not a canonical-parameter accident**.
+### S2-5 — own SSDI paper is binding internal prior art
 
-### S1-3 — economic source of policy-adjustment absorption
+`standardization-scope-direction-innovation` / **Standardization Scope and Endogenous Innovation Portfolios** already contains
 
-The PR #65 mapping separates:
+`continuous standardization policy -> endogenous downstream strategic reallocation -> Bertrand competition -> welfare -> policy-ranking reversal`.
 
-- formal coalition membership / compatibility benefit through the discrete graph `G(rho)`; and
-- continuous standards depth through `Tau(rho,s)`.
+The revival therefore cannot claim novelty from that generic architecture. Its downstream margin must remain product repositioning, and its publication contribution must be at the coalition-stability / absorption-nonabsorption level.
 
-The network-benefit term does not increase with depth. Under IS, deeper harmonization therefore raises competitive substitutability without adding a separate interoperability/network benefit.
+### S2-6 — surviving theorem-level gap
 
-Classification of this depth interpretation: **CORRECT BUT ECONOMICALLY AD HOC / RESTRICTIVE**.
+No exact prior model or immediate theorem was identified that simultaneously delivers:
 
-No repair is authorized at Stage 1.
+1. multilateral standards partition / coalition state;
+2. endogenous bloc standards depth;
+3. costly post-policy product repositioning;
+4. downstream price competition;
+5. national welfare;
+6. coalition blocking/stability;
+7. a theorem showing when policy adjustment absorbs repositioning versus when repositioning changes the stable coalition set or stability threshold relative to fixed product positions.
 
-### S1-4 — endogenous-depth absorption diagnostic survives
+This is the only surviving novelty family and is classified **POTENTIALLY NOVEL, BUT NARROW AND RESULT-DEPENDENT**.
 
-At the canonical source point:
+## Permanently killed revival claims
 
-- `W_i(IS) approximately 0.1434896983` at `s_I=0`;
-- the symmetry-reduced FULL SU candidate at `(s_12,s_3)=(s_bar,s_bar)` has member welfare approximately `0.1432070478`;
-- `W_member(SU)-W_i(IS) approximately -0.0002826505`.
+The revival may not use any of the following as headline novelty:
 
-The old pre-specified `3 x 3` `(v,gamma)` box remains negative under the same candidate-policy diagnostic, with member-minus-IS gaps approximately from `-0.0001863` to `-0.0003791`.
+- standards induce firms to differentiate;
+- compatibility can soften competition through product location;
+- continuous compatibility / standardization policy is new;
+- standards coalitions alter competition or welfare;
+- regional vs multilateral standards can differ in stability;
+- coalition structure changes later product choice and prices;
+- continuous standardization policy changes a downstream strategic margin and reverses policy ranking;
+- nonzero repositioning itself is a contribution;
+- a fixed-depth SU/IS welfare reversal alone is sufficient.
 
-Evidence maturity: **repository-reproducible diagnostic plus exact IS derivative; not a global analytic FULL-policy theorem**.
+## Surviving research object for Stage 3
 
-### S1-5 — source conflicts / limitations
+> **Characterize absorption versus non-absorption of strategic product repositioning in a standards-coalition game with endogenous bloc policy depth, and determine whether non-absorption changes the stable coalition set, a stability threshold, blocking behavior, or a private/social stability wedge relative to an otherwise identical fixed-position benchmark.**
 
-1. The stale Salop manuscript says singleton blocs cannot choose positive depth, but the later Stage-3 policy map and PR #65 `Tau` implementation allow singleton depth. The revival source audit uses the later policy map.
-2. `W_i=CS/3+Pi_i` is valid only if the inherited equal-country consumer aggregation is stated explicitly; the affine demand system alone does not derive the one-third split.
-3. The inherited materials do not fully specify a post-affine blocking/consent correspondence for every ordered transition among `IS`, all SUs, and `SW`. The IS-vs-SU blocking comparison is clear, but a complete stable-partition operator must be frozen before any future Stage-4 stability theorem.
-4. Old Salop policy, welfare, coalition-stability, freeze, and manuscript results remain stale and may not be reused.
+## Stage 3 mandatory comparison set
 
-## Refined research puzzle after Stage 1
+Stage 3 must treat as binding:
 
-> **Is policy-adjustment absorption a general property of standards-depth / strategic-repositioning games, or is it caused by the PR #65 separation in which coalition membership supplies compatibility benefits while continuous depth affects only competitive substitutability?**
+- Woeckener (1999);
+- Gandal & Shy (2001);
+- Economides & Skrzypacz (2003/2004);
+- Ruiz (2004);
+- Klimenko (2009);
+- Takarada (2020);
+- Guo, Liu & Nault (2024);
+- Huang, Tan, Teh & Zhou (2026);
+- product-repositioning literature;
+- `private-compatibility-standards-coalitions`;
+- `standardization-scope-direction-innovation`.
 
-The project may survive only if Stage 2 finds theorem-level room for an absorption/non-absorption result or for a whole-game coalition-stability effect that is not already known.
+## Stage 3 contract
 
-## Stage 2 mandatory comparison set
+Stage 3 may generate and compare genuinely distinct mechanisms explaining why policy adjustment absorbs repositioning in #65 and what minimal economic condition might prevent complete absorption.
 
-Stage 2 must audit at least:
+Stage 3 must:
 
-- Woeckener (1999) and compatibility-before-product-design work;
-- standards-coalition / network-competition literature;
-- compatibility-policy and harmonization-depth literature;
-- endogenous product differentiation / alliance literature;
-- `private-compatibility-standards-coalitions` as an own nested benchmark;
-- `standardization-scope-direction-innovation` / **Standardization Scope and Endogenous Innovation Portfolios** as own internal prior art on continuous standardization policy inducing a downstream strategic firm response.
+1. give every candidate an independent economic rationale;
+2. compare whole-game novelty, tractability, welfare content, and referee risk;
+3. preserve fixed-position and exogenous-depth nested benchmarks;
+4. reject any candidate whose only function is to force `s_I>0`;
+5. reject parameter fishing for SU dominance;
+6. reject any candidate needing multiple unrelated added primitives;
+7. choose at most one preferred minimal architecture for Stage 4.
 
-The revival cannot claim novelty merely from:
-
-- compatibility causing later differentiation;
-- a continuous standardization policy changing firms' subsequent strategies;
-- coalition structure changing product differentiation and prices;
-- a calibrated fixed-depth welfare reversal.
-
-Stage 2 must perform a whole-game/result-level absorption test.
-
-## Next-stage contract
-
-**Stage 2 — Literature Frontier / Novelty Kill Gate** may search and classify prior work against the audited Stage-1 representation. It may not add or select a new primitive.
-
-If no model/result-level distinction survives, return `NO-GO`.
-
-If a precise theorem-level gap survives, route to Stage 3 mechanism search. Only Stage 3 may compare the six Stage-0 candidate mechanisms and select a minimal architecture for Stage 4.
+If no candidate survives, return `NO-GO` and terminate the revival branch.
