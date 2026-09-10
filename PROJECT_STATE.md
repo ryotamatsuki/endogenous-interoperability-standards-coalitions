@@ -16,8 +16,9 @@ Last updated: 2026-09-10
 - Revival Stage 1: **GO TO NOVELTY GATE**
 - Revival Stage 2: **GO — GO TO MECHANISM SEARCH**
 - Revival Stage 3: **GO — GO TO MINIMAL MODEL**
-- Selected Stage-3 mechanism: **C1 — Realized Interoperability Depth**
-- Next canonical stage: **Stage 4 — Minimal Model**
+- Revival Stage 4: **GO — GO TO STAGE 4A**
+- Selected mechanism: **C1 — Realized Interoperability Depth**
+- Next canonical stage: **Stage 4A — Independent Mathematical Adversarial Certification Gate**
 - Submission authorization: **NO**
 - Theory freeze: **NONE FOR REVIVAL TRACK**
 - Historical IJIO target: **context only; not binding**
@@ -51,14 +52,13 @@ Live research question:
 
 Stage 1 verdict: **GO TO NOVELTY GATE**.
 
-### Stage 1 binding findings
+Binding findings:
 
-- The historical fixed-depth #65 welfare reversal is reproducible.
-- Under the source architecture, IS lower-bound depth is structurally implied along the symmetric-anchor continuation: `dW_IS/ds<0`, hence `s_I*=0`.
-- The source reason is that coalition membership activates the full compatibility/network term while continuous depth changes competitive substitutability through `Tau` without increasing realized interoperability.
-- This source depth interpretation is mathematically coherent but economically restrictive.
-- The endogenous-depth source diagnostic leaves IS preferred to SU, so no coalition reversal exists at the canonical #65 witness.
-- National-welfare aggregation and the full blocking correspondence require explicit treatment before a future stability theorem.
+- the historical #65 fixed-depth welfare reversal is reproducible;
+- in the source architecture, IS `s_I*=0` is structural because depth changes competitive substitutability but not realized interoperability;
+- this source depth interpretation is mathematically coherent but economically restrictive;
+- restoring endogenous depth in the source architecture absorbs the fixed-depth reversal;
+- national welfare and the complete blocking correspondence required explicit rebuilding.
 
 ## Stage 2 authority
 
@@ -68,15 +68,15 @@ Stage 1 verdict: **GO TO NOVELTY GATE**.
 
 Stage 2 verdict: **GO — GO TO MECHANISM SEARCH**.
 
-### Stage 2 binding novelty boundary
+Binding novelty boundary:
 
-Generic claims about compatibility-induced differentiation, continuous standards policy, standards-coalition stability, coalition-induced downstream choices, and continuous standardization changing a later firm strategy are occupied by prior literature and/or own SSDI.
+- generic compatibility-induced differentiation is occupied;
+- continuous compatibility/standardization policy is occupied;
+- standards-coalition stability is occupied;
+- coalition-induced downstream strategic choice is occupied;
+- own SSDI already occupies the generic `continuous standardization -> endogenous downstream response -> policy reversal` architecture.
 
-The only surviving contribution family is:
-
-> **Absorption versus non-absorption of strategic product repositioning in a standards-coalition game with endogenous bloc depth, with a coalition-stability consequence that disappears when product positions are fixed.**
-
-No exact prior model was identified for that whole-game/result class, but the gap is narrow and result-dependent.
+The only surviving contribution family is an **absorption/non-absorption or coalition-stability result that depends indispensably on product repositioning after endogenous bloc depth choice**.
 
 ## Stage 3 authority
 
@@ -87,78 +87,134 @@ No exact prior model was identified for that whole-game/result class, but the ga
 
 Stage 3 verdict: **GO — GO TO MINIMAL MODEL**.
 
-### Stage 3 candidate search
+Ten candidates were compared. The selected and only Stage-4-authorized mechanism was **C1 — Realized Interoperability Depth**.
 
-Ten distinct candidates were compared under ex-ante weights for whole-game novelty, mechanism clarity, minimality/tractability, welfare/coalition leverage, institutional plausibility, empirical bridge, and referee defensibility.
+C1 keeps one depth variable and gives it one literal technical interpretation:
 
-TOP 3:
+- membership determines potential interoperability partners;
+- depth determines how fully interoperability is realized within the bloc;
+- the same depth compresses standard-related differentiation through the retained `Tau` map.
 
-1. **C1 — Realized interoperability depth** — 92/100;
-2. C2 — Multi-market common standard — 82/100;
-3. C3 — Home-market incidence / asymmetric national surplus — 77/100.
-
-Only C1 is authorized for Stage 4.
-
-### Selected mechanism — C1 Realized Interoperability Depth
-
-The existing bloc depth variable receives one coherent technical interpretation:
-
-- formal coalition membership determines which firms are potential interoperability partners;
-- standards depth determines how completely interoperability is realized within the bloc;
-- the same depth also compresses standard-related differentiation through the retained `Tau` map.
-
-The Stage-4 baseline realization map is pre-fixed as
+The realization map is fixed as
 
 `chi(s)=s/s_bar`.
 
-For `i != j`, the candidate affine-demand map is
+For `i!=j`,
 
-`K_ij = c0 + lambda*phi(x_i-x_j)/Tau_ij(rho,s) - v*M_ij(rho,s)`,
+`K_ij=c0+lambda*phi(x_i-x_j)/Tau_ij(rho,s)-v*M_ij(rho,s)`,
 
-where `M_ij=chi(s_C)` for two firms in the same multi-country bloc and `M_ij=0` across blocs.
+where within a multi-country bloc `M_ij=chi(s_C)` and across blocs `M_ij=0`.
 
-No nonlinear `chi`, home bias, heterogeneous repositioning costs, policy cost, bargaining rule, extra market, implementation effort, standard-direction choice, or second policy dimension is authorized in the first Stage-4 attempt.
+No nonlinear `chi`, policy cost, home bias, asymmetry, bargaining, second policy dimension, or extra market is authorized.
 
-### Reduced-form mechanism logic
+## Stage 4 authority
 
-Under symmetric IS with fixed positions,
+- `model/REVIVAL_STAGE4_C1_MINIMAL_MODEL_2026-09-10.md`
+- `verification/stage04_revival_c1_minimal_model.py`
+- `verification/stage04_revival_policy_completion.py`
+- `theorem_certificates/STAGE04_REVIVAL_C1_PRELIMINARY_CERTIFICATES.md`
+- `reviews/STAGE_04_REVIVAL_C1_MINIMAL_MODEL_2026-09-10.md`
+- `decisions/STAGE04_REVIVAL_DECISIONS.md`
 
-`c_FIX(s)=c0 + lambda*phi_bar/(t_bar-s) - v*chi(s)`.
+Stage 4 verdict: **GO — GO TO STAGE 4A INDEPENDENT MATHEMATICAL ADVERSARIAL CERTIFICATION**.
 
-Stage 1 established `dW_IS/dc<0`, while now
+### S4-1 — global continuation construction survives
 
-`dc_FIX/ds=lambda*phi_bar/(t_bar-s)^2-v*chi'(s)`.
+On the threshold audit domain `v in [.06,.16]`, off-diagonal curvature is uniformly bounded by
 
-Thus standards depth has a genuine interoperability-benefit / competition-cost trade-off instead of the mechanically negative policy effect in PR #65.
+`c_min=.14`, `c_max=.966666...`,
 
-In FULL, product positions depend on depth. If members reposition apart, the induced fall in product proximity can attenuate the marginal competitive cost of deeper interoperability. This induced term is absent in `B-FIX`. Whether it is large enough to change policy or coalition stability is an open Stage-4 question, not an assumed result.
+and the inherited sufficient inequalities for positive definiteness / substitute-demand structure continue to hold over the full policy box and product circle. KKT nonnegative demand and direct global one-price deviation regressions pass at hostile histories.
 
-## Stage 4 mandatory benchmarks
+This is construction evidence, not Stage-4A certification.
 
-Stage 4 must solve:
+### S4-2 — C1 removes the mechanical `s_I*=0` result
 
-- `B-FIX`: endogenous coalition/depth with product positions fixed;
-- `B-EXO`: endogenous product positions with exogenous depth;
-- `FULL`: endogenous depth and product positions;
-- historical #65 as a predecessor/comparison object only.
+At symmetric IS anchors,
 
-## Stage 4 fatal contribution gate
+`c_IS(s)=c0+lambda*(1/4)/(t_bar-s)-v*s/s_bar`.
 
-The C1 minimal model must establish on a nondegenerate regular region at least one of:
+The exact Stage-1 derivative `dW_IS/dc<0` still holds, but now the depth effect is
 
-- a different stable partition in `B-FIX` and `FULL`;
-- a strict coalition-stability threshold shift caused by repositioning;
-- a coalition-blocking reversal caused by repositioning;
-- a private/social coalition-stability wedge caused specifically by repositioning.
+`dc_IS/ds=lambda*(1/4)/(t_bar-s)^2-v/s_bar`.
 
-Removing endogenous product positioning must remove the headline result.
+Thus depth has a genuine realized-interoperability benefit versus competitive-compression trade-off. A sufficient threshold for the upper-depth policy is
 
-A positive optimal depth, nonzero repositioning, fixed-depth welfare reversal, or small welfare-level difference is insufficient.
+`v>1/18`.
 
-If no repositioning-essential coalition-level result survives, the mandatory verdict is **NO-GO — TERMINATE THE REVIVAL**.
+### S4-3 — canonical stable-set reversal
 
-Stage 4 failure may not be repaired in the same cycle by adding C2/C3, asymmetry, nonlinear network effects, extra markets, bargaining, or another primitive. Any such future pivot requires a fresh workflow rollback / Stage-0 authorization.
+At `(v,gamma)=(.08,.03)`:
 
-## Next canonical stage
+- `B-FIX stable set = {IS}`;
+- `FULL stable set = {SU_12,SU_13,SU_23}`.
 
-**Stage 4 — Minimal Model: test C1 Realized Interoperability Depth only.**
+Canonical FULL SU policy is `(s_12,s_3)=(.25,.25)` and the member firms reposition to approximately
+
+`(.135440,.531226,.833333)`.
+
+Approximate welfare:
+
+- IS: `.14275239` each;
+- B-FIX SU member: `.14263839`;
+- FULL SU member: `.14320705`;
+- FULL SU outsider: `.14182976`;
+- FULL SW: `.14251852` each.
+
+The same B-FIX/FULL stable-set reversal is reproduced at all nine points of the pre-existing box
+
+`v in {.07,.08,.09}` x `gamma in {.025,.03,.035}`.
+
+### S4-4 — ordered blocking thresholds
+
+At `gamma=.03`, the SU-member indifference/blocking thresholds against IS are
+
+- `v_FIX=1/15 approximately .06666667` for B-FIX;
+- `v_EXO-HIST approximately .11154504` for the pre-existing #65 positive exogenous-depth benchmark;
+- `v_FULL approximately .13368738` for FULL.
+
+Hence
+
+`v_FIX < v_EXO-HIST < v_FULL`.
+
+The B-EXO/FULL ordering persists at the pre-existing redesign-cost values:
+
+- `gamma=.025`: `.11264515 < .13493252`;
+- `gamma=.030`: `.11154504 < .13368738`;
+- `gamma=.035`: `.11048100 < .13247968`.
+
+### S4-5 — FULL-only interaction region
+
+At the transparent point `v=.12,gamma=.03`, which lies strictly between the derived B-EXO-HIST and FULL thresholds:
+
+- B-FIX -> `{IS}`;
+- B-EXO-HIST -> `{IS}`;
+- FULL -> `{SU_12,SU_13,SU_23}`.
+
+Thus the FULL stable-partition result is not reproduced by either binding nested benchmark at the same primitives. Removing endogenous positioning or removing endogenous policy under the pre-existing exogenous-depth benchmark destroys the headline outcome.
+
+### S4-6 — stability rule now explicit
+
+Stage 4 freezes a strict residual-membership blocking correspondence: a deviating coalition forms an exclusive bloc, nondeviators retain residual links where feasible, and all deviators must strictly gain at the alternative partition's own complete continuation equilibrium.
+
+This rule is a mandatory Stage-4A attack target.
+
+## Stage 4A contract
+
+Stage 4A must independently certify or defeat:
+
+1. global Bertrand continuation on the full stated history domain;
+2. SU location equilibrium globality/multiplicity throughout threshold brackets;
+3. SU and SW global policy best responses beyond finite-grid construction evidence;
+4. uniqueness and ordering of `v_EXO-HIST` and `v_FULL` roots;
+5. local-open-set / quantifier claims;
+6. the complete blocking correspondence and stable-set calculations;
+7. robustness to alternative equilibrium selections if multiplicity is found.
+
+Stage 4A may not silently repair the model. A failed headline certificate reopens or kills the theory.
+
+## Current routing
+
+**NEXT: STAGE 4A — INDEPENDENT MATHEMATICAL ADVERSARIAL CERTIFICATION GATE.**
+
+No Stage 6, theory freeze, journal positioning, manuscript rehabilitation, or submission authorization is active.
