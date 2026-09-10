@@ -16,98 +16,38 @@ Last updated: 2026-09-10
 - Revival Stage 1: **GO TO NOVELTY GATE**
 - Revival Stage 2: **GO — GO TO MECHANISM SEARCH**
 - Revival Stage 3: **GO — GO TO MINIMAL MODEL**
-- Revival Stage 4: **GO — GO TO STAGE 4A**
+- Revival Stage 4: **GO AT CONSTRUCTION LEVEL — NOW REOPENED**
+- Revival Stage 4A: **NO-GO / REOPEN STAGE 4**
+- Exact Stage-4A blocker: **SU product-location equilibrium multiplicity with welfare/stability selection dependence**
 - Selected mechanism: **C1 — Realized Interoperability Depth**
-- Next canonical stage: **Stage 4A — Independent Mathematical Adversarial Certification Gate**
+- Next canonical stage: **REOPENED STAGE 4 — multiplicity / selection characterization**
 - Submission authorization: **NO**
 - Theory freeze: **NONE FOR REVIVAL TRACK**
+- Stage 6 novelty re-kill: **BLOCKED**
+- Formal verification: **APPLICABLE; IMPLEMENTATION NOT YET AUTHORIZED / PASSED**
 - Historical IJIO target: **context only; not binding**
 
 ## Relationship to main and PR #65
 
-This branch does not replace or rewrite either historical authority:
+This branch does not replace or rewrite historical authority:
 
 1. `main` preserves the canonical terminated history of the prior paper architecture.
 2. PR #65 preserves the historical affine-demand conditional-go branch and its fixed-depth welfare-reversal witness.
 
-The revival track starts from PR #65 solely to preserve useful source mathematics and provenance. It does not inherit old Stage 4, theory-freeze, hostile-referee, journal-selection, manuscript-integration, or submission passing status.
+The revival branch starts from PR #65 for provenance only and inherits no old theory freeze, referee gate, journal selection, manuscript integration, or submission authorization.
 
-## Stage 0 authority
+## Stage 0–3 authority
 
-- `reviews/STAGE_00_REVIVAL_IDEA_INTAKE_2026-09-10.md`
-- `decisions/REVIVAL_2026-09-10_DECISION_RECORD.md`
+- Stage 0: `reviews/STAGE_00_REVIVAL_IDEA_INTAKE_2026-09-10.md`
+- Revival provenance: `decisions/REVIVAL_2026-09-10_DECISION_RECORD.md`
+- Stage 1: `reviews/STAGE_01_REVIVAL_SOURCE_MATHEMATICAL_AUDIT_2026-09-10.md`
+- Stage 2: `reviews/STAGE_02_REVIVAL_NOVELTY_GATE_2026-09-10.md`
+- Stage 3: `reviews/STAGE_03_REVIVAL_MECHANISM_SEARCH_2026-09-10.md`
+- Stage-3 selected model: `model/REVIVAL_STAGE3_SELECTED_MECHANISM_2026-09-10.md`
 
-Stage 0 verdict: **GO TO AUDIT**.
+The surviving research object remains an absorption/non-absorption or coalition-stability result that depends indispensably on product repositioning after endogenous bloc depth choice. Generic compatibility-induced differentiation, continuous standardization policy, coalition-induced downstream strategy, and continuous-policy-to-strategy-to-policy-reversal claims remain killed by Stage 2 and own SSDI prior art.
 
-Live research question:
-
-> **When standards blocs choose standards depth optimally before firms reposition products, under what economically defensible conditions does post-policy product repositioning change the stable standards-coalition set rather than being absorbed by the blocs' policy adjustment?**
-
-## Stage 1 authority
-
-- `model/REVIVAL_STAGE1_AUDITED_REPRESENTATION_2026-09-10.md`
-- `verification/stage01_revival_source_audit.py`
-- `reviews/STAGE_01_REVIVAL_SOURCE_MATHEMATICAL_AUDIT_2026-09-10.md`
-- `decisions/STAGE01_REVIVAL_DECISIONS.md`
-
-Stage 1 verdict: **GO TO NOVELTY GATE**.
-
-Binding findings:
-
-- the historical #65 fixed-depth welfare reversal is reproducible;
-- in the source architecture, IS `s_I*=0` is structural because depth changes competitive substitutability but not realized interoperability;
-- this source depth interpretation is mathematically coherent but economically restrictive;
-- restoring endogenous depth in the source architecture absorbs the fixed-depth reversal;
-- national welfare and the complete blocking correspondence required explicit rebuilding.
-
-## Stage 2 authority
-
-- `docs/REVIVAL_STAGE2_PRIOR_ART_MATRIX_2026-09-10.md`
-- `reviews/STAGE_02_REVIVAL_NOVELTY_GATE_2026-09-10.md`
-- `decisions/STAGE02_REVIVAL_DECISIONS.md`
-
-Stage 2 verdict: **GO — GO TO MECHANISM SEARCH**.
-
-Binding novelty boundary:
-
-- generic compatibility-induced differentiation is occupied;
-- continuous compatibility/standardization policy is occupied;
-- standards-coalition stability is occupied;
-- coalition-induced downstream strategic choice is occupied;
-- own SSDI already occupies the generic `continuous standardization -> endogenous downstream response -> policy reversal` architecture.
-
-The only surviving contribution family is an **absorption/non-absorption or coalition-stability result that depends indispensably on product repositioning after endogenous bloc depth choice**.
-
-## Stage 3 authority
-
-- `docs/REVIVAL_STAGE3_CANDIDATE_MECHANISM_MATRIX_2026-09-10.md`
-- `model/REVIVAL_STAGE3_SELECTED_MECHANISM_2026-09-10.md`
-- `reviews/STAGE_03_REVIVAL_MECHANISM_SEARCH_2026-09-10.md`
-- `decisions/STAGE03_REVIVAL_DECISIONS.md`
-
-Stage 3 verdict: **GO — GO TO MINIMAL MODEL**.
-
-Ten candidates were compared. The selected and only Stage-4-authorized mechanism was **C1 — Realized Interoperability Depth**.
-
-C1 keeps one depth variable and gives it one literal technical interpretation:
-
-- membership determines potential interoperability partners;
-- depth determines how fully interoperability is realized within the bloc;
-- the same depth compresses standard-related differentiation through the retained `Tau` map.
-
-The realization map is fixed as
-
-`chi(s)=s/s_bar`.
-
-For `i!=j`,
-
-`K_ij=c0+lambda*phi(x_i-x_j)/Tau_ij(rho,s)-v*M_ij(rho,s)`,
-
-where within a multi-country bloc `M_ij=chi(s_C)` and across blocs `M_ij=0`.
-
-No nonlinear `chi`, policy cost, home bias, asymmetry, bargaining, second policy dimension, or extra market is authorized.
-
-## Stage 4 authority
+## Stage 4 construction authority
 
 - `model/REVIVAL_STAGE4_C1_MINIMAL_MODEL_2026-09-10.md`
 - `verification/stage04_revival_c1_minimal_model.py`
@@ -116,105 +56,120 @@ No nonlinear `chi`, policy cost, home bias, asymmetry, bargaining, second policy
 - `reviews/STAGE_04_REVIVAL_C1_MINIMAL_MODEL_2026-09-10.md`
 - `decisions/STAGE04_REVIVAL_DECISIONS.md`
 
-Stage 4 verdict: **GO — GO TO STAGE 4A INDEPENDENT MATHEMATICAL ADVERSARIAL CERTIFICATION**.
+Stage 4 selected only **C1 — Realized Interoperability Depth**. For `i!=j`,
 
-### S4-1 — global continuation construction survives
+`K_ij=c0+lambda*phi(x_i-x_j)/Tau_ij(rho,s)-v*M_ij(rho,s)`,
 
-On the threshold audit domain `v in [.06,.16]`, off-diagonal curvature is uniformly bounded by
+where within a multi-country bloc `M_ij=s_C/s_bar` and across blocs `M_ij=0`.
 
-`c_min=.14`, `c_max=.966666...`,
+No nonlinear realization map, policy cost, home bias, asymmetry, bargaining, extra market, or second policy dimension was added.
 
-and the inherited sufficient inequalities for positive definiteness / substitute-demand structure continue to hold over the full policy box and product circle. KKT nonnegative demand and direct global one-price deviation regressions pass at hostile histories.
+### Stage-4 construction findings retained provisionally
 
-This is construction evidence, not Stage-4A certification.
+- affine-demand regularity survives on the stated threshold domain;
+- the preferred outward SU location equilibrium exists;
+- exact IS policy trade-off survives, with sufficient upper-depth condition `v>1/18`;
+- exact fixed-position member-indifference threshold `v_FIX=1/15` survives;
+- Stage-4 production solver obtained a preferred-branch stable-set reversal and ordered threshold result.
 
-### S4-2 — C1 removes the mechanical `s_I*=0` result
+The last two preferred-branch FULL results are **not certified model-level conclusions after Stage 4A**.
 
-At symmetric IS anchors,
+## Stage 4A authority
 
-`c_IS(s)=c0+lambda*(1/4)/(t_bar-s)-v*s/s_bar`.
+- independent regression: `verification/stage04a_independent_multiplicity_red_team.py`
+- adversarial review: `reviews/STAGE_04A_REVIVAL_C1_MATH_RED_TEAM_2026-09-10.md`
+- theorem certificates: `theorem_certificates/STAGE04A_REVIVAL_C1_ADVERSARIAL_CERTIFICATES.md`
+- decision record: `decisions/STAGE04A_REVIVAL_DECISIONS.md`
 
-The exact Stage-1 derivative `dW_IS/dc<0` still holds, but now the depth effect is
+Stage 4A verdict:
 
-`dc_IS/ds=lambda*(1/4)/(t_bar-s)^2-v/s_bar`.
+**NO-GO / REOPEN STAGE 4.**
 
-Thus depth has a genuine realized-interoperability benefit versus competitive-compression trade-off. A sufficient threshold for the upper-depth policy is
+## Binding Stage-4A counterexample
 
-`v>1/18`.
+At FULL-SU policy history `(s_12,s_3)=(.25,.25)` and `(v,gamma)=(.08,.03)`, independent multi-start solution of the full three-firm location FOC system plus whole-circle unilateral best-response attacks finds at least two distinct pure-strategy Nash equilibria.
 
-### S4-3 — canonical stable-set reversal
+### E1 — preferred outward equilibrium
 
-At `(v,gamma)=(.08,.03)`:
+`x≈(.13544022,.53122644,.83333333)`.
 
-- `B-FIX stable set = {IS}`;
-- `FULL stable set = {SU_12,SU_13,SU_23}`.
+- SU member welfare ≈ `.14320705`;
+- IS welfare ≈ `.14275239`;
+- therefore `W_M(SU)>W(IS)`.
 
-Canonical FULL SU policy is `(s_12,s_3)=(.25,.25)` and the member firms reposition to approximately
+### E2 — omitted crossing equilibrium
 
-`(.135440,.531226,.833333)`.
+`x≈(.47774332,.18892335,.83333333)`.
 
-Approximate welfare:
+- SU member welfare ≈ `.14061475`;
+- SU outsider welfare ≈ `.14296880`;
+- therefore `W_M(SU)<W(IS)`.
 
-- IS: `.14275239` each;
-- B-FIX SU member: `.14263839`;
-- FULL SU member: `.14320705`;
-- FULL SU outsider: `.14182976`;
-- FULL SW: `.14251852` each.
+Both E1 and E2 survive dense whole-circle unilateral best-response audits. E2 is not a failed stationary point or a local-only optimum.
 
-The same B-FIX/FULL stable-set reversal is reproduced at all nine points of the pre-existing box
+The same qualitative multiplicity occurs at the Stage-4 interaction point `(v,gamma)=(.12,.03)`:
 
-`v in {.07,.08,.09}` x `gamma in {.025,.03,.035}`.
+- preferred SU branch gives member welfare ≈ `.143577` > IS ≈ `.143460`;
+- crossing SU branch gives member welfare ≈ `.140983` < IS.
 
-### S4-4 — ordered blocking thresholds
+Hence the Stage-4 stable-set conclusion is equilibrium-selection dependent.
 
-At `gamma=.03`, the SU-member indifference/blocking thresholds against IS are
+## Consequences for Stage-4 claims
 
-- `v_FIX=1/15 approximately .06666667` for B-FIX;
-- `v_EXO-HIST approximately .11154504` for the pre-existing #65 positive exogenous-depth benchmark;
-- `v_FULL approximately .13368738` for FULL.
+### Still retained
 
-Hence
+- P1 affine-demand regularity / attacked Bertrand continuation: **survives Stage-4A attack**;
+- P2 outward repositioning: **survives as an existence claim only**;
+- P3 exact IS marginal policy condition: **survives**;
+- exact B-FIX threshold `1/15`: **survives**.
 
-`v_FIX < v_EXO-HIST < v_FULL`.
+### Reopened / revoked as selection-free claims
 
-The B-EXO/FULL ordering persists at the pre-existing redesign-cost values:
+- `FULL stable set={SU_12,SU_13,SU_23}`;
+- nine-point stable-set reversal as a unique equilibrium implication;
+- `v_FULL≈.13368738` as a unique model-implied threshold;
+- `v_FIX<v_EXO-HIST<v_FULL` as a selection-free theorem;
+- FULL-only stable-partition identification relative to B-FIX and B-EXO-HIST;
+- FULL SU upper-depth policy equilibrium as a selection-free continuation result.
 
-- `gamma=.025`: `.11264515 < .13493252`;
-- `gamma=.030`: `.11154504 < .13368738`;
-- `gamma=.035`: `.11048100 < .13247968`.
+The Stage-4 preferred branch may remain a valid conditional equilibrium path, but the current model has no equilibrium-selection rule that makes it the unique continuation.
 
-### S4-5 — FULL-only interaction region
+## No silent refinement
 
-At the transparent point `v=.12,gamma=.03`, which lies strictly between the derived B-EXO-HIST and FULL thresholds:
+The following are not part of the model and may not be used to delete the crossing equilibrium without explicit workflow authorization:
 
-- B-FIX -> `{IS}`;
-- B-EXO-HIST -> `{IS}`;
-- FULL -> `{SU_12,SU_13,SU_23}`.
+- closest-anchor equilibrium selection;
+- no-crossing/order-preservation restriction;
+- selection by best-response dynamics initialized at anchors;
+- welfare/Pareto selection;
+- risk dominance;
+- arbitrary preferred-branch selection.
 
-Thus the FULL stable-partition result is not reproduced by either binding nested benchmark at the same primitives. Removing endogenous positioning or removing endogenous policy under the pre-existing exogenous-depth benchmark destroys the headline outcome.
+## Reopened Stage-4 contract
 
-### S4-6 — stability rule now explicit
+Before Stage 4A can be repeated, Stage 4 must:
 
-Stage 4 freezes a strict residual-membership blocking correspondence: a deviating coalition forms an exclusive bloc, nondeviators retain residual links where feasible, and all deviators must strictly gain at the alternative partition's own complete continuation equilibrium.
+1. characterize the relevant SU location-equilibrium correspondence over the policy/threshold domain;
+2. determine whether policy and coalition conclusions are invariant across all relevant equilibria;
+3. if not invariant, determine whether an economically defensible and symmetric equilibrium refinement/selection is part of the intended model;
+4. re-solve every material bloc-depth deviation using the correct continuation object;
+5. restate blocking/stability and threshold claims with exact equilibrium-selection quantifiers;
+6. preserve `stage04a_independent_multiplicity_red_team.py` as a permanent regression test;
+7. return `NO-GO` if no non-ad-hoc resolution preserves a substantive FULL-only coalition result.
 
-This rule is a mandatory Stage-4A attack target.
+## Formal-verification applicability
 
-## Stage 4A contract
+Stage 4A records **FORMALIZATION APPLICABLE**. Preliminary future Lean targets, after theorem scope stabilizes, are:
 
-Stage 4A must independently certify or defeat:
+- exact B-FIX factorization and threshold `v_FIX=1/15`;
+- exact IS derivative and sufficient condition `v>1/18`;
+- welfare-to-strict-blocking logical implications;
+- any analytic equilibrium-branch conditions and threshold ordering that survive Stage-4 repair.
 
-1. global Bertrand continuation on the full stated history domain;
-2. SU location equilibrium globality/multiplicity throughout threshold brackets;
-3. SU and SW global policy best responses beyond finite-grid construction evidence;
-4. uniqueness and ordering of `v_EXO-HIST` and `v_FULL` roots;
-5. local-open-set / quantifier claims;
-6. the complete blocking correspondence and stable-set calculations;
-7. robustness to alternative equilibrium selections if multiplicity is found.
-
-Stage 4A may not silently repair the model. A failed headline certificate reopens or kills the theory.
+Formal implementation is deferred until the theorem scope is stable; there is no formal-verification PASS yet.
 
 ## Current routing
 
-**NEXT: STAGE 4A — INDEPENDENT MATHEMATICAL ADVERSARIAL CERTIFICATION GATE.**
+**REOPEN STAGE 4 — EQUILIBRIUM MULTIPLICITY / SELECTION CHARACTERIZATION.**
 
-No Stage 6, theory freeze, journal positioning, manuscript rehabilitation, or submission authorization is active.
+Stage 6, Stage 7.5A, theory freeze, journal positioning, manuscript rehabilitation, and submission remain blocked.
