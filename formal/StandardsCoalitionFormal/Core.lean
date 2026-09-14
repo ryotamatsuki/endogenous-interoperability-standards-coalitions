@@ -28,24 +28,10 @@ theorem bFix_factorization (v : ℝ)
     (h375 : 375 * v - 3913 ≠ 0)
     (hq : bFixQ v ≠ 0) :
     bFixDelta v = bFixFactored v := by
-  have h15' : -82 + v * 15 ≠ 0 := by
-    intro h
-    apply h15
-    nlinarith
-  have h375' : -3913 + v * 375 ≠ 0 := by
-    intro h
-    apply h375
-    nlinarith
-  have hprod : 320866 - v * 89445 + v^2 * 5625 ≠ 0 := by
-    have heq : 320866 - v * 89445 + v^2 * 5625 =
-        (15 * v - 82) * (375 * v - 3913) := by ring
-    rw [heq]
-    exact mul_ne_zero h15 h375
   have hq' : 225 * v^2 + 2040 * v - 45929 ≠ 0 := by
     simpa [bFixQ] using hq
-  unfold bFixDelta bFixWsu bFixWis bFixFactored
-  field_simp [h15, h375, h15', h375', hprod, hq, hq']
-  unfold bFixPoly bFixQ
+  unfold bFixDelta bFixWsu bFixWis bFixFactored bFixPoly bFixQ
+  field_simp [h15, h375, hq']
   ring
 
 theorem bFix_delta_at_cutoff : bFixDelta ((1 : ℝ) / 15) = 0 := by
