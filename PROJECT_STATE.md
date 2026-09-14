@@ -50,11 +50,11 @@ At `gamma=.10`:
 - `v_EXO-HIST≈.0993400329`;
 - `v_FULL≈.1196400688`.
 
-Repeat Stage 4A independently attacked multiplicity/global deviations on the declared higher-gamma stress domain. It did not prove uniqueness for all parameters.
+Repeat Stage 4A independently attacked multiplicity/global deviations on the declared higher-redesign-cost stress domain. It did not prove uniqueness for all parameters.
 
 ## Surviving contribution
 
-> In a government standards-coalition game with endogenous interoperability depth, costly post-policy product repositioning can remain consequential after policy adjustment. In a selection-safe higher-redesign-cost region, allowing repositioning shifts the bilateral-union versus international-standardization national-welfare blocking threshold relative to the otherwise identical fixed-position policy game and can therefore change the stable standards partition.
+> In the symmetric three-country baseline model, post-policy product repositioning can remain consequential after standards blocs optimize interoperability depth. At an independently audited higher-redesign-cost witness, restoring repositioning shifts the bilateral-union versus international-standardization national-welfare blocking cutoff relative to the fixed-position benchmark and changes the stable partition. The qualitative cutoff shift also survives one pre-specified concave alternative mapping from standards depth to realized interoperability.
 
 Generic compatibility-induced differentiation, continuous standards depth, standards breadth/depth, coalition-induced downstream choice, and regional-versus-multilateral stability remain killed as novelty claims.
 
