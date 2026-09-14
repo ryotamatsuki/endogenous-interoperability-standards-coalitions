@@ -3,7 +3,7 @@ import Mathlib
 namespace StandardsCoalitionFormal
 
 /-- Exact derivative dW_IS/dc for the symmetric affine-Bertrand continuation. -/
-def isWelfareDerivative (a b c : ℝ) : ℝ :=
+noncomputable def isWelfareDerivative (a b c : ℝ) : ℝ :=
   -(a^2 * (2*b^2 + b*c + c^2)) / (4*b^2*(b + 2*c)^2)
 
 /-- The exact IS welfare derivative is strictly negative for positive primitives. -/
