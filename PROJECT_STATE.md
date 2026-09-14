@@ -22,18 +22,19 @@ Last updated: 2026-09-15
 - Stage 6: **GO — GO TO STAGE 7**
 - Stage 7: **GO — GO TO STAGE 7.5**
 - Stage 7.5: **CONDITIONAL GO — ONE GENERALITY ROBUSTNESS BLOCKER**
+- Stage 7R: **GO — ALTERNATIVE-REALIZATION ROBUSTNESS PASS**
 - Selected mechanism: **C1 — Realized Interoperability Depth**
-- Next canonical action: **Stage 7R — bounded alternative-realization robustness test, then repeat Stage 7.5**
+- Next canonical action: **REPEAT STAGE 7.5 — Full-Theory Freeze Decision**
 - Submission authorization: **NO**
 - Theory freeze: **NONE**
-- Stage 7.5A: **BLOCKED pending Stage 7R / repeat Stage 7.5**
+- Stage 7.5A: **BLOCKED pending repeat Stage 7.5**
 - Formal verification: **APPLICABLE; NOT YET IMPLEMENTED/PASSED**
 
 ## Relationship to historical branches
 
 `main` remains the canonical terminated history of the prior architecture. PR #65 remains the historical affine-demand conditional-go source and fixed-depth welfare-reversal witness. The revival branch does not rewrite either authority and inherits no old theory freeze, journal selection, referee pass, or submission authorization.
 
-## C1 model retained unchanged
+## Canonical C1 baseline
 
 For `i!=j`,
 
@@ -41,7 +42,7 @@ For `i!=j`,
 
 where within a multi-country bloc `M_ij=s_C/s_bar` and across blocs `M_ij=0`.
 
-No nonlinear realization map, policy cost, home bias, asymmetry, bargaining, extra market, no-crossing restriction, dynamic selection rule, or second policy dimension has been added to the canonical baseline.
+No nonlinear realization map, policy cost, home bias, asymmetry, bargaining, extra market, no-crossing restriction, dynamic selection rule, or second policy dimension has been added to the canonical baseline. The nonlinear realization map used at Stage 7R is a robustness exercise only.
 
 ## Permanent first Stage-4A counterexample
 
@@ -57,7 +58,7 @@ No implicit selection rule may suppress this equilibrium.
 
 Stage 4R kept the model unchanged and narrowed theorem scope to higher repositioning-cost curvature `gamma`.
 
-The repaired headline point is `(v,gamma)=(.11,.10)`.
+The repaired baseline headline point is `(v,gamma)=(.11,.10)`.
 
 At the repaired point:
 
@@ -69,7 +70,7 @@ At the repaired point:
 
 Repeat Stage 4A independently certified the repaired higher-`gamma` continuation class against multiplicity/global-deviation attacks on the declared stress domain. It did **not** certify global uniqueness for all `gamma` or all primitives.
 
-Thresholds at `gamma=.10`:
+Baseline thresholds at `gamma=.10`:
 
 - `v_FIX=1/15=.0666666667` exactly;
 - `v_EXO-HIST≈.0993400329`;
@@ -91,7 +92,7 @@ Generic compatibility-induced differentiation, continuous standards policy, coal
 
 Strongest current novelty threat: the 2026 Menegaki–Serfes complementary-oligopoly standards/coalition program. If a later public version contains the same product-repositioning threshold mechanism, Stage 6 must be reopened.
 
-## Stage 7 welfare / generality / institutional authority
+## Stage 7 welfare / institutional authority
 
 - `verification/stage07_welfare_generality.py`
 - `docs/REVIVAL_STAGE7_WELFARE_GENERALITY_INSTITUTIONAL_2026-09-15.md`
@@ -108,68 +109,79 @@ At `(v,gamma)=(.11,.10)` the FULL-SU versus IS member-welfare gain is approximat
 
 By contrast, B-FIX SU is about `-.00037303` below IS in member national welfare. The economic object is therefore a repositioning-driven coalition-threshold shift, mainly through restored domestic producer rents with a smaller positive consumer-surplus contribution.
 
-The institutional interpretation `depth -> realized interoperability` is defensible in environments with multi-function standards, implementation profiles, and conformance/interoperability testing. The literal linear map `chi(s)=s/s_bar` is only a reduced-form normalization.
-
-Essential economic ingredients identified at Stage 7:
-
-1. intensive interoperability/harmonization margin;
-2. compatibility gain from depth;
-3. competitive compression from harmonization;
-4. separate costly post-policy design margin;
-5. national objectives combining domestic consumer surplus and producer profit;
-6. selection-safe continuation.
-
-No general theorem is established for arbitrary demand, arbitrary realization maps, asymmetric countries, or arbitrary redesign costs.
+The institutional interpretation `depth -> realized interoperability` is defensible in environments with multi-function standards, implementation profiles, and conformance/interoperability testing. The literal linear baseline map `chi(s)=s/s_bar` is a reduced-form normalization.
 
 ## Stage 7.5 authority
 
 - review: `reviews/STAGE_075_REVIVAL_FULL_THEORY_FREEZE_DECISION_2026-09-15.md`
 - decision record: `decisions/STAGE075_REVIVAL_DECISIONS_2026-09-15.md`
 
-Stage 7.5 verdict:
-
-**CONDITIONAL GO.**
-
-The project passes the following full-paper tests:
-
-- the core result can be stated without model-specific notation;
-- the minimal strategic chain is economically coherent;
-- the welfare/organizational implication is substantive despite small local level effects;
-- the surviving novelty is a full-game threshold result, not setup novelty;
-- institutional motivation exists for an intensive realized-interoperability margin.
+Stage 7.5 verdict: **CONDITIONAL GO**.
 
 Exact blocker:
 
-> **The surviving coalition-threshold mechanism has not yet survived any credible alternative functional formulation outside the current baseline architecture.**
+> **The surviving coalition-threshold mechanism had not yet survived any credible alternative functional formulation outside the current baseline architecture.**
 
-This is the only authorized Stage-7.5 blocker.
+Exactly one repair was authorized: replace only the linear realization map in a robustness exercise by
 
-## Stage 7R authorized robustness test
+`chi_alt(s)=2(s/s_bar)-(s/s_bar)^2`.
 
-Stage 7R may alter **only** the realization map for a robustness exercise, while keeping the baseline model unchanged as canonical.
+## Stage 7R authority
 
-Pre-specified alternative:
+- verifier: `verification/stage07r_alternative_realization_robustness.py`
+- review: `reviews/STAGE_07R_REVIVAL_ALTERNATIVE_REALIZATION_2026-09-15.md`
+- decision record: `decisions/STAGE07R_REVIVAL_DECISIONS_2026-09-15.md`
 
-`chi_alt(s)=2(s/s_bar)-(s/s_bar)^2`, `s in [0,s_bar]`.
+Stage 7R verdict:
 
-Properties:
+**GO — ALTERNATIVE-REALIZATION ROBUSTNESS PASS.**
 
-- smooth;
-- monotone;
-- concave;
-- `chi_alt(0)=0`;
-- `chi_alt(s_bar)=1`.
+The Stage-7.5 blocker is resolved without changing the canonical baseline model.
 
-Passing requirement:
+Alternative robustness map:
 
-- re-solve B-FIX and FULL on a declared selection-safe higher-`gamma` test domain;
-- preserve well-defined continuation/policy equilibria under the alternative map;
-- obtain a strict B-FIX/FULL blocking-threshold difference or equivalent coalition-stability difference;
-- do not retune parameters after observing the result merely to recover the headline ranking.
+`chi_alt(s)=2(s/s_bar)-(s/s_bar)^2`.
 
-No asymmetry, policy cost, extra market, bargaining, new strategic variable, no-crossing restriction, selection rule, or second robustness modification is authorized in this cycle.
+Because `chi_alt'(s_bar)=0`, policy was re-optimized from zero rather than inherited from the baseline.
 
-If the alternative-realization test passes, repeat Stage 7.5. If it fails materially, do not grant full-theory-freeze authorization on the baseline alone without reassessing scope.
+At `gamma=.10`, the alternative-realization SU-vs-IS member-welfare thresholds are approximately:
+
+- `v_FIX_alt≈.05133198`;
+- `v_FULL_alt≈.10666955`.
+
+Hence
+
+`v_FULL_alt > v_FIX_alt`.
+
+At the transparent same-primitive witness `(v,gamma)=(.08,.10)`:
+
+### B-FIX
+
+- optimized IS depth ≈ `.17777483`;
+- optimized SU member depth ≈ `.19091946`;
+- optimized SU outsider depth = `.25`;
+- `W_M(SU)-W(IS)≈-.000205416`.
+
+### FULL
+
+- optimized IS depth ≈ `.17777483`;
+- optimized SU member depth = `.25`;
+- optimized SU outsider depth = `.25`;
+- `W_M(SU)-W(IS)≈+.000195579`.
+
+Thus product repositioning continues to shift the government coalition-blocking threshold and changes the SU-vs-IS coalition comparison under a credible nonlinear realization map.
+
+Selection-safety attack under the alternative formulation:
+
+- `v in {.06,.08,.10,.11}`;
+- `s_12 in {0,.0625,.125,.1875,.25}`;
+- `s_3=.25`;
+- `gamma=.10`;
+- 20 material SU histories total.
+
+A dispersed full-system multi-start plus whole-circle unilateral-deviation audit retained exactly one global-BR pure SU location Nash at every attacked history.
+
+This is finite robustness evidence. It does not establish a theorem for arbitrary monotone `chi`, arbitrary demand, arbitrary product geometry, country asymmetry, or all redesign-cost values.
 
 ## Formal-verification applicability
 
@@ -177,16 +189,16 @@ Status: **FORMALIZATION APPLICABLE**.
 
 Future Stage-7.5A targets include:
 
-- exact B-FIX factorization `v_FIX=1/15`;
-- exact IS welfare derivative and sufficient condition `v>1/18`;
+- exact baseline B-FIX factorization `v_FIX=1/15`;
+- exact baseline IS welfare derivative and sufficient condition `v>1/18`;
 - strict-welfare inequalities -> blocking/stability logic;
 - exact threshold-ordering components separable from numerical location continuation;
-- any analytic high-`gamma` uniqueness condition later added to theorem scope.
+- the statement-fidelity boundary between baseline certified theorems and Stage-7R robustness evidence.
 
-There is no Formal Verification PASS yet. Lean does not substitute for the Stage-7R economic robustness test.
+There is no Formal Verification PASS yet.
 
 ## Current routing
 
-**NEXT: STAGE 7R — ONE BOUNDED ALTERNATIVE-REALIZATION ROBUSTNESS TEST.**
+**NEXT: REPEAT STAGE 7.5 — FULL-THEORY FREEZE DECISION.**
 
-Then repeat Stage 7.5. Stage 7.5A, Stage 8 theory freeze, journal positioning, manuscript rehabilitation, and submission authorization remain blocked.
+If the repeat Stage 7.5 issues `GO`, the next stage is Stage 7.5A Generality / Quantifier Red-Team plus the embedded Formal Verification Gate. Stage 8 theory freeze, journal positioning, manuscript rehabilitation, and submission authorization remain blocked.
