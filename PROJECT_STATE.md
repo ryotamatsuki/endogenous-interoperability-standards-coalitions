@@ -21,25 +21,17 @@ Last updated: 2026-09-15
 - Stage 4A repeat: **GO — MATHEMATICAL ADVERSARIAL CERTIFICATION PASS**
 - Stage 6: **GO — GO TO STAGE 7**
 - Stage 7: **GO — GO TO STAGE 7.5**
+- Stage 7.5: **CONDITIONAL GO — ONE GENERALITY ROBUSTNESS BLOCKER**
 - Selected mechanism: **C1 — Realized Interoperability Depth**
-- Next canonical stage: **Stage 7.5 — Full-Theory Freeze Decision**
+- Next canonical action: **Stage 7R — bounded alternative-realization robustness test, then repeat Stage 7.5**
 - Submission authorization: **NO**
 - Theory freeze: **NONE**
+- Stage 7.5A: **BLOCKED pending Stage 7R / repeat Stage 7.5**
 - Formal verification: **APPLICABLE; NOT YET IMPLEMENTED/PASSED**
 
 ## Relationship to historical branches
 
 `main` remains the canonical terminated history of the prior architecture. PR #65 remains the historical affine-demand conditional-go source and fixed-depth welfare-reversal witness. The revival branch does not rewrite either authority and inherits no old theory freeze, journal selection, referee pass, or submission authorization.
-
-## Stage 0–3 authority
-
-- Stage 0: `reviews/STAGE_00_REVIVAL_IDEA_INTAKE_2026-09-10.md`
-- Stage 1: `reviews/STAGE_01_REVIVAL_SOURCE_MATHEMATICAL_AUDIT_2026-09-10.md`
-- Stage 2: `reviews/STAGE_02_REVIVAL_NOVELTY_GATE_2026-09-10.md`
-- Stage 3: `reviews/STAGE_03_REVIVAL_MECHANISM_SEARCH_2026-09-10.md`
-- Stage-3 model: `model/REVIVAL_STAGE3_SELECTED_MECHANISM_2026-09-10.md`
-
-Generic compatibility-induced differentiation, continuous standards policy, coalition-induced downstream strategy, standards breadth/depth, and generic policy-to-strategy-to-policy-reversal claims remain killed.
 
 ## C1 model retained unchanged
 
@@ -49,7 +41,7 @@ For `i!=j`,
 
 where within a multi-country bloc `M_ij=s_C/s_bar` and across blocs `M_ij=0`.
 
-No nonlinear realization map, policy cost, home bias, asymmetry, bargaining, extra market, no-crossing restriction, dynamic selection rule, or second policy dimension has been added.
+No nonlinear realization map, policy cost, home bias, asymmetry, bargaining, extra market, no-crossing restriction, dynamic selection rule, or second policy dimension has been added to the canonical baseline.
 
 ## Permanent first Stage-4A counterexample
 
@@ -61,115 +53,64 @@ Permanent regression:
 
 No implicit selection rule may suppress this equilibrium.
 
-## Stage 4R repair authority
-
-- model repair scope: `model/REVIVAL_STAGE4R_C1_MULTIPLICITY_REPAIR_2026-09-10.md`
-- construction verifier: `verification/stage04r_multiplicity_safe_region.py`
-- review: `reviews/STAGE_04R_REVIVAL_C1_MULTIPLICITY_REPAIR_2026-09-10.md`
-- decision record: `decisions/STAGE04R_REVIVAL_DECISIONS.md`
+## Stage 4R / repeat Stage 4A certified scope
 
 Stage 4R kept the model unchanged and narrowed theorem scope to higher repositioning-cost curvature `gamma`.
 
 The repaired headline point is `(v,gamma)=(.11,.10)`.
 
-Construction welfare:
+At the repaired point:
 
-- IS: `.1432822599`;
-- FULL SU member: `.1433644618`;
-- FULL SU outsider: `.1419734070`;
-- FULL SW: `.1425185185`.
+- FULL-SU location `x_SU≈(.14246245,.52420422,.83333333)`;
+- IS welfare ≈ `.1432822599`;
+- FULL SU member welfare ≈ `.1433644618`;
+- FULL SU outsider welfare ≈ `.1419734070`;
+- FULL SW welfare ≈ `.1425185185`.
 
-At `gamma=.10`, construction thresholds are
+Repeat Stage 4A independently certified the repaired higher-`gamma` continuation class against multiplicity/global-deviation attacks on the declared stress domain. It did **not** certify global uniqueness for all `gamma` or all primitives.
 
-- `v_FIX=1/15=.0666666667`;
-- `v_EXO-HIST≈.0993400328`;
+Thresholds at `gamma=.10`:
+
+- `v_FIX=1/15=.0666666667` exactly;
+- `v_EXO-HIST≈.0993400329`;
 - `v_FULL≈.1196400688`.
 
-## Repeat Stage 4A authority
+## Stage 6 novelty authority
 
-- independent red-team: `verification/stage04a_repeat_high_gamma_red_team.py`
-- review: `reviews/STAGE_04A_REPEAT_REVIVAL_C1_MATH_RED_TEAM_2026-09-15.md`
-- theorem certificates: `theorem_certificates/STAGE04A_REPEAT_REVIVAL_C1_CERTIFICATES_2026-09-15.md`
-- decision record: `decisions/STAGE04A_REPEAT_REVIVAL_DECISIONS_2026-09-15.md`
+- `docs/REVIVAL_STAGE6_NOVELTY_REKILL_MATRIX_2026-09-15.md`
+- `reviews/STAGE_06_REVIVAL_NOVELTY_REKILL_2026-09-15.md`
+- `decisions/STAGE06_REVIVAL_DECISIONS_2026-09-15.md`
 
-Repeat Stage 4A verdict:
-
-**GO — MATHEMATICAL ADVERSARIAL CERTIFICATION PASS.**
-
-Certified repaired scope:
-
-1. low-`gamma` crossing multiplicity remains a permanent failure of global uniqueness;
-2. the higher-`gamma` stress box and 81 additional SU policy histories reveal no second global-BR pure Nash under the independent attack;
-3. at `(v,gamma)=(.11,.10)`, IS, SU, and SW each have one attacked location Nash under the independent alternative-equilibrium search;
-4. downstream-re-solved SU depth attacks preserve `(s_12,s_3)=(.25,.25)`;
-5. FULL bilateral SUs are stable under the frozen strict-blocking correspondence at the repaired witness, while B-FIX retains IS against the SU pair block;
-6. independent threshold reconstruction reproduces `v_EXO-HIST≈.0993400329`, `v_FULL≈.1196400688`, and exact `v_FIX=1/15`.
-
-The project does **not** claim analytic/global uniqueness for all `gamma` or all parameter values.
-
-## Stage 6 authority
-
-- updated prior-art/result matrix: `docs/REVIVAL_STAGE6_NOVELTY_REKILL_MATRIX_2026-09-15.md`
-- review: `reviews/STAGE_06_REVIVAL_NOVELTY_REKILL_2026-09-15.md`
-- decision record: `decisions/STAGE06_REVIVAL_DECISIONS_2026-09-15.md`
-
-Stage 6 verdict:
-
-**GO — GO TO STAGE 7 WELFARE / GENERALITY / INSTITUTIONAL VALIDATION.**
+Stage 6 verdict: **GO**.
 
 Only surviving core contribution:
 
 > **In a government standards-coalition game with endogenous realized-interoperability depth, post-policy costly product repositioning can remain consequential after policy adjustment: in a selection-safe higher-redesign-cost region, allowing repositioning shifts the bilateral-union versus international-standardization national-welfare blocking threshold relative to the otherwise identical fixed-position policy game, and can therefore change the stable standards partition.**
 
-The strongest current novelty threat remains the 2026 Menegaki–Serfes complementary-oligopoly standards/coalition program. If a public later version adds the same endogenous product-design/repositioning threshold mechanism, Stage 6 must be reopened.
+Generic compatibility-induced differentiation, continuous standards policy, coalition-induced downstream strategy, standards breadth/depth, regional-versus-multilateral standards stability, and generic policy-to-strategy-to-policy-reversal claims remain killed.
 
-## Stage 7 authority
+Strongest current novelty threat: the 2026 Menegaki–Serfes complementary-oligopoly standards/coalition program. If a later public version contains the same product-repositioning threshold mechanism, Stage 6 must be reopened.
 
-- welfare/generality diagnostic: `verification/stage07_welfare_generality.py`
-- detailed economic/institutional record: `docs/REVIVAL_STAGE7_WELFARE_GENERALITY_INSTITUTIONAL_2026-09-15.md`
-- review: `reviews/STAGE_07_REVIVAL_WELFARE_GENERALITY_INSTITUTIONAL_2026-09-15.md`
-- decision record: `decisions/STAGE07_REVIVAL_DECISIONS_2026-09-15.md`
+## Stage 7 welfare / generality / institutional authority
 
-Stage 7 verdict:
+- `verification/stage07_welfare_generality.py`
+- `docs/REVIVAL_STAGE7_WELFARE_GENERALITY_INSTITUTIONAL_2026-09-15.md`
+- `reviews/STAGE_07_REVIVAL_WELFARE_GENERALITY_INSTITUTIONAL_2026-09-15.md`
+- `decisions/STAGE07_REVIVAL_DECISIONS_2026-09-15.md`
 
-**GO — GO TO STAGE 7.5 FULL-THEORY FREEZE DECISION.**
+Stage 7 verdict: **GO — GO TO STAGE 7.5**.
 
-### Stage-7 welfare interpretation
+At `(v,gamma)=(.11,.10)` the FULL-SU versus IS member-welfare gain is approximately:
 
-At `(v,gamma)=(.11,.10)`:
+- domestic profit `+.00007085`;
+- domestic consumer-surplus share `+.00001136`;
+- national welfare `+.00008220`.
 
-- IS domestic profit ≈ `.09322289`, domestic CS share ≈ `.05005937`, national welfare ≈ `.14328226`;
-- B-FIX SU domestic profit ≈ `.09283986`, domestic CS share ≈ `.05006938`, national welfare ≈ `.14290923`;
-- FULL SU domestic profit ≈ `.09329374`, domestic CS share ≈ `.05007073`, national welfare ≈ `.14336446`.
+By contrast, B-FIX SU is about `-.00037303` below IS in member national welfare. The economic object is therefore a repositioning-driven coalition-threshold shift, mainly through restored domestic producer rents with a smaller positive consumer-surplus contribution.
 
-Thus FULL-SU versus IS is approximately:
+The institutional interpretation `depth -> realized interoperability` is defensible in environments with multi-function standards, implementation profiles, and conformance/interoperability testing. The literal linear map `chi(s)=s/s_bar` is only a reduced-form normalization.
 
-- `Δ domestic profit = +.00007085`;
-- `Δ domestic CS share = +.00001136`;
-- `Δ national welfare = +.00008220`.
-
-The coalition-ranking reversal is mainly a domestic-producer-rent effect, with a smaller positive consumer-surplus contribution.
-
-The economically important magnitude is the organizational threshold shift: at `gamma=.10`, B-FIX has exact cutoff `1/15≈.06667` while FULL has cutoff about `.11964`.
-
-### Stage-7 private/national wedge
-
-At `gamma=.10`:
-
-- domestic-firm profit indifference: `v≈.1180578`;
-- national-welfare indifference: `v≈.1196401`.
-
-This narrow wedge is secondary and shows the government coalition problem is not identical to firm-profit maximization.
-
-### Stage-7 institutional validation
-
-`depth -> realized interoperability` is **institutionally defensible with qualification** in standards environments with multiple functions/options/interfaces, implementation profiles, and interoperability/conformance testing.
-
-ETSI testing architecture and SAE J3400 are retained as motivating examples. The literal linear map `chi(s)=s/s_bar` is only a reduced-form normalization and is not claimed to be a real standards body's measurement equation.
-
-### Stage-7 generality boundary
-
-Essential economic ingredients:
+Essential economic ingredients identified at Stage 7:
 
 1. intensive interoperability/harmonization margin;
 2. compatibility gain from depth;
@@ -178,15 +119,57 @@ Essential economic ingredients:
 5. national objectives combining domestic consumer surplus and producer profit;
 6. selection-safe continuation.
 
-Not yet general theorems: arbitrary demand, arbitrary realization functions, country asymmetry, arbitrary redesign costs, global uniqueness, or the exact reported numerical thresholds.
+No general theorem is established for arbitrary demand, arbitrary realization maps, asymmetric countries, or arbitrary redesign costs.
 
-### Stage-7 exposition triage
+## Stage 7.5 authority
 
-Preferred main figure: `Δ_M(v)=W_M(SU)-W(IS)` for B-FIX and FULL at `gamma=.10` with threshold markers.
+- review: `reviews/STAGE_075_REVIVAL_FULL_THEORY_FREEZE_DECISION_2026-09-15.md`
+- decision record: `decisions/STAGE075_REVIVAL_DECISIONS_2026-09-15.md`
 
-Preferred main table: welfare decomposition for IS, B-FIX SU, and FULL SU at the repaired witness.
+Stage 7.5 verdict:
 
-Low-`gamma` multiplicity, threshold sensitivity, and institutional mapping are secondary/appendix candidates.
+**CONDITIONAL GO.**
+
+The project passes the following full-paper tests:
+
+- the core result can be stated without model-specific notation;
+- the minimal strategic chain is economically coherent;
+- the welfare/organizational implication is substantive despite small local level effects;
+- the surviving novelty is a full-game threshold result, not setup novelty;
+- institutional motivation exists for an intensive realized-interoperability margin.
+
+Exact blocker:
+
+> **The surviving coalition-threshold mechanism has not yet survived any credible alternative functional formulation outside the current baseline architecture.**
+
+This is the only authorized Stage-7.5 blocker.
+
+## Stage 7R authorized robustness test
+
+Stage 7R may alter **only** the realization map for a robustness exercise, while keeping the baseline model unchanged as canonical.
+
+Pre-specified alternative:
+
+`chi_alt(s)=2(s/s_bar)-(s/s_bar)^2`, `s in [0,s_bar]`.
+
+Properties:
+
+- smooth;
+- monotone;
+- concave;
+- `chi_alt(0)=0`;
+- `chi_alt(s_bar)=1`.
+
+Passing requirement:
+
+- re-solve B-FIX and FULL on a declared selection-safe higher-`gamma` test domain;
+- preserve well-defined continuation/policy equilibria under the alternative map;
+- obtain a strict B-FIX/FULL blocking-threshold difference or equivalent coalition-stability difference;
+- do not retune parameters after observing the result merely to recover the headline ranking.
+
+No asymmetry, policy cost, extra market, bargaining, new strategic variable, no-crossing restriction, selection rule, or second robustness modification is authorized in this cycle.
+
+If the alternative-realization test passes, repeat Stage 7.5. If it fails materially, do not grant full-theory-freeze authorization on the baseline alone without reassessing scope.
 
 ## Formal-verification applicability
 
@@ -200,10 +183,10 @@ Future Stage-7.5A targets include:
 - exact threshold-ordering components separable from numerical location continuation;
 - any analytic high-`gamma` uniqueness condition later added to theorem scope.
 
-There is no formal-verification PASS yet.
+There is no Formal Verification PASS yet. Lean does not substitute for the Stage-7R economic robustness test.
 
 ## Current routing
 
-**NEXT: STAGE 7.5 — FULL-THEORY FREEZE DECISION.**
+**NEXT: STAGE 7R — ONE BOUNDED ALTERNATIVE-REALIZATION ROBUSTNESS TEST.**
 
-Stage 7.5 must decide whether the narrow but certified threshold/stability mechanism is sufficient for full-paper investment. Theory freeze is still blocked; Stage 7.5A quantifier/generality certification and the embedded formal-verification gate remain mandatory before Stage 8.
+Then repeat Stage 7.5. Stage 7.5A, Stage 8 theory freeze, journal positioning, manuscript rehabilitation, and submission authorization remain blocked.
