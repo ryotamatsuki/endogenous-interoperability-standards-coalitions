@@ -1,6 +1,6 @@
 # Project State
 
-Last updated: 2026-09-10
+Last updated: 2026-09-15
 
 ## Canonical status for this branch
 
@@ -18,11 +18,11 @@ Last updated: 2026-09-10
 - Stage 4 initial construction: **GO, later reopened by Stage 4A**
 - Stage 4A first pass: **NO-GO / REOPEN STAGE 4**
 - Stage 4R multiplicity repair: **GO — REPEAT STAGE 4A**
+- Stage 4A repeat: **GO — MATHEMATICAL ADVERSARIAL CERTIFICATION PASS**
 - Selected mechanism: **C1 — Realized Interoperability Depth**
-- Next canonical stage: **Stage 4A repeat independent mathematical adversarial certification**
+- Next canonical stage: **Stage 6 — Novelty Re-Kill**
 - Submission authorization: **NO**
 - Theory freeze: **NONE**
-- Stage 6 novelty re-kill: **BLOCKED pending Stage 4A repeat**
 - Formal verification: **APPLICABLE; NOT YET IMPLEMENTED/PASSED**
 
 ## Relationship to historical branches
@@ -37,7 +37,7 @@ Last updated: 2026-09-10
 - Stage 3: `reviews/STAGE_03_REVIVAL_MECHANISM_SEARCH_2026-09-10.md`
 - Stage-3 model: `model/REVIVAL_STAGE3_SELECTED_MECHANISM_2026-09-10.md`
 
-The only surviving novelty family remains an absorption/non-absorption or coalition-stability result that depends indispensably on strategic product repositioning after endogenous bloc depth choice. Generic compatibility-induced differentiation, continuous standardization policy, coalition-induced downstream strategy, and generic policy-to-strategy-to-policy-reversal claims remain killed.
+The only surviving novelty family remains a coalition-stability / blocking-threshold result that depends indispensably on strategic product repositioning after endogenous bloc depth choice. Generic compatibility-induced differentiation, continuous standardization policy, coalition-induced downstream strategy, and generic policy-to-strategy-to-policy-reversal claims remain killed.
 
 ## C1 model retained unchanged
 
@@ -49,102 +49,87 @@ where within a multi-country bloc `M_ij=s_C/s_bar` and across blocs `M_ij=0`.
 
 No nonlinear realization map, policy cost, home bias, asymmetry, bargaining, extra market, no-crossing restriction, dynamic selection rule, or second policy dimension has been added.
 
-## First Stage-4A blocker retained permanently
+## Permanent first Stage-4A counterexample
 
-At low repositioning cost `gamma=.03`, the FULL-SU full-depth location game has at least two distinct global-BR pure-strategy Nash equilibria. At `(v,gamma)=(.12,.03)` these equilibria give opposite signs for SU-member welfare relative to IS. Therefore the old low-gamma FULL stable-set reversal and `v_FULL≈.133687` threshold are not selection-free model implications.
+At low repositioning cost `gamma=.03`, the FULL-SU full-depth location game has at least two distinct global-BR pure-strategy Nash equilibria. At `(v,gamma)=(.12,.03)` they give opposite signs for SU-member welfare relative to IS. Therefore the old low-gamma FULL stable-set reversal and `v_FULL≈.133687` threshold are not selection-free model implications.
 
 Permanent regression:
 
 `verification/stage04a_independent_multiplicity_red_team.py`.
 
-No closest-anchor, no-crossing, dynamics, Pareto/welfare, or risk-dominance selection rule is authorized to suppress this equilibrium.
+No implicit selection rule may suppress this equilibrium.
 
-## Stage 4R authority
+## Stage 4R repair authority
 
 - model repair scope: `model/REVIVAL_STAGE4R_C1_MULTIPLICITY_REPAIR_2026-09-10.md`
 - construction verifier: `verification/stage04r_multiplicity_safe_region.py`
 - review: `reviews/STAGE_04R_REVIVAL_C1_MULTIPLICITY_REPAIR_2026-09-10.md`
 - decision record: `decisions/STAGE04R_REVIVAL_DECISIONS.md`
 
-Stage 4R verdict:
+Stage 4R kept the model unchanged and narrowed the theorem domain to higher repositioning-cost curvature `gamma`.
 
-**GO — REPEAT STAGE 4A.**
-
-## Stage 4R repair logic
-
-The model is not changed. Stage 4R treats `gamma`, the existing quadratic repositioning-cost curvature, as part of the theorem domain and asks whether the crossing-equilibrium problem disappears in a higher-adjustment-cost region.
-
-At `gamma=.05`, a declared construction multi-start audit covers 18 SU policy/parameter histories spanning `v in {.07,.11,.13}` and policy depths from zero through full depth. No alternative global-BR SU equilibrium is found on this finite audit set. This is construction evidence only; `.05` is not claimed to be an analytic uniqueness threshold.
-
-The conservative repaired headline point is
+The repaired headline point is
 
 `(v,gamma)=(.11,.10)`.
 
-At FULL SU policy `(s_12,s_3)=(.25,.25)`, the construction search finds one global-BR SU location equilibrium:
+Stage-4R construction gives FULL-SU location
 
-`x_SU≈(.14246245,.52420422,.83333333)`.
+`x_SU≈(.14246245,.52420422,.83333333)`
 
-Approximate national welfare:
+with approximate welfare
 
 - IS: `.1432822599`;
 - FULL SU member: `.1433644618`;
 - FULL SU outsider: `.1419734070`;
 - FULL SW: `.1425185185`.
 
-Thus SU members strictly prefer SU to both IS and SW at the repaired construction point.
+At `gamma=.10`, construction thresholds are
 
-## Repaired policy / threshold construction
-
-At `v=.11`, exact IS calculus gives `s_I=.25` because `v>1/18`.
-
-Stage-4R downstream-re-solved full-domain scans give the construction SU policy candidate `(s_12,s_3)=(.25,.25)` and SW candidate `(.25,.25,.25)` at the repaired point.
-
-At `gamma=.10`, the blocking thresholds are:
-
-- `v_FIX=1/15=.0666666667` exactly;
+- `v_FIX=1/15=.0666666667`;
 - `v_EXO-HIST≈.0993400328`;
 - `v_FULL≈.1196400688`.
 
-Hence
+## Repeat Stage 4A authority
 
-`v_FIX < v_EXO-HIST < v_FULL`,
+- independent red-team: `verification/stage04a_repeat_high_gamma_red_team.py`
+- review: `reviews/STAGE_04A_REPEAT_REVIVAL_C1_MATH_RED_TEAM_2026-09-15.md`
+- theorem certificates: `theorem_certificates/STAGE04A_REPEAT_REVIVAL_C1_CERTIFICATES_2026-09-15.md`
+- decision record: `decisions/STAGE04A_REPEAT_REVIVAL_DECISIONS_2026-09-15.md`
 
-and the repaired illustration `v=.11` lies strictly between `v_EXO-HIST` and `v_FULL`.
+Repeat Stage 4A verdict:
 
-The conceptual headline is narrowed to the **B-FIX versus FULL repositioning-induced blocking/stability-threshold shift after endogenous policy optimization**. B-EXO-HIST remains an auxiliary pre-existing benchmark; it does not establish that endogenous policy is generically necessary.
+**GO — MATHEMATICAL ADVERSARIAL CERTIFICATION PASS.**
 
-## What remains uncertified
+### Certified repaired scope
 
-Stage 4R does **not** yet certify:
+1. The low-`gamma` crossing equilibrium is independently reproduced and remains a permanent failure of global uniqueness.
+2. In the higher-`gamma` full-depth stress box `v in {.09,.10,.11,.12,.13}`, `gamma in {.08,.10,.12}`, independent full-system multi-start + whole-circle deviation search retains one pure Nash per attacked SU history.
+3. An additional 81 material SU policy histories spanning zero/intermediate/full depths around the repaired region reveal no second global-BR pure Nash under the independent attack.
+4. At `(v,gamma)=(.11,.10)`, independent alternative-equilibrium searches find one attacked location Nash each for IS, SU, and SW.
+5. Downstream-re-solved SU unilateral depth attacks preserve the policy candidate `(s_12,s_3)=(.25,.25)`.
+6. At the repaired witness, FULL has the bilateral SUs stable under the frozen strict-blocking correspondence, while B-FIX retains IS against SU pair blocking.
+7. Independent threshold reconstruction gives `v_EXO-HIST≈.0993400329` and `v_FULL≈.1196400688`, with exact `v_FIX=1/15`.
 
-- continuous-domain uniqueness of the SU location equilibrium in a higher-`gamma` region;
-- absence of non-symmetric alternative equilibria near the repaired point;
-- analytic location-equilibrium uniqueness;
-- global SU/SW policy best responses beyond construction evidence;
-- the repaired `v_FULL` root as a model-level theorem;
-- the open-neighborhood / selection-free quantifier.
+### Scope limitation
 
-These are the mandatory targets of the repeat Stage 4A.
-
-## Repeat Stage-4A kill contract
-
-The repeat independent audit must:
-
-1. actively search for crossing and non-symmetric SU equilibria at and around `(v,gamma)=(.11,.10)`;
-2. attack a nondegenerate higher-`gamma` neighborhood, not only the single witness;
-3. re-solve policy deviations under every additional continuation equilibrium discovered;
-4. independently recompute the B-FIX/FULL blocking thresholds;
-5. audit the complete strict-blocking stable-set logic;
-6. return to Stage 4 or terminate C1 if welfare/stability again depends on equilibrium selection.
-
-No selection rule is available as an automatic fallback.
+The project does **not** claim analytic/global uniqueness for all `gamma` or all parameter values. The maximum certified statement is a repaired higher-redesign-cost continuation class supported by independent adversarial equilibrium-set and global-BR attacks. Any stronger generality must pass later quantifier/generality and formal-verification gates.
 
 ## Formal-verification applicability
 
-Status remains **FORMALIZATION APPLICABLE**. Future Lean targets, after theorem scope stabilizes, include the exact B-FIX factorization `v_FIX=1/15`, the IS policy inequality `v>1/18`, welfare-to-strict-blocking implications, and any analytic uniqueness/high-`gamma` condition that survives the repeat Stage 4A.
+Status: **FORMALIZATION APPLICABLE**.
+
+Future Stage-7.5A targets include:
+
+- exact B-FIX factorization `v_FIX=1/15`;
+- exact IS welfare derivative and sufficient condition `v>1/18`;
+- strict-welfare inequalities -> blocking/stability logic;
+- exact threshold-ordering components separable from numerical location continuation;
+- any analytic high-`gamma` uniqueness condition later added to theorem scope.
+
+There is no formal-verification PASS yet.
 
 ## Current routing
 
-**NEXT: REPEAT STAGE 4A — INDEPENDENT MATHEMATICAL ADVERSARIAL CERTIFICATION.**
+**NEXT: STAGE 6 — NOVELTY RE-KILL.**
 
-Stage 6, Stage 7.5A, theory freeze, journal positioning, manuscript rehabilitation, and submission remain blocked.
+Stage 6 must assess the repaired high-`gamma` theorem, not the superseded low-`gamma` claim. Theory freeze, journal positioning, manuscript rehabilitation, and submission remain blocked until later workflow gates pass.
