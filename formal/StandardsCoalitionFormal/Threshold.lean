@@ -2,8 +2,6 @@ import StandardsCoalitionFormal.Core
 
 namespace StandardsCoalitionFormal
 
-noncomputable section
-
 theorem bFixPoly_pos_on_audit_domain (v : ℝ)
     (hlo : (3 : ℝ) / 50 ≤ v)
     (hhi : v ≤ (4 : ℝ) / 25) :
