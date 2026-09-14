@@ -18,13 +18,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Build pinned Lean proof-critical core
+      - name: Build pinned Lean proof-critical core and audit axioms
         uses: leanprover/lean-action@v1
         with:
           lake-package-directory: formal
           build: true
-          nanoda: true
-          nanoda-allow-sorry: false
+          nanoda: false
           axiom-audit: true
       - name: Reject proof placeholders
         shell: bash
@@ -32,3 +31,7 @@ jobs:
           if grep -R -nE '\b(sorry|admit)\b' formal --include='*.lean'; then
             exit 1
           fi
+      - name: Replay exact proof module with pinned independent NanoDa kernel
+        shell: bash
+        working-directory: formal
+        run: bash scripts/check_nanoda_exact.sh
