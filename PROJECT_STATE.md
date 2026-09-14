@@ -19,8 +19,9 @@ Last updated: 2026-09-15
 - Stage 4A first pass: **NO-GO / REOPEN STAGE 4**
 - Stage 4R multiplicity repair: **GO — REPEAT STAGE 4A**
 - Stage 4A repeat: **GO — MATHEMATICAL ADVERSARIAL CERTIFICATION PASS**
+- Stage 6: **GO — GO TO STAGE 7**
 - Selected mechanism: **C1 — Realized Interoperability Depth**
-- Next canonical stage: **Stage 6 — Novelty Re-Kill**
+- Next canonical stage: **Stage 7 — Welfare / Generality / Institutional Validation**
 - Submission authorization: **NO**
 - Theory freeze: **NONE**
 - Formal verification: **APPLICABLE; NOT YET IMPLEMENTED/PASSED**
@@ -37,7 +38,7 @@ Last updated: 2026-09-15
 - Stage 3: `reviews/STAGE_03_REVIVAL_MECHANISM_SEARCH_2026-09-10.md`
 - Stage-3 model: `model/REVIVAL_STAGE3_SELECTED_MECHANISM_2026-09-10.md`
 
-The only surviving novelty family remains a coalition-stability / blocking-threshold result that depends indispensably on strategic product repositioning after endogenous bloc depth choice. Generic compatibility-induced differentiation, continuous standardization policy, coalition-induced downstream strategy, and generic policy-to-strategy-to-policy-reversal claims remain killed.
+Generic compatibility-induced differentiation, continuous standards policy, coalition-induced downstream strategy, standards breadth/depth, and generic policy-to-strategy-to-policy-reversal claims remain killed.
 
 ## C1 model retained unchanged
 
@@ -66,17 +67,11 @@ No implicit selection rule may suppress this equilibrium.
 - review: `reviews/STAGE_04R_REVIVAL_C1_MULTIPLICITY_REPAIR_2026-09-10.md`
 - decision record: `decisions/STAGE04R_REVIVAL_DECISIONS.md`
 
-Stage 4R kept the model unchanged and narrowed the theorem domain to higher repositioning-cost curvature `gamma`.
+Stage 4R kept the model unchanged and narrowed theorem scope to higher repositioning-cost curvature `gamma`.
 
-The repaired headline point is
+The repaired headline point is `(v,gamma)=(.11,.10)`.
 
-`(v,gamma)=(.11,.10)`.
-
-Stage-4R construction gives FULL-SU location
-
-`x_SU≈(.14246245,.52420422,.83333333)`
-
-with approximate welfare
+Construction welfare:
 
 - IS: `.1432822599`;
 - FULL SU member: `.1433644618`;
@@ -100,19 +95,63 @@ Repeat Stage 4A verdict:
 
 **GO — MATHEMATICAL ADVERSARIAL CERTIFICATION PASS.**
 
-### Certified repaired scope
+Certified repaired scope:
 
-1. The low-`gamma` crossing equilibrium is independently reproduced and remains a permanent failure of global uniqueness.
-2. In the higher-`gamma` full-depth stress box `v in {.09,.10,.11,.12,.13}`, `gamma in {.08,.10,.12}`, independent full-system multi-start + whole-circle deviation search retains one pure Nash per attacked SU history.
-3. An additional 81 material SU policy histories spanning zero/intermediate/full depths around the repaired region reveal no second global-BR pure Nash under the independent attack.
-4. At `(v,gamma)=(.11,.10)`, independent alternative-equilibrium searches find one attacked location Nash each for IS, SU, and SW.
-5. Downstream-re-solved SU unilateral depth attacks preserve the policy candidate `(s_12,s_3)=(.25,.25)`.
-6. At the repaired witness, FULL has the bilateral SUs stable under the frozen strict-blocking correspondence, while B-FIX retains IS against SU pair blocking.
-7. Independent threshold reconstruction gives `v_EXO-HIST≈.0993400329` and `v_FULL≈.1196400688`, with exact `v_FIX=1/15`.
+1. low-`gamma` crossing multiplicity remains a permanent failure of global uniqueness;
+2. the higher-`gamma` stress box and 81 additional SU policy histories reveal no second global-BR pure Nash under the independent attack;
+3. at `(v,gamma)=(.11,.10)`, IS, SU, and SW each have one attacked location Nash under the independent alternative-equilibrium search;
+4. downstream-re-solved SU depth attacks preserve `(s_12,s_3)=(.25,.25)`;
+5. FULL bilateral SUs are stable under the frozen strict-blocking correspondence at the repaired witness, while B-FIX retains IS against the SU pair block;
+6. independent threshold reconstruction reproduces `v_EXO-HIST≈.0993400329`, `v_FULL≈.1196400688`, and exact `v_FIX=1/15`.
 
-### Scope limitation
+The project does **not** claim analytic/global uniqueness for all `gamma` or all parameter values.
 
-The project does **not** claim analytic/global uniqueness for all `gamma` or all parameter values. The maximum certified statement is a repaired higher-redesign-cost continuation class supported by independent adversarial equilibrium-set and global-BR attacks. Any stronger generality must pass later quantifier/generality and formal-verification gates.
+## Stage 6 authority
+
+- updated prior-art/result matrix: `docs/REVIVAL_STAGE6_NOVELTY_REKILL_MATRIX_2026-09-15.md`
+- review: `reviews/STAGE_06_REVIVAL_NOVELTY_REKILL_2026-09-15.md`
+- decision record: `decisions/STAGE06_REVIVAL_DECISIONS_2026-09-15.md`
+
+Stage 6 verdict:
+
+**GO — GO TO STAGE 7 WELFARE / GENERALITY / INSTITUTIONAL VALIDATION.**
+
+### Stage-6 binding novelty boundary
+
+The following are not available as headline novelty:
+
+- compatibility-induced product differentiation;
+- interoperability/network benefit versus competition trade-offs;
+- continuous government compatibility/standards policy;
+- coalition/interoperability membership followed by an endogenous action;
+- standards breadth/depth as a coalition-stability margin;
+- regional versus multilateral standards stability;
+- costly product repositioning itself;
+- continuous standardization changing downstream strategy;
+- private versus social preferred standards depth/participation.
+
+This boundary is strengthened by the 2026 Menegaki–Serfes work on complementary-goods coalition stability, breadth/depth coordination, and voluntary interoperability-standard participation.
+
+### Only surviving core contribution
+
+> **In a government standards-coalition game with endogenous realized-interoperability depth, post-policy costly product repositioning can remain consequential after policy adjustment: in a selection-safe higher-redesign-cost region, allowing repositioning shifts the bilateral-union versus international-standardization national-welfare blocking threshold relative to the otherwise identical fixed-position policy game, and can therefore change the stable standards partition.**
+
+This is a narrow full-game/result-level contribution. It is not setup novelty.
+
+### Strongest current novelty threat
+
+Mandatory comparison at later manuscript/submission stages:
+
+- Menegaki & Serfes (2026), *Coalition Stability with Complementary Goods*;
+- Menegaki & Serfes (2026), *Breadth, Depth, and Coalition Stability in Complementary Oligopoly*;
+- Menegaki & Serfes, current working-paper listing *The Architecture of Voluntary Standards in Complementary Oligopoly*.
+
+If a public later version contains an endogenous product-design/repositioning margin that shifts an interoperability-coalition blocking threshold, Stage 6 must be reopened.
+
+Own prior art also remains binding:
+
+- `standardization-scope-direction-innovation` kills generic continuous-standardization -> downstream-strategy -> policy-reversal novelty;
+- `private-compatibility-standards-coalitions` kills generic formal-partition -> private response -> welfare -> stability novelty.
 
 ## Formal-verification applicability
 
@@ -130,6 +169,6 @@ There is no formal-verification PASS yet.
 
 ## Current routing
 
-**NEXT: STAGE 6 — NOVELTY RE-KILL.**
+**NEXT: STAGE 7 — WELFARE / GENERALITY / INSTITUTIONAL VALIDATION.**
 
-Stage 6 must assess the repaired high-`gamma` theorem, not the superseded low-`gamma` claim. Theory freeze, journal positioning, manuscript rehabilitation, and submission remain blocked until later workflow gates pass.
+Stage 7 may interpret only the surviving threshold/stability result. Theory freeze, Stage 7.5A formal/quantifier certification, journal positioning, manuscript rehabilitation, and submission remain blocked.
