@@ -2,8 +2,6 @@ import Mathlib
 
 namespace StandardsCoalitionFormal
 
-noncomputable section
-
 def bFixPoly (v : ℝ) : ℝ :=
   56953125 * v^6 + 1148478750 * v^5 - 39349972125 * v^4
     + 376745393700 * v^3 + 541587760155 * v^2
@@ -30,8 +28,9 @@ theorem bFix_factorization (v : ℝ)
     (h375 : 375 * v - 3913 ≠ 0)
     (hq : bFixQ v ≠ 0) :
     bFixDelta v = bFixFactored v := by
-  simp [bFixDelta, bFixWsu, bFixWis, bFixFactored, bFixPoly, bFixQ]
+  unfold bFixDelta bFixWsu bFixWis bFixFactored
   field_simp [h15, h375, hq]
+  unfold bFixPoly bFixQ
   ring
 
 theorem bFix_delta_at_cutoff : bFixDelta ((1 : ℝ) / 15) = 0 := by
