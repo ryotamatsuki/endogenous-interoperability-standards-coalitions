@@ -25,10 +25,13 @@ jobs:
           build: true
           nanoda: false
           axiom-audit: true
-      - name: Reject proof placeholders
+      - name: Reject proof placeholders in project sources
         shell: bash
         run: |
-          if grep -R -nE '\b(sorry|admit)\b' formal --include='*.lean'; then
+          if grep -nE '\b(sorry|admit)\b' formal/StandardsCoalitionFormal.lean; then
+            exit 1
+          fi
+          if grep -R -nE '\b(sorry|admit)\b' formal/StandardsCoalitionFormal --include='*.lean'; then
             exit 1
           fi
       - name: Replay exact proof module with pinned independent NanoDa kernel
