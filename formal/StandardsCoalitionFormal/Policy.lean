@@ -2,7 +2,7 @@ import Mathlib
 
 namespace StandardsCoalitionFormal
 
-def isCrossDerivative (s v : ℝ) : ℝ := ((1 : ℝ) / 8) / (1 - s)^2 - 4 * v
+noncomputable def isCrossDerivative (s v : ℝ) : ℝ := ((1 : ℝ) / 8) / (1 - s)^2 - 4 * v
 
 theorem isCrossDerivative_neg
     (s v : ℝ)
