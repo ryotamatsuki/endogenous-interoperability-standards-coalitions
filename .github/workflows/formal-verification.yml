@@ -12,9 +12,25 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: leanprover/lean-action@v1
+      - name: Install pinned Lean toolchain
+        uses: leanprover/lean-action@v1
         with:
           lake-package-directory: formal
+          auto-config: false
+          build: false
+          test: false
+          lint: false
+          use-github-cache: false
+      - name: Resolve pinned mathlib dependency
+        shell: bash
+        run: |
+          cd formal
+          lake update
+      - name: Build and independently type-check formal core
+        uses: leanprover/lean-action@v1
+        with:
+          lake-package-directory: formal
+          auto-config: false
           build: true
           nanoda: true
           nanoda-allow-sorry: false
