@@ -2,8 +2,6 @@ import Mathlib
 
 namespace StandardsCoalitionFormal
 
-noncomputable section
-
 /-- Exact derivative dW_IS/dc for the symmetric affine-Bertrand continuation. -/
 def isWelfareDerivative (a b c : ℝ) : ℝ :=
   -(a^2 * (2*b^2 + b*c + c^2)) / (4*b^2*(b + 2*c)^2)
@@ -12,8 +10,12 @@ def isWelfareDerivative (a b c : ℝ) : ℝ :=
 theorem isWelfareDerivative_neg
     (a b c : ℝ) (ha : 0 < a) (hb : 0 < b) (hc : 0 < c) :
     isWelfareDerivative a b c < 0 := by
+  have hsum : 0 < 2*b^2 + b*c + c^2 := by positivity
+  have hnum : 0 < a^2 * (2*b^2 + b*c + c^2) := by positivity
+  have hden : 0 < 4*b^2*(b + 2*c)^2 := by positivity
+  have hneg : -(a^2 * (2*b^2 + b*c + c^2)) < 0 := neg_neg_of_pos hnum
   dsimp [isWelfareDerivative]
-  positivity
+  exact div_neg_of_neg_of_pos hneg hden
 
 /-- Two negative marginal links imply a positive welfare response to depth. -/
 theorem welfareDepthDerivative_pos
