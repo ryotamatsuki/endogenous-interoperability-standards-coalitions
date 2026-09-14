@@ -1,0 +1,26 @@
+name: formal-verification
+
+on:
+  push:
+    branches:
+      - 'revival/**'
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  lean-core:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: leanprover/lean-action@v1
+        with:
+          lake-package-directory: formal
+          build: true
+          nanoda: true
+          nanoda-allow-sorry: false
+      - name: Reject proof placeholders
+        shell: bash
+        run: |
+          if grep -R -nE '\b(sorry|admit)\b' formal --include='*.lean'; then
+            exit 1
+          fi
