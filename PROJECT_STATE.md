@@ -20,8 +20,9 @@ Last updated: 2026-09-15
 - Stage 4R multiplicity repair: **GO — REPEAT STAGE 4A**
 - Stage 4A repeat: **GO — MATHEMATICAL ADVERSARIAL CERTIFICATION PASS**
 - Stage 6: **GO — GO TO STAGE 7**
+- Stage 7: **GO — GO TO STAGE 7.5**
 - Selected mechanism: **C1 — Realized Interoperability Depth**
-- Next canonical stage: **Stage 7 — Welfare / Generality / Institutional Validation**
+- Next canonical stage: **Stage 7.5 — Full-Theory Freeze Decision**
 - Submission authorization: **NO**
 - Theory freeze: **NONE**
 - Formal verification: **APPLICABLE; NOT YET IMPLEMENTED/PASSED**
@@ -116,42 +117,76 @@ Stage 6 verdict:
 
 **GO — GO TO STAGE 7 WELFARE / GENERALITY / INSTITUTIONAL VALIDATION.**
 
-### Stage-6 binding novelty boundary
-
-The following are not available as headline novelty:
-
-- compatibility-induced product differentiation;
-- interoperability/network benefit versus competition trade-offs;
-- continuous government compatibility/standards policy;
-- coalition/interoperability membership followed by an endogenous action;
-- standards breadth/depth as a coalition-stability margin;
-- regional versus multilateral standards stability;
-- costly product repositioning itself;
-- continuous standardization changing downstream strategy;
-- private versus social preferred standards depth/participation.
-
-This boundary is strengthened by the 2026 Menegaki–Serfes work on complementary-goods coalition stability, breadth/depth coordination, and voluntary interoperability-standard participation.
-
-### Only surviving core contribution
+Only surviving core contribution:
 
 > **In a government standards-coalition game with endogenous realized-interoperability depth, post-policy costly product repositioning can remain consequential after policy adjustment: in a selection-safe higher-redesign-cost region, allowing repositioning shifts the bilateral-union versus international-standardization national-welfare blocking threshold relative to the otherwise identical fixed-position policy game, and can therefore change the stable standards partition.**
 
-This is a narrow full-game/result-level contribution. It is not setup novelty.
+The strongest current novelty threat remains the 2026 Menegaki–Serfes complementary-oligopoly standards/coalition program. If a public later version adds the same endogenous product-design/repositioning threshold mechanism, Stage 6 must be reopened.
 
-### Strongest current novelty threat
+## Stage 7 authority
 
-Mandatory comparison at later manuscript/submission stages:
+- welfare/generality diagnostic: `verification/stage07_welfare_generality.py`
+- detailed economic/institutional record: `docs/REVIVAL_STAGE7_WELFARE_GENERALITY_INSTITUTIONAL_2026-09-15.md`
+- review: `reviews/STAGE_07_REVIVAL_WELFARE_GENERALITY_INSTITUTIONAL_2026-09-15.md`
+- decision record: `decisions/STAGE07_REVIVAL_DECISIONS_2026-09-15.md`
 
-- Menegaki & Serfes (2026), *Coalition Stability with Complementary Goods*;
-- Menegaki & Serfes (2026), *Breadth, Depth, and Coalition Stability in Complementary Oligopoly*;
-- Menegaki & Serfes, current working-paper listing *The Architecture of Voluntary Standards in Complementary Oligopoly*.
+Stage 7 verdict:
 
-If a public later version contains an endogenous product-design/repositioning margin that shifts an interoperability-coalition blocking threshold, Stage 6 must be reopened.
+**GO — GO TO STAGE 7.5 FULL-THEORY FREEZE DECISION.**
 
-Own prior art also remains binding:
+### Stage-7 welfare interpretation
 
-- `standardization-scope-direction-innovation` kills generic continuous-standardization -> downstream-strategy -> policy-reversal novelty;
-- `private-compatibility-standards-coalitions` kills generic formal-partition -> private response -> welfare -> stability novelty.
+At `(v,gamma)=(.11,.10)`:
+
+- IS domestic profit ≈ `.09322289`, domestic CS share ≈ `.05005937`, national welfare ≈ `.14328226`;
+- B-FIX SU domestic profit ≈ `.09283986`, domestic CS share ≈ `.05006938`, national welfare ≈ `.14290923`;
+- FULL SU domestic profit ≈ `.09329374`, domestic CS share ≈ `.05007073`, national welfare ≈ `.14336446`.
+
+Thus FULL-SU versus IS is approximately:
+
+- `Δ domestic profit = +.00007085`;
+- `Δ domestic CS share = +.00001136`;
+- `Δ national welfare = +.00008220`.
+
+The coalition-ranking reversal is mainly a domestic-producer-rent effect, with a smaller positive consumer-surplus contribution.
+
+The economically important magnitude is the organizational threshold shift: at `gamma=.10`, B-FIX has exact cutoff `1/15≈.06667` while FULL has cutoff about `.11964`.
+
+### Stage-7 private/national wedge
+
+At `gamma=.10`:
+
+- domestic-firm profit indifference: `v≈.1180578`;
+- national-welfare indifference: `v≈.1196401`.
+
+This narrow wedge is secondary and shows the government coalition problem is not identical to firm-profit maximization.
+
+### Stage-7 institutional validation
+
+`depth -> realized interoperability` is **institutionally defensible with qualification** in standards environments with multiple functions/options/interfaces, implementation profiles, and interoperability/conformance testing.
+
+ETSI testing architecture and SAE J3400 are retained as motivating examples. The literal linear map `chi(s)=s/s_bar` is only a reduced-form normalization and is not claimed to be a real standards body's measurement equation.
+
+### Stage-7 generality boundary
+
+Essential economic ingredients:
+
+1. intensive interoperability/harmonization margin;
+2. compatibility gain from depth;
+3. competitive compression from harmonization;
+4. separate costly post-policy design margin;
+5. national objectives combining domestic consumer surplus and producer profit;
+6. selection-safe continuation.
+
+Not yet general theorems: arbitrary demand, arbitrary realization functions, country asymmetry, arbitrary redesign costs, global uniqueness, or the exact reported numerical thresholds.
+
+### Stage-7 exposition triage
+
+Preferred main figure: `Δ_M(v)=W_M(SU)-W(IS)` for B-FIX and FULL at `gamma=.10` with threshold markers.
+
+Preferred main table: welfare decomposition for IS, B-FIX SU, and FULL SU at the repaired witness.
+
+Low-`gamma` multiplicity, threshold sensitivity, and institutional mapping are secondary/appendix candidates.
 
 ## Formal-verification applicability
 
@@ -169,6 +204,6 @@ There is no formal-verification PASS yet.
 
 ## Current routing
 
-**NEXT: STAGE 7 — WELFARE / GENERALITY / INSTITUTIONAL VALIDATION.**
+**NEXT: STAGE 7.5 — FULL-THEORY FREEZE DECISION.**
 
-Stage 7 may interpret only the surviving threshold/stability result. Theory freeze, Stage 7.5A formal/quantifier certification, journal positioning, manuscript rehabilitation, and submission remain blocked.
+Stage 7.5 must decide whether the narrow but certified threshold/stability mechanism is sufficient for full-paper investment. Theory freeze is still blocked; Stage 7.5A quantifier/generality certification and the embedded formal-verification gate remain mandatory before Stage 8.
