@@ -1,11 +1,14 @@
 import StandardsCoalitionFormal.Core
 import StandardsCoalitionFormal.Threshold
 import StandardsCoalitionFormal.Policy
+import StandardsCoalitionFormal.Welfare
 import StandardsCoalitionFormal.Blocking
 
 #print axioms StandardsCoalitionFormal.bFix_factorization
 #print axioms StandardsCoalitionFormal.bFix_delta_pos_iff
 #print axioms StandardsCoalitionFormal.bFix_delta_at_cutoff
 #print axioms StandardsCoalitionFormal.isCrossDerivative_neg
+#print axioms StandardsCoalitionFormal.isWelfareDerivative_neg
+#print axioms StandardsCoalitionFormal.welfareDepthDerivative_pos
 #print axioms StandardsCoalitionFormal.no_strict_block_if_member_not_gain
 #print axioms StandardsCoalitionFormal.pair_strict_block
