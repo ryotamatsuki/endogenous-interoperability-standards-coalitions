@@ -4,7 +4,13 @@ on:
   push:
     branches:
       - 'revival/**'
+    paths:
+      - 'formal/**'
+      - '.github/workflows/formal-verification.yml'
   pull_request:
+    paths:
+      - 'formal/**'
+      - '.github/workflows/formal-verification.yml'
   workflow_dispatch:
 
 jobs:
